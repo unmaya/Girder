@@ -1,0 +1,12 @@
+//////////////////////////////
+// Breakpoints and responsiveness
+
+@media screen and (max-width: $small_breakpoint) {
+	// Align or hide on small screens
+	.center_small {
+		text-align: center;
+	}
+	.hide_small {
+		display: none !important;
+	}
+}

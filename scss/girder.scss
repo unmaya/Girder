@@ -1,7 +1,6 @@
 //////////////////////////////
 // Resets & Core Modules
 @charset "UTF-8";
-@import "../components/normalize.scss/normalize";
 @import "compass";
 
 // Girder Variables
@@ -10,7 +9,8 @@ $containerPad		    : .8em;
 $gutters            : emCalc(20px);
 
 // Lets pass Pixels and Get ems in return
-$small_breakpoint  : emCalc(490px);
+// $small_breakpoint  : emCalc(490px);
+$small_breakpoint  : emCalc(568px); // lets expand the small breakpoint
 $medium_breakpoint : emCalc(640px); // 40em
 $large_breakpoint  : emCalc(790px);
 $xlarge_breakpoint : emCalc(940px);
@@ -25,6 +25,6 @@ $xlarge_breakpoint : emCalc(940px);
 @import "girder_modules/girder_base";
 
 // Responsiveness
-@import "girder_modules/girder_breakpoints";
+@import "girder_modules/girder_responsive";
 
 

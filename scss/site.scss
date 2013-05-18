@@ -2,6 +2,13 @@
 // Site and demo page styles
 // (not required by Girder)
 
+// Normalize this thing
+@import "../components/normalize.scss/normalize";
+
+// Include Girder modules
+@import "girder";
+
+// Site Styling Variables
 $body-bg            : #fff;
 $body-font-color    : #333333;
 $linkColor	        : #555555;
