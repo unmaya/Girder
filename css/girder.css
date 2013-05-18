@@ -1,0 +1,54 @@
+@charset "UTF-8";
+/* line 12, ../scss/girder_modules/_girder_utilities.scss */
+.left {
+  float: left !important;
+}
+
+/* line 13, ../scss/girder_modules/_girder_utilities.scss */
+.right {
+  float: right !important;
+}
+
+/* line 14, ../scss/girder_modules/_girder_utilities.scss */
+.text-left {
+  text-align: left !important;
+}
+
+/* line 15, ../scss/girder_modules/_girder_utilities.scss */
+.text-right {
+  text-align: right !important;
+}
+
+/* line 16, ../scss/girder_modules/_girder_utilities.scss */
+.text-center {
+  text-align: center !important;
+}
+
+/* line 17, ../scss/girder_modules/_girder_utilities.scss */
+.text-justify {
+  text-align: justify !important;
+}
+
+/* line 18, ../scss/girder_modules/_girder_utilities.scss */
+.hide {
+  display: none;
+}
+
+/* line 5, ../scss/girder_modules/_girder_base.scss */
+*, *:before, *:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+@media screen and (max-width: emCalc(568px)) {
+  /* line 6, ../scss/girder_modules/_girder_responsive.scss */
+  .center_small {
+    text-align: center;
+  }
+
+  /* line 9, ../scss/girder_modules/_girder_responsive.scss */
+  .hide_small {
+    display: none !important;
+  }
+}
