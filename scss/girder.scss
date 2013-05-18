@@ -1,0 +1,30 @@
+//////////////////////////////
+// Resets & Core Modules
+@charset "UTF-8";
+@import "../components/normalize.scss/normalize";
+@import "compass";
+
+// Girder Variables
+$em_base            : 16px;
+$containerPad		    : .8em;
+$gutters            : emCalc(20px);
+
+// Lets pass Pixels and Get ems in return
+$small_breakpoint  : emCalc(490px);
+$medium_breakpoint : emCalc(640px); // 40em
+$large_breakpoint  : emCalc(790px);
+$xlarge_breakpoint : emCalc(940px);
+
+// Functions (like pixel to em converters)
+@import "girder_modules/girder_functions";
+
+// Utility mixins and classes (clearfix, floats, text-aligns)
+@import "girder_modules/girder_utilities";
+
+// Base grid for girder
+@import "girder_modules/girder_base";
+
+// Responsiveness
+@import "girder_modules/girder_breakpoints";
+
+

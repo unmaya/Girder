@@ -1,0 +1,12 @@
+//////////////////////////////
+// Site and demo page styles
+// (not required by Girder)
+
+$body-bg            : #fff;
+$body-font-color    : #333333;
+$linkColor	        : #555555;
+$linkHoverColor     : saturate(lighten($coloredText, 15%), 40%);
+$lightText			    : lighten($body-font-color, 75%);
+$headingsFont       : source-sans-pro, "Helvetica Neue", "Helvetica", sans-serif;
+$body-font-family   : "Helvetica Neue", "Helvetica", Arial, sans-serif;
+@include establish-baseline;

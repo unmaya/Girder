@@ -3,6 +3,7 @@ grunt_settings/
 node_modules/
 build/
 components/
+scripts/
 Gemfile.lock
 Gruntfile.js
 package.json

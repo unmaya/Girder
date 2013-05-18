@@ -1,0 +1,9 @@
+//////////////////////////////
+// Base Grid for Girder
+
+// Include border-box on everything and profit.
+*, *:before, *:after {
+	box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+}
