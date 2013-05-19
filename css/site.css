@@ -679,6 +679,17 @@ html {
   display: none;
 }
 
+@media screen and (max-width: 35.5em) {
+  /* line 6, ../scss/girder_modules/_girder_responsive.scss */
+  .center-small {
+    text-align: center;
+  }
+
+  /* line 9, ../scss/girder_modules/_girder_responsive.scss */
+  .hide-small {
+    display: none !important;
+  }
+}
 /* line 60, ../scss/site.scss */
 body {
   background: white;
