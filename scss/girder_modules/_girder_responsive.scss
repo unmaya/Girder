@@ -3,10 +3,10 @@
 
 @media screen and (max-width: $small_breakpoint) {
 	// Align or hide on small screens
-	.center_small {
+	.center-small {
 		text-align: center;
 	}
-	.hide_small {
+	.hide-small {
 		display: none !important;
 	}
 }

@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/* //////////////////////////////// */
+/* Guirder is a Sassy grid toolkit */
+/* Simple, Responsive & Semantic  */
+/* ////////////////////////////// */
 /* line 12, ../scss/girder_modules/_girder_utilities.scss */
 .left {
   float: left !important;
@@ -34,21 +38,81 @@
   display: none;
 }
 
-/* line 5, ../scss/girder_modules/_girder_base.scss */
+/* line 6, ../scss/girder_modules/_girder_base.scss */
 *, *:before, *:after {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
 
-@media screen and (max-width: emCalc(568px)) {
+/* line 54, ../scss/girder_modules/_girder_base.scss */
+.container .row {
+  max-width: auto;
+  margin: 0 auto;
+}
+
+/* line 60, ../scss/girder_modules/_girder_base.scss */
+.row {
+  display: block;
+  clear: both;
+  *zoom: 1;
+}
+/* line 84, ../scss/girder_modules/_girder_base.scss */
+.row:after {
+  clear: both;
+}
+
+/* line 88, ../scss/girder_modules/_girder_base.scss */
+.row .unit:first-child {
+  padding-left: 1.25em;
+}
+
+/* line 89, ../scss/girder_modules/_girder_base.scss */
+.row .unit:last-child {
+  padding-right: 1.25em;
+}
+
+/* line 92, ../scss/girder_modules/_girder_base.scss */
+.unit .unit:first-child {
+  padding-left: 0;
+}
+
+/* line 93, ../scss/girder_modules/_girder_base.scss */
+.unit .unit:last-child {
+  padding-right: 0;
+}
+
+/* line 94, ../scss/girder_modules/_girder_base.scss */
+.unit .row:first-child > .unit {
+  padding-top: 0;
+}
+
+/* line 95, ../scss/girder_modules/_girder_base.scss */
+.unit .row:last-child > .unit {
+  padding-bottom: 0;
+}
+
+/* line 99, ../scss/girder_modules/_girder_base.scss */
+.no-gutters .unit,
+.unit.no-gutters {
+  padding: 0 !important;
+}
+
+/* line 104, ../scss/girder_modules/_girder_base.scss */
+.row:before, .row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+@media screen and (max-width: 35.5em) {
   /* line 6, ../scss/girder_modules/_girder_responsive.scss */
-  .center_small {
+  .center-small {
     text-align: center;
   }
 
   /* line 9, ../scss/girder_modules/_girder_responsive.scss */
-  .hide_small {
+  .hide-small {
     display: none !important;
   }
 }

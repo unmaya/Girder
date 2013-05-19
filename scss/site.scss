@@ -1,9 +1,7 @@
 //////////////////////////////
 // Site and demo page styles
 // (not required by Girder)
-
-// Include Girder modules
-@import "girder";
+@charset "UTF-8";
 
 // Site Styling Variables
 $body-bg            : #fff;
@@ -26,17 +24,57 @@ $h4-font-size: 1    * $base-font-size !default;
 $h5-font-size: 0.83 * $base-font-size !default;
 $h6-font-size: 0.67 * $base-font-size !default;
 
-// Set this to true to add support for IE 7.
-// $legacy-support-for-ie7: true; // Override default set in Compass' Support partial.
-
 // The amount lists and blockquotes are indented.
 $indent-amount: 30px !default;
 
 // Default font families
 $headingsFont       : source-sans-pro, "Helvetica Neue", "Helvetica", sans-serif;
 $base-font-family   : "Helvetica Neue", "Helvetica", Arial, sans-serif;
+
+
+////////////////////////////////
+// Import the required partials
+// Used by the demo, not Guirder
+
+// Compass support modules
+@import "compass";
+@import "compass/support";
+
+// Normalize this thing
+// @import "../components/normalize.scss/normalize";
+@import "normalize";
+
+// Baseline for Compass Vertical Rhythm
+@import "compass/typography/vertical_rhythm";
 @include establish-baseline;
 
-// After the default variables are set, import the required Compass partials.
-@import "compass/support";
-@import "compass/typography/vertical_rhythm";
+// Load the Girder modules
+@import "girder";
+
+
+
+////////////////////////////////
+// Theme Styles For Reference
+// Used by the demo, not Guirder
+
+html, body, .container, .about, .content, .actions {height: 100%;}
+
+// Expressed CSS Classes
+// For Debugging Purposes
+.content {
+	@include unit(golden-large);
+	@extend %unit;
+	padding: 10px 40px !important;
+}
+.actions {
+	@include unit(golden-small);
+	@extend %unit;
+	padding-right: 40px !important;
+
+	ul {list-style: none;}
+}
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}

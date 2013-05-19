@@ -1,12 +1,21 @@
-//////////////////////////////
-// Resets & Core Modules
+/* //////////////////////////////// */
+/* Guirder is a Sassy grid toolkit */
+/* Simple, Responsive & Semantic  */
+/* ////////////////////////////// */
+
+// Core Modules and Variables
 @charset "UTF-8";
-@import "compass";
+
+// Functions (like pixel to em converters)
+@import "girder_modules/girder_functions";
 
 // Girder Variables
-$em_base            : 16px;
-$containerPad		    : .8em;
-$gutters            : emCalc(20px);
+$em-base             : 16px;
+// Gutter width is split into each side of a unit (except of outer units in a row)
+$gutters             : emCalc(20px);
+// Set a fixed width for your wraping container or keep it fluid with auto
+$container-width     : auto;
+$container-margins   : 0 auto;
 
 // Lets pass Pixels and Get ems in return
 // $small_breakpoint  : emCalc(490px);
@@ -14,9 +23,6 @@ $small_breakpoint  : emCalc(568px); // lets expand the small breakpoint
 $medium_breakpoint : emCalc(640px); // 40em
 $large_breakpoint  : emCalc(790px);
 $xlarge_breakpoint : emCalc(940px);
-
-// Functions (like pixel to em converters)
-@import "girder_modules/girder_functions";
 
 // Utility mixins and classes (clearfix, floats, text-aligns)
 @import "girder_modules/girder_utilities";

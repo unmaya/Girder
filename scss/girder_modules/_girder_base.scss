@@ -1,9 +1,108 @@
 //////////////////////////////
 // Base Grid for Girder
 
-// Include border-box on everything and profit.
+// Include a broad amout of border-box on everything and profit.
+// Override for special cases within selectors
 *, *:before, *:after {
 	box-sizing: border-box;
 		-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
+}
+
+
+// Test Mixin for unit widths (Might change to func to use return values later)
+@mixin unit($width) {
+	@if $width == 'whole' {
+		@extend %whole;
+	}
+	@if $width == 'half' {
+		@extend %half;
+	}
+	@if $width == 'one-third' {
+		@extend %one-third;
+	}
+	@if $width == 'two-thirds' {
+		@extend %two-thirds;
+	}
+	@if $width == 'one-quarter' {
+		@extend %one-quarter;
+	}
+	@if $width == 'three-quarters' {
+		@extend %three-quarters;
+	}
+	@if $width == 'one-fifth' {
+		@extend %one-fifth;
+	}
+	@if $width == 'two-fifths' {
+		@extend %two-fifths;
+	}
+	@if $width == 'three-fifths' {
+		@extend %three-fifths;
+	}
+	@if $width == 'four-fifths' {
+		@extend %four-fifths;
+	}
+	@if $width == 'golden-small' {
+		@extend %golden-small;
+	}
+	@if $width == 'golden-large' {
+		@extend %golden-large;
+	}
+}
+
+// Set up the container width and alignment
+.container .row {
+  max-width: $container-width;
+  margin: $container-margins;
+}
+
+// Flexible grid units using percentages
+.row {
+	display: block;
+	clear: both;
+	*zoom: 1;
+
+	%unit {
+		float: left;
+		width: 100%;
+		padding: $gutters / 2;
+	}
+
+	%whole          { width: 100%; }
+	%half           { width: 50%; }
+	%one-third      { width: 33.3332%; }
+	%two-thirds     { width: 66.6665%; }
+	%one-%uarter    { width: 25%; }
+	%three-quarters { width: 75%; }
+	%one-fifth      { width: 20%; }
+	%two-fifths     { width: 40%; }
+	%three-fifths   { width: 60%; }
+	%four-fifths    { width: 80%; }
+	%golden-small   { width: 38.2716%; }
+	%golden-large   { width: 61.7283%; }
+
+	&:after {clear: both;}
+}
+
+// This ensures the outer gutters are equal to the (doubled) inner gutters.
+.row .unit:first-child { padding-left: $gutters; }
+.row .unit:last-child { padding-right: $gutters; }
+
+// Remove outer gutters for nested units
+.unit .unit:first-child { padding-left: 0; }
+.unit .unit:last-child { padding-right: 0; }
+.unit .row:first-child > .unit { padding-top: 0; }
+.unit .row:last-child > .unit { padding-bottom: 0; }
+
+// Remove all gutters within a parent element or a unit
+.no-gutters .unit,
+.unit.no-gutters {
+  padding: 0 !important;
+}
+
+// Automagic clearing for rows
+.row:before, .row:after {
+	display: table;
+	content: "";
+	line-height: 0;
 }
