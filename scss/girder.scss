@@ -6,31 +6,33 @@
 // Core Modules and Variables
 @charset "UTF-8";
 
-// Functions (like pixel to em converters)
+// Girder Global Variables
+// Start with $em-base to use it in functions
+$em-base             : 16px;
+
+// Functions module (like pixel to em converters)
 @import "girder_modules/girder_functions";
 
-// Girder Variables
-$em-base             : 16px;
-// Gutter width is split into each side of a unit (except of outer units in a row)
-$gutters             : emCalc(20px);
-// Set a fixed width for your wraping container or keep it fluid with auto
+// Gutter width is split into each side of a unit (except for outer units in a row)
+$gutters             : emCalc(30px);
+// Set a fixed width for our wraping container or keep it fluid by setting it to auto
 $container-width     : auto;
 $container-margins   : 0 auto;
 
 // Lets pass Pixels and Get ems in return
 // $small_breakpoint  : emCalc(490px);
-$small_breakpoint  : emCalc(568px); // lets expand the small breakpoint
+$small_breakpoint  : emCalc(568px); // Expand the small breakpoint
 $medium_breakpoint : emCalc(640px); // 40em
 $large_breakpoint  : emCalc(790px);
 $xlarge_breakpoint : emCalc(940px);
 
-// Utility mixins and classes (clearfix, floats, text-aligns)
-@import "girder_modules/girder_utilities";
-
 // Base grid for girder
 @import "girder_modules/girder_base";
 
+// Utility mixins and classes (clearfix, floats, text-aligns)
+@import "girder_modules/girder_utilities";
+
 // Responsiveness
-@import "girder_modules/girder_responsive";
+// @import "girder_modules/girder_responsive";
 
 

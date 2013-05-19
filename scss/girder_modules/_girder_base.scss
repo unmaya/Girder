@@ -11,7 +11,12 @@
 
 
 // Test Mixin for unit widths (Might change to func to use return values later)
-@mixin unit($width) {
+@mixin unit($width:whole, $nested:true) {
+	@if $nested == true {
+		&:first-child {padding-left: 0 !important;}
+		&:last-child {padding-right: 0 !important;}
+	}
+
 	@if $width == 'whole' {
 		@extend %whole;
 	}
@@ -51,9 +56,12 @@
 }
 
 // Set up the container width and alignment
-.container .row {
-  max-width: $container-width;
+.container {
   margin: $container-margins;
+
+	.row {
+  	max-width: $container-width;
+  }
 }
 
 // Flexible grid units using percentages
@@ -66,6 +74,10 @@
 		float: left;
 		width: 100%;
 		padding: $gutters / 2;
+
+		// This ensures the outer gutters are equal to the (doubled) inner gutters.
+		&:first-child {padding-left: $gutters;}
+		&:last-child {padding-right: $gutters;}
 	}
 
 	%whole          { width: 100%; }
@@ -78,26 +90,24 @@
 	%two-fifths     { width: 40%; }
 	%three-fifths   { width: 60%; }
 	%four-fifths    { width: 80%; }
-	%golden-small   { width: 38.2716%; }
-	%golden-large   { width: 61.7283%; }
+	%golden-small   { width: 38.2716%;
+		@extend %unit; }
+	%golden-large   { width: 61.7283%;
+		@extend %unit; }
 
 	&:after {clear: both;}
 }
 
-// This ensures the outer gutters are equal to the (doubled) inner gutters.
-.row .unit:first-child { padding-left: $gutters; }
-.row .unit:last-child { padding-right: $gutters; }
-
-// Remove outer gutters for nested units
-.unit .unit:first-child { padding-left: 0; }
-.unit .unit:last-child { padding-right: 0; }
-.unit .row:first-child > .unit { padding-top: 0; }
-.unit .row:last-child > .unit { padding-bottom: 0; }
+// Remove outer gutters for nested units (move to param for unit function)
+// .row .row:first-child { padding-left: 0; }
+// .row .row:last-child { padding-right: 0; }
+// %unit .row:first-child > %unit { padding-top: 0; }
+// %unit .row:last-child > %unit { padding-bottom: 0; }
 
 // Remove all gutters within a parent element or a unit
 .no-gutters .unit,
 .unit.no-gutters {
-  padding: 0 !important;
+	padding: 0 !important;
 }
 
 // Automagic clearing for rows
@@ -106,3 +116,18 @@
 	content: "";
 	line-height: 0;
 }
+
+
+// Temporary placeholder code example
+// @if $include-html-classes {
+
+// .row {
+// @include grid-row;
+
+// .column,
+// .columns { @include grid-column($columns:$total-columns); }
+
+// .row { @include grid-row($behavior:nest);
+// &.collapse { @include grid-row($behavior:nest-collapse); }
+// }
+// }

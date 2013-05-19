@@ -5,10 +5,10 @@
 
 // Site Styling Variables
 $body-bg            : #fff;
-$body-font-color    : #333333;
+$base-font-color    : #333333;
 $linkColor	        : #555555;
 $linkHoverColor     : saturate(lighten($linkColor, 15%), 40%);
-$lightText			    : lighten($body-font-color, 75%);
+$lightText			    : lighten($base-font-color, 75%);
 
 // Normalize and Typography Variables
 $base-font-size: 16px !default; // Override default set in Compass' Vertical Rhythm partial.
@@ -55,26 +55,46 @@ $base-font-family   : "Helvetica Neue", "Helvetica", Arial, sans-serif;
 
 ////////////////////////////////
 // Theme Styles For Reference
-// Used by the demo, not Guirder
+// Not needed by Guirder
 
+body {
+	background: $body-bg;
+	color: $base-font-color;
+	font-family: $base-font-family;
+	-webkit-font-smoothing: antialiased;
+}
 html, body, .container, .about, .content, .actions {height: 100%;}
+h1, h2, h3, h4 {margin-bottom: .4em;}
+p {margin: 1em 0 1.5em;}
+a {
+	&:link, &:visited {color: $linkColor;}
+}
 
 // Expressed CSS Classes
 // For Debugging Purposes
 .content {
-	@include unit(golden-large);
-	@extend %unit;
-	padding: 10px 40px !important;
+	@include unit(golden-large, false);
 }
 .actions {
-	@include unit(golden-small);
-	@extend %unit;
-	padding-right: 40px !important;
+	@include unit(golden-small, false);
+	background: #f4f4f4;
 
 	ul {list-style: none;}
 }
 footer {
+	background: $base-font-color;
+	color: $body-bg;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+}
+
+
+.goldlarge {
+	@include unit(golden-large);
+	pre {@include panel();}
+}
+.goldsmall {
+	@include unit(golden-small);
+	pre {@include panel();}
 }

@@ -17,6 +17,6 @@ Because I can :) No, really. I couldn't find exactly what I was looking for so I
 
 Thats it for now. I'll include some reference info for grid usage as it develops.
 
-_Note:_ Some functionality is not available yet (its a work in progress).
+_Note: Some functionality is not available yet, this is a work in progress and its still early._
 
 Girder will be built to take advantage of Sass but I'm also making a plain css version of the grid for other use cases. The css version however, will rely on presentational classes to structure the markup (which is exactly what I'm looking to avoid here).
