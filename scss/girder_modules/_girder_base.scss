@@ -99,10 +99,8 @@
 }
 
 // Remove outer gutters for nested units (move to param for unit function)
-// .row .row:first-child { padding-left: 0; }
-// .row .row:last-child { padding-right: 0; }
-// %unit .row:first-child > %unit { padding-top: 0; }
-// %unit .row:last-child > %unit { padding-bottom: 0; }
+%unit .row:first-child > %unit { padding-top: 0; }
+%unit .row:last-child > %unit { padding-bottom: 0; }
 
 // Remove all gutters within a parent element or a unit
 .no-gutters .unit,

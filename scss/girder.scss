@@ -14,7 +14,7 @@ $em-base             : 16px;
 @import "girder_modules/girder_functions";
 
 // Gutter width is split into each side of a unit (except for outer units in a row)
-$gutters             : emCalc(30px);
+$gutters             : emCalc(20px);
 // Set a fixed width for our wraping container or keep it fluid by setting it to auto
 $container-width     : auto;
 $container-margins   : 0 auto;

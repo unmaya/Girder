@@ -74,6 +74,7 @@ a {
 // For Debugging Purposes
 .content {
 	@include unit(golden-large, false);
+	padding-right: 1.25em !important;
 }
 .actions {
 	@include unit(golden-small, false);
@@ -87,6 +88,8 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+
+	a {text-transform: uppercase;}
 }
 
 

@@ -8,7 +8,84 @@
 	&:after { clear: both; }
 }
 
-// Various utility classes for presentational markup
+
+// Modified Version of the Excellent Panels Mixin from Zurb
+// ----------------------------
+// Panel Variables
+//
+
+// Control the background and border styles
+$panel-bg:              darken(#fff, 5%) !default;
+$panel-border-color:    darken($panel-bg, 15%) !default;
+
+// Set default inner padding and bottom margin
+$panel-margin-bottom:   0 !default;
+$panel-padding:         emCalc(20px) !default;
+
+// Set default font colors
+$panel-font-color:      #333 !default;
+$panel-font-color-alt:  #fff !default;
+
+// Panel Mixin
+//
+
+@mixin panel($bg:$panel-bg, $padding:$panel-padding) {
+
+	text-align: center;
+	font-size: .6em;
+	border-radius: 5px;
+
+  @if $bg {
+		$bg-lightness: lightness($bg);
+
+		border-style: solid;
+		border-width: 1px;
+		border-color: darken($bg, 15%);
+		margin-bottom: $panel-margin-bottom;
+		margin-top: 0;
+		padding: $padding;
+
+		background: $bg;
+
+		// We set the font color based on the darkness of the bg.
+		@if $bg-lightness >= 50% and $bg == blue { h1,h2,h3,h4,h5,h6,p { color: $panel-font-color-alt; } }
+		@else if $bg-lightness >= 50%            { h1,h2,h3,h4,h5,h6,p { color: $panel-font-color; } }
+		@else                                    { h1,h2,h3,h4,h5,h6,p { color: $panel-font-color-alt; } }
+
+    // Respect the padding, fool.
+    &>:first-child { margin-top: 0; }
+    &>:last-child { margin-bottom: 0; }
+
+		// reset header line-heights for panels
+		h1,h2,h3,h4,h5,h6 {
+			line-height: 1; margin-bottom: emCalc(20px) / 2;
+			&.subheader { line-height: 1.4; }
+		}
+	}
+}
+
+// Only include these classes if the option exists
+// @if $include-html-classes {
+
+//   /* Panels */
+//   .panel { @include panel;
+
+//     &.callout {
+//       @include panel($primary-color);
+//       @include inset-shadow($active:false);
+//     }
+
+//     &.radius {
+//       @include panel($bg:false);
+//       @include radius;
+//     }
+
+//   }
+
+// }
+
+
+// Utility classes for presentational markup
 .left         { float: left !important; }
 .right        { float: right !important; }
 .text-left    { text-align: left !important; }
