@@ -12,10 +12,11 @@
 
 // Test Mixin for unit widths (Might change to func to use return values later)
 @mixin unit($width:whole, $nested:true) {
-	@if $nested == true {
-		&:first-child {padding-left: 0 !important;}
-		&:last-child {padding-right: 0 !important;}
-	}
+	// Reduce verbosity and simplify by moving this to the extended placeholder
+	// @if $nested == true {
+	// 	&:first-child {padding-left: 0 !important; padding-top: 0;}
+	// 	&:last-child {padding-right: 0 !important; padding-top: 0;}
+	// }
 
 	@if $width == 'whole' {
 		@extend %whole;
@@ -78,18 +79,31 @@
 		// This ensures the outer gutters are equal to the (doubled) inner gutters.
 		&:first-child {padding-left: $gutters;}
 		&:last-child {padding-right: $gutters;}
+
+		.row &:first-child {padding-left: 0;}
+		.row &:last-child {padding-right: 0;}
 	}
 
-	%whole          { width: 100%; }
-	%half           { width: 50%; }
-	%one-third      { width: 33.3332%; }
-	%two-thirds     { width: 66.6665%; }
-	%one-%uarter    { width: 25%; }
-	%three-quarters { width: 75%; }
-	%one-fifth      { width: 20%; }
-	%two-fifths     { width: 40%; }
-	%three-fifths   { width: 60%; }
-	%four-fifths    { width: 80%; }
+	%whole          { width: 100%;
+		@extend %unit; }
+	%half           { width: 50%;
+		@extend %unit; }
+	%one-third      { width: 33.3332%;
+		@extend %unit; }
+	%two-thirds     { width: 66.6665%;
+		@extend %unit; }
+	%one-%uarter    { width: 25%;
+		@extend %unit; }
+	%three-quarters { width: 75%;
+		@extend %unit; }
+	%one-fifth      { width: 20%;
+		@extend %unit; }
+	%two-fifths     { width: 40%;
+		@extend %unit; }
+	%three-fifths   { width: 60%;
+		@extend %unit; }
+	%four-fifths    { width: 80%;
+		@extend %unit; }
 	%golden-small   { width: 38.2716%;
 		@extend %unit; }
 	%golden-large   { width: 61.7283%;
@@ -98,9 +112,6 @@
 	&:after {clear: both;}
 }
 
-// Remove outer gutters for nested units (move to param for unit function)
-%unit .row:first-child > %unit { padding-top: 0; }
-%unit .row:last-child > %unit { padding-bottom: 0; }
 
 // Remove all gutters within a parent element or a unit
 .no-gutters .unit,

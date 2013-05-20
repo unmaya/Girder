@@ -10,33 +10,33 @@
   -webkit-box-sizing: border-box;
 }
 
-/* line 59, ../scss/girder_modules/_girder_base.scss */
+/* line 60, ../scss/girder_modules/_girder_base.scss */
 .container {
   margin: 0 auto;
 }
-/* line 62, ../scss/girder_modules/_girder_base.scss */
+/* line 63, ../scss/girder_modules/_girder_base.scss */
 .container .row {
   max-width: auto;
 }
 
-/* line 68, ../scss/girder_modules/_girder_base.scss */
+/* line 69, ../scss/girder_modules/_girder_base.scss */
 .row {
   display: block;
   clear: both;
   *zoom: 1;
 }
-/* line 98, ../scss/girder_modules/_girder_base.scss */
+/* line 112, ../scss/girder_modules/_girder_base.scss */
 .row:after {
   clear: both;
 }
 
-/* line 107, ../scss/girder_modules/_girder_base.scss */
+/* line 118, ../scss/girder_modules/_girder_base.scss */
 .no-gutters .unit,
 .unit.no-gutters {
   padding: 0 !important;
 }
 
-/* line 112, ../scss/girder_modules/_girder_base.scss */
+/* line 123, ../scss/girder_modules/_girder_base.scss */
 .row:before, .row:after {
   display: table;
   content: "";

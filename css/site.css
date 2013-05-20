@@ -589,65 +589,67 @@ html {
   -webkit-box-sizing: border-box;
 }
 
-/* line 59, ../scss/girder_modules/_girder_base.scss */
+/* line 60, ../scss/girder_modules/_girder_base.scss */
 .container {
   margin: 0 auto;
 }
-/* line 62, ../scss/girder_modules/_girder_base.scss */
+/* line 63, ../scss/girder_modules/_girder_base.scss */
 .container .row {
   max-width: auto;
 }
 
-/* line 68, ../scss/girder_modules/_girder_base.scss */
+/* line 69, ../scss/girder_modules/_girder_base.scss */
 .row {
   display: block;
   clear: both;
   *zoom: 1;
 }
-/* line 73, ../scss/girder_modules/_girder_base.scss */
-.row .actions, .row .goldsmall, .row .content, .row .goldlarge {
+/* line 74, ../scss/girder_modules/_girder_base.scss */
+.row .halfsize, .row .actions, .row .goldsmall, .row .content, .row .goldlarge {
   float: left;
   width: 100%;
   padding: 0.625em;
 }
-/* line 79, ../scss/girder_modules/_girder_base.scss */
-.row .actions:first-child, .row .goldsmall:first-child, .row .content:first-child, .row .goldlarge:first-child {
+/* line 80, ../scss/girder_modules/_girder_base.scss */
+.row .halfsize:first-child, .row .actions:first-child, .row .goldsmall:first-child, .row .content:first-child, .row .goldlarge:first-child {
   padding-left: 1.25em;
 }
-/* line 80, ../scss/girder_modules/_girder_base.scss */
-.row .actions:last-child, .row .goldsmall:last-child, .row .content:last-child, .row .goldlarge:last-child {
+/* line 81, ../scss/girder_modules/_girder_base.scss */
+.row .halfsize:last-child, .row .actions:last-child, .row .goldsmall:last-child, .row .content:last-child, .row .goldlarge:last-child {
   padding-right: 1.25em;
 }
-/* line 93, ../scss/girder_modules/_girder_base.scss */
+/* line 83, ../scss/girder_modules/_girder_base.scss */
+.row .row .halfsize:first-child, .row .row .actions:first-child, .row .row .goldsmall:first-child, .row .row .content:first-child, .row .row .goldlarge:first-child {
+  padding-left: 0;
+}
+/* line 84, ../scss/girder_modules/_girder_base.scss */
+.row .row .halfsize:last-child, .row .row .actions:last-child, .row .row .goldsmall:last-child, .row .row .content:last-child, .row .row .goldlarge:last-child {
+  padding-right: 0;
+}
+/* line 89, ../scss/girder_modules/_girder_base.scss */
+.row .halfsize {
+  width: 50%;
+}
+/* line 107, ../scss/girder_modules/_girder_base.scss */
 .row .actions, .row .goldsmall {
   width: 38.2716%;
 }
-/* line 95, ../scss/girder_modules/_girder_base.scss */
+/* line 109, ../scss/girder_modules/_girder_base.scss */
 .row .content, .row .goldlarge {
   width: 61.7283%;
 }
-/* line 98, ../scss/girder_modules/_girder_base.scss */
+/* line 112, ../scss/girder_modules/_girder_base.scss */
 .row:after {
   clear: both;
 }
 
-/* line 102, ../scss/girder_modules/_girder_base.scss */
-.row .actions .row:first-child > .actions, .row .goldsmall .row:first-child > .actions, .row .content .row:first-child > .actions, .row .goldlarge .row:first-child > .actions, .row .actions .row:first-child > .goldsmall, .row .goldsmall .row:first-child > .goldsmall, .row .content .row:first-child > .goldsmall, .row .goldlarge .row:first-child > .goldsmall, .row .actions .row:first-child > .content, .row .goldsmall .row:first-child > .content, .row .content .row:first-child > .content, .row .goldlarge .row:first-child > .content, .row .actions .row:first-child > .goldlarge, .row .goldsmall .row:first-child > .goldlarge, .row .content .row:first-child > .goldlarge, .row .goldlarge .row:first-child > .goldlarge {
-  padding-top: 0;
-}
-
-/* line 103, ../scss/girder_modules/_girder_base.scss */
-.row .actions .row:last-child > .actions, .row .goldsmall .row:last-child > .actions, .row .content .row:last-child > .actions, .row .goldlarge .row:last-child > .actions, .row .actions .row:last-child > .goldsmall, .row .goldsmall .row:last-child > .goldsmall, .row .content .row:last-child > .goldsmall, .row .goldlarge .row:last-child > .goldsmall, .row .actions .row:last-child > .content, .row .goldsmall .row:last-child > .content, .row .content .row:last-child > .content, .row .goldlarge .row:last-child > .content, .row .actions .row:last-child > .goldlarge, .row .goldsmall .row:last-child > .goldlarge, .row .content .row:last-child > .goldlarge, .row .goldlarge .row:last-child > .goldlarge {
-  padding-bottom: 0;
-}
-
-/* line 107, ../scss/girder_modules/_girder_base.scss */
+/* line 118, ../scss/girder_modules/_girder_base.scss */
 .no-gutters .unit,
 .unit.no-gutters {
   padding: 0 !important;
 }
 
-/* line 112, ../scss/girder_modules/_girder_base.scss */
+/* line 123, ../scss/girder_modules/_girder_base.scss */
 .row:before, .row:after {
   display: table;
   content: "";
@@ -755,16 +757,8 @@ footer a {
   text-transform: uppercase;
 }
 
-/* line 16, ../scss/girder_modules/_girder_base.scss */
-.goldlarge:first-child {
-  padding-left: 0 !important;
-}
-/* line 17, ../scss/girder_modules/_girder_base.scss */
-.goldlarge:last-child {
-  padding-right: 0 !important;
-}
-/* line 98, ../scss/site.scss */
-.goldlarge pre {
+/* line 106, ../scss/site.scss */
+.goldlarge pre, .goldsmall pre, .halfsize pre {
   text-align: center;
   font-size: .6em;
   border-radius: 5px;
@@ -777,66 +771,23 @@ footer a {
   background: #f2f2f2;
 }
 /* line 52, ../scss/girder_modules/_girder_utilities.scss */
-.goldlarge pre h1, .goldlarge pre h2, .goldlarge pre h3, .goldlarge pre h4, .goldlarge pre h5, .goldlarge pre h6, .goldlarge pre p {
+.goldlarge pre h1, .goldlarge pre h2, .goldlarge pre h3, .goldlarge pre h4, .goldlarge pre h5, .goldlarge pre h6, .goldlarge pre p, .goldsmall pre h1, .goldsmall pre h2, .goldsmall pre h3, .goldsmall pre h4, .goldsmall pre h5, .goldsmall pre h6, .goldsmall pre p, .halfsize pre h1, .halfsize pre h2, .halfsize pre h3, .halfsize pre h4, .halfsize pre h5, .halfsize pre h6, .halfsize pre p {
   color: #333333;
 }
 /* line 56, ../scss/girder_modules/_girder_utilities.scss */
-.goldlarge pre > :first-child {
+.goldlarge pre > :first-child, .goldsmall pre > :first-child, .halfsize pre > :first-child {
   margin-top: 0;
 }
 /* line 57, ../scss/girder_modules/_girder_utilities.scss */
-.goldlarge pre > :last-child {
+.goldlarge pre > :last-child, .goldsmall pre > :last-child, .halfsize pre > :last-child {
   margin-bottom: 0;
 }
 /* line 60, ../scss/girder_modules/_girder_utilities.scss */
-.goldlarge pre h1, .goldlarge pre h2, .goldlarge pre h3, .goldlarge pre h4, .goldlarge pre h5, .goldlarge pre h6 {
+.goldlarge pre h1, .goldlarge pre h2, .goldlarge pre h3, .goldlarge pre h4, .goldlarge pre h5, .goldlarge pre h6, .goldsmall pre h1, .goldsmall pre h2, .goldsmall pre h3, .goldsmall pre h4, .goldsmall pre h5, .goldsmall pre h6, .halfsize pre h1, .halfsize pre h2, .halfsize pre h3, .halfsize pre h4, .halfsize pre h5, .halfsize pre h6 {
   line-height: 1;
   margin-bottom: 0.625em;
 }
 /* line 62, ../scss/girder_modules/_girder_utilities.scss */
-.goldlarge pre h1.subheader, .goldlarge pre h2.subheader, .goldlarge pre h3.subheader, .goldlarge pre h4.subheader, .goldlarge pre h5.subheader, .goldlarge pre h6.subheader {
-  line-height: 1.4;
-}
-
-/* line 16, ../scss/girder_modules/_girder_base.scss */
-.goldsmall:first-child {
-  padding-left: 0 !important;
-}
-/* line 17, ../scss/girder_modules/_girder_base.scss */
-.goldsmall:last-child {
-  padding-right: 0 !important;
-}
-/* line 102, ../scss/site.scss */
-.goldsmall pre {
-  text-align: center;
-  font-size: .6em;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #cccccc;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 1.25em;
-  background: #f2f2f2;
-}
-/* line 52, ../scss/girder_modules/_girder_utilities.scss */
-.goldsmall pre h1, .goldsmall pre h2, .goldsmall pre h3, .goldsmall pre h4, .goldsmall pre h5, .goldsmall pre h6, .goldsmall pre p {
-  color: #333333;
-}
-/* line 56, ../scss/girder_modules/_girder_utilities.scss */
-.goldsmall pre > :first-child {
-  margin-top: 0;
-}
-/* line 57, ../scss/girder_modules/_girder_utilities.scss */
-.goldsmall pre > :last-child {
-  margin-bottom: 0;
-}
-/* line 60, ../scss/girder_modules/_girder_utilities.scss */
-.goldsmall pre h1, .goldsmall pre h2, .goldsmall pre h3, .goldsmall pre h4, .goldsmall pre h5, .goldsmall pre h6 {
-  line-height: 1;
-  margin-bottom: 0.625em;
-}
-/* line 62, ../scss/girder_modules/_girder_utilities.scss */
-.goldsmall pre h1.subheader, .goldsmall pre h2.subheader, .goldsmall pre h3.subheader, .goldsmall pre h4.subheader, .goldsmall pre h5.subheader, .goldsmall pre h6.subheader {
+.goldlarge pre h1.subheader, .goldlarge pre h2.subheader, .goldlarge pre h3.subheader, .goldlarge pre h4.subheader, .goldlarge pre h5.subheader, .goldlarge pre h6.subheader, .goldsmall pre h1.subheader, .goldsmall pre h2.subheader, .goldsmall pre h3.subheader, .goldsmall pre h4.subheader, .goldsmall pre h5.subheader, .goldsmall pre h6.subheader, .halfsize pre h1.subheader, .halfsize pre h2.subheader, .halfsize pre h3.subheader, .halfsize pre h4.subheader, .halfsize pre h5.subheader, .halfsize pre h6.subheader {
   line-height: 1.4;
 }

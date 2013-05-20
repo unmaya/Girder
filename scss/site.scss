@@ -95,9 +95,14 @@ footer {
 
 .goldlarge {
 	@include unit(golden-large);
-	pre {@include panel();}
 }
 .goldsmall {
 	@include unit(golden-small);
-	pre {@include panel();}
+}
+.halfsize {
+	@include unit(half)
+}
+
+.goldlarge pre, .goldsmall pre, .halfsize pre {
+	@include panel();
 }
