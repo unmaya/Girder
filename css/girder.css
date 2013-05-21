@@ -11,25 +11,22 @@
 }
 
 /* line 67, ../scss/girder_modules/_girder_base.scss */
-.container {
+.container, .row {
   margin: 0 auto;
-}
-/* line 70, ../scss/girder_modules/_girder_base.scss */
-.container .row {
   max-width: auto;
 }
 
-/* line 76, ../scss/girder_modules/_girder_base.scss */
+/* line 73, ../scss/girder_modules/_girder_base.scss */
 .row {
   display: block;
   clear: both;
   *zoom: 1;
 }
-/* line 128, ../scss/girder_modules/_girder_base.scss */
+/* line 125, ../scss/girder_modules/_girder_base.scss */
 .row:after {
   clear: both;
 }
-/* line 130, ../scss/girder_modules/_girder_base.scss */
+/* line 127, ../scss/girder_modules/_girder_base.scss */
 .row:before, .row:after {
   display: table;
   content: "";

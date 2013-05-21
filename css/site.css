@@ -590,59 +590,56 @@ html {
 }
 
 /* line 67, ../scss/girder_modules/_girder_base.scss */
-.container {
+.container, .row {
   margin: 0 auto;
-}
-/* line 70, ../scss/girder_modules/_girder_base.scss */
-.container .row {
   max-width: auto;
 }
 
-/* line 76, ../scss/girder_modules/_girder_base.scss */
+/* line 73, ../scss/girder_modules/_girder_base.scss */
 .row {
   display: block;
   clear: both;
   *zoom: 1;
 }
-/* line 81, ../scss/girder_modules/_girder_base.scss */
+/* line 78, ../scss/girder_modules/_girder_base.scss */
 .row .halfsize, .row .actions, .row .goldsmall, .row .content, .row .goldlarge {
   float: left;
   width: 100%;
   padding: 0.625em;
 }
-/* line 87, ../scss/girder_modules/_girder_base.scss */
+/* line 84, ../scss/girder_modules/_girder_base.scss */
 .row .halfsize:first-child, .row .actions:first-child, .row .goldsmall:first-child, .row .content:first-child, .row .goldlarge:first-child {
   padding-left: 1.25em;
 }
-/* line 88, ../scss/girder_modules/_girder_base.scss */
+/* line 85, ../scss/girder_modules/_girder_base.scss */
 .row .halfsize:last-child, .row .actions:last-child, .row .goldsmall:last-child, .row .content:last-child, .row .goldlarge:last-child {
   padding-right: 1.25em;
 }
-/* line 91, ../scss/girder_modules/_girder_base.scss */
+/* line 88, ../scss/girder_modules/_girder_base.scss */
 .row .row .halfsize:first-child, .row .row .actions:first-child, .row .row .goldsmall:first-child, .row .row .content:first-child, .row .row .goldlarge:first-child {
   padding-left: 0;
 }
-/* line 92, ../scss/girder_modules/_girder_base.scss */
+/* line 89, ../scss/girder_modules/_girder_base.scss */
 .row .row .halfsize:last-child, .row .row .actions:last-child, .row .row .goldsmall:last-child, .row .row .content:last-child, .row .row .goldlarge:last-child {
   padding-right: 0;
 }
-/* line 104, ../scss/girder_modules/_girder_base.scss */
+/* line 101, ../scss/girder_modules/_girder_base.scss */
 .row .halfsize {
   width: 50%;
 }
-/* line 122, ../scss/girder_modules/_girder_base.scss */
+/* line 119, ../scss/girder_modules/_girder_base.scss */
 .row .actions, .row .goldsmall {
   width: 38.2716%;
 }
-/* line 124, ../scss/girder_modules/_girder_base.scss */
+/* line 121, ../scss/girder_modules/_girder_base.scss */
 .row .content, .row .goldlarge {
   width: 61.7283%;
 }
-/* line 128, ../scss/girder_modules/_girder_base.scss */
+/* line 125, ../scss/girder_modules/_girder_base.scss */
 .row:after {
   clear: both;
 }
-/* line 130, ../scss/girder_modules/_girder_base.scss */
+/* line 127, ../scss/girder_modules/_girder_base.scss */
 .row:before, .row:after {
   display: table;
   content: "";

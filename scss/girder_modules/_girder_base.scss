@@ -63,13 +63,10 @@
 	}
 }
 
-// Set up the container width and alignment
-.container {
-  margin: $container-margins;
-
-	.row {
-  	max-width: $container-width;
-  }
+// Set up the container and alignment row width
+.container, .row {
+	margin: $container-margins;
+	max-width: $container-width;
 }
 
 // Flexible grid units using percentages
