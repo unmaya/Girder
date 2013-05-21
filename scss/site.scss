@@ -73,11 +73,12 @@ a {
 // Expressed CSS Classes
 // For Debugging Purposes
 .content {
-	@include unit(golden-large, false);
+	@include unit(golden-large);
+	// This is extra padding for custom use
 	padding-right: 1.25em !important;
 }
 .actions {
-	@include unit(golden-small, false);
+	@include unit(golden-small);
 	background: #f4f4f4;
 
 	ul {list-style: none;}

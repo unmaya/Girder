@@ -11,47 +11,54 @@
 
 
 // Test Mixin for unit widths (Might change to func to use return values later)
-@mixin unit($width:whole, $nested:true) {
+@mixin unit($width:whole, $addgutters:true) {
+
 	// Reduce verbosity and simplify by moving this to the extended placeholder
 	// @if $nested == true {
 	// 	&:first-child {padding-left: 0 !important; padding-top: 0;}
 	// 	&:last-child {padding-right: 0 !important; padding-top: 0;}
 	// }
 
+	// Handle the no-gutter case but its not pretty, looking for better options
+	@if $addgutters == false {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
 	@if $width == 'whole' {
 		@extend %whole;
 	}
-	@if $width == 'half' {
+	@else if $width == 'half' {
 		@extend %half;
 	}
-	@if $width == 'one-third' {
+	@else if $width == 'one-third' {
 		@extend %one-third;
 	}
-	@if $width == 'two-thirds' {
+	@else if $width == 'two-thirds' {
 		@extend %two-thirds;
 	}
-	@if $width == 'one-quarter' {
+	@else if $width == 'one-quarter' {
 		@extend %one-quarter;
 	}
-	@if $width == 'three-quarters' {
+	@else if $width == 'three-quarters' {
 		@extend %three-quarters;
 	}
-	@if $width == 'one-fifth' {
+	@else if $width == 'one-fifth' {
 		@extend %one-fifth;
 	}
-	@if $width == 'two-fifths' {
+	@else if $width == 'two-fifths' {
 		@extend %two-fifths;
 	}
-	@if $width == 'three-fifths' {
+	@else if $width == 'three-fifths' {
 		@extend %three-fifths;
 	}
-	@if $width == 'four-fifths' {
+	@else if $width == 'four-fifths' {
 		@extend %four-fifths;
 	}
-	@if $width == 'golden-small' {
+	@else if $width == 'golden-small' {
 		@extend %golden-small;
 	}
-	@if $width == 'golden-large' {
+	@else if $width == 'golden-large' {
 		@extend %golden-large;
 	}
 }
@@ -80,8 +87,16 @@
 		&:first-child {padding-left: $gutters;}
 		&:last-child {padding-right: $gutters;}
 
+		// Try handling nested outer gutters here
 		.row &:first-child {padding-left: 0;}
 		.row &:last-child {padding-right: 0;}
+
+		// Add a .no-gutters class to a unit to remove gutters
+		// Too much unneeded bloat is generated so disabled to find a better option
+		// &.no-gutters {
+		// 	padding-left: 0;
+		// 	padding-right: 0;
+		// }
 	}
 
 	%whole          { width: 100%;
@@ -109,23 +124,15 @@
 	%golden-large   { width: 61.7283%;
 		@extend %unit; }
 
+	// Automagic clearing for rows
 	&:after {clear: both;}
+
+	&:before, &:after {
+		display: table;
+		content: "";
+		line-height: 0;
+	}
 }
-
-
-// Remove all gutters within a parent element or a unit
-.no-gutters .unit,
-.unit.no-gutters {
-	padding: 0 !important;
-}
-
-// Automagic clearing for rows
-.row:before, .row:after {
-	display: table;
-	content: "";
-	line-height: 0;
-}
-
 
 // Temporary placeholder code example
 // @if $include-html-classes {
