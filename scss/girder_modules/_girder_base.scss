@@ -25,10 +25,7 @@
 		padding-right: 0 !important;
 	}
 
-	@if $width == 'whole' {
-		@extend %whole;
-	}
-	@else if $width == 'half' {
+	@if $width == 'half' {
 		@extend %half;
 	}
 	@else if $width == 'one-third' {
@@ -60,6 +57,9 @@
 	}
 	@else if $width == 'golden-large' {
 		@extend %golden-large;
+	}
+	@else {
+		@extend %whole;
 	}
 }
 
