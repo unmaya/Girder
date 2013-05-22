@@ -143,19 +143,19 @@ blockquote {
 /* line 147, ../scss/_normalize.scss */
 h1 {
   /* Set the font-size and line-height while keeping a proper vertical rhythm. */
-  font-size: 2em;
-  line-height: 1.5em;
+  font-size: 2.8em;
+  line-height: 1.60714em;
   /* Set 1 unit of vertical rhythm on the top and bottom margins. */
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
+  margin-top: 0.53571em;
+  margin-bottom: 0.53571em;
 }
 
 /* line 156, ../scss/_normalize.scss */
 h2 {
-  font-size: 1.5em;
-  line-height: 2em;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  font-size: 1.8em;
+  line-height: 1.66667em;
+  margin-top: 0.83333em;
+  margin-bottom: 0.83333em;
 }
 
 /* line 162, ../scss/_normalize.scss */
@@ -751,7 +751,7 @@ footer a {
   text-transform: uppercase;
 }
 
-/* line 110, ../scss/site.scss */
+/* line 111, ../scss/site.scss */
 .goldlarge pre, .goldsmall pre, .halfsize pre, .whole pre {
   text-align: center;
   font-size: .6em;

@@ -11,3 +11,7 @@
 	@return $pxWidth / $em-base * 1rem;
 }
 
+// Calculate percentage values using the target ÷ context formula
+@function percentCalc($target, $context) {
+	@return $target / $context * 100%;
+}
