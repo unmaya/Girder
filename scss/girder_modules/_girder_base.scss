@@ -84,7 +84,7 @@
 		&:first-child {padding-left: $gutters;}
 		&:last-child {padding-right: $gutters;}
 
-		// Try handling nested outer gutters here
+		// Try handling nested outer gutters here, its redundant for now
 		.row &:first-child {padding-left: 0;}
 		.row &:last-child {padding-right: 0;}
 

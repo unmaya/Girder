@@ -27,9 +27,7 @@ $panel-font-color:      #333 !default;
 $panel-font-color-alt:  #fff !default;
 
 // Panel Mixin
-//
-
-@mixin panel($bg:$panel-bg, $padding:$panel-padding) {
+@mixin panel($bg:$panel-bg, $padding:$panel-padding, $filler:false) {
 
 	text-align: center;
 	font-size: .6em;
@@ -47,20 +45,18 @@ $panel-font-color-alt:  #fff !default;
 
 		background: $bg;
 
-		// We set the font color based on the darkness of the bg.
-		@if $bg-lightness >= 50% and $bg == blue { h1,h2,h3,h4,h5,h6,p { color: $panel-font-color-alt; } }
-		@else if $bg-lightness >= 50%            { h1,h2,h3,h4,h5,h6,p { color: $panel-font-color; } }
-		@else                                    { h1,h2,h3,h4,h5,h6,p { color: $panel-font-color-alt; } }
+		// We set the font color based on the darkness of the bg and if we are using filler content
+		@if $bg-lightness >= 50% and $filler == true        { h1,h2,h3,h4,p { color: $panel-font-color-alt; } }
+		@else if $bg-lightness >= 50% and $filler == true   { h1,h2,h3,h4,p { color: $panel-font-color; } }
+		@else if $filler == true {
+			h1,h2,h3,h4,p { color: $panel-font-color-alt;
+			line-height: 1; margin-bottom: emCalc(20px) / 2;
+			}
+		}
 
     // Respect the padding, fool.
-    &>:first-child { margin-top: 0; }
-    &>:last-child { margin-bottom: 0; }
-
-		// reset header line-heights for panels
-		h1,h2,h3,h4,h5,h6 {
-			line-height: 1; margin-bottom: emCalc(20px) / 2;
-			&.subheader { line-height: 1.4; }
-		}
+    // &>:first-child { margin-top: 0; }
+    // &>:last-child { margin-bottom: 0; }
 	}
 }
 

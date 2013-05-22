@@ -101,9 +101,12 @@ footer {
 	@include unit(golden-small);
 }
 .halfsize {
-	@include unit(half)
+	@include unit(half);
+}
+.whole {
+	@include unit(whole);
 }
 
-.goldlarge pre, .goldsmall pre, .halfsize pre {
+.goldlarge pre, .goldsmall pre, .halfsize pre, .whole pre {
 	@include panel();
 }

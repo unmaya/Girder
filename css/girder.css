@@ -33,37 +33,37 @@
   line-height: 0;
 }
 
-/* line 89, ../scss/girder_modules/_girder_utilities.scss */
+/* line 85, ../scss/girder_modules/_girder_utilities.scss */
 .left {
   float: left !important;
 }
 
-/* line 90, ../scss/girder_modules/_girder_utilities.scss */
+/* line 86, ../scss/girder_modules/_girder_utilities.scss */
 .right {
   float: right !important;
 }
 
-/* line 91, ../scss/girder_modules/_girder_utilities.scss */
+/* line 87, ../scss/girder_modules/_girder_utilities.scss */
 .text-left {
   text-align: left !important;
 }
 
-/* line 92, ../scss/girder_modules/_girder_utilities.scss */
+/* line 88, ../scss/girder_modules/_girder_utilities.scss */
 .text-right {
   text-align: right !important;
 }
 
-/* line 93, ../scss/girder_modules/_girder_utilities.scss */
+/* line 89, ../scss/girder_modules/_girder_utilities.scss */
 .text-center {
   text-align: center !important;
 }
 
-/* line 94, ../scss/girder_modules/_girder_utilities.scss */
+/* line 90, ../scss/girder_modules/_girder_utilities.scss */
 .text-justify {
   text-align: justify !important;
 }
 
-/* line 95, ../scss/girder_modules/_girder_utilities.scss */
+/* line 91, ../scss/girder_modules/_girder_utilities.scss */
 .hide {
   display: none;
 }
