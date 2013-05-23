@@ -85,7 +85,8 @@
 		&:last-child {padding-right: $gutters;}
 
 		// Try handling nested outer gutters here, its redundant for now
-		.row &:first-child {padding-left: 0;}
+		// Use first of type for rows starting with headings etc.
+		.row &:first-of-type {padding-left: 0;}
 		.row &:last-child {padding-right: 0;}
 
 		// Add a .no-gutters class to a unit to remove gutters
@@ -104,7 +105,7 @@
 		@extend %unit; }
 	%two-thirds     { width: 66.6665%;
 		@extend %unit; }
-	%one-%uarter    { width: 25%;
+	%one-quarter    { width: 25%;
 		@extend %unit; }
 	%three-quarters { width: 75%;
 		@extend %unit; }

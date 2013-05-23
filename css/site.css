@@ -66,7 +66,7 @@ audio:not([controls]) {
  */
 /* line 72, ../scss/_normalize.scss */
 html {
-  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-family: source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
   /* 1 */
   font-size: 100%;
   /* 3 */
@@ -87,7 +87,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-family: source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
 
 /**
@@ -602,48 +602,56 @@ html {
   *zoom: 1;
 }
 /* line 78, ../scss/girder_modules/_girder_base.scss */
-.row .whole, .row .halfsize, .row .actions, .row .goldsmall, .row .content, .row .goldlarge {
+.row .whole, .row .halfsize, .row .actions, .row .content, .row .goldsmall, .row .goldlarge {
   float: left;
   width: 100%;
   padding: 0.625em;
 }
 /* line 84, ../scss/girder_modules/_girder_base.scss */
-.row .whole:first-child, .row .halfsize:first-child, .row .actions:first-child, .row .goldsmall:first-child, .row .content:first-child, .row .goldlarge:first-child {
+.row .whole:first-child, .row .halfsize:first-child, .row .actions:first-child, .row .content:first-child, .row .goldsmall:first-child, .row .goldlarge:first-child {
   padding-left: 1.25em;
 }
 /* line 85, ../scss/girder_modules/_girder_base.scss */
-.row .whole:last-child, .row .halfsize:last-child, .row .actions:last-child, .row .goldsmall:last-child, .row .content:last-child, .row .goldlarge:last-child {
+.row .whole:last-child, .row .halfsize:last-child, .row .actions:last-child, .row .content:last-child, .row .goldsmall:last-child, .row .goldlarge:last-child {
   padding-right: 1.25em;
 }
-/* line 88, ../scss/girder_modules/_girder_base.scss */
-.row .row .whole:first-child, .row .row .halfsize:first-child, .row .row .actions:first-child, .row .row .goldsmall:first-child, .row .row .content:first-child, .row .row .goldlarge:first-child {
+/* line 89, ../scss/girder_modules/_girder_base.scss */
+.row .row .whole:first-of-type, .row .row .halfsize:first-of-type, .row .row .actions:first-of-type, .row .row .content:first-of-type, .row .row .goldsmall:first-of-type, .row .row .goldlarge:first-of-type {
   padding-left: 0;
 }
-/* line 89, ../scss/girder_modules/_girder_base.scss */
-.row .row .whole:last-child, .row .row .halfsize:last-child, .row .row .actions:last-child, .row .row .goldsmall:last-child, .row .row .content:last-child, .row .row .goldlarge:last-child {
+/* line 90, ../scss/girder_modules/_girder_base.scss */
+.row .row .whole:last-child, .row .row .halfsize:last-child, .row .row .actions:last-child, .row .row .content:last-child, .row .row .goldsmall:last-child, .row .row .goldlarge:last-child {
   padding-right: 0;
 }
-/* line 99, ../scss/girder_modules/_girder_base.scss */
+/* line 100, ../scss/girder_modules/_girder_base.scss */
 .row .whole {
   width: 100%;
 }
-/* line 101, ../scss/girder_modules/_girder_base.scss */
+/* line 102, ../scss/girder_modules/_girder_base.scss */
 .row .halfsize {
   width: 50%;
 }
-/* line 119, ../scss/girder_modules/_girder_base.scss */
-.row .actions, .row .goldsmall {
+/* line 108, ../scss/girder_modules/_girder_base.scss */
+.row .actions {
+  width: 25%;
+}
+/* line 110, ../scss/girder_modules/_girder_base.scss */
+.row .content {
+  width: 75%;
+}
+/* line 120, ../scss/girder_modules/_girder_base.scss */
+.row .goldsmall {
   width: 38.2716%;
 }
-/* line 121, ../scss/girder_modules/_girder_base.scss */
-.row .content, .row .goldlarge {
+/* line 122, ../scss/girder_modules/_girder_base.scss */
+.row .goldlarge {
   width: 61.7283%;
 }
-/* line 125, ../scss/girder_modules/_girder_base.scss */
+/* line 126, ../scss/girder_modules/_girder_base.scss */
 .row:after {
   clear: both;
 }
-/* line 127, ../scss/girder_modules/_girder_base.scss */
+/* line 128, ../scss/girder_modules/_girder_base.scss */
 .row:before, .row:after {
   display: table;
   content: "";
@@ -686,9 +694,9 @@ html {
 }
 
 @media screen and (max-width: 35.5em) {
-  /* line 6, ../scss/girder_modules/_girder_responsive.scss */
+  /* line 8, ../scss/girder_modules/_girder_responsive.scss */
   .center-small {
-    text-align: center;
+    text-align: center !important;
   }
 
   /* line 9, ../scss/girder_modules/_girder_responsive.scss */
@@ -696,62 +704,107 @@ html {
     display: none !important;
   }
 }
-/* line 60, ../scss/site.scss */
+@media screen and (max-width: 40em) {
+  /* line 14, ../scss/girder_modules/_girder_responsive.scss */
+  .center-small {
+    text-align: inherit;
+  }
+
+  /* line 15, ../scss/girder_modules/_girder_responsive.scss */
+  .hide-small {
+    display: block;
+  }
+}
+/* line 61, ../scss/site.scss */
 body {
   background: white;
   color: #333333;
-  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-family: source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 66, ../scss/site.scss */
+/* line 67, ../scss/site.scss */
 html, body, .container, .about, .content, .actions {
   height: 100%;
 }
 
-/* line 67, ../scss/site.scss */
+/* line 68, ../scss/site.scss */
 h1, h2, h3, h4 {
   margin-bottom: .4em;
 }
 
-/* line 68, ../scss/site.scss */
+/* line 69, ../scss/site.scss */
 p {
   margin: 1em 0 1.5em;
 }
 
-/* line 70, ../scss/site.scss */
+/* line 71, ../scss/site.scss */
 a:link, a:visited {
-  color: #555555;
+  color: #72cee7;
+}
+/* line 72, ../scss/site.scss */
+a:hover, a:active {
+  color: #daf7fe;
 }
 
-/* line 75, ../scss/site.scss */
+/* line 77, ../scss/site.scss */
 .content {
   padding-right: 1.25em !important;
 }
-
-/* line 80, ../scss/site.scss */
-.actions {
-  background: #f4f4f4;
+/* line 82, ../scss/site.scss */
+.content > * {
+  max-width: 35.5em;
+  margin-left: auto;
+  margin-right: auto;
 }
-/* line 84, ../scss/site.scss */
+/* line 88, ../scss/site.scss */
+.content [role="banner"] h1 {
+  font-family: lato;
+  font-weight: 200;
+  font-size: 4em;
+  text-transform: uppercase;
+  letter-spacing: -.05em;
+}
+/* line 97, ../scss/site.scss */
+.content a:link, .content a:visited {
+  color: #2099ba;
+}
+
+/* line 99, ../scss/site.scss */
+.actions {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  background: #242526;
+  color: #a6a6a6;
+  text-align: center;
+}
+/* line 105, ../scss/site.scss */
+.actions .gee {
+  font-family: lato;
+  font-weight: 900;
+  font-size: 4em;
+}
+/* line 111, ../scss/site.scss */
 .actions ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 113, ../scss/site.scss */
+.actions a:link, .actions a:visited {
+  text-decoration: none;
 }
 
-/* line 86, ../scss/site.scss */
+/* line 117, ../scss/site.scss */
 footer {
-  background: #333333;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  margin: 3em 0;
 }
-/* line 93, ../scss/site.scss */
+/* line 119, ../scss/site.scss */
 footer a {
   text-transform: uppercase;
 }
 
-/* line 111, ../scss/site.scss */
+/* line 129, ../scss/site.scss */
 .goldlarge pre, .goldsmall pre, .halfsize pre, .whole pre {
   text-align: center;
   font-size: .6em;

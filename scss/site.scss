@@ -4,32 +4,33 @@
 @charset "UTF-8";
 
 // Site Styling Variables
-$body-bg            : #fff;
-$base-font-color    : #333333;
-$linkColor	        : #555555;
-$linkHoverColor     : saturate(lighten($linkColor, 15%), 40%);
-$lightText			    : lighten($base-font-color, 75%);
+$body-bg             : #ffffff;
+$base-font-color     : #333333;
+$linkColor	         : #72CEE7;
+$linkHoverColor      : saturate(lighten($linkColor, 25%), 25%);
+$lightText			     : lighten($base-font-color, 45%);
 
 // Normalize and Typography Variables
+// Matching Girder's em-base for consistency
 $base-font-size: 16px !default; // Override default set in Compass' Vertical Rhythm partial.
 
 // The base line height determines the basic unit of vertical rhythm.
 // $base-line-height: 24px; // Override default set in Compass' Vertical Rhythm partial.
 
 // The font sizes for h1-h6.
-$h1-font-size: 2.8    * $base-font-size !default;
-$h2-font-size: 1.8  * $base-font-size !default;
-$h3-font-size: 1.17 * $base-font-size !default;
-$h4-font-size: 1    * $base-font-size !default;
-$h5-font-size: 0.83 * $base-font-size !default;
-$h6-font-size: 0.67 * $base-font-size !default;
+$h1-font-size: 2.8   * $base-font-size !default;
+$h2-font-size: 1.8   * $base-font-size !default;
+$h3-font-size: 1.17  * $base-font-size !default;
+$h4-font-size: 1     * $base-font-size !default;
+$h5-font-size: 0.83  * $base-font-size !default;
+$h6-font-size: 0.67  * $base-font-size !default;
 
 // The amount lists and blockquotes are indented.
 $indent-amount: 30px !default;
 
 // Default font families
-$headingsFont       : source-sans-pro, "Helvetica Neue", "Helvetica", sans-serif;
-$base-font-family   : "Helvetica Neue", "Helvetica", Arial, sans-serif;
+$headingsFont        : source-sans-pro, "Helvetica Neue", "Helvetica", sans-serif;
+$base-font-family    : source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
 
 
 ////////////////////////////////
@@ -68,44 +69,61 @@ h1, h2, h3, h4 {margin-bottom: .4em;}
 p {margin: 1em 0 1.5em;}
 a {
 	&:link, &:visited {color: $linkColor;}
+	&:hover, &:active {color: $linkHoverColor;}
 }
 
 // Expressed CSS Classes
 // For Debugging Purposes
 .content {
-	@include unit(golden-large);
+	@include unit(three-quarters);
 	// This is extra padding for custom use
 	padding-right: 1.25em !important;
+
+	> * {
+		max-width: $small-breakpoint;
+		margin-left: auto; margin-right: auto;
+		}
+
+	[role="banner"] {
+		h1 {
+			font-family: lato;
+			font-weight: 200;
+			font-size: 4em;
+			text-transform: uppercase;
+			letter-spacing: -.05em;
+		}
+	}
+
+	a:link, a:visited { color: darken($linkColor, 25%);}
 }
 .actions {
-	@include unit(golden-small);
-	background: #f4f4f4;
+	@include unit(one-quarter, false);
+	background: #242526;
+	color: $lightText;
+	text-align: center;
 
-	ul {list-style: none;}
+	.gee {
+		font-family: lato;
+		font-weight: 900;
+		font-size: 4em;
+	}
+
+	ul {list-style: none; margin: 0; padding: 0;}
+
+	a:link, a:visited {
+		text-decoration: none;
+		}
 }
 footer {
-	background: $base-font-color;
-	color: $body-bg;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-
+	margin: 3em 0;
 	a {text-transform: uppercase;}
 }
 
-
-.goldlarge {
-	@include unit(golden-large);
-}
-.goldsmall {
-	@include unit(golden-small);
-}
-.halfsize {
-	@include unit(half);
-}
-.whole {
-	@include unit(whole);
-}
+// Test grid elements
+.goldlarge {@include unit(golden-large);}
+.goldsmall {@include unit(golden-small);}
+.halfsize {@include unit(half);}
+.whole {@include unit(whole);}
 
 // Visualizing units
 .goldlarge pre, .goldsmall pre, .halfsize pre, .whole pre {

@@ -22,11 +22,11 @@
   clear: both;
   *zoom: 1;
 }
-/* line 125, ../scss/girder_modules/_girder_base.scss */
+/* line 126, ../scss/girder_modules/_girder_base.scss */
 .row:after {
   clear: both;
 }
-/* line 127, ../scss/girder_modules/_girder_base.scss */
+/* line 128, ../scss/girder_modules/_girder_base.scss */
 .row:before, .row:after {
   display: table;
   content: "";
@@ -69,13 +69,24 @@
 }
 
 @media screen and (max-width: 35.5em) {
-  /* line 6, ../scss/girder_modules/_girder_responsive.scss */
+  /* line 8, ../scss/girder_modules/_girder_responsive.scss */
   .center-small {
-    text-align: center;
+    text-align: center !important;
   }
 
   /* line 9, ../scss/girder_modules/_girder_responsive.scss */
   .hide-small {
     display: none !important;
+  }
+}
+@media screen and (max-width: 40em) {
+  /* line 14, ../scss/girder_modules/_girder_responsive.scss */
+  .center-small {
+    text-align: inherit;
+  }
+
+  /* line 15, ../scss/girder_modules/_girder_responsive.scss */
+  .hide-small {
+    display: block;
   }
 }

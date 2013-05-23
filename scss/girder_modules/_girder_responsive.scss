@@ -1,12 +1,16 @@
 //////////////////////////////
 // Breakpoints and responsiveness
 
+@import "breakpoint";
+
 @media screen and (max-width: $small_breakpoint) {
 	// Align or hide on small screens
-	.center-small {
-		text-align: center;
-	}
-	.hide-small {
-		display: none !important;
-	}
+	.center-small {text-align: center !important;}
+	.hide-small {display: none !important;}
+}
+
+@media screen and (max-width: $medium_breakpoint) {
+	// Reset alignment and visibility for larger screens
+	.center-small {text-align: inherit;}
+	.hide-small {display: block;}
 }

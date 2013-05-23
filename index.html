@@ -10,22 +10,22 @@
 	<meta name="description" content="A CSS grid built on Sass. Its responsive, modular and semantic." />
 
 	<link rel="stylesheet" href="css/site.css">
-	<script src="//use.edgefonts.net/source-sans-pro;pt-sans-narrow.js"></script>
+	<script src="//use.edgefonts.net/source-sans-pro;pt-sans-narrow;lato:n1,n3,n9,i9.js"></script>
 	<!-- /js/modernizr-2.5.3.min.js -->
 </head>
 
 <body>
 	<main class="container">
 
-		<section class="about row">
-			<div class="content">
+		<article class="about row">
+			<section class="content">
 				<header role="banner">
 					<h1>Girder</h1>
 				</header>
 				<p>[ Placeholder ] - This page will be used to lay out the markup which will put Girder to the test and (potentialy) serve as a reference for how it works.</p>
 
-				<h2>Nested grid elements</h2>
 				<div class="row">
+				<h2>Simple Grid Units</h2>
 					<div class="goldsmall"><pre>@include unit(golden-small);</pre></div>
 					<div class="goldlarge"><pre>@include unit(golden-large);</pre></div>
 				</div>
@@ -36,22 +36,24 @@
 				<div class="row">
 					<div class="whole"><pre>@include unit(whole);</pre></div>
 				</div>
-			</div>
+
+				<footer>
+					<p class="text-center hide-small">
+						<small>Made with care by Comfypixel &copy; 2013</small> <br>
+						<small><a href="https://github.com/unmaya">Github</a> - <a href="https://twitter.com/unmaya">Twitter</a></small>
+					</p>
+				</footer>
+
+			</section>
 
 			<div class="actions">
+				<h1 class="gee">G</h1>
 				<ul>
 					<li> <a href="https://github.com/unmaya/Girder">About</a> </li>
 					<li> <a href="https://github.com/unmaya/Girder">Download</a> </li>
 				</ul>
 			</div>
-		</section>
-
-	<footer>
-		<p class="text-center">
-			<small>Made with care by Comfypixel &copy; 2013</small> <br>
-			<small><a href="https://github.com/unmaya">Github</a> - <a href="https://twitter.com/unmaya">Twitter</a></small>
-		</p>
-	</footer>
+		</article>
 
 	</main>
 
