@@ -1,4 +1,4 @@
-Girder 0.1.0 (Alpha)
+Girder 0.2.0 (Alpha)
 ====================
 
 A simple grid toolkit built on Sass. Its responsive, semantic, silent and minimal but its also going to include some utility CSS to build prototypes quickly. Mostly for my little projects and general amusement.

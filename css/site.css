@@ -597,33 +597,33 @@ html {
   *zoom: 1;
 }
 /* line 78, ../scss/girder_modules/_girder_base.scss */
-.row .whole, .row .halfsize, .row .actions, .row .content, .row .goldsmall, .row .goldlarge {
+.row .example-whole, .row .example-half, .row .actions, .row .content, .row .example-gs, .row .example-gl {
   float: left;
   width: 100%;
   padding: 0.625em;
 }
 /* line 84, ../scss/girder_modules/_girder_base.scss */
-.row .whole:first-child, .row .halfsize:first-child, .row .actions:first-child, .row .content:first-child, .row .goldsmall:first-child, .row .goldlarge:first-child {
+.row .example-whole:first-of-type, .row .example-half:first-of-type, .row .actions:first-of-type, .row .content:first-of-type, .row .example-gs:first-of-type, .row .example-gl:first-of-type {
   padding-left: 1.25em;
 }
 /* line 85, ../scss/girder_modules/_girder_base.scss */
-.row .whole:last-child, .row .halfsize:last-child, .row .actions:last-child, .row .content:last-child, .row .goldsmall:last-child, .row .goldlarge:last-child {
+.row .example-whole:last-child, .row .example-half:last-child, .row .actions:last-child, .row .content:last-child, .row .example-gs:last-child, .row .example-gl:last-child {
   padding-right: 1.25em;
 }
 /* line 89, ../scss/girder_modules/_girder_base.scss */
-.row .row .whole:first-of-type, .row .row .halfsize:first-of-type, .row .row .actions:first-of-type, .row .row .content:first-of-type, .row .row .goldsmall:first-of-type, .row .row .goldlarge:first-of-type {
+.row .row .example-whole:first-of-type, .row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .content:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
   padding-left: 0;
 }
 /* line 90, ../scss/girder_modules/_girder_base.scss */
-.row .row .whole:last-child, .row .row .halfsize:last-child, .row .row .actions:last-child, .row .row .content:last-child, .row .row .goldsmall:last-child, .row .row .goldlarge:last-child {
+.row .row .example-whole:last-child, .row .row .example-half:last-child, .row .row .actions:last-child, .row .row .content:last-child, .row .row .example-gs:last-child, .row .row .example-gl:last-child {
   padding-right: 0;
 }
 /* line 100, ../scss/girder_modules/_girder_base.scss */
-.row .whole {
+.row .example-whole {
   width: 100%;
 }
 /* line 102, ../scss/girder_modules/_girder_base.scss */
-.row .halfsize {
+.row .example-half {
   width: 50%;
 }
 /* line 108, ../scss/girder_modules/_girder_base.scss */
@@ -635,11 +635,11 @@ html {
   width: 75%;
 }
 /* line 120, ../scss/girder_modules/_girder_base.scss */
-.row .goldsmall {
+.row .example-gs {
   width: 38.2716%;
 }
 /* line 122, ../scss/girder_modules/_girder_base.scss */
-.row .goldlarge {
+.row .example-gl {
   width: 61.7283%;
 }
 /* line 126, ../scss/girder_modules/_girder_base.scss */
@@ -690,7 +690,7 @@ html {
 
 @media (min-width: 0) and (max-width: 35.5em) {
   /* line 9, ../scss/girder_modules/_girder_responsive.scss */
-  .row .whole, .row .halfsize, .row .actions, .row .content, .row .goldsmall, .row .goldlarge {
+  .row .example-whole, .row .example-half, .row .actions, .row .content, .row .example-gs, .row .example-gl {
     padding-left: 0;
     padding-right: 0;
     width: 100%;
@@ -766,15 +766,16 @@ a:hover, a:active {
   font-family: lato;
   font-weight: 200;
   font-size: 4em;
-  text-transform: uppercase;
+  margin-bottom: 0;
   letter-spacing: -.05em;
+  text-transform: uppercase;
 }
-/* line 97, ../scss/site.scss */
+/* line 98, ../scss/site.scss */
 .content a:link, .content a:visited {
   color: #2099ba;
 }
 
-/* line 99, ../scss/site.scss */
+/* line 100, ../scss/site.scss */
 .actions {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -782,34 +783,34 @@ a:hover, a:active {
   color: #a6a6a6;
   text-align: center;
 }
-/* line 105, ../scss/site.scss */
+/* line 106, ../scss/site.scss */
 .actions .gee {
   font-family: lato;
   font-weight: 900;
   font-size: 4em;
 }
-/* line 111, ../scss/site.scss */
+/* line 112, ../scss/site.scss */
 .actions ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 113, ../scss/site.scss */
+/* line 114, ../scss/site.scss */
 .actions a:link, .actions a:visited {
   text-decoration: none;
 }
 
-/* line 117, ../scss/site.scss */
+/* line 118, ../scss/site.scss */
 footer {
   margin: 3em 0;
 }
-/* line 119, ../scss/site.scss */
+/* line 120, ../scss/site.scss */
 footer a {
   text-transform: uppercase;
 }
 
-/* line 129, ../scss/site.scss */
-.goldlarge pre, .goldsmall pre, .halfsize pre, .whole pre {
+/* line 130, ../scss/site.scss */
+.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre {
   text-align: center;
   font-size: .6em;
   border-radius: 5px;

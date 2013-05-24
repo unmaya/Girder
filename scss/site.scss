@@ -89,8 +89,9 @@ a {
 			font-family: lato;
 			font-weight: 200;
 			font-size: 4em;
-			text-transform: uppercase;
+			margin-bottom: 0;
 			letter-spacing: -.05em;
+			text-transform: uppercase;
 		}
 	}
 
@@ -120,12 +121,12 @@ footer {
 }
 
 // Test grid elements
-.goldlarge {@include unit(golden-large);}
-.goldsmall {@include unit(golden-small);}
-.halfsize {@include unit(half);}
-.whole {@include unit(whole);}
+.example-gl {@include unit(golden-large);}
+.example-gs {@include unit(golden-small);}
+.example-half {@include unit(half);}
+.example-whole {@include unit(whole);}
 
 // Visualizing units
-.goldlarge pre, .goldsmall pre, .halfsize pre, .whole pre {
+.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre {
 	@include panel();
 }

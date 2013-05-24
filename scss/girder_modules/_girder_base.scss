@@ -81,7 +81,7 @@
 		padding: $gutters / 2;
 
 		// This ensures the outer gutters are equal to the (doubled) inner gutters.
-		&:first-child {padding-left: $gutters;}
+		&:first-of-type {padding-left: $gutters;}
 		&:last-child {padding-right: $gutters;}
 
 		// Try handling nested outer gutters here, its redundant for now
