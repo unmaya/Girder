@@ -382,17 +382,17 @@ fieldset {
   border-color: #c0c0c0;
   margin: 0 2px;
   /* Apply borders and padding that keep the vertical rhythm. */
-  border-top-style: solid;
   border-top-width: 0.0625em;
+  border-top-style: solid;
   padding-top: 0.4625em;
-  border-bottom-style: solid;
   border-bottom-width: 0.0625em;
+  border-bottom-style: solid;
   padding-bottom: 0.9125em;
-  border-left-style: solid;
   border-left-width: 0.0625em;
+  border-left-style: solid;
   padding-left: 0.875em;
-  border-right-style: solid;
   border-right-width: 0.0625em;
+  border-right-style: solid;
   padding-right: 0.875em;
 }
 
@@ -567,14 +567,9 @@ table {
   border-spacing: 0;
 }
 
-/* line 61, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
-* html {
-  font-size: 100%;
-}
-
-/* line 64, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 105, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
-  font-size: 16px;
+  font-size: 100%;
   line-height: 1.5em;
 }
 
@@ -660,12 +655,12 @@ html {
 
 /* line 85, ../scss/girder_modules/_girder_utilities.scss */
 .left {
-  float: left !important;
+  float: left;
 }
 
 /* line 86, ../scss/girder_modules/_girder_utilities.scss */
 .right {
-  float: right !important;
+  float: right;
 }
 
 /* line 87, ../scss/girder_modules/_girder_utilities.scss */
@@ -690,31 +685,40 @@ html {
 
 /* line 91, ../scss/girder_modules/_girder_utilities.scss */
 .hide {
-  display: none;
+  display: none !important;
 }
 
-@media screen and (max-width: 35.5em) {
-  /* line 8, ../scss/girder_modules/_girder_responsive.scss */
-  .center-small {
-    text-align: center !important;
-  }
-
+@media (min-width: 0) and (max-width: 35.5em) {
   /* line 9, ../scss/girder_modules/_girder_responsive.scss */
-  .hide-small {
-    display: none !important;
+  .row .whole, .row .halfsize, .row .actions, .row .content, .row .goldsmall, .row .goldlarge {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
   }
 }
-@media screen and (max-width: 40em) {
-  /* line 14, ../scss/girder_modules/_girder_responsive.scss */
+
+/* line 18, ../scss/girder_modules/_girder_responsive.scss */
+.center-small {
+  text-align: center;
+}
+@media (min-width: 35.5em) and (max-width: 40em) {
+  /* line 18, ../scss/girder_modules/_girder_responsive.scss */
   .center-small {
     text-align: inherit;
   }
+}
 
-  /* line 15, ../scss/girder_modules/_girder_responsive.scss */
+/* line 24, ../scss/girder_modules/_girder_responsive.scss */
+.hide-small {
+  display: none;
+}
+@media (min-width: 40em) {
+  /* line 24, ../scss/girder_modules/_girder_responsive.scss */
   .hide-small {
     display: block;
   }
 }
+
 /* line 61, ../scss/site.scss */
 body {
   background: white;

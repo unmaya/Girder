@@ -35,12 +35,12 @@
 
 /* line 85, ../scss/girder_modules/_girder_utilities.scss */
 .left {
-  float: left !important;
+  float: left;
 }
 
 /* line 86, ../scss/girder_modules/_girder_utilities.scss */
 .right {
-  float: right !important;
+  float: right;
 }
 
 /* line 87, ../scss/girder_modules/_girder_utilities.scss */
@@ -65,27 +65,26 @@
 
 /* line 91, ../scss/girder_modules/_girder_utilities.scss */
 .hide {
-  display: none;
+  display: none !important;
 }
 
-@media screen and (max-width: 35.5em) {
-  /* line 8, ../scss/girder_modules/_girder_responsive.scss */
-  .center-small {
-    text-align: center !important;
-  }
-
-  /* line 9, ../scss/girder_modules/_girder_responsive.scss */
-  .hide-small {
-    display: none !important;
-  }
+/* line 18, ../scss/girder_modules/_girder_responsive.scss */
+.center-small {
+  text-align: center;
 }
-@media screen and (max-width: 40em) {
-  /* line 14, ../scss/girder_modules/_girder_responsive.scss */
+@media (min-width: 35.5em) and (max-width: 40em) {
+  /* line 18, ../scss/girder_modules/_girder_responsive.scss */
   .center-small {
     text-align: inherit;
   }
+}
 
-  /* line 15, ../scss/girder_modules/_girder_responsive.scss */
+/* line 24, ../scss/girder_modules/_girder_responsive.scss */
+.hide-small {
+  display: none;
+}
+@media (min-width: 40em) {
+  /* line 24, ../scss/girder_modules/_girder_responsive.scss */
   .hide-small {
     display: block;
   }
