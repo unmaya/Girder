@@ -13,6 +13,9 @@ $em-base             : 16px;
 // Functions module (like pixel to em converters)
 @import "girder_modules/girder_functions";
 
+// Include HTML presentational classes?
+$html-classes        : false;
+
 // Gutter width is split into each side of a unit (except for outer units in a row)
 $gutters             : emCalc(20px);
 // Set a fixed width for our wraping container or keep it fluid by setting it to auto

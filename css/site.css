@@ -382,17 +382,17 @@ fieldset {
   border-color: #c0c0c0;
   margin: 0 2px;
   /* Apply borders and padding that keep the vertical rhythm. */
-  border-top-width: 0.0625em;
   border-top-style: solid;
+  border-top-width: 0.0625em;
   padding-top: 0.4625em;
-  border-bottom-width: 0.0625em;
   border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
   padding-bottom: 0.9125em;
-  border-left-width: 0.0625em;
   border-left-style: solid;
+  border-left-width: 0.0625em;
   padding-left: 0.875em;
-  border-right-width: 0.0625em;
   border-right-style: solid;
+  border-right-width: 0.0625em;
   padding-right: 0.875em;
 }
 
@@ -567,9 +567,14 @@ table {
   border-spacing: 0;
 }
 
-/* line 105, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
-html {
+/* line 61, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+* html {
   font-size: 100%;
+}
+
+/* line 64, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 16px;
   line-height: 1.5em;
 }
 
@@ -651,41 +656,6 @@ html {
   display: table;
   content: "";
   line-height: 0;
-}
-
-/* line 85, ../scss/girder_modules/_girder_utilities.scss */
-.left {
-  float: left;
-}
-
-/* line 86, ../scss/girder_modules/_girder_utilities.scss */
-.right {
-  float: right;
-}
-
-/* line 87, ../scss/girder_modules/_girder_utilities.scss */
-.text-left {
-  text-align: left !important;
-}
-
-/* line 88, ../scss/girder_modules/_girder_utilities.scss */
-.text-right {
-  text-align: right !important;
-}
-
-/* line 89, ../scss/girder_modules/_girder_utilities.scss */
-.text-center {
-  text-align: center !important;
-}
-
-/* line 90, ../scss/girder_modules/_girder_utilities.scss */
-.text-justify {
-  text-align: justify !important;
-}
-
-/* line 91, ../scss/girder_modules/_girder_utilities.scss */
-.hide {
-  display: none !important;
 }
 
 @media (min-width: 0) and (max-width: 35.5em) {

@@ -132,16 +132,28 @@
 	}
 }
 
-// Temporary placeholder code example
-// @if $include-html-classes {
 
-// .row {
-// @include grid-row;
+// Only include these classes if the option exists
+@if $html-classes == true {
 
-// .column,
-// .columns { @include grid-column($columns:$total-columns); }
+	$units: (whole 100%), (half 50%), (one-third 33.3332%), (two-thirds 66.6665%), (one-quarter 25%), (three-quarters 75%), (one-fifth 20%), (two-fifths 40%), (three-fifths 60%), (four-fifths 80%), (golden-small 38.2716%), (golden-large 61.7283%);
 
-// .row { @include grid-row($behavior:nest);
-// &.collapse { @include grid-row($behavior:nest-collapse); }
-// }
-// }
+	@each $unit in $units {
+	  .#{nth($unit, 1)} {
+	    width: #{nth($unit, 2)};
+	    @extend .unit;
+	  }
+	}
+
+	.unit {
+		float: left;
+		width: 100%;
+		padding: $gutters / 2;
+
+		&:first-of-type {padding-left: $gutters;}
+		&:last-child {padding-right: $gutters;}
+
+		.row &:first-of-type {padding-left: 0;}
+		.row &:last-child {padding-right: 0;}
+	}
+}

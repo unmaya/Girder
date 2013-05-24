@@ -33,41 +33,6 @@
   line-height: 0;
 }
 
-/* line 85, ../scss/girder_modules/_girder_utilities.scss */
-.left {
-  float: left;
-}
-
-/* line 86, ../scss/girder_modules/_girder_utilities.scss */
-.right {
-  float: right;
-}
-
-/* line 87, ../scss/girder_modules/_girder_utilities.scss */
-.text-left {
-  text-align: left !important;
-}
-
-/* line 88, ../scss/girder_modules/_girder_utilities.scss */
-.text-right {
-  text-align: right !important;
-}
-
-/* line 89, ../scss/girder_modules/_girder_utilities.scss */
-.text-center {
-  text-align: center !important;
-}
-
-/* line 90, ../scss/girder_modules/_girder_utilities.scss */
-.text-justify {
-  text-align: justify !important;
-}
-
-/* line 91, ../scss/girder_modules/_girder_utilities.scss */
-.hide {
-  display: none !important;
-}
-
 /* line 18, ../scss/girder_modules/_girder_responsive.scss */
 .center-small {
   text-align: center;

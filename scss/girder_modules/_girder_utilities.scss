@@ -60,33 +60,15 @@ $panel-font-color-alt:  #fff !default;
 	}
 }
 
+
 // Only include these classes if the option exists
-// @if $include-html-classes {
-
-//   /* Panels */
-//   .panel { @include panel;
-
-//     &.callout {
-//       @include panel($primary-color);
-//       @include inset-shadow($active:false);
-//     }
-
-//     &.radius {
-//       @include panel($bg:false);
-//       @include radius;
-//     }
-
-//   }
-
-// }
-
-
-// Utility classes for presentational markup
-.left         { float: left; }
-.right        { float: right; }
-.text-left    { text-align: left !important; }
-.text-right   { text-align: right !important; }
-.text-center  { text-align: center !important; }
-.text-justify { text-align: justify !important; }
-.hide         { display: none !important; }
-
+@if $html-classes == true {
+	// Utility classes for presentational markup
+	.left         { float: left; }
+	.right        { float: right; }
+	.text-left    { text-align: left !important; }
+	.text-right   { text-align: right !important; }
+	.text-center  { text-align: center !important; }
+	.text-justify { text-align: justify !important; }
+	.hide         { display: none !important; }
+}
