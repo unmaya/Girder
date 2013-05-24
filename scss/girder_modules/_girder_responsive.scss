@@ -4,7 +4,9 @@
 @import "breakpoint";
 $breakpoints: 'turn single column' (0 $small-breakpoint, 'no-query' '.no-mq'),
 							'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
-							'medium and up' $medium-breakpoint;
+							'medium and up' $medium-breakpoint,
+							'larger screens' $large-breakpoint,
+							'extra large screens' $xlarge-breakpoint;
 
 .row %unit {
 	@include respond-to('turn single column') {

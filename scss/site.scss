@@ -29,9 +29,9 @@ $h6-font-size: 0.67  * $base-font-size !default;
 $indent-amount: 30px !default;
 
 // Default font families
-$headingsFont        : source-sans-pro, "Helvetica Neue", "Helvetica", sans-serif;
-$base-font-family    : source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
-
+$headings-font        : source-sans-pro, "Helvetica Neue", "Helvetica", sans-serif;
+$base-font-family     : source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
+$girder-font-family   : lato, source-sans-pro, "Helvetica", sans-serif;
 
 ////////////////////////////////
 // Import the required partials
@@ -86,7 +86,7 @@ a {
 
 	[role="banner"] {
 		h1 {
-			font-family: lato;
+			font-family: $girder-font-family;
 			font-weight: 200;
 			font-size: 4em;
 			margin-bottom: 0;
@@ -117,6 +117,7 @@ a {
 }
 footer {
 	margin: 3em 0;
+	.credits {@include text-align(center);}
 	a {text-transform: uppercase;}
 }
 

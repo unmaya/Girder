@@ -10,46 +10,46 @@
   -webkit-box-sizing: border-box;
 }
 
-/* line 67, ../scss/girder_modules/_girder_base.scss */
+/* line 13, ../scss/girder_modules/_girder_base.scss */
 .container, .row {
   margin: 0 auto;
   max-width: auto;
 }
 
-/* line 73, ../scss/girder_modules/_girder_base.scss */
+/* line 72, ../scss/girder_modules/_girder_base.scss */
 .row {
   display: block;
   clear: both;
   *zoom: 1;
 }
-/* line 126, ../scss/girder_modules/_girder_base.scss */
+/* line 127, ../scss/girder_modules/_girder_base.scss */
 .row:after {
   clear: both;
 }
-/* line 128, ../scss/girder_modules/_girder_base.scss */
+/* line 129, ../scss/girder_modules/_girder_base.scss */
 .row:before, .row:after {
   display: table;
   content: "";
   line-height: 0;
 }
 
-/* line 18, ../scss/girder_modules/_girder_responsive.scss */
+/* line 20, ../scss/girder_modules/_girder_responsive.scss */
 .center-small {
   text-align: center;
 }
 @media (min-width: 35.5em) and (max-width: 40em) {
-  /* line 18, ../scss/girder_modules/_girder_responsive.scss */
+  /* line 20, ../scss/girder_modules/_girder_responsive.scss */
   .center-small {
     text-align: inherit;
   }
 }
 
-/* line 24, ../scss/girder_modules/_girder_responsive.scss */
+/* line 26, ../scss/girder_modules/_girder_responsive.scss */
 .hide-small {
   display: none;
 }
 @media (min-width: 40em) {
-  /* line 24, ../scss/girder_modules/_girder_responsive.scss */
+  /* line 26, ../scss/girder_modules/_girder_responsive.scss */
   .hide-small {
     display: block;
   }

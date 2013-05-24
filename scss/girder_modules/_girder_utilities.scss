@@ -60,15 +60,38 @@ $panel-font-color-alt:  #fff !default;
 	}
 }
 
+// Basic Mixin for text alignment
+@mixin text-align($direction) {
+	@if $direction == left {
+		text-align: #{$direction} !important;
+	}
+	@else if $direction == right {
+		text-align: #{$direction} !important;
+	}
+	@else if $direction == center {
+		text-align: #{$direction} !important;
+	}
+	@else if $direction == justify {
+		text-align: #{$direction} !important;
+	}
+	@else {
+		@warn '"#{$direction}" is not a valid alignment for the text-align() mixin.';
+	}
+}
+
+// Utility placeholders
+// %left         { float: left; }
+// %right        { float: right; }
+// %hide         { display: none !important; }
 
 // Only include these classes if the option exists
 @if $html-classes == true {
 	// Utility classes for presentational markup
 	.left         { float: left; }
 	.right        { float: right; }
-	.text-left    { text-align: left !important; }
-	.text-right   { text-align: right !important; }
-	.text-center  { text-align: center !important; }
-	.text-justify { text-align: justify !important; }
 	.hide         { display: none !important; }
+	// Write out classes for text-alignment
+	@each $direction in left, right, center, justify {
+		.text-#{$direction} {text-align: #{$direction} !important;}
+	}
 }
