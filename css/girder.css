@@ -16,17 +16,17 @@
   max-width: auto;
 }
 
-/* line 72, ../scss/girder_modules/_girder_base.scss */
+/* line 78, ../scss/girder_modules/_girder_base.scss */
 .row {
   display: block;
   clear: both;
   *zoom: 1;
 }
-/* line 129, ../scss/girder_modules/_girder_base.scss */
+/* line 139, ../scss/girder_modules/_girder_base.scss */
 .row:after {
   clear: both;
 }
-/* line 131, ../scss/girder_modules/_girder_base.scss */
+/* line 141, ../scss/girder_modules/_girder_base.scss */
 .row:before, .row:after {
   display: table;
   content: "";

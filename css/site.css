@@ -414,65 +414,65 @@ html {
   max-width: auto;
 }
 
-/* line 72, ../scss/girder_modules/_girder_base.scss */
+/* line 78, ../scss/girder_modules/_girder_base.scss */
 .row {
   display: block;
   clear: both;
   *zoom: 1;
 }
-/* line 77, ../scss/girder_modules/_girder_base.scss */
+/* line 83, ../scss/girder_modules/_girder_base.scss */
 .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-gs, .row .example-gl {
   float: left;
   width: 100%;
   padding: 0.625em;
 }
-/* line 83, ../scss/girder_modules/_girder_base.scss */
+/* line 89, ../scss/girder_modules/_girder_base.scss */
 .row .example-half:first-of-type, .row .actions:first-of-type, .row .example-quarter:first-of-type, .row .content:first-of-type, .row .example-gs:first-of-type, .row .example-gl:first-of-type {
   padding-left: 1.25em;
 }
-/* line 84, ../scss/girder_modules/_girder_base.scss */
+/* line 90, ../scss/girder_modules/_girder_base.scss */
 .row .example-half:last-child, .row .actions:last-child, .row .example-quarter:last-child, .row .content:last-child, .row .example-gs:last-child, .row .example-gl:last-child {
   padding-right: 1.25em;
 }
-/* line 88, ../scss/girder_modules/_girder_base.scss */
+/* line 94, ../scss/girder_modules/_girder_base.scss */
 .row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .example-quarter:first-of-type, .row .row .content:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
   padding-left: 0;
 }
-/* line 89, ../scss/girder_modules/_girder_base.scss */
+/* line 95, ../scss/girder_modules/_girder_base.scss */
 .row .row .example-half:last-child, .row .row .actions:last-child, .row .row .example-quarter:last-child, .row .row .content:last-child, .row .row .example-gs:last-child, .row .row .example-gl:last-child {
   padding-right: 0;
 }
-/* line 100, ../scss/girder_modules/_girder_base.scss */
+/* line 106, ../scss/girder_modules/_girder_base.scss */
 .row .example-half {
   width: 50%;
 }
-/* line 106, ../scss/girder_modules/_girder_base.scss */
+/* line 112, ../scss/girder_modules/_girder_base.scss */
 .row .actions, .row .example-quarter {
   width: 25%;
 }
-/* line 108, ../scss/girder_modules/_girder_base.scss */
+/* line 114, ../scss/girder_modules/_girder_base.scss */
 .row .content {
   width: 75%;
 }
-/* line 118, ../scss/girder_modules/_girder_base.scss */
+/* line 128, ../scss/girder_modules/_girder_base.scss */
 .row .example-gs {
   width: 38.2716%;
 }
-/* line 120, ../scss/girder_modules/_girder_base.scss */
+/* line 130, ../scss/girder_modules/_girder_base.scss */
 .row .example-gl {
   width: 61.7283%;
 }
-/* line 122, ../scss/girder_modules/_girder_base.scss */
+/* line 132, ../scss/girder_modules/_girder_base.scss */
 .row .example-whole {
   width: 100%;
   padding: 0.625em 0;
   width: 100%;
 }
-/* line 129, ../scss/girder_modules/_girder_base.scss */
+/* line 139, ../scss/girder_modules/_girder_base.scss */
 .row:after {
   clear: both;
 }
-/* line 131, ../scss/girder_modules/_girder_base.scss */
+/* line 141, ../scss/girder_modules/_girder_base.scss */
 .row:before, .row:after {
   display: table;
   content: "";
@@ -510,7 +510,7 @@ html {
   }
 }
 
-/* line 61, ../scss/site.scss */
+/* line 60, ../scss/site.scss */
 body {
   background: white;
   color: #333333;
@@ -518,63 +518,63 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 67, ../scss/site.scss */
+/* line 66, ../scss/site.scss */
 html, body, .container, .about, .content, .actions {
   height: 100%;
 }
 
-/* line 68, ../scss/site.scss */
+/* line 67, ../scss/site.scss */
 h1, h2, h3, h4 {
   margin-bottom: .4em;
 }
 
-/* line 69, ../scss/site.scss */
+/* line 68, ../scss/site.scss */
 p {
   margin: 1em 0 1.5em;
 }
 
-/* line 71, ../scss/site.scss */
+/* line 70, ../scss/site.scss */
 a:link, a:visited {
   color: #72cee7;
 }
-/* line 72, ../scss/site.scss */
+/* line 71, ../scss/site.scss */
 a:hover, a:active {
   color: #daf7fe;
 }
 
-/* line 77, ../scss/site.scss */
+/* line 76, ../scss/site.scss */
 .content {
   margin-right: 25%;
   padding-right: 1.25em !important;
 }
 @media (min-width: 10em) and (max-width: 35.5em) {
-  /* line 77, ../scss/site.scss */
+  /* line 76, ../scss/site.scss */
   .content {
     height: auto;
   }
 }
-/* line 88, ../scss/site.scss */
+/* line 86, ../scss/site.scss */
 .content > * {
   max-width: 35.5em;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 94, ../scss/site.scss */
+/* line 92, ../scss/site.scss */
 .content [role="banner"] h1 {
   font-family: lato, source-sans-pro, "Helvetica", sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 4em;
   margin-top: 1em;
   margin-bottom: 0;
   letter-spacing: -.05em;
   text-transform: uppercase;
 }
-/* line 104, ../scss/site.scss */
+/* line 102, ../scss/site.scss */
 .content a:link, .content a:visited {
   color: #2099ba;
 }
 
-/* line 106, ../scss/site.scss */
+/* line 104, ../scss/site.scss */
 .actions {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -586,44 +586,44 @@ a:hover, a:active {
   top: 0;
 }
 @media (min-width: 10em) and (max-width: 35.5em) {
-  /* line 106, ../scss/site.scss */
+  /* line 104, ../scss/site.scss */
   .actions {
     height: auto;
     position: relative;
   }
 }
-/* line 119, ../scss/site.scss */
+/* line 117, ../scss/site.scss */
 .actions .gee {
   font-family: lato, source-sans-pro, "Helvetica", sans-serif;
   font-weight: 900;
   font-size: 4em;
   margin: 1em auto .25em;
 }
-/* line 126, ../scss/site.scss */
+/* line 124, ../scss/site.scss */
 .actions ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 128, ../scss/site.scss */
+/* line 126, ../scss/site.scss */
 .actions a:link, .actions a:visited {
   text-decoration: none;
 }
 
-/* line 132, ../scss/site.scss */
+/* line 130, ../scss/site.scss */
 footer {
   padding: 2em 0;
 }
-/* line 134, ../scss/site.scss */
+/* line 132, ../scss/site.scss */
 footer .credits {
   text-align: center !important;
 }
-/* line 135, ../scss/site.scss */
+/* line 133, ../scss/site.scss */
 footer a {
   text-transform: uppercase;
 }
 
-/* line 146, ../scss/site.scss */
+/* line 144, ../scss/site.scss */
 .example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre {
   text-align: center;
   font-size: .6em;
@@ -635,4 +635,14 @@ footer a {
   margin-top: 0;
   padding: 1.25em 0.625em;
   background: #f2f2f2;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  text-shadow: 0 1px 0 #daf7fe;
+}
+/* line 148, ../scss/site.scss */
+.example-gl pre:hover, .example-gs pre:hover, .example-half pre:hover, .example-whole pre:hover, .example-quarter pre:hover {
+  background: #72cee7;
+  border-color: #23abd0;
 }

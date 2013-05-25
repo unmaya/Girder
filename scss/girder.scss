@@ -11,7 +11,8 @@ $em-base             : 16px;
 // Functions module (like pixel to em converters)
 @import "girder_modules/girder_functions";
 
-// Include HTML presentational classes?
+// Include HTML presentational classes? (Makes your CSS file larger)
+// Set this to true to use .unit .two-thirds classes in html elements
 $html-classes        : false;
 
 // Gutter width is split into each side of a unit (except for outer units in a row)
@@ -21,8 +22,8 @@ $container-width     : auto;
 $container-margins   : 0 auto;
 
 // Lets pass Pixels and Get ems in return
-// $small_breakpoint  : emCalc(490px);
-$small-breakpoint  : emCalc(568px); // Expand the small breakpoint
+// $xsmall_breakpoint  : emCalc(320px);
+$small-breakpoint  : emCalc(568px); // Expand small from usual 490px
 $medium-breakpoint : emCalc(640px); // 40em
 $large-breakpoint  : emCalc(790px);
 $xlarge-breakpoint : emCalc(940px);

@@ -8,7 +8,6 @@
 	&:after { clear: both; }
 }
 
-
 // Modified Version of the Excellent Panels Mixin from Zurb
 // ----------------------------
 // Panel Variables
@@ -55,8 +54,8 @@ $panel-font-color-alt:  #fff !default;
 		}
 
     // Respect the padding, fool.
-    // &>:first-child { margin-top: 0; }
-    // &>:last-child { margin-bottom: 0; }
+    // &>:first-child { padding-top: 0; }
+    // &>:last-child { padding-bottom: 0; }
 	}
 }
 
@@ -79,17 +78,17 @@ $panel-font-color-alt:  #fff !default;
 	}
 }
 
-// Utility placeholders
-// %left         { float: left; }
-// %right        { float: right; }
-// %hide         { display: none !important; }
+// Utility placeholders - TODO: Mixin
+// %left         { float: left; margin-right: .8em; }
+// %right        { float: right; margin-left: .8em; }
+// %hide         { display: none !important; visibility: hidden; }
 
 // Only include these classes if the option exists
 @if $html-classes == true {
 	// Utility classes for presentational markup
-	.left         { float: left; }
-	.right        { float: right; }
-	.hide         { display: none !important; }
+	.left         { float: left; margin-right: .8em; }
+	.right        { float: right; margin-left: .8em; }
+	.hide         { display: none !important; visibility: hidden; }
 	// Write out classes for text-alignment
 	@each $direction in left, right, center, justify {
 		.text-#{$direction} {text-align: #{$direction} !important;}

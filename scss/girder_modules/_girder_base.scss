@@ -57,6 +57,12 @@
 	@else if $width == 'four-fifths' {
 		@extend %four-fifths;
 	}
+	@else if $width == 'one-sixth' {
+		@extend %one-sixth;
+	}
+	@else if $width == 'five-sixths' {
+		@extend %five-sixths;
+	}
 	@else if $width == 'golden-small' {
 		@extend %golden-small;
 	}
@@ -114,6 +120,10 @@
 	%three-fifths   { width: 60%;
 		@extend %unit; }
 	%four-fifths    { width: 80%;
+		@extend %unit; }
+	%one-sixth      { width: 16.6666%;
+		@extend %unit; }
+	%five-sixths      { width: 83.3333%;
 		@extend %unit; }
 	%golden-small   { width: 38.2716%;
 		@extend %unit; }
