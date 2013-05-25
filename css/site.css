@@ -597,7 +597,7 @@ a:hover, a:active {
   font-family: lato, source-sans-pro, "Helvetica", sans-serif;
   font-weight: 900;
   font-size: 4em;
-  margin-top: 1em;
+  margin: 1em auto .25em;
 }
 /* line 126, ../scss/site.scss */
 .actions ul {
