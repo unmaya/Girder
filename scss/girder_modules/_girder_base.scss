@@ -84,12 +84,11 @@
 		&:last-child {padding-right: $gutters;}
 
 		// Try handling nested outer gutters here, its redundant for now
-		// Use first of type for rows starting with headings etc.
+		// Use first of type for rows that start with headings etc.
 		.row &:first-of-type {padding-left: 0;}
 		.row &:last-child {padding-right: 0;}
 
-		// Add a .no-gutters class to a unit to remove gutters
-		// Too much unneeded bloat is generated so disabled to find a better option
+		// Add a .no-gutters class to a unit to remove gutters (experimental)
 		@if $html-classes == true {
 			.no-gutters > &:first-of-type {
 				padding-left: 0;
@@ -98,8 +97,6 @@
 		}
 	}
 
-	%whole          { width: 100%;
-		@extend %unit; }
 	%half           { width: 50%;
 		@extend %unit; }
 	%one-third      { width: 33.3332%;
@@ -122,6 +119,11 @@
 		@extend %unit; }
 	%golden-large   { width: 61.7283%;
 		@extend %unit; }
+	%whole {
+		width: 100%;
+		padding: $gutters /2 0;
+		width: 100%;
+	}
 
 	// Automagic clearing for rows
 	&:after {clear: both;}
@@ -132,7 +134,6 @@
 		line-height: 0;
 	}
 }
-
 
 // Only include these classes if the option exists
 @if $html-classes == true {

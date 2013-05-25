@@ -22,11 +22,11 @@
   clear: both;
   *zoom: 1;
 }
-/* line 127, ../scss/girder_modules/_girder_base.scss */
+/* line 129, ../scss/girder_modules/_girder_base.scss */
 .row:after {
   clear: both;
 }
-/* line 129, ../scss/girder_modules/_girder_base.scss */
+/* line 131, ../scss/girder_modules/_girder_base.scss */
 .row:before, .row:after {
   display: table;
   content: "";

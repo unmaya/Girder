@@ -421,56 +421,58 @@ html {
   *zoom: 1;
 }
 /* line 77, ../scss/girder_modules/_girder_base.scss */
-.row .example-whole, .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-gs, .row .example-gl {
+.row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-gs, .row .example-gl {
   float: left;
   width: 100%;
   padding: 0.625em;
 }
 /* line 83, ../scss/girder_modules/_girder_base.scss */
-.row .example-whole:first-of-type, .row .example-half:first-of-type, .row .actions:first-of-type, .row .example-quarter:first-of-type, .row .content:first-of-type, .row .example-gs:first-of-type, .row .example-gl:first-of-type {
+.row .example-half:first-of-type, .row .actions:first-of-type, .row .example-quarter:first-of-type, .row .content:first-of-type, .row .example-gs:first-of-type, .row .example-gl:first-of-type {
   padding-left: 1.25em;
 }
 /* line 84, ../scss/girder_modules/_girder_base.scss */
-.row .example-whole:last-child, .row .example-half:last-child, .row .actions:last-child, .row .example-quarter:last-child, .row .content:last-child, .row .example-gs:last-child, .row .example-gl:last-child {
+.row .example-half:last-child, .row .actions:last-child, .row .example-quarter:last-child, .row .content:last-child, .row .example-gs:last-child, .row .example-gl:last-child {
   padding-right: 1.25em;
 }
 /* line 88, ../scss/girder_modules/_girder_base.scss */
-.row .row .example-whole:first-of-type, .row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .example-quarter:first-of-type, .row .row .content:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
+.row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .example-quarter:first-of-type, .row .row .content:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
   padding-left: 0;
 }
 /* line 89, ../scss/girder_modules/_girder_base.scss */
-.row .row .example-whole:last-child, .row .row .example-half:last-child, .row .row .actions:last-child, .row .row .example-quarter:last-child, .row .row .content:last-child, .row .row .example-gs:last-child, .row .row .example-gl:last-child {
+.row .row .example-half:last-child, .row .row .actions:last-child, .row .row .example-quarter:last-child, .row .row .content:last-child, .row .row .example-gs:last-child, .row .row .example-gl:last-child {
   padding-right: 0;
 }
-/* line 101, ../scss/girder_modules/_girder_base.scss */
-.row .example-whole {
-  width: 100%;
-}
-/* line 103, ../scss/girder_modules/_girder_base.scss */
+/* line 100, ../scss/girder_modules/_girder_base.scss */
 .row .example-half {
   width: 50%;
 }
-/* line 109, ../scss/girder_modules/_girder_base.scss */
+/* line 106, ../scss/girder_modules/_girder_base.scss */
 .row .actions, .row .example-quarter {
   width: 25%;
 }
-/* line 111, ../scss/girder_modules/_girder_base.scss */
+/* line 108, ../scss/girder_modules/_girder_base.scss */
 .row .content {
   width: 75%;
 }
-/* line 121, ../scss/girder_modules/_girder_base.scss */
+/* line 118, ../scss/girder_modules/_girder_base.scss */
 .row .example-gs {
   width: 38.2716%;
 }
-/* line 123, ../scss/girder_modules/_girder_base.scss */
+/* line 120, ../scss/girder_modules/_girder_base.scss */
 .row .example-gl {
   width: 61.7283%;
 }
-/* line 127, ../scss/girder_modules/_girder_base.scss */
+/* line 122, ../scss/girder_modules/_girder_base.scss */
+.row .example-whole {
+  width: 100%;
+  padding: 0.625em 0;
+  width: 100%;
+}
+/* line 129, ../scss/girder_modules/_girder_base.scss */
 .row:after {
   clear: both;
 }
-/* line 129, ../scss/girder_modules/_girder_base.scss */
+/* line 131, ../scss/girder_modules/_girder_base.scss */
 .row:before, .row:after {
   display: table;
   content: "";
@@ -479,7 +481,7 @@ html {
 
 @media (min-width: 10em) and (max-width: 35.5em) {
   /* line 11, ../scss/girder_modules/_girder_responsive.scss */
-  .row .example-whole, .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-gs, .row .example-gl {
+  .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-gs, .row .example-gl {
     padding-left: 0;
     padding-right: 0;
     width: 100%;
