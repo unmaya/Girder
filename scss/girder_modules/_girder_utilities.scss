@@ -31,7 +31,7 @@ $panel-font-color-alt:  #fff !default;
 
 	text-align: center;
 	font-size: .6em;
-	border-radius: 5px;
+	border-radius: 3px;
 
   @if $bg {
 		$bg-lightness: lightness($bg);
@@ -41,7 +41,7 @@ $panel-font-color-alt:  #fff !default;
 		border-color: darken($bg, 15%);
 		margin-bottom: $panel-margin-bottom;
 		margin-top: 0;
-		padding: $padding;
+		padding: $padding $padding / 2;
 
 		background: $bg;
 

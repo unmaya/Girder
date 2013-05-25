@@ -2,7 +2,7 @@
 // Breakpoints and responsiveness
 
 @import "breakpoint";
-$breakpoints: 'turn single column' (0 $small-breakpoint, 'no-query' '.no-mq'),
+$breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq'),
 							'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
 							'medium and up' $medium-breakpoint,
 							'larger screens' $large-breakpoint,

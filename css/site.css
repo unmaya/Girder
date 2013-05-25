@@ -267,17 +267,17 @@ form {
 fieldset {
   border-color: #c0c0c0;
   margin: 0 2px;
-  border-top-style: solid;
   border-top-width: 0.0625em;
+  border-top-style: solid;
   padding-top: 0.4625em;
-  border-bottom-style: solid;
   border-bottom-width: 0.0625em;
+  border-bottom-style: solid;
   padding-bottom: 0.9125em;
-  border-left-style: solid;
   border-left-width: 0.0625em;
+  border-left-style: solid;
   padding-left: 0.875em;
-  border-right-style: solid;
   border-right-width: 0.0625em;
+  border-right-style: solid;
   padding-right: 0.875em;
 }
 
@@ -391,14 +391,9 @@ table {
   border-spacing: 0;
 }
 
-/* line 61, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
-* html {
-  font-size: 100%;
-}
-
-/* line 64, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 105, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
-  font-size: 16px;
+  font-size: 100%;
   line-height: 1.5em;
 }
 
@@ -426,25 +421,25 @@ html {
   *zoom: 1;
 }
 /* line 77, ../scss/girder_modules/_girder_base.scss */
-.row .example-whole, .row .example-half, .row .actions, .row .content, .row .example-gs, .row .example-gl {
+.row .example-whole, .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-gs, .row .example-gl {
   float: left;
   width: 100%;
   padding: 0.625em;
 }
 /* line 83, ../scss/girder_modules/_girder_base.scss */
-.row .example-whole:first-of-type, .row .example-half:first-of-type, .row .actions:first-of-type, .row .content:first-of-type, .row .example-gs:first-of-type, .row .example-gl:first-of-type {
+.row .example-whole:first-of-type, .row .example-half:first-of-type, .row .actions:first-of-type, .row .example-quarter:first-of-type, .row .content:first-of-type, .row .example-gs:first-of-type, .row .example-gl:first-of-type {
   padding-left: 1.25em;
 }
 /* line 84, ../scss/girder_modules/_girder_base.scss */
-.row .example-whole:last-child, .row .example-half:last-child, .row .actions:last-child, .row .content:last-child, .row .example-gs:last-child, .row .example-gl:last-child {
+.row .example-whole:last-child, .row .example-half:last-child, .row .actions:last-child, .row .example-quarter:last-child, .row .content:last-child, .row .example-gs:last-child, .row .example-gl:last-child {
   padding-right: 1.25em;
 }
 /* line 88, ../scss/girder_modules/_girder_base.scss */
-.row .row .example-whole:first-of-type, .row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .content:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
+.row .row .example-whole:first-of-type, .row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .example-quarter:first-of-type, .row .row .content:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
   padding-left: 0;
 }
 /* line 89, ../scss/girder_modules/_girder_base.scss */
-.row .row .example-whole:last-child, .row .row .example-half:last-child, .row .row .actions:last-child, .row .row .content:last-child, .row .row .example-gs:last-child, .row .row .example-gl:last-child {
+.row .row .example-whole:last-child, .row .row .example-half:last-child, .row .row .actions:last-child, .row .row .example-quarter:last-child, .row .row .content:last-child, .row .row .example-gs:last-child, .row .row .example-gl:last-child {
   padding-right: 0;
 }
 /* line 101, ../scss/girder_modules/_girder_base.scss */
@@ -456,7 +451,7 @@ html {
   width: 50%;
 }
 /* line 109, ../scss/girder_modules/_girder_base.scss */
-.row .actions {
+.row .actions, .row .example-quarter {
   width: 25%;
 }
 /* line 111, ../scss/girder_modules/_girder_base.scss */
@@ -482,9 +477,9 @@ html {
   line-height: 0;
 }
 
-@media (min-width: 0) and (max-width: 35.5em) {
+@media (min-width: 10em) and (max-width: 35.5em) {
   /* line 11, ../scss/girder_modules/_girder_responsive.scss */
-  .row .example-whole, .row .example-half, .row .actions, .row .content, .row .example-gs, .row .example-gl {
+  .row .example-whole, .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-gs, .row .example-gl {
     padding-left: 0;
     padding-right: 0;
     width: 100%;
@@ -547,76 +542,95 @@ a:hover, a:active {
 
 /* line 77, ../scss/site.scss */
 .content {
+  margin-right: 25%;
   padding-right: 1.25em !important;
 }
-/* line 82, ../scss/site.scss */
+@media (min-width: 10em) and (max-width: 35.5em) {
+  /* line 77, ../scss/site.scss */
+  .content {
+    height: auto;
+  }
+}
+/* line 88, ../scss/site.scss */
 .content > * {
   max-width: 35.5em;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 88, ../scss/site.scss */
+/* line 94, ../scss/site.scss */
 .content [role="banner"] h1 {
   font-family: lato, source-sans-pro, "Helvetica", sans-serif;
   font-weight: 200;
   font-size: 4em;
+  margin-top: 1em;
   margin-bottom: 0;
   letter-spacing: -.05em;
   text-transform: uppercase;
 }
-/* line 98, ../scss/site.scss */
+/* line 104, ../scss/site.scss */
 .content a:link, .content a:visited {
   color: #2099ba;
 }
 
-/* line 100, ../scss/site.scss */
+/* line 106, ../scss/site.scss */
 .actions {
   padding-left: 0 !important;
   padding-right: 0 !important;
   background: #242526;
   color: #a6a6a6;
+  position: fixed;
   text-align: center;
+  right: 0;
+  top: 0;
 }
-/* line 106, ../scss/site.scss */
+@media (min-width: 10em) and (max-width: 35.5em) {
+  /* line 106, ../scss/site.scss */
+  .actions {
+    height: auto;
+    position: relative;
+  }
+}
+/* line 119, ../scss/site.scss */
 .actions .gee {
-  font-family: lato;
+  font-family: lato, source-sans-pro, "Helvetica", sans-serif;
   font-weight: 900;
   font-size: 4em;
+  margin-top: 1em;
 }
-/* line 112, ../scss/site.scss */
+/* line 126, ../scss/site.scss */
 .actions ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 114, ../scss/site.scss */
+/* line 128, ../scss/site.scss */
 .actions a:link, .actions a:visited {
   text-decoration: none;
 }
 
-/* line 118, ../scss/site.scss */
+/* line 132, ../scss/site.scss */
 footer {
-  margin: 3em 0;
+  padding: 2em 0;
 }
-/* line 120, ../scss/site.scss */
+/* line 134, ../scss/site.scss */
 footer .credits {
   text-align: center !important;
 }
-/* line 121, ../scss/site.scss */
+/* line 135, ../scss/site.scss */
 footer a {
   text-transform: uppercase;
 }
 
-/* line 131, ../scss/site.scss */
-.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre {
+/* line 146, ../scss/site.scss */
+.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre {
   text-align: center;
   font-size: .6em;
-  border-radius: 5px;
+  border-radius: 3px;
   border-style: solid;
   border-width: 1px;
   border-color: #cccccc;
   margin-bottom: 0;
   margin-top: 0;
-  padding: 1.25em;
+  padding: 1.25em 0.625em;
   background: #f2f2f2;
 }

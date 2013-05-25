@@ -33,7 +33,7 @@ $xlarge-breakpoint : emCalc(940px);
 // Utility mixins and classes (clearfix, floats, text-aligns)
 @import "girder_modules/girder_utilities";
 
-// Responsiveness
+// Responsiveness, not required but essential (requires breakpoint)
 @import "girder_modules/girder_responsive";
 
 

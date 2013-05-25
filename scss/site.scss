@@ -76,9 +76,15 @@ a {
 // For Debugging Purposes
 .content {
 	@include unit(three-quarters);
+	// Account for actions sidebar
+	margin-right: 25%;
 	// This is extra padding for custom use
 	padding-right: 1.25em !important;
 
+	@include respond-to('turn single column') {
+		height: auto;
+		// margin-top: emCalc(230px);
+	}
 	> * {
 		max-width: $small-breakpoint;
 		margin-left: auto; margin-right: auto;
@@ -89,24 +95,32 @@ a {
 			font-family: $girder-font-family;
 			font-weight: 200;
 			font-size: 4em;
+			margin-top: 1em;
 			margin-bottom: 0;
 			letter-spacing: -.05em;
 			text-transform: uppercase;
 		}
 	}
-
 	a:link, a:visited { color: darken($linkColor, 25%);}
 }
 .actions {
 	@include unit(one-quarter, false);
 	background: #242526;
 	color: $lightText;
+	position: fixed;
 	text-align: center;
+	right: 0;
+	top: 0;
 
+	@include respond-to('turn single column') {
+		height: auto;
+		position: relative;
+	}
 	.gee {
-		font-family: lato;
+		font-family: $girder-font-family;
 		font-weight: 900;
 		font-size: 4em;
+		margin-top: 1em;
 	}
 
 	ul {list-style: none; margin: 0; padding: 0;}
@@ -116,7 +130,7 @@ a {
 		}
 }
 footer {
-	margin: 3em 0;
+	padding: 2em 0;
 	.credits {@include text-align(center);}
 	a {text-transform: uppercase;}
 }
@@ -125,9 +139,10 @@ footer {
 .example-gl {@include unit(golden-large);}
 .example-gs {@include unit(golden-small);}
 .example-half {@include unit(half);}
+.example-quarter {@include unit(one-quarter);}
 .example-whole {@include unit(whole);}
 
-// Visualizing units
-.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre {
+// Visualizing Girder units
+.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre {
 	@include panel();
 }
