@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* /////////////////////////////////////////////// */
+/*   Guirder is a Sassy grid toolkit   ////////// */
+/*   Simple, Responsive & Semantic    ////////// */
+/* //////////////////////////////////////////// */
+*, *:before, *:after { box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+
+.container, .row { margin: 0 auto; max-width: auto; }
+
+.row { display: block; clear: both; *zoom: 1; }
+.row:after { clear: both; }
+.row:before, .row:after { display: table; content: ""; line-height: 0; }
+
+.center-small { text-align: center; }
+@media (min-width: 35.5em) and (max-width: 40em) { .center-small { text-align: inherit; } }
+
+.hide-small { display: none; }
+@media (min-width: 40em) { .hide-small { display: block; } }
