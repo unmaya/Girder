@@ -4,7 +4,6 @@ node_modules/
 build/
 components/
 scripts/
-css/
 js/
 Gemfile.lock
 Gruntfile.js
