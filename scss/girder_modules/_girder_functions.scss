@@ -1,0 +1,17 @@
+//////////////////////////////
+// Useful Mixins and Functions
+
+// Pass pixels and get ems with this emCalc(#px)
+@function emCalc($pxWidth) {
+	@return $pxWidth / $em-base * 1em;
+}
+
+// Creating rems and pixels
+@function remCalc($pxWidth) {
+	@return $pxWidth / $em-base * 1rem;
+}
+
+// Calculate percentage values using the target ÷ context formula
+@function percentCalc($target, $context) {
+	@return $target / $context * 100%;
+}

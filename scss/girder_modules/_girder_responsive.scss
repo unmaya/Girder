@@ -1,0 +1,31 @@
+//////////////////////////////
+// Breakpoints and responsiveness
+
+@import "breakpoint";
+$breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq'),
+							'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
+							'medium and up' $medium-breakpoint,
+							'larger screens' $large-breakpoint,
+							'extra large screens' $xlarge-breakpoint;
+
+.row %unit {
+	@include respond-to('turn single column') {
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+	}
+}
+
+// Utility classes for centering text and hiding stuff in smaller screens
+.center-small {
+	text-align: center;
+	@include respond-to('small to medium') {
+		text-align: inherit;
+	}
+}
+.hide-small {
+	display: none;
+	@include respond-to('medium and up') {
+		display: block;
+	}
+}

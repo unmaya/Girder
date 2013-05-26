@@ -1,0 +1,149 @@
+//////////////////////////////
+// Site and demo page styles
+// (not required by Girder)
+@charset "UTF-8";
+
+// Site Styling Variables
+$body-bg             : #ffffff;
+$base-font-color     : #333333;
+$linkColor	         : #72CEE7;
+$linkHoverColor      : saturate(lighten($linkColor, 25%), 25%);
+$lightText			     : lighten($base-font-color, 45%);
+
+// Normalize and Typography Variables
+// Matching Girder's em-base for consistency
+$base-font-size: 16px !default; // Override default set in Compass' Vertical Rhythm partial.
+
+// The base line height determines the basic unit of vertical rhythm.
+// $base-line-height: 24px; // Override default set in Compass' Vertical Rhythm partial.
+
+// The font sizes for h1-h6.
+$h1-font-size: 2.8   * $base-font-size !default;
+$h2-font-size: 1.8   * $base-font-size !default;
+$h3-font-size: 1.17  * $base-font-size !default;
+$h4-font-size: 1     * $base-font-size !default;
+$h5-font-size: 0.83  * $base-font-size !default;
+$h6-font-size: 0.67  * $base-font-size !default;
+
+// The amount lists and blockquotes are indented.
+$indent-amount: 30px !default;
+
+// Default font families
+$headings-font        : source-sans-pro, "Helvetica Neue", "Helvetica", sans-serif;
+$base-font-family     : source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
+$girder-font-family   : lato, source-sans-pro, "Helvetica", sans-serif;
+
+////////////////////////////////
+// Import the required partials
+// Used by the demo, not Guirder
+
+// Compass support modules
+@import "compass";
+@import "compass/support";
+
+// Normalize this thing
+// @import "../components/normalize.scss/normalize";
+@import "normalize";
+
+// Baseline for Compass Vertical Rhythm
+@import "compass/typography/vertical_rhythm";
+@include establish-baseline;
+
+// Load the Girder modules
+@import "girder";
+
+
+////////////////////////////////
+// Theme Styles For Reference
+// Not needed by Guirder
+
+body {
+	background: $body-bg;
+	color: $base-font-color;
+	font-family: $base-font-family;
+	-webkit-font-smoothing: antialiased;
+}
+html, body, .container, .about, .content, .actions {height: 100%;}
+h1, h2, h3, h4 {margin-bottom: .4em;}
+p {margin: 1em 0 1.5em;}
+a {
+	&:link, &:visited {color: $linkColor;}
+	&:hover, &:active {color: $linkHoverColor;}
+}
+
+// Expressed CSS Classes
+// For Debugging Purposes
+.content {
+	@include unit(three-quarters);
+	// Account for actions sidebar
+	margin-right: 25%;
+	// This is extra padding for custom use
+	padding-right: 1.25em !important;
+
+	@include respond-to('turn single column') {
+		height: auto;
+	}
+	> * {
+		max-width: $small-breakpoint;
+		margin-left: auto; margin-right: auto;
+		}
+
+	[role="banner"] {
+		h1 {
+			font-family: $girder-font-family;
+			font-weight: 300;
+			font-size: 4em;
+			margin-top: 1em;
+			margin-bottom: 0;
+			letter-spacing: -.05em;
+			text-transform: uppercase;
+		}
+	}
+	a:link, a:visited { color: darken($linkColor, 25%);}
+}
+.actions {
+	@include unit(one-quarter, false);
+	background: #242526;
+	color: $lightText;
+	position: fixed;
+	text-align: center;
+	right: 0;
+	top: 0;
+
+	@include respond-to('turn single column') {
+		height: auto;
+		position: relative;
+	}
+	.gee {
+		font-family: $girder-font-family;
+		font-weight: 900;
+		font-size: 4em;
+		margin: 1em auto .25em;
+	}
+
+	ul {list-style: none; margin: 0; padding: 0;}
+
+	a:link, a:visited {
+		text-decoration: none;
+		}
+}
+footer {
+	padding: 2em 0;
+	.credits {@include text-align(center);}
+	a {text-transform: uppercase;}
+}
+
+// Test grid elements
+.example-gl {@include unit(golden-large);}
+.example-gs {@include unit(golden-small);}
+.example-half {@include unit(half);}
+.example-quarter {@include unit(one-quarter);}
+.example-whole {@include unit(whole);}
+
+// Visualizing Girder units
+.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre {
+	@include panel();
+	@include transition(all 0.3s ease-in);
+	text-shadow: 0 1px 0 $linkHoverColor;
+	&:hover {background: $linkColor; border-color: darken($linkColor, 20%);}
+}

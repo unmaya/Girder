@@ -1,0 +1,40 @@
+/* /////////////////////////////////////////////// */
+/*   Guirder is a Sassy grid toolkit   ////////// */
+/*   Simple, Responsive & Semantic    ////////// */
+/* //////////////////////////////////////////// */
+@charset "UTF-8";
+
+// Girder Global Variables and Modules
+// Start with $em-base to use it in functions
+$em-base             : 16px;
+
+// Functions module (like pixel to em converters)
+@import "girder_modules/girder_functions";
+
+// Include HTML presentational classes? (Makes your CSS file larger)
+// Set this to true to use .unit .two-thirds classes in html elements
+$html-classes        : false;
+
+// Gutter width is split into each side of a unit (except for outer units in a row)
+$gutters             : emCalc(20px);
+// Set a fixed width for our wraping container or keep it fluid by setting it to auto
+$container-width     : auto;
+$container-margins   : 0 auto;
+
+// Lets pass Pixels and Get ems in return
+// $xsmall_breakpoint  : emCalc(320px);
+$small-breakpoint  : emCalc(568px); // Expand small from usual 490px
+$medium-breakpoint : emCalc(640px); // 40em
+$large-breakpoint  : emCalc(790px);
+$xlarge-breakpoint : emCalc(940px);
+
+// Base grid for girder
+@import "girder_modules/girder_base";
+
+// Utility mixins and classes (clearfix, floats, text-aligns)
+@import "girder_modules/girder_utilities";
+
+// Responsiveness, not required but essential (requires breakpoint)
+@import "girder_modules/girder_responsive";
+
+

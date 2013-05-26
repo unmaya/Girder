@@ -1,0 +1,171 @@
+//////////////////////////////
+// Base Grid for Girder
+
+// Include a broad amount of border-box on everything and profit.
+// Override for special cases within selectors
+*, *:before, *:after {
+	box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+}
+
+// Set up the container and alignment row width
+.container, .row {
+	margin: $container-margins;
+	max-width: $container-width;
+}
+
+// Test Mixin for unit widths (Might change to func to use return values later)
+@mixin unit($width:whole, $addgutters:true) {
+
+	// Reduce verbosity and simplify by moving this to the extended placeholder
+	// @if $nested == true {
+	// 	&:first-child {padding-left: 0 !important; padding-top: 0;}
+	// 	&:last-child {padding-right: 0 !important; padding-top: 0;}
+	// }
+
+	// Handle the no-gutter case but its not pretty, looking for better options
+	@if $addgutters == false {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	@if $width == 'half' {
+		@extend %half;
+	}
+	@else if $width == 'one-third' {
+		@extend %one-third;
+	}
+	@else if $width == 'two-thirds' {
+		@extend %two-thirds;
+	}
+	@else if $width == 'one-quarter' {
+		@extend %one-quarter;
+	}
+	@else if $width == 'three-quarters' {
+		@extend %three-quarters;
+	}
+	@else if $width == 'one-fifth' {
+		@extend %one-fifth;
+	}
+	@else if $width == 'two-fifths' {
+		@extend %two-fifths;
+	}
+	@else if $width == 'three-fifths' {
+		@extend %three-fifths;
+	}
+	@else if $width == 'four-fifths' {
+		@extend %four-fifths;
+	}
+	@else if $width == 'one-sixth' {
+		@extend %one-sixth;
+	}
+	@else if $width == 'five-sixths' {
+		@extend %five-sixths;
+	}
+	@else if $width == 'golden-small' {
+		@extend %golden-small;
+	}
+	@else if $width == 'golden-large' {
+		@extend %golden-large;
+	}
+	@else {
+		@extend %whole;
+	}
+}
+
+// Flexible grid units using percentages
+.row {
+	display: block;
+	clear: both;
+	*zoom: 1;
+
+	%unit {
+		float: left;
+		width: 100%;
+		padding: $gutters / 2;
+
+		// This ensures the outer gutters are equal to the (doubled) inner gutters.
+		&:first-of-type {padding-left: $gutters;}
+		&:last-child {padding-right: $gutters;}
+
+		// Try handling nested outer gutters here, its redundant for now
+		// Use first of type for rows that start with headings etc.
+		.row &:first-of-type {padding-left: 0;}
+		.row &:last-child {padding-right: 0;}
+
+		// Add a .no-gutters class to a unit to remove gutters (experimental)
+		@if $html-classes == true {
+			.no-gutters > &:first-of-type {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	%half           { width: 50%;
+		@extend %unit; }
+	%one-third      { width: 33.3332%;
+		@extend %unit; }
+	%two-thirds     { width: 66.6665%;
+		@extend %unit; }
+	%one-quarter    { width: 25%;
+		@extend %unit; }
+	%three-quarters { width: 75%;
+		@extend %unit; }
+	%one-fifth      { width: 20%;
+		@extend %unit; }
+	%two-fifths     { width: 40%;
+		@extend %unit; }
+	%three-fifths   { width: 60%;
+		@extend %unit; }
+	%four-fifths    { width: 80%;
+		@extend %unit; }
+	%one-sixth      { width: 16.6666%;
+		@extend %unit; }
+	%five-sixths      { width: 83.3333%;
+		@extend %unit; }
+	%golden-small   { width: 38.2716%;
+		@extend %unit; }
+	%golden-large   { width: 61.7283%;
+		@extend %unit; }
+	%whole {
+		width: 100%;
+		padding: $gutters /2 0;
+		width: 100%;
+	}
+
+	// Automagic clearing for rows
+	&:after {clear: both;}
+
+	&:before, &:after {
+		display: table;
+		content: "";
+		line-height: 0;
+	}
+}
+
+// Only include these classes if the option exists
+@if $html-classes == true {
+
+	$units: (whole 100%), (half 50%), (one-third 33.3332%), (two-thirds 66.6665%), (one-quarter 25%), (three-quarters 75%), (one-fifth 20%), (two-fifths 40%), (three-fifths 60%), (four-fifths 80%), (golden-small 38.2716%), (golden-large 61.7283%);
+
+	@each $unit in $units {
+	  .#{nth($unit, 1)} {
+	    width: #{nth($unit, 2)};
+	    @extend .unit;
+	  }
+	}
+
+	.unit {
+		float: left;
+		width: 100%;
+		padding: $gutters / 2;
+
+		&:first-of-type {padding-left: $gutters;}
+		&:last-child {padding-right: $gutters;}
+
+		.row &:first-of-type {padding-left: 0;}
+		.row &:last-child {padding-right: 0;}
+	}
+}

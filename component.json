@@ -1,0 +1,13 @@
+{
+  "name": "girder",
+  "version": "0.2.0",
+  "main": "./scss/girder.scss",
+  "author": "Fred Maya",
+  "homepage": "https://github.com/unmaya/girder",
+  "dependencies": {
+    "requirejs": "~2.1.4",
+    "requirejs-text": "~2.0.5",
+    "jquery": "~1.9.1",
+    "normalize.scss": "~2.1.0"
+  }
+}
