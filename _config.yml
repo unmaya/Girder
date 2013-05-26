@@ -1,0 +1,11 @@
+baseurl: /
+
+source:      .
+destination: ./_site
+
+exclude: [scripts, components, grunt_settings, node_modules, Gruntfile.js, package.json, component.json, Gemfile, Gemfile.lock]
+
+author: Fred Maya
+description: Girder Project - A minmalist grid built on Sass
+twitter: unmaya
+github: unmaya
