@@ -5,6 +5,7 @@ build/
 components/
 scripts/
 js/
+css/
 Gemfile.lock
 Gruntfile.js
 package.json
