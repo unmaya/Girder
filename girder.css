@@ -7,7 +7,7 @@
 
 /* This is the CSS version of Girder which was designed for use with Scss.
 In this form it requires presentational classes be added to the HTML which
-I wanted to avoid by building it with Sass / Scss - Give that a try! */
+is what I wanted to avoid by building it with Sass / Scss. */
 
 /* Include a broad amount of border-box on everything and profit. */
 /* Override for special cases within selectors */
