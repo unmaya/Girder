@@ -23,7 +23,8 @@ html {font-size: 16px;}
 
 /* Set up your wrapping container to a fixed width if desired */
 .container, .row {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   max-width: auto;
 }
 
@@ -70,6 +71,20 @@ html {font-size: 16px;}
 
 /* Remove padding - gutter for all units inside a row or for a specific unit */
 .row.no-gutters .unit, .unit.no-gutters {padding: 0;}
+
+/* We can also remove just left or right padding - gutter by using alpha omega */
+.alpha {padding-left: 0;}
+.omega {padding-right: 0;}
+
+/* Your standard presentational clearing class. Yuck! Seriously, try Sass. */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
 
 /* Utility classes to align text and float / hide elements */
 .left {
