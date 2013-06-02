@@ -7,6 +7,7 @@ scripts/
 js/
 _site/
 css/
+index.html
 Gemfile.lock
 Gruntfile.js
 package.json
