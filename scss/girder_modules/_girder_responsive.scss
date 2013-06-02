@@ -19,13 +19,13 @@ $breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq')
 // Utility classes for centering text and hiding stuff in smaller screens
 .center-small {
 	text-align: center;
-	@include respond-to('small to medium') {
+	@include respond-to('turn single column') {
 		text-align: inherit;
 	}
 }
 .hide-small {
 	display: none;
-	@include respond-to('medium and up') {
+	@include respond-to('turn single column') {
 		display: block;
 	}
 }

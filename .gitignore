@@ -10,6 +10,10 @@ Gruntfile.js
 package.json
 npm-debug.log
 .sass-cache/
+css/girder.css
+
+# Jekyll generated
+_site/
 
 # OS Generated files
 .DS_Store
