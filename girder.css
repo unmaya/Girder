@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/* /////////////////////////////////////////////// */
+/*   Guirder is a Sassy grid toolkit    ////////// */
+/*   Simple, Responsive & Semantic     ////////// */
+/*   https://github.com/unmaya/Girder ////////// */
+/* //////////////////////////////////////////// */
+
+/* This is the CSS version of Girder which was designed for use with Scss.
+In this form it requires presentational classes be added to the HTML which
+I wanted to avoid by building it with Sass / Scss - Give that a try! */
+
+/* Include a broad amount of border-box on everything and profit. */
+/* Override for special cases within selectors */
+*, *:before, *:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* Adjust this to fit your preference for an em base
+By default its set to the current standard of 100% or 1em */
+html {font-size: 16px;}
+
+/* Set up your wrapping container to a fixed width if desired */
+.container, .row {
+  margin: 0 auto;
+  max-width: auto;
+}
+
+/* Automatically clear rows and column / unit groupings */
+/* Rows are the primary building blocks for Girder */
+.row {
+  display: block;
+  clear: both;
+  *zoom: 1;
+}
+.row:after {clear: both;}
+.row:before, .row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+/* All units will float left and use ems for gutter spacing */
+.row .unit {
+  float: left;
+  width: 100%;
+  padding: 0.625em;
+}
+.row .unit:first-of-type {padding-left: 1.25em;}
+.row .unit:last-child {padding-right: 1.25em;}
+
+/* Lets remove the padding - gutter for nested units */
+.row .unit:first-of-type {padding-left: 0;}
+.row .unit:last-child {padding-right: 0;}
+
+/* The unit classes are named based on how a row can be divided */
+.whole {width: 100%;}
+.half {width: 50%;}
+.one-third {width: 33.3332%;}
+.two-thirds {width: 66.6665%;}
+.one-quarter {width: 25%;}
+.three-quarters {width: 75%;}
+.one-fifth {width: 20%;}
+.two-fifths {width: 40%;}
+.three-fifths {width: 60%;}
+.four-fifths {width: 80%;}
+.golden-small {width: 38.2716%;}
+.golden-large {width: 61.7283%;}
+
+/* Remove padding - gutter for all units inside a row or for a specific unit */
+.row.no-gutters .unit, .unit.no-gutters {padding: 0;}
+
+/* Utility classes to align text and float / hide elements */
+.left {
+  float: left;
+  margin-right: .8em;
+}
+.right {
+  float: right;
+  margin-left: .8em;
+}
+.hide {
+  display: none !important;
+  visibility: hidden;
+}
+.text-left {text-align: left !important;}
+.text-right {text-align: right !important;}
+.text-center {text-align: center !important;}
+.text-justify {text-align: justify !important;}
+
+/* Small classes will only apply to viewports below 35.5em or 568px (with a 16px base) */
+.center-small {text-align: center;}
+.hide-small {display: none;}
+
+@media (min-width: 35.5em) {
+.hide-small {display: block;}
+.center-small {text-align: inherit;}
+}

@@ -88,8 +88,7 @@ $panel-font-color-alt:  #fff !default;
 }
 
 
-// Only include these classes if the option exists
-// Girder option to include presentational clases for html elements
+// Only include utility classes if setting is set to true
 // Useful for classes in your HTML like: <p class="right text-right">Go Right!</h2>
 @if $html-classes == true {
 	// Utility classes for presentational markup
