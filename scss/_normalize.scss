@@ -1,6 +1,5 @@
 /* normalize.css v2.1.0 | MIT License | git.io/normalize */
-/* normalize.scss v2.1.0 | MIT/GPLv2 License | bit.ly/normalize-with-compass */
-
+// Edited to remove comments from rendered css
 // /**
 //  * Correct display not defined in IE 8/9.
 //  */
@@ -60,11 +59,11 @@ audio:not([controls]) {
 //  */
 
 html {
-    font-family: $base-font-family; /* 1 */
-    font-size: 100% * ($base-font-size / 16px); /* 3 */
+    font-family: $base-font-family; // /* 1 */
+    font-size: 100% * ($base-font-size / 16px); // /* 3 */
     -webkit-text-size-adjust: 100%; /* 2 */
-    -ms-text-size-adjust: 100%; /* 2 */
-    /* Establish a vertical rhythm unit using $base-line-height. */
+    -ms-text-size-adjust: 100%; // /* 2 */
+    // /* Establish a vertical rhythm unit using $base-line-height. */
     @include adjust-leading-to(1);
 }
 
@@ -125,7 +124,7 @@ pre {
 }
 
 blockquote {
-    /* Set 1 unit of vertical rhythm on the top and bottom margin. */
+    // /* Set 1 unit of vertical rhythm on the top and bottom margin. */
     margin: rhythm(1) $indent-amount;
 }
 
@@ -135,10 +134,10 @@ blockquote {
 //  */
 
 h1 {
-    /* Set the font-size and line-height while keeping a proper vertical rhythm. */
+    // /* Set the font-size and line-height while keeping a proper vertical rhythm. */
     @include adjust-font-size-to( $h1-font-size );
 
-    /* Set 1 unit of vertical rhythm on the top and bottom margins. */
+    // /* Set 1 unit of vertical rhythm on the top and bottom margins. */
     @include leader(1, $h1-font-size);
     @include trailer(1, $h1-font-size);
 }
@@ -323,7 +322,7 @@ dd {
 img {
     border: 0;
     @if $legacy-support-for-ie7 {
-        /* Improve image quality when scaled in IE 7. */
+        // /* Improve image quality when scaled in IE 7. */
         -ms-interpolation-mode: bicubic;
     }
 }
@@ -353,9 +352,9 @@ figure {
 //    ========================================================================== */
 
 @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-    /**
-     * Correct margin displayed oddly in IE 6/7.
-     */
+    // /**
+    //  * Correct margin displayed oddly in IE 6/7.
+    //  */
 
     form {
         margin: 0;
@@ -383,10 +382,10 @@ fieldset {
 //  */
 
 legend {
-    border: 0; /* 1 */
-    padding: 0; /* 2 */
+    border: 0; // /* 1 */
+    padding: 0; // /* 2 */
     @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-        *margin-left: -7px; /* 3 */
+        *margin-left: -7px; // /* 3 */
     }
 }
 
@@ -401,12 +400,12 @@ button,
 input,
 select,
 textarea {
-    font-family: inherit; /* 1 */
-    font-size: 100%; /* 2 */
-    margin: 0; /* 3 */
+    font-family: inherit; // /* 1 */
+    font-size: 100%; // /* 2 */
+    margin: 0; // /* 3 */
     @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-        vertical-align: baseline; /* 4 */
-        *vertical-align: middle; /* 4 */
+        vertical-align: baseline; // /* 4 */
+        *vertical-align: middle; // /* 4 */
     }
 }
 
@@ -443,13 +442,13 @@ select {
 //  */
 
 button,
-html input[type="button"], /* 1 */
+html input[type="button"], // /* 1 */
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button; /* 2 */
-    cursor: pointer; /* 3 */
+    -webkit-appearance: button; // /* 2 */
+    cursor: pointer; // /* 3 */
     @if $legacy-support-for-ie7 {
-        *overflow: visible; /* 4 */
+        *overflow: visible; // /* 4 */
     }
 }
 
@@ -471,11 +470,11 @@ html input[disabled] {
 
 input[type="checkbox"],
 input[type="radio"] {
-    @include box-sizing(border-box); /* 1 */
-    padding: 0; /* 2 */
+    @include box-sizing(border-box); // /* 1 */
+    padding: 0; // /* 2 */
     @if $legacy-support-for-ie7 {
-        *height: 13px; /* 3 */
-        *width: 13px; /* 3 */
+        *height: 13px; // /* 3 */
+        *width: 13px; // /* 3 */
     }
 }
 
@@ -486,8 +485,8 @@ input[type="radio"] {
 //  */
 
 input[type="search"] {
-    -webkit-appearance: textfield; /* 1 */
-    @include box-sizing(content-box); /* 2 */
+    -webkit-appearance: textfield; // /* 1 */
+    @include box-sizing(content-box); // /* 2 */
 }
 
 // /**

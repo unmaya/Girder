@@ -1,7 +1,9 @@
 /* /////////////////////////////////////////////// */
-/*   Guirder is a Sassy grid toolkit   ////////// */
-/*   Simple, Responsive & Semantic    ////////// */
+/*   Guirder is a Sassy grid toolkit    ////////// */
+/*   Simple, Responsive & Semantic     ////////// */
+/*   https://github.com/unmaya/Girder ////////// */
 /* //////////////////////////////////////////// */
+
 @charset "UTF-8";
 
 // Girder Global Variables and Modules
@@ -13,7 +15,7 @@ $em-base             : 16px;
 
 // Include HTML presentational classes? (Makes your CSS file larger)
 // Set this to true to use .unit .two-thirds classes in html elements
-$html-classes        : false;
+$html-classes        : true;
 
 // Gutter width is split into each side of a unit (except for outer units in a row)
 $gutters             : emCalc(20px);

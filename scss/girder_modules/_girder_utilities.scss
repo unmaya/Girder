@@ -8,23 +8,31 @@
 	&:after { clear: both; }
 }
 
+
+// Return rem units with pixel fallback
+// This takes an rem value (just a number)
+// Returns a pixel fall back based on our $em-base
+// Usage: @include font-size(2);
+@mixin font-size($sizeValue: 1.8) {
+	$size: strip-unit($sizeValue);
+	font-size: ($size * $em-base);
+	font-size: $size + rem;
+}
+
+
 // Modified Version of the Excellent Panels Mixin from Zurb
 // ----------------------------
 // Panel Variables
 //
-
 // Control the background and border styles
 $panel-bg:              darken(#fff, 5%) !default;
 $panel-border-color:    darken($panel-bg, 15%) !default;
-
 // Set default inner padding and bottom margin
 $panel-margin-bottom:   0 !default;
 $panel-padding:         emCalc(20px) !default;
-
 // Set default font colors
 $panel-font-color:      #333 !default;
 $panel-font-color-alt:  #fff !default;
-
 // Panel Mixin
 @mixin panel($bg:$panel-bg, $padding:$panel-padding, $filler:false) {
 
@@ -52,14 +60,15 @@ $panel-font-color-alt:  #fff !default;
 			line-height: 1; margin-bottom: emCalc(20px) / 2;
 			}
 		}
-
     // Respect the padding, fool.
     // &>:first-child { padding-top: 0; }
     // &>:last-child { padding-bottom: 0; }
 	}
 }
 
-// Basic Mixin for text alignment
+
+// Basic Mixin for text alignments
+// Usage: @include text-align(right);
 @mixin text-align($direction) {
 	@if $direction == left {
 		text-align: #{$direction} !important;
@@ -78,12 +87,9 @@ $panel-font-color-alt:  #fff !default;
 	}
 }
 
-// Utility placeholders - TODO: Mixin
-// %left         { float: left; margin-right: .8em; }
-// %right        { float: right; margin-left: .8em; }
-// %hide         { display: none !important; visibility: hidden; }
 
-// Only include these classes if the option exists
+// Only include utility classes if setting is set to true
+// Useful for classes in your HTML like: <p class="right text-right">Go Right!</h2>
 @if $html-classes == true {
 	// Utility classes for presentational markup
 	.left         { float: left; margin-right: .8em; }
@@ -94,3 +100,7 @@ $panel-font-color-alt:  #fff !default;
 		.text-#{$direction} {text-align: #{$direction} !important;}
 	}
 }
+
+
+// Utility placeholders - Not used at this point
+// %hide         { display: none !important; visibility: hidden; }
