@@ -5,12 +5,14 @@ build/
 components/
 scripts/
 js/
+Gemfile
 Gemfile.lock
 Gruntfile.js
 package.json
 npm-debug.log
 .sass-cache/
 css/girder.css
+component.json
 
 # Jekyll generated
 _site/
