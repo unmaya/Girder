@@ -15,7 +15,7 @@ $em-base             : 16px;
 
 // Include HTML presentational classes? (Makes your CSS file larger)
 // Set this to true to use .unit .two-thirds classes in html elements
-$html-classes        : true;
+$html-classes        : false;
 
 // Gutter width is split into each side of a unit (except for outer units in a row)
 $gutters             : emCalc(20px);
