@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/* /////////////////////////////////////////////// */
+/*   Site and demo page styles in one   ///////// */
+/*   https://github.com/unmaya/Girder ////////// */
+/* //////////////////////////////////////////// */
 /* normalize.css v2.1.0 | MIT License | git.io/normalize */
 article,
 aside,
@@ -318,7 +322,7 @@ html {
 }
 
 /* /////////////////////////////////////////////// */
-/*   Guirder is a Sassy grid toolkit    ////////// */
+/*   Girder is a Sassy grid toolkit    ////////// */
 /*   Simple, Responsive & Semantic     ////////// */
 /*   https://github.com/unmaya/Girder ////////// */
 /* //////////////////////////////////////////// */
@@ -337,17 +341,13 @@ html {
   display: block;
   clear: both;
   *zoom: 1;
+  padding-right: 1.25em;
+  padding-left: 1.25em;
 }
 .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
   float: left;
   width: 100%;
   padding: 0.625em;
-}
-.row .example-half:first-of-type, .row .actions:first-of-type, .row .example-quarter:first-of-type, .row .content:first-of-type, .row .example-34:first-of-type, .row .example-gs:first-of-type, .row .example-gl:first-of-type {
-  padding-left: 1.25em;
-}
-.row .example-half:last-child, .row .actions:last-child, .row .example-quarter:last-child, .row .content:last-child, .row .example-34:last-child, .row .example-gs:last-child, .row .example-gl:last-child {
-  padding-right: 1.25em;
 }
 .row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .example-quarter:first-of-type, .row .row .content:first-of-type, .row .row .example-34:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
   padding-left: 0;
@@ -382,6 +382,10 @@ html {
   display: table;
   content: "";
   line-height: 0;
+}
+.row.no-gutters, .row .row, .row .row .row {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .push-one, .push-two, .push-three, .push-four {
@@ -463,7 +467,8 @@ a:hover, a:active {
 
 .content {
   margin-right: 25%;
-  padding-right: 1.25em !important;
+  padding: 0 1.25em !important;
+  overflow: auto;
 }
 @media (min-width: 10em) and (max-width: 35.5em) {
   .content {
@@ -489,8 +494,6 @@ a:hover, a:active {
 }
 
 .actions {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
   background: #242526;
   color: #a6a6a6;
   position: fixed;
@@ -517,6 +520,10 @@ a:hover, a:active {
 }
 .actions a:link, .actions a:visited {
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  margin-bottom: .5em;
 }
 
 footer {

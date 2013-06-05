@@ -1,6 +1,8 @@
-//////////////////////////////
-// Site and demo page styles
-// (not required by Girder)
+/* /////////////////////////////////////////////// */
+/*   Site and demo page styles in one   ///////// */
+/*   https://github.com/unmaya/Girder ////////// */
+/* //////////////////////////////////////////// */
+
 @charset "UTF-8";
 
 // Site Styling Variables
@@ -77,8 +79,10 @@ a {
 	@include unit(three-quarters);
 	// Account for actions sidebar
 	margin-right: 25%;
-	// This is extra padding for custom use
-	padding-right: 1.25em !important;
+	// We want padding here for small devices
+	// This is one of two units inside a .no-gutters row
+	padding: 0 1.25em !important;
+	overflow: auto;
 
 	@include respond-to('turn single column') {
 		height: auto;
@@ -102,7 +106,7 @@ a {
 	a:link, a:visited { color: darken($linkColor, 25%);}
 }
 .actions {
-	@include unit(one-quarter, false);
+	@include unit(one-quarter);
 	background: #242526;
 	color: $lightText;
 	position: fixed;
@@ -125,6 +129,10 @@ a {
 
 	a:link, a:visited {
 		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: bold;
+		display: block;
+		margin-bottom: .5em;
 		}
 }
 footer {

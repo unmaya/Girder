@@ -86,8 +86,9 @@
 		padding: $gutters / 2;
 
 		// This ensures the outer gutters are equal to the (doubled) inner gutters.
-		&:first-of-type {padding-left: $gutters;}
-		&:last-child {padding-right: $gutters;}
+		// Considering moving this gutter value to the parent .row
+		// &:first-of-type {padding-left: $gutters;}
+		// &:last-child {padding-right: $gutters;}
 
 		// Try handling nested outer gutters here, its redundant for now
 		// Use first of type for rows that start with headings etc.
@@ -143,6 +144,12 @@
 		content: "";
 		line-height: 0;
 	}
+
+	// Lets add outer gutters to rows
+	padding-right: $gutters;
+	padding-left: $gutters;
+	// but remove them when nested or specified
+	&.no-gutters, .row, .row .row {padding-left: 0; padding-right: 0;}
 }
 
 // Only include these classes if the option exists
