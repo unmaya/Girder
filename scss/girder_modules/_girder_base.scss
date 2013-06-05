@@ -171,17 +171,19 @@
 }
 
 
-// Test some push / pull functionality
-
-$gutterpercent: $gutters * $em-base / 100;
-.push-one, .push-two, .push-three, .push-four,
-.pull-one, .pull-two, .pull-three, .pull-four {
+// Test some push functionality (experimental)
+$gutterpercent: $gutters * 9 * $em-base / 100;
+// We'll use the ol' positioning trick for now
+.push-one, .push-two, .push-three, .push-four {
 	position: relative;
 }
-.push-one {
-	// left: $gutters;
-	padding-left: 12.5%;
+// We'll attempt to align with eights going up to half-page
+.push-one { left: 12.5% + strip-unit($gutterpercent) !important; }
+.push-two { left: 25% + strip-unit($gutterpercent) !important; }
+.push-three { left: 37.5% + strip-unit($gutterpercent) !important; }
+.push-four { left: 50% + strip-unit($gutterpercent) !important; }
+
+// What about consistent gutters?
+.push-one:last-child, .push-two:last-child, .push-three:last-child, .push-four:last-child {
+	padding-right: $gutters / 2 !important;
 }
-.push-two { padding-left: 25 + $gutterpercent; }
-.push-three { padding-left: 37.5%; }
-.push-four { padding-left: 50%; }

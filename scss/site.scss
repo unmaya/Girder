@@ -138,10 +138,11 @@ footer {
 .example-gs {@include unit(golden-small);}
 .example-half {@include unit(half);}
 .example-quarter {@include unit(one-quarter);}
+.example-34 {@include unit(three-quarters);}
 .example-whole {@include unit(whole);}
 
 // Visualizing Girder units
-.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre {
+.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre, .example-34 pre {
 	@include panel();
 	@include transition(all 0.3s ease-in);
 	text-shadow: 0 1px 0 $linkHoverColor;

@@ -338,24 +338,24 @@ html {
   clear: both;
   *zoom: 1;
 }
-.row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-gs, .row .example-gl {
+.row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
   float: left;
   width: 100%;
   padding: 0.625em;
 }
-.row .example-half:first-of-type, .row .actions:first-of-type, .row .example-quarter:first-of-type, .row .content:first-of-type, .row .example-gs:first-of-type, .row .example-gl:first-of-type {
+.row .example-half:first-of-type, .row .actions:first-of-type, .row .example-quarter:first-of-type, .row .content:first-of-type, .row .example-34:first-of-type, .row .example-gs:first-of-type, .row .example-gl:first-of-type {
   padding-left: 1.25em;
 }
-.row .example-half:last-child, .row .actions:last-child, .row .example-quarter:last-child, .row .content:last-child, .row .example-gs:last-child, .row .example-gl:last-child {
+.row .example-half:last-child, .row .actions:last-child, .row .example-quarter:last-child, .row .content:last-child, .row .example-34:last-child, .row .example-gs:last-child, .row .example-gl:last-child {
   padding-right: 1.25em;
 }
-.row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .example-quarter:first-of-type, .row .row .content:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
+.row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .example-quarter:first-of-type, .row .row .content:first-of-type, .row .row .example-34:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
   padding-left: 0;
 }
-.row .row .example-half:last-child, .row .row .actions:last-child, .row .row .example-quarter:last-child, .row .row .content:last-child, .row .row .example-gs:last-child, .row .row .example-gl:last-child {
+.row .row .example-half:last-child, .row .row .actions:last-child, .row .row .example-quarter:last-child, .row .row .content:last-child, .row .row .example-34:last-child, .row .row .example-gs:last-child, .row .row .example-gl:last-child {
   padding-right: 0;
 }
-.no-gutters > .row .example-half:first-of-type, .no-gutters > .row .actions:first-of-type, .no-gutters > .row .example-quarter:first-of-type, .no-gutters > .row .content:first-of-type, .no-gutters > .row .example-gs:first-of-type, .no-gutters > .row .example-gl:first-of-type {
+.no-gutters > .row .example-half:first-of-type, .no-gutters > .row .actions:first-of-type, .no-gutters > .row .example-quarter:first-of-type, .no-gutters > .row .content:first-of-type, .no-gutters > .row .example-34:first-of-type, .no-gutters > .row .example-gs:first-of-type, .no-gutters > .row .example-gl:first-of-type {
   padding-left: 0;
   padding-right: 0;
 }
@@ -365,7 +365,7 @@ html {
 .row .actions, .row .example-quarter {
   width: 25%;
 }
-.row .content {
+.row .content, .row .example-34 {
   width: 75%;
 }
 .row .example-gs {
@@ -454,25 +454,28 @@ html {
   padding-right: 0;
 }
 
-.push-one, .push-two, .push-three, .push-four,
-.pull-one, .pull-two, .pull-three, .pull-four {
+.push-one, .push-two, .push-three, .push-four {
   position: relative;
 }
 
 .push-one {
-  padding-left: 12.5%;
+  left: 14.3% !important;
 }
 
 .push-two {
-  padding-left: 25%;
+  left: 26.8% !important;
 }
 
 .push-three {
-  padding-left: 37.5%;
+  left: 39.3% !important;
 }
 
 .push-four {
-  padding-left: 50%;
+  left: 51.8% !important;
+}
+
+.push-one:last-child, .push-two:last-child, .push-three:last-child, .push-four:last-child {
+  padding-right: 0.625em !important;
 }
 
 .left {
@@ -507,7 +510,7 @@ html {
 }
 
 @media (min-width: 10em) and (max-width: 35.5em) {
-  .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-gs, .row .example-gl {
+  .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
     padding-left: 0;
     padding-right: 0;
     width: 100%;
@@ -626,7 +629,7 @@ footer a {
   text-transform: uppercase;
 }
 
-.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre {
+.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre, .example-34 pre {
   text-align: center;
   font-size: .6em;
   border-radius: 3px;
@@ -643,7 +646,7 @@ footer a {
   transition: all 0.3s ease-in;
   text-shadow: 0 1px 0 #daf7fe;
 }
-.example-gl pre:hover, .example-gs pre:hover, .example-half pre:hover, .example-whole pre:hover, .example-quarter pre:hover {
+.example-gl pre:hover, .example-gs pre:hover, .example-half pre:hover, .example-whole pre:hover, .example-quarter pre:hover, .example-34 pre:hover {
   background: #72cee7;
   border-color: #23abd0;
 }
