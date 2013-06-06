@@ -1,8 +1,132 @@
 @charset "UTF-8";
 /* /////////////////////////////////////////////// */
-/*   Site and demo page styles in one   ///////// */
+/*   Site and demo-page styles combined  //////// */
+/*   https://github.com/unmaya/Girder   //////// */
+/* //////////////////////////////////////////// */
+html {
+  font-size: 100%;
+  line-height: 1.5em;
+}
+
+/* /////////////////////////////////////////////// */
+/*   Girder is a Sassy grid toolkit    ////////// */
+/*   Simple, Responsive & Semantic     ////////// */
 /*   https://github.com/unmaya/Girder ////////// */
 /* //////////////////////////////////////////// */
+*, *:before, *:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container, .row {
+  margin: 0 auto;
+  max-width: auto;
+}
+
+.row {
+  display: block;
+  clear: both;
+  *zoom: 1;
+  padding-right: 1.25em;
+  padding-left: 1.25em;
+}
+.row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
+  float: left;
+  width: 100%;
+  padding: 0.625em;
+}
+.row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .example-quarter:first-of-type, .row .row .content:first-of-type, .row .row .example-34:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
+  margin-left: -0.625em;
+}
+.row .row .example-half:last-child, .row .row .actions:last-child, .row .row .example-quarter:last-child, .row .row .content:last-child, .row .row .example-34:last-child, .row .row .example-gs:last-child, .row .row .example-gl:last-child {
+  margin-right: -0.625em;
+}
+.row .example-half {
+  width: 50%;
+}
+.row .actions, .row .example-quarter {
+  width: 25%;
+}
+.row .content, .row .example-34 {
+  width: 75%;
+}
+.row .example-gs {
+  width: 38.2716%;
+}
+.row .example-gl {
+  width: 61.7283%;
+}
+.row .example-whole {
+  width: 100%;
+  padding: 0.625em 0;
+  padding-right: 1.25em;
+}
+.row:after {
+  clear: both;
+}
+.row:before, .row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.row.no-gutters, .row .row, .row .row .row {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.push-one, .push-two, .push-three, .push-four {
+  position: relative;
+}
+
+.push-one {
+  left: 13.9%;
+}
+
+.push-two {
+  left: 26.4%;
+}
+
+.push-three {
+  left: 38.9%;
+}
+
+.push-four {
+  left: 51.4%;
+}
+
+.push-one:last-child, .push-two:last-child, .push-three:last-child, .push-four:last-child {
+  padding-right: 0.625em;
+}
+
+@media (min-width: 10em) and (max-width: 35.5em) {
+  .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    left: 0;
+    margin-left: inherit !important;
+  }
+}
+
+.center-small {
+  text-align: center;
+}
+@media (min-width: 10em) and (max-width: 35.5em) {
+  .center-small {
+    text-align: inherit;
+  }
+}
+
+.hide-small {
+  display: none;
+}
+@media (min-width: 10em) and (max-width: 35.5em) {
+  .hide-small {
+    display: block;
+  }
+}
+
 /* normalize.css v2.1.0 | MIT License | git.io/normalize */
 article,
 aside,
@@ -316,134 +440,11 @@ table {
   border-spacing: 0;
 }
 
-html {
-  font-size: 100%;
-  line-height: 1.5em;
-}
-
-/* /////////////////////////////////////////////// */
-/*   Girder is a Sassy grid toolkit    ////////// */
-/*   Simple, Responsive & Semantic     ////////// */
-/*   https://github.com/unmaya/Girder ////////// */
-/* //////////////////////////////////////////// */
-*, *:before, *:after {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-
-.container, .row {
-  margin: 0 auto;
-  max-width: auto;
-}
-
-.row {
-  display: block;
-  clear: both;
-  *zoom: 1;
-  padding-right: 1.25em;
-  padding-left: 1.25em;
-}
-.row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
-  float: left;
-  width: 100%;
-  padding: 0.625em;
-}
-.row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .example-quarter:first-of-type, .row .row .content:first-of-type, .row .row .example-34:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
-  margin-left: -0.625em;
-}
-.row .row .example-half:last-child, .row .row .actions:last-child, .row .row .example-quarter:last-child, .row .row .content:last-child, .row .row .example-34:last-child, .row .row .example-gs:last-child, .row .row .example-gl:last-child {
-  margin-right: -0.625em;
-}
-.row .example-half {
-  width: 50%;
-}
-.row .actions, .row .example-quarter {
-  width: 25%;
-}
-.row .content, .row .example-34 {
-  width: 75%;
-}
-.row .example-gs {
-  width: 38.2716%;
-}
-.row .example-gl {
-  width: 61.7283%;
-}
-.row .example-whole {
-  width: 100%;
-  padding: 0.625em 0;
-  padding-right: 1.25em;
-}
-.row:after {
-  clear: both;
-}
-.row:before, .row:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.row.no-gutters, .row .row, .row .row .row {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.push-one, .push-two, .push-three, .push-four {
-  position: relative;
-}
-
-.push-one {
-  left: 13.9%;
-}
-
-.push-two {
-  left: 26.4%;
-}
-
-.push-three {
-  left: 38.9%;
-}
-
-.push-four {
-  left: 51.4%;
-}
-
-.push-one:last-child, .push-two:last-child, .push-three:last-child, .push-four:last-child {
-  padding-right: 0.625em;
-}
-
-@media (min-width: 10em) and (max-width: 35.5em) {
-  .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-    left: 0;
-    margin-left: inherit !important;
-  }
-}
-
-.center-small {
-  text-align: center;
-}
-@media (min-width: 10em) and (max-width: 35.5em) {
-  .center-small {
-    text-align: inherit;
-  }
-}
-
-.hide-small {
-  display: none;
-}
-@media (min-width: 10em) and (max-width: 35.5em) {
-  .hide-small {
-    display: block;
-  }
-}
-
 body {
   background: white;
   color: #333333;
   font-family: source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 
