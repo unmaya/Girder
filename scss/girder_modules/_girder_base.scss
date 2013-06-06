@@ -71,6 +71,10 @@
 	}
 	@else {
 		@extend %whole;
+
+		@include respond-to('turn single column') {
+			padding-right: 0 !important;
+		}
 	}
 }
 
@@ -137,7 +141,7 @@
 	%whole {
 		width: 100%;
 		padding: $gutters /2 0;
-		width: 100%;
+		padding-right: $gutters;
 	}
 
 	// Automagic clearing for rows

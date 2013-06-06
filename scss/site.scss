@@ -148,7 +148,7 @@ footer {
 .example-half {@include unit(half);}
 .example-quarter {@include unit(one-quarter);}
 .example-34 {@include unit(three-quarters);}
-.example-whole {@include unit(whole);}
+.example-whole {@include unit();}
 
 // Visualizing Girder units
 .example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre, .example-34 pre {

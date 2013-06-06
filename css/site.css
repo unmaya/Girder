@@ -373,7 +373,7 @@ html {
 .row .example-whole {
   width: 100%;
   padding: 0.625em 0;
-  width: 100%;
+  padding-right: 1.25em;
 }
 .row:after {
   clear: both;
@@ -418,6 +418,7 @@ html {
     padding-right: 0;
     width: 100%;
     left: 0;
+    margin-left: inherit !important;
   }
 }
 
@@ -535,6 +536,12 @@ footer .credits {
 }
 footer a {
   text-transform: uppercase;
+}
+
+@media (min-width: 10em) and (max-width: 35.5em) {
+  .example-whole {
+    padding-right: 0 !important;
+  }
 }
 
 .example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre, .example-34 pre {
