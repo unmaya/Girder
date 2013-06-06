@@ -79,9 +79,10 @@ a {
 	@include unit(three-quarters);
 	// Account for actions sidebar
 	margin-right: 25%;
-	// We want padding here for small devices
+	// lets add double padding here for small screens
 	// This is one of two units inside a .no-gutters row
-	padding: 0 1.25em !important;
+	padding-left: $gutters * 2 !important;
+	padding-right: $gutters * 2 !important;
 	overflow: auto;
 
 	@include respond-to('turn single column') {

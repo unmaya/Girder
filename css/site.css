@@ -350,10 +350,10 @@ html {
   padding: 0.625em;
 }
 .row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .example-quarter:first-of-type, .row .row .content:first-of-type, .row .row .example-34:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
-  padding-left: 0;
+  margin-left: -0.625em;
 }
 .row .row .example-half:last-child, .row .row .actions:last-child, .row .row .example-quarter:last-child, .row .row .content:last-child, .row .row .example-34:last-child, .row .row .example-gs:last-child, .row .row .example-gl:last-child {
-  padding-right: 0;
+  margin-right: -0.625em;
 }
 .row .example-half {
   width: 50%;
@@ -393,19 +393,19 @@ html {
 }
 
 .push-one {
-  left: 14.3%;
+  left: 13.9%;
 }
 
 .push-two {
-  left: 26.8%;
+  left: 26.4%;
 }
 
 .push-three {
-  left: 39.3%;
+  left: 38.9%;
 }
 
 .push-four {
-  left: 51.8%;
+  left: 51.4%;
 }
 
 .push-one:last-child, .push-two:last-child, .push-three:last-child, .push-four:last-child {
@@ -467,7 +467,8 @@ a:hover, a:active {
 
 .content {
   margin-right: 25%;
-  padding: 0 1.25em !important;
+  padding-left: 2.5em !important;
+  padding-right: 2.5em !important;
   overflow: auto;
 }
 @media (min-width: 10em) and (max-width: 35.5em) {
