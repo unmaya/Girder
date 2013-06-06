@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////// */
-/*   Site and demo-page styles combined  //////// */
-/*   https://github.com/unmaya/Girder   //////// */
-/* //////////////////////////////////////////// */
-
 @charset "UTF-8";
 
 ////////////////////////////////
 // Import the required partials
 // Used by the demo, not Guirder
+
+// Girder CSS grid modules
+// Align $em-base with $base-font-size
+@import "girder";
 
 // Compass support modules
 @import "compass";
@@ -16,10 +15,6 @@
 // Baseline for Compass Vertical Rhythm
 @import "compass/typography/vertical_rhythm";
 @include establish-baseline;
-
-// Load the Girder css grid modules
-// Load first to align $em-base with $base-font-size
-@import "girder";
 
 // Site Styling Variables
 $body-bg             : #ffffff;
@@ -55,6 +50,11 @@ $girder-font-family   : lato, source-sans-pro, "Helvetica", sans-serif;
 // @import "../components/normalize.scss/normalize";
 @import "normalize";
 
+
+/* /////////////////////////////////////////////// */
+/*   Site and demo-page styles combined  //////// */
+/*   https://github.com/unmaya/Girder   //////// */
+/* //////////////////////////////////////////// */
 
 ////////////////////////////////
 // Theme Styles For Reference
