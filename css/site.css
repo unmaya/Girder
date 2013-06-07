@@ -45,11 +45,6 @@
 .row .example-gl {
   width: 61.7283%;
 }
-.row .example-whole {
-  width: 100%;
-  padding: 0.625em 0;
-  padding-right: 1.25em;
-}
 .row:after {
   clear: both;
 }
@@ -538,13 +533,7 @@ footer a {
   text-transform: uppercase;
 }
 
-@media (min-width: 10em) and (max-width: 35.5em) {
-  .example-whole {
-    padding-right: 0 !important;
-  }
-}
-
-.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre, .example-34 pre {
+.example-gl pre, .example-gs pre, .example-half pre, .example-quarter pre, .example-34 pre {
   text-align: center;
   font-size: .6em;
   border-radius: 3px;
@@ -561,7 +550,7 @@ footer a {
   transition: all 0.3s ease-in;
   text-shadow: 0 1px 0 #daf7fe;
 }
-.example-gl pre:hover, .example-gs pre:hover, .example-half pre:hover, .example-whole pre:hover, .example-quarter pre:hover, .example-34 pre:hover {
+.example-gl pre:hover, .example-gs pre:hover, .example-half pre:hover, .example-quarter pre:hover, .example-34 pre:hover {
   background: #72cee7;
   border-color: #23abd0;
 }
