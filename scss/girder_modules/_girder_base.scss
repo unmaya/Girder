@@ -12,6 +12,7 @@
 // Set up the container and alignment row width
 .container, .row {
 	margin: $container-margins;
+	// TODO: Add a check for 'auto' value here
 	max-width: $container-width;
 }
 
@@ -28,6 +29,9 @@
 	@if $addgutters == false {
 		padding-left: 0 !important;
 		padding-right: 0 !important;
+		.row &:first-of-type {
+			padding-left: 0 !important;
+		}
 	}
 
 	@if $width == 'half' {
@@ -90,18 +94,17 @@
 		padding: $gutters / 2;
 
 		// This ensures the outer gutters are equal to the (doubled) inner gutters.
-		// Considering moving this gutter value to the parent .row
+		// Moving this gutter value to the parent .row (swapable to not use margins)
 		// &:first-of-type {padding-left: $gutters;}
 		// &:last-child {padding-right: $gutters;}
 
-		// Try handling nested outer gutters here (Deprecated for neg margin)
+		// Handling nested outer gutters here (Deprecated for neg margin)
 		// Use first of type for rows that start with headings etc.
 		// .row &:first-of-type {padding-left: 0;}
 		// .row &:last-child {padding-right: 0;}
 
 		// Lets use neg. margin to keep third+ units equal!
 		.row &:first-of-type {margin-left: -$gutters /2;}
-		.row &:last-child {margin-right: -$gutters /2;}
 
 		// Add a .no-gutters class to a unit to remove gutters (experimental)
 		@if $html-classes == true {
@@ -109,6 +112,8 @@
 				padding-left: 0;
 				padding-right: 0;
 			}
+			// Experimental
+			&:first-of-type {margin-left: -$gutters /2;}
 		}
 	}
 
@@ -153,12 +158,13 @@
 		line-height: 0;
 	}
 
-	// Lets add outer gutters to rows
+	// Lets add outer gutters to top level row
 	padding-right: $gutters;
 	padding-left: $gutters;
 	// but remove them when nested or specified
-	&.no-gutters, .row, .row .row {padding-left: 0; padding-right: 0;}
+	&.no-gutters, .row, .row .row  {padding-left: 0; padding-right: 0;}
 }
+
 
 // Only include these classes if the option exists
 @if $html-classes == true {
@@ -186,7 +192,7 @@
 }
 
 
-// Test some push functionality (experimental)
+// Push units in eights including gutters (experimental)
 $gutterpercent: $gutters * 7 * $em-base / 100;
 // We'll use the ol' positioning trick for now
 .push-one, .push-two, .push-three, .push-four {

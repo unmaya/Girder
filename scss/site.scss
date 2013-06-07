@@ -85,7 +85,8 @@ a {
 	// This is one of two units inside a .no-gutters row
 	padding-left: $gutters * 2 !important;
 	padding-right: $gutters * 2 !important;
-	overflow: auto;
+	// bad scrollbar is bad
+	// overflow: auto;
 
 	@include respond-to('turn single column') {
 		height: auto;
