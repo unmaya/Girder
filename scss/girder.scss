@@ -1,5 +1,5 @@
 /* /////////////////////////////////////////////// */
-/*   Guirder is a Sassy grid toolkit    ////////// */
+/*   Girder is a Sassy grid toolkit    ////////// */
 /*   Simple, Responsive & Semantic     ////////// */
 /*   https://github.com/unmaya/Girder ////////// */
 /* //////////////////////////////////////////// */
@@ -15,12 +15,12 @@ $em-base             : 16px;
 
 // Include HTML presentational classes? (Makes your CSS file larger)
 // Set this to true to use .unit .two-thirds classes in html elements
-$html-classes        : true;
+$html-classes        : false;
 
 // Gutter width is split into each side of a unit (except for outer units in a row)
 $gutters             : emCalc(20px);
-// Set a fixed width for our wraping container or keep it fluid by setting it to auto
-$container-width     : auto;
+// Set a fixed width for our wraping container or keep it fluid by setting it to none
+$container-width     : none;
 $container-margins   : 0 auto;
 
 // Lets pass Pixels and Get ems in return
@@ -40,3 +40,6 @@ $xlarge-breakpoint : emCalc(940px);
 @import "girder_modules/girder_responsive";
 
 
+/* /////////////////////////////////////////////// */
+/*   Girder CSS Ends Here - Extras +   ////////// */
+/* //////////////////////////////////////////// */

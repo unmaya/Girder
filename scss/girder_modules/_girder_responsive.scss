@@ -13,6 +13,11 @@ $breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq')
 		padding-left: 0;
 		padding-right: 0;
 		width: 100%;
+
+		// Reset push for small viewports
+		left: 0;
+		// Reset neg margin for nested grids
+		margin-left: inherit !important;
 	}
 }
 

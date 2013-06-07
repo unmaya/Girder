@@ -1,7 +1,20 @@
-//////////////////////////////
-// Site and demo page styles
-// (not required by Girder)
 @charset "UTF-8";
+
+////////////////////////////////
+// Import the required partials
+// Used by the demo, not Guirder
+
+// Girder CSS grid modules
+// Align $em-base with $base-font-size
+@import "girder";
+
+// Compass support modules
+@import "compass";
+@import "compass/support";
+
+// Baseline for Compass Vertical Rhythm
+@import "compass/typography/vertical_rhythm";
+@include establish-baseline;
 
 // Site Styling Variables
 $body-bg             : #ffffff;
@@ -12,7 +25,7 @@ $lightText			     : lighten($base-font-color, 45%);
 
 // Normalize and Typography Variables
 // Matching Girder's em-base for consistency
-$base-font-size: 16px !default; // Override default set in Compass' Vertical Rhythm partial.
+$base-font-size: $em-base !default; // Override default set in Compass' Vertical Rhythm partial.
 
 // The base line height determines the basic unit of vertical rhythm.
 // $base-line-height: 24px; // Override default set in Compass' Vertical Rhythm partial.
@@ -33,25 +46,15 @@ $headings-font        : source-sans-pro, "Helvetica Neue", "Helvetica", sans-ser
 $base-font-family     : source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
 $girder-font-family   : lato, source-sans-pro, "Helvetica", sans-serif;
 
-////////////////////////////////
-// Import the required partials
-// Used by the demo, not Guirder
-
-// Compass support modules
-@import "compass";
-@import "compass/support";
-
 // Normalize this thing
 // @import "../components/normalize.scss/normalize";
 @import "normalize";
 
-// Baseline for Compass Vertical Rhythm
-@import "compass/typography/vertical_rhythm";
-@include establish-baseline;
 
-// Load the Girder modules
-@import "girder";
-
+/* /////////////////////////////////////////////// */
+/*   Site and demo-page styles combined  //////// */
+/*   https://github.com/unmaya/Girder   //////// */
+/* //////////////////////////////////////////// */
 
 ////////////////////////////////
 // Theme Styles For Reference
@@ -61,6 +64,7 @@ body {
 	background: $body-bg;
 	color: $base-font-color;
 	font-family: $base-font-family;
+	font-size: $base-font-size;
 	-webkit-font-smoothing: antialiased;
 }
 html, body, .container, .about, .content, .actions {height: 100%;}
@@ -77,8 +81,12 @@ a {
 	@include unit(three-quarters);
 	// Account for actions sidebar
 	margin-right: 25%;
-	// This is extra padding for custom use
-	padding-right: 1.25em !important;
+	// lets add double padding here for small screens
+	// This is one of two units inside a .no-gutters row
+	padding-left: $gutters * 2 !important;
+	padding-right: $gutters * 2 !important;
+	// bad scrollbar is bad
+	// overflow: auto;
 
 	@include respond-to('turn single column') {
 		height: auto;
@@ -102,7 +110,7 @@ a {
 	a:link, a:visited { color: darken($linkColor, 25%);}
 }
 .actions {
-	@include unit(one-quarter, false);
+	@include unit(one-quarter);
 	background: #242526;
 	color: $lightText;
 	position: fixed;
@@ -125,6 +133,10 @@ a {
 
 	a:link, a:visited {
 		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: bold;
+		display: block;
+		margin-bottom: .5em;
 		}
 }
 footer {
@@ -138,10 +150,11 @@ footer {
 .example-gs {@include unit(golden-small);}
 .example-half {@include unit(half);}
 .example-quarter {@include unit(one-quarter);}
-.example-whole {@include unit(whole);}
+.example-34 {@include unit(three-quarters);}
+.example-whole {@include unit();}
 
 // Visualizing Girder units
-.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre {
+.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre, .example-34 pre {
 	@include panel();
 	@include transition(all 0.3s ease-in);
 	text-shadow: 0 1px 0 $linkHoverColor;
