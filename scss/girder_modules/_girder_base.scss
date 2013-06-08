@@ -75,7 +75,7 @@
 	}
 	@else {
 		@extend %whole;
-
+		// TODO: Add check for breakpoint();
 		@include respond-to('turn single column') {
 			padding-right: 0 !important;
 		}
@@ -93,7 +93,7 @@
 		width: 100%;
 		padding: $gutters / 2;
 
-		// This ensures the outer gutters are equal to the (doubled) inner gutters.
+		// Ensures outer gutters are equal to (doubled) inner gutters.
 		// Moving this gutter value to the parent .row (swapable to not use margins)
 		// &:first-of-type {padding-left: $gutters;}
 		// &:last-child {padding-right: $gutters;}
@@ -103,8 +103,10 @@
 		// .row &:first-of-type {padding-left: 0;}
 		// .row &:last-child {padding-right: 0;}
 
-		// Lets use neg. margin to keep third+ units equal!
+		// Lets use neg. margin to push things left
+		// When first & last have zeroed gutters this keeps third+ units equal!
 		.row &:first-of-type {margin-left: -$gutters /2;}
+
 
 		// Add a .no-gutters class to a unit to remove gutters (experimental)
 		@if $html-classes == true {

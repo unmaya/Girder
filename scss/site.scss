@@ -81,15 +81,16 @@ a {
 	@include unit(three-quarters);
 	// Account for actions sidebar
 	margin-right: 25%;
-	// lets add double padding here for small screens
-	// This is one of two units inside a .no-gutters row
-	padding-left: $gutters * 2 !important;
+	// double padding in small screens while inside .no-gutters
+	// exact center with neg. margin is messy. A compromise.
+	padding-left: $gutters * 2 + 1 !important;
 	padding-right: $gutters * 2 !important;
 	// bad scrollbar is bad
 	// overflow: auto;
 
 	@include respond-to('turn single column') {
 		height: auto;
+		padding-left: $gutters * 2 !important;
 	}
 	> * {
 		max-width: $small-breakpoint;

@@ -464,12 +464,13 @@ a:hover, a:active {
 
 .content {
   margin-right: 25%;
-  padding-left: 2.5em !important;
+  padding-left: 3.5em !important;
   padding-right: 2.5em !important;
 }
 @media (min-width: 10em) and (max-width: 35.5em) {
   .content {
     height: auto;
+    padding-left: 2.5em !important;
   }
 }
 .content > * {
