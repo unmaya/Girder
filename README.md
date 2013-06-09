@@ -1,7 +1,7 @@
 Girder 0.2.0 (Alpha) [demo](http://unmaya.github.io/Girder/)
 ====================
 
-A simple grid toolkit built on Sass. Its a minimalist solution designed to be responsive and semantic. It includes some utilities to build prototypes quickly and I use it for smaller projects and as a kickstarter template.
+A simple CSS grid toolkit built on Sass. Its a minimalist solution designed to be responsive and semantic. It includes some utilities to build prototypes quickly and I use it for smaller projects and as a kickstarter template.
 
 ---
 
