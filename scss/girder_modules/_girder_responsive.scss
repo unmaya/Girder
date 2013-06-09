@@ -1,23 +1,32 @@
 //////////////////////////////
 // Breakpoints and responsiveness
 
-@import "breakpoint";
 $breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq'),
 							'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
 							'medium and up' $medium-breakpoint,
 							'larger screens' $large-breakpoint,
 							'extra large screens' $xlarge-breakpoint;
 
-.row %unit {
-	@include respond-to('turn single column') {
-		padding-left: 0;
-		padding-right: 0;
-		width: 100%;
 
-		// Reset push for small viewports
-		left: 0;
-		// Reset neg margin for nested grids
-		margin-left: inherit !important;
+@include respond-to('turn single column') {
+	.row {
+		// Clear for small screens
+		&.equal-units {
+			> :first-of-type {padding-left: 0 !important;}
+			> :last-child {padding-right: 0 !important;}
+		}
+
+		// All units can go full-width here
+		%unit {
+			padding-left: 0;
+			padding-right: 0;
+			width: 100%;
+
+			// Reset push for small viewports
+			left: 0;
+			// Reset neg margin for nested grids
+			margin-left: inherit !important;
+		}
 	}
 }
 

@@ -15,24 +15,21 @@
 }
 
 .row {
-  display: block;
   clear: both;
-  *zoom: 1;
+  display: block;
   padding-right: 1.25em;
   padding-left: 1.25em;
+  *zoom: 1;
 }
-.row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
+.row .example-half, .row .actions, .row .example-fourth, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
   float: left;
-  width: 100%;
   padding: 0.625em;
-}
-.row .row .example-half:first-of-type, .row .row .actions:first-of-type, .row .row .example-quarter:first-of-type, .row .row .content:first-of-type, .row .row .example-34:first-of-type, .row .row .example-gs:first-of-type, .row .row .example-gl:first-of-type {
-  margin-left: -0.625em;
+  width: 100%;
 }
 .row .example-half {
   width: 50%;
 }
-.row .actions, .row .example-quarter {
+.row .actions, .row .example-fourth {
   width: 25%;
 }
 .row .content, .row .example-34 {
@@ -55,6 +52,18 @@
 .row.no-gutters, .row .row, .row .row .row {
   padding-left: 0;
   padding-right: 0;
+}
+.row .row > :first-of-type {
+  padding-left: 0;
+}
+.row .row > :last-child {
+  padding-right: 0;
+}
+.row.equal-units > :first-of-type {
+  padding-left: 0.625em !important;
+}
+.row.equal-units > :last-child {
+  padding-right: 0.625em !important;
 }
 
 .push-one, .push-two, .push-three, .push-four {
@@ -82,7 +91,13 @@
 }
 
 @media (min-width: 10em) and (max-width: 35.5em) {
-  .row .example-half, .row .actions, .row .example-quarter, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
+  .row.equal-units > :first-of-type {
+    padding-left: 0 !important;
+  }
+  .row.equal-units > :last-child {
+    padding-right: 0 !important;
+  }
+  .row .example-half, .row .actions, .row .example-fourth, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
     padding-left: 0;
     padding-right: 0;
     width: 100%;
@@ -90,7 +105,6 @@
     margin-left: inherit !important;
   }
 }
-
 .center-small {
   text-align: center;
 }
@@ -533,7 +547,7 @@ footer a {
   text-transform: uppercase;
 }
 
-.example-gl pre, .example-gs pre, .example-half pre, .example-quarter pre, .example-34 pre {
+.example-gl pre, .example-gs pre, .example-half pre, .example-fourth pre, .example-34 pre {
   text-align: center;
   font-size: .6em;
   border-radius: 3px;
@@ -550,7 +564,7 @@ footer a {
   transition: all 0.3s ease-in;
   text-shadow: 0 1px 0 #daf7fe;
 }
-.example-gl pre:hover, .example-gs pre:hover, .example-half pre:hover, .example-quarter pre:hover, .example-34 pre:hover {
+.example-gl pre:hover, .example-gs pre:hover, .example-half pre:hover, .example-fourth pre:hover, .example-34 pre:hover {
   background: #72cee7;
   border-color: #23abd0;
 }

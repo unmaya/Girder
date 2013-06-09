@@ -29,8 +29,10 @@ $small-breakpoint  : emCalc(568px); // Expand small from usual 490px
 $medium-breakpoint : emCalc(640px); // 40em
 $large-breakpoint  : emCalc(790px);
 $xlarge-breakpoint : emCalc(940px);
+
 // Todo: add checks for this var
 $use-breakpoint    : true;
+@import "breakpoint";
 
 // Base grid for girder
 @import "girder_modules/girder_base";

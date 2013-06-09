@@ -16,14 +16,9 @@
 	max-width: $container-width;
 }
 
-// Test Mixin for unit widths (Might change to func to use return values later)
+// Mixin for unit widths (Might change to func to use return values later)
+// TODO: Optimize if statement with a list and a for loop
 @mixin unit($width:whole, $addgutters:true) {
-
-	// Reduce verbosity and simplify by moving this to the extended placeholder
-	// @if $nested == true {
-	// 	&:first-child {padding-left: 0 !important; padding-top: 0;}
-	// 	&:last-child {padding-right: 0 !important; padding-top: 0;}
-	// }
 
 	// Handle the no-gutter case but its not pretty, looking for better options
 	@if $addgutters == false {
@@ -43,11 +38,11 @@
 	@else if $width == 'two-thirds' {
 		@extend %two-thirds;
 	}
-	@else if $width == 'one-quarter' {
-		@extend %one-quarter;
+	@else if $width == 'one-fourth' {
+		@extend %one-fourth;
 	}
-	@else if $width == 'three-quarters' {
-		@extend %three-quarters;
+	@else if $width == 'three-fourths' {
+		@extend %three-fourths;
 	}
 	@else if $width == 'one-fifth' {
 		@extend %one-fifth;
@@ -84,17 +79,16 @@
 
 // Flexible grid units using percentages
 .row {
-	display: block;
 	clear: both;
-	*zoom: 1;
+	display: block;
 
 	%unit {
 		float: left;
-		width: 100%;
 		padding: $gutters / 2;
+		width: 100%;
 
 		// Ensures outer gutters are equal to (doubled) inner gutters.
-		// Moving this gutter value to the parent .row (swapable to not use margins)
+		// Moved this gutter to the parent .row
 		// &:first-of-type {padding-left: $gutters;}
 		// &:last-child {padding-right: $gutters;}
 
@@ -103,10 +97,9 @@
 		// .row &:first-of-type {padding-left: 0;}
 		// .row &:last-child {padding-right: 0;}
 
-		// Lets use neg. margin to push things left
+		// Lets use neg. margin to push things left (moved out to .row css level)
 		// When first & last have zeroed gutters this keeps third+ units equal!
-		.row &:first-of-type {margin-left: -$gutters /2;}
-
+		// .row &:first-of-type {margin-left: -$gutters /2;}
 
 		// Add a .no-gutters class to a unit to remove gutters (experimental)
 		@if $html-classes == true {
@@ -125,9 +118,9 @@
 		@extend %unit; }
 	%two-thirds     { width: 66.6665%;
 		@extend %unit; }
-	%one-quarter    { width: 25%;
+	%one-fourth    { width: 25%;
 		@extend %unit; }
-	%three-quarters { width: 75%;
+	%three-fourths { width: 75%;
 		@extend %unit; }
 	%one-fifth      { width: 20%;
 		@extend %unit; }
@@ -165,13 +158,26 @@
 	padding-left: $gutters;
 	// but remove them when nested or specified
 	&.no-gutters, .row, .row .row  {padding-left: 0; padding-right: 0;}
+
+	// test removing nested outer gutters at css level
+	.row > :first-of-type {padding-left: 0;}
+	.row > :last-child {padding-right: 0;}
+
+	// Add an option to add outer gutters back in to keep third+ units even
+	&.equal-units {
+		> :first-of-type {padding-left: $gutters / 2 !important;}
+		> :last-child {padding-right: $gutters / 2 !important;}
+	}
+
+	// .row clearing haxor
+	*zoom: 1;
 }
 
 
 // Only include these classes if the option exists
 @if $html-classes == true {
 
-	$units: (whole 100%), (half 50%), (one-third 33.3332%), (two-thirds 66.6665%), (one-quarter 25%), (three-quarters 75%), (one-fifth 20%), (two-fifths 40%), (three-fifths 60%), (four-fifths 80%), (golden-small 38.2716%), (golden-large 61.7283%);
+	$units: (whole 100%), (half 50%), (one-third 33.3332%), (two-thirds 66.6665%), (one-fourth 25%), (three-fourths 75%), (one-fifth 20%), (two-fifths 40%), (three-fifths 60%), (four-fifths 80%), (golden-small 38.2716%), (golden-large 61.7283%);
 
 	@each $unit in $units {
 	  .#{nth($unit, 1)} {
@@ -182,8 +188,8 @@
 
 	.unit {
 		float: left;
-		width: 100%;
 		padding: $gutters / 2;
+		width: 100%;
 
 		&:first-of-type {padding-left: $gutters;}
 		&:last-child {padding-right: $gutters;}
