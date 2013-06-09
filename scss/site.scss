@@ -23,6 +23,7 @@ $base-font-color     : #333333;
 $linkColor	         : #72CEE7;
 $linkHoverColor      : saturate(lighten($linkColor, 25%), 25%);
 $lightText			     : lighten($base-font-color, 45%);
+$highlightColor      : #fffac0;
 
 // Normalize and Typography Variables
 // Matching Girder's em-base for consistency
@@ -78,6 +79,7 @@ a {
 
 // Expressed CSS Classes
 // For Debugging Purposes
+.about {@extend .no-gutters;}
 .content {
 	@include unit(three-fourths);
 	// Account for actions sidebar
@@ -94,7 +96,10 @@ a {
 		padding-left: $gutters * 2 !important;
 	}
 	> * {
-		max-width: $small-breakpoint;
+		// constrain content to small-breakpoint width, fallback to pixels
+		max-width: strip-unit($small-breakpoint) / 100 * $base-font-size * 100;
+		// replace em for rem
+		max-width: strip-unit($small-breakpoint) + rem;
 		margin-left: auto; margin-right: auto;
 		}
 
@@ -153,11 +158,25 @@ footer {
 .example-half {@include unit(half);}
 .example-fourth {@include unit(one-fourth);}
 .example-34 {@include unit(three-fourths);}
+.equal-units {background: $highlightColor;}
 
 // Visualizing Girder units
 .example-gl pre, .example-gs pre, .example-half pre, .example-fourth pre, .example-34 pre {
 	@include panel();
 	@include transition(all 0.3s ease-in);
+	overflow: hidden;
 	text-shadow: 0 1px 0 $linkHoverColor;
 	&:hover {background: $linkColor; border-color: darken($linkColor, 20%);}
+}
+
+// Example response to larger screens
+@include respond-to('larger screens') {
+	.content pre {
+		font-size: 13px;
+		font-size: .75rem;
+	}
+	p {
+		@include adjust-font-size-to(1.125rem);
+		@include adjust-leading-to(1.1, 18px);
+	}
 }
