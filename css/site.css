@@ -533,7 +533,6 @@ a:hover, a:active {
 .actions a:link, .actions a:visited {
   text-decoration: none;
   display: block;
-  margin-bottom: .5em;
 }
 .actions a:link.download, .actions a:visited.download {
   -webkit-box-shadow: #333333 0 1px 0;
@@ -542,17 +541,21 @@ a:hover, a:active {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  color: white;
+  text-shadow: #23abd0;
   width: 7.5em;
-  margin: 0 auto .4em auto;
+  margin: 0 auto .8em auto;
   padding: 0.3125em 0.625em;
-  background: #090909;
-  font-weight: bold;
+  background: #23abd0;
   line-height: 1.6em;
   text-transform: uppercase;
   font-weight: bold;
 }
+.actions a:link.download:hover, .actions a:visited.download:hover {
+  background: #72cee7;
+}
 .actions a:link:hover, .actions a:visited:hover {
-  color: #fffac0;
+  color: #daf7fe;
 }
 
 footer {
@@ -596,6 +599,7 @@ footer a {
   .content pre {
     font-size: 13px;
     font-size: .75rem;
+    line-height: .8rem;
   }
 
   p {

@@ -3,7 +3,7 @@
 ////////////////////////////////
 // Import the required partials
 // Styles for an example site using Guirder
-// You can use this as a boilerplate to get started
+// You can use this as a boilerplate to get started with Girder
 
 // Girder CSS grid modules
 // Align $em-base with $base-font-size
@@ -141,22 +141,24 @@ a {
 	a:link, a:visited {
 		text-decoration: none;
 		display: block;
-		margin-bottom: .5em;
 
 		&.download {
 			@include box-shadow(#333 0 1px 0);
 			@include border-radius(4px);
+			color: $body-bg;
+			text-shadow: darken($linkColor, 20%);
 			width: emCalc(120px);
-			margin: 0 auto .4em auto;
+			margin: 0 auto .8em auto;
 			padding: emCalc(5px) emCalc(10px);
-			background: #090909;
-			font-weight: bold;
+			background: darken($linkColor, 20%);
+
 			line-height: 1.6em;
 			text-transform: uppercase;
 			font-weight: bold;
+			&:hover {background: $linkColor;}
 		}
 
-		&:hover { color: $highlightColor; }
+		&:hover {color: $linkHoverColor;}
 	}
 }
 footer {
@@ -187,6 +189,7 @@ footer {
 	.content pre {
 		font-size: 13px;
 		font-size: .75rem;
+		line-height: .8rem;
 	}
 	p {
 		@include adjust-font-size-to(1.125rem);
