@@ -2,7 +2,8 @@
 
 ////////////////////////////////
 // Import the required partials
-// Used by the demo, not Guirder
+// Styles for an example site using Guirder
+// You can use this as a boilerplate to get started with Girder
 
 // Girder CSS grid modules
 // Align $em-base with $base-font-size
@@ -22,6 +23,7 @@ $base-font-color     : #333333;
 $linkColor	         : #72CEE7;
 $linkHoverColor      : saturate(lighten($linkColor, 25%), 25%);
 $lightText			     : lighten($base-font-color, 45%);
+$highlightColor      : #fffac0;
 
 // Normalize and Typography Variables
 // Matching Girder's em-base for consistency
@@ -77,22 +79,27 @@ a {
 
 // Expressed CSS Classes
 // For Debugging Purposes
+.about {@extend .no-gutters;}
 .content {
-	@include unit(three-quarters);
+	@include unit(three-fourths);
 	// Account for actions sidebar
 	margin-right: 25%;
-	// lets add double padding here for small screens
-	// This is one of two units inside a .no-gutters row
-	padding-left: $gutters * 2 !important;
+	// double padding in small screens while inside .no-gutters
+	// exact center with neg. margin is messy. A compromise.
+	padding-left: $gutters * 2 + 1 !important;
 	padding-right: $gutters * 2 !important;
 	// bad scrollbar is bad
 	// overflow: auto;
 
 	@include respond-to('turn single column') {
 		height: auto;
+		padding-left: $gutters * 2 !important;
 	}
 	> * {
-		max-width: $small-breakpoint;
+		// constrain content to small-breakpoint width, fallback to pixels
+		max-width: strip-unit($small-breakpoint) / 100 * $base-font-size * 100;
+		// replace em for rem
+		max-width: strip-unit($small-breakpoint) + rem;
 		margin-left: auto; margin-right: auto;
 		}
 
@@ -110,7 +117,7 @@ a {
 	a:link, a:visited { color: darken($linkColor, 25%);}
 }
 .actions {
-	@include unit(one-quarter);
+	@include unit(one-fourth);
 	background: #242526;
 	color: $lightText;
 	position: fixed;
@@ -133,11 +140,26 @@ a {
 
 	a:link, a:visited {
 		text-decoration: none;
-		text-transform: uppercase;
-		font-weight: bold;
 		display: block;
-		margin-bottom: .5em;
+
+		&.download {
+			@include box-shadow(#333 0 1px 0);
+			@include border-radius(4px);
+			color: $body-bg;
+			text-shadow: darken($linkColor, 20%);
+			width: emCalc(120px);
+			margin: 0 auto .8em auto;
+			padding: emCalc(5px) emCalc(10px);
+			background: darken($linkColor, 20%);
+
+			line-height: 1.6em;
+			text-transform: uppercase;
+			font-weight: bold;
+			&:hover {background: $linkColor;}
 		}
+
+		&:hover {color: $linkHoverColor;}
+	}
 }
 footer {
 	padding: 2em 0;
@@ -149,14 +171,28 @@ footer {
 .example-gl {@include unit(golden-large);}
 .example-gs {@include unit(golden-small);}
 .example-half {@include unit(half);}
-.example-quarter {@include unit(one-quarter);}
-.example-34 {@include unit(three-quarters);}
-.example-whole {@include unit();}
+.example-fourth {@include unit(one-fourth);}
+.example-34 {@include unit(three-fourths);}
+.equal-units {background: $highlightColor;}
 
 // Visualizing Girder units
-.example-gl pre, .example-gs pre, .example-half pre, .example-whole pre, .example-quarter pre, .example-34 pre {
+.example-gl pre, .example-gs pre, .example-half pre, .example-fourth pre, .example-34 pre {
 	@include panel();
 	@include transition(all 0.3s ease-in);
+	overflow: hidden;
 	text-shadow: 0 1px 0 $linkHoverColor;
 	&:hover {background: $linkColor; border-color: darken($linkColor, 20%);}
+}
+
+// Example response to larger screens
+@include respond-to('larger screens') {
+	.content pre {
+		font-size: 13px;
+		font-size: .75rem;
+		line-height: .8rem;
+	}
+	p {
+		@include adjust-font-size-to(1.125rem);
+		@include adjust-leading-to(1.1, 18px);
+	}
 }

@@ -1,4 +1,4 @@
-/* /////////////////////////////////////////////// */
+/////////////////////////////////////////////// */
 /*   Girder is a Sassy grid toolkit    ////////// */
 /*   Simple, Responsive & Semantic     ////////// */
 /*   https://github.com/unmaya/Girder ////////// */
@@ -30,6 +30,10 @@ $medium-breakpoint : emCalc(640px); // 40em
 $large-breakpoint  : emCalc(790px);
 $xlarge-breakpoint : emCalc(940px);
 
+// Todo: add checks for this var
+$use-breakpoint    : true;
+@import "breakpoint";
+
 // Base grid for girder
 @import "girder_modules/girder_base";
 
@@ -42,4 +46,4 @@ $xlarge-breakpoint : emCalc(940px);
 
 /* /////////////////////////////////////////////// */
 /*   Girder CSS Ends Here - Extras +   ////////// */
-/* //////////////////////////////////////////// */
+/* ///////////////////////////////////////////// */
