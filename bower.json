@@ -1,8 +1,8 @@
 {
   "name": "girder",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "./scss/girder.scss",
-  "homepage": "http://github.com/unmaya/Girder",
+  "homepage": "http://comfypixel.com/Girder",
   "dependencies": {
     "requirejs": "~2.1.4",
     "requirejs-text": "~2.0.5",
