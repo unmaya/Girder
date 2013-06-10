@@ -140,11 +140,24 @@ a {
 
 	a:link, a:visited {
 		text-decoration: none;
-		text-transform: uppercase;
-		font-weight: bold;
 		display: block;
 		margin-bottom: .5em;
+
+		&.download {
+			@include box-shadow(#333 0 1px 0);
+			@include border-radius(4px);
+			width: emCalc(120px);
+			margin: 0 auto .4em auto;
+			padding: emCalc(5px) emCalc(10px);
+			background: #090909;
+			font-weight: bold;
+			line-height: 1.6em;
+			text-transform: uppercase;
+			font-weight: bold;
 		}
+
+		&:hover { color: $highlightColor; }
+	}
 }
 footer {
 	padding: 2em 0;

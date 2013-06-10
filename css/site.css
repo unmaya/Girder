@@ -532,10 +532,27 @@ a:hover, a:active {
 }
 .actions a:link, .actions a:visited {
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
   display: block;
   margin-bottom: .5em;
+}
+.actions a:link.download, .actions a:visited.download {
+  -webkit-box-shadow: #333333 0 1px 0;
+  -moz-box-shadow: #333333 0 1px 0;
+  box-shadow: #333333 0 1px 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  width: 7.5em;
+  margin: 0 auto .4em auto;
+  padding: 0.3125em 0.625em;
+  background: #090909;
+  font-weight: bold;
+  line-height: 1.6em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.actions a:link:hover, .actions a:visited:hover {
+  color: #fffac0;
 }
 
 footer {
