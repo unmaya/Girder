@@ -10,6 +10,7 @@ css/
 index.html
 Gemfile.lock
 Gruntfile.js
+bower.json
 package.json
 npm-debug.log
 .sass-cache/
