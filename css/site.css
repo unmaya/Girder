@@ -104,6 +104,10 @@
     left: 0;
     margin-left: inherit !important;
   }
+
+  .gee {
+    margin-top: 0 !important;
+  }
 }
 .center-small {
   text-align: center;
@@ -528,7 +532,7 @@ a:hover, a:active {
 .actions ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 1em;
 }
 .actions a:link, .actions a:visited {
   text-decoration: none;
