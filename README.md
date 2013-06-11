@@ -1,4 +1,4 @@
-Girder 0.3.0 (Alpha) [demo](http://unmaya.github.io/Girder/)
+Girder 0.3.0 (Beta) [demo](http://comfypixel.com/Girder/)
 ====================
 
 A simple CSS grid toolkit built on Sass. Its flexible, semantic, responsive and minimalistic. It includes some utilities to build prototypes quickly so I use it for smaller projects and as a kickstarter template.
