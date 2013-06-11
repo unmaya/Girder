@@ -163,7 +163,7 @@
 	.row > :first-of-type {padding-left: 0;}
 	.row > :last-child {padding-right: 0;}
 
-	// Add an option to add outer gutters back in to keep third+ units even
+	// Option to add outer gutters back in to keep third+ units even
 	&.equal-units {
 		> :first-of-type {padding-left: $gutters / 2 !important;}
 		> :last-child {padding-right: $gutters / 2 !important;}

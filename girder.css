@@ -1,13 +1,13 @@
 @charset "UTF-8";
-/* /////////////////////////////////////////////// */
-/*   Guirder is a Sassy grid toolkit    ////////// */
-/*   Simple, Responsive & Semantic     ////////// */
-/*   https://github.com/unmaya/Girder ////////// */
+/* //////////////////////////////////////////////// */
+/*    Guirder is a simple grid toolkit   ///////// */
+/*    Simple, Responsive & Semantic     ///////// */
+/*    http://comfypixel.com/Girder     ///////// */
 /* //////////////////////////////////////////// */
 
 /* This is the CSS version of Girder which was designed for use with Scss.
-In this form it requires presentational classes be added to the HTML which
-is what I wanted to avoid by building it with Sass / Scss. */
+In this form it requires presentational classes in the HTML which is
+exactly what I wanted to avoid by building it with Sass / Scss. */
 
 /* Include a broad amount of border-box on everything and profit. */
 /* Override for special cases within selectors */
@@ -34,6 +34,10 @@ html {font-size: 16px;}
   display: block;
   clear: both;
   *zoom: 1;
+
+  /* Lets add outer gutters to top level row */
+  padding-left: 1.25em;
+  padding-right: 1.25em;
 }
 .row:after {clear: both;}
 .row:before, .row:after {
@@ -47,15 +51,29 @@ html {font-size: 16px;}
   float: left;
   width: 100%;
   padding: 0.625em;
+  /* 0.625em = 10px with a 16px base font */
 }
-.row .unit:first-of-type {padding-left: 1.25em;}
-.row .unit:last-child {padding-right: 1.25em;}
+
+/* remove gutter when nested or specified */
+.row.no-gutters, .row, .row .row  {padding-left: 0; padding-right: 0;}
+
+/* remove nested outer gutters */
+.row > :first-of-type {padding-left: 0;}
+.row > :last-child {padding-right: 0;}
+
+/* Option to add them back in to keep third+ units equal */
+.row.equal-units > :first-of-type  {padding-left: 0.625em !important;}
+.row.equal-units > :last-child {padding-right: 0.625em !important;}
+
 
 /* Lets remove the padding - gutter for nested units */
-.row .unit:first-of-type {padding-left: 0;}
-.row .unit:last-child {padding-right: 0;}
+/* We can also remove just left or right gutter with .alpha .omega */
+.row .unit:first-of-type,
+.alpha {padding-left: 0;}
+.row .unit:last-child,
+.omega {padding-right: 0;}
 
-/* The unit classes are named based on how a row can be divided 1 - 6 parts */
+/* Units are named based on how a row can be divided 1 - 6 parts */
 .whole {width: 100%;}
 .half, .two-quarters {width: 50%;}
 .one-third, .two-sixths {width: 33.3332%;}
@@ -71,14 +89,10 @@ html {font-size: 16px;}
 .golden-small {width: 38.2716%;}
 .golden-large {width: 61.7283%;}
 
-/* Remove padding - gutter for all units inside a row or for a specific unit */
+/* Remove padding (gutter) for units inside a row or for a specific unit */
 .row.no-gutters .unit, .unit.no-gutters {padding: 0;}
 
-/* We can also remove just left or right padding - gutter by using alpha omega */
-.alpha {padding-left: 0;}
-.omega {padding-right: 0;}
-
-/* Your standard presentational clearing class. Yuck! Seriously, try Sass. */
+/* Your standard presentational clearing class. Boo! Seriously, try Sass. */
 .clear {
   clear: both;
   display: block;
@@ -88,7 +102,7 @@ html {font-size: 16px;}
   height: 0;
 }
 
-/* Utility classes to align text and float / hide elements */
+/* Utility classes to align text and float / hide elements (optional) */
 .left {
   float: left;
   margin-right: .8em;
@@ -101,16 +115,28 @@ html {font-size: 16px;}
   display: none !important;
   visibility: hidden;
 }
-.text-left {text-align: left !important;}
-.text-right {text-align: right !important;}
-.text-center {text-align: center !important;}
-.text-justify {text-align: justify !important;}
 
 /* Small classes will only apply to viewports below 35.5em or 568px (with a 16px base) */
 .center-small {text-align: center;}
 .hide-small {display: none;}
 
 @media (min-width: 35.5em) {
-.hide-small {display: block;}
-.center-small {text-align: inherit;}
+  .hide-small {display: block;}
+  .center-small {text-align: inherit;}
+}
+
+@media (min-width: 10em) and (max-width: 35.5em) {
+  .row.equal-units > :first-of-type {padding-left: 0;}
+  .row.equal-units > :last-child {padding-right: 0;}
+
+   /* All units can go full-width here */
+  .unit {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+
+    left: 0;
+    /* Reset neg margin for nested grids */
+    margin-left: inherit;
+  }
 }
