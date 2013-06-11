@@ -43,11 +43,12 @@ main.content {
 	**/girder_modules/**
 
 3. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
-```scss @include unit(three-fourths); ```
-```scss @include unit(one-third); ```
-```scss @include unit(two-fifths); ```
+``` @include unit(three-fourths); ```
+``` @include unit(one-third); ```
+``` @include unit(two-fifths); ```
 
-4. **Optional** Girder is made to be responsive and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you include the module by uncommenting this line in the Girder settings file:
+4. **Optional** Girder is made to be responsive and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by uncommenting these lines in the Girder settings file:
+```@import "breakpoint";```
 ```@import "girder_modules/girder_responsive";```
 
 Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units and use sophisticated breakpoint plugins to make Girder fully responsive. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download all the files to see exactly how it works.
