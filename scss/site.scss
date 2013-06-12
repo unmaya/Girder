@@ -155,7 +155,7 @@ a {
 			line-height: 1.6em;
 			text-transform: uppercase;
 			font-weight: bold;
-			&:hover {background: $linkColor;}
+			&:hover {background: darken($linkColor, 30%);}
 		}
 
 		&:hover {color: $linkHoverColor;}

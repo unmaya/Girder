@@ -556,7 +556,7 @@ a:hover, a:active {
   font-weight: bold;
 }
 .actions a:link.download:hover, .actions a:visited.download:hover {
-  background: #72cee7;
+  background: #1c87a4;
 }
 .actions a:link:hover, .actions a:visited:hover {
   color: #daf7fe;
