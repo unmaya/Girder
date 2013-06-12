@@ -36,19 +36,21 @@ main.content {
 
 # Installation / Requirements
 1. Copy the Sass folder from this Repo. or [Download all the files](http://comfypixel.com/Girder/girder_package_v03.zip). You only need two things, the main Girder settings file and the modules folder (everything else is optional):
+
 	**girder.scss**
 
 	**/girder_modules/**
 
 2. Unless you're using the plain CSS version be sure the Compass Gem is installed which includes Sass, if you're not sure issue this command in the console: ```sudo gem install compass```
 3. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
-``` @include unit(three-fourths); ```
 
-``` @include unit(one-third); ```
+	``` @include unit(three-fourths); ```
 
-``` @include unit(two-fifths); ```
+	``` @include unit(one-third); ```
 
-``` footer { @include clearfix; } ```
+	``` @include unit(two-fifths); ```
+
+	``` footer { @include clearfix; } ```
 
 **For plain CSS** you just add the classes to the markup like this:
 ```HTML
@@ -63,8 +65,9 @@ main.content {
 
 ## Optional
 Girder is made with responsive design in mind and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by uncommenting these lines in the Girder settings file:
-```@import "breakpoint";```
 
-```@import "girder_modules/girder_responsive";```
+	```@import "breakpoint";```
+
+	```@import "girder_modules/girder_responsive";```
 
 Girder is built to take advantage of Sass but I'm also making a plain CSS version of the grid for other uses. The CSS version however, will rely on presentational classes to structure the markup (which is exactly what I'm looking to avoid here).
