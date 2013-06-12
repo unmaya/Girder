@@ -35,19 +35,28 @@ main.content {
 ```
 
 # Installation / Requirements
-1. Install the Compass Gem which includes Sass: ```sudo gem install compass```
-2. Copy the Sass folder from this Repo or [Download all the files](http://comfypixel.com/Girder/girder_package_v03.zip). You only need two things (everything else is optional):
+1. Copy the Sass folder from this Repo. or [Download all the files](http://comfypixel.com/Girder/girder_package_v03.zip). You only need two things, the main Girder settings file and the modules folder (everything else is optional):
 
 	**girder.scss**
 
 	**/girder_modules/**
 
+2. Unless you're using the plain CSS version be sure the Compass Gem is installed which includes Sass: ```sudo gem install compass```
 3. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
 ``` @include unit(three-fourths); ```
 ``` @include unit(one-third); ```
 ``` @include unit(two-fifths); ```
 
-4. **Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units and use media queries or the sophisticated breakpoint plugin to make Girder fully responsive. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download all the files to see exactly how it works.
+**For plain CSS** you just add the classes to the markup like this:
+```HTML
+<main class="content row">
+	<article class="unit two-thirds"> My main column covers two thirds of the page. </article>
+	<aside class="unit one-third"> This sidebar content occupies one third of the page. </aside>
+	<footer class="clear">Awesome footer</footer>
+</main>
+```
+
+**Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units and use media queries or the sophisticated breakpoint plugin to make Girder fully responsive. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download all the files to see exactly how it works.
 
 ## Optional
 Girder is made with responsive design in mind and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by uncommenting these lines in the Girder settings file:
