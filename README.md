@@ -66,8 +66,9 @@ main.content {
 ## Optional
 Girder is made with responsive design in mind and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by uncommenting these lines in the Girder settings file:
 
-	```@import "breakpoint";```
-
-	```@import "girder_modules/girder_responsive";```
+	``` SASS
+	@import "breakpoint";```
+	@import "girder_modules/girder_responsive";
+	```
 
 Girder is built to take advantage of Sass but I'm also making a plain CSS version of the grid for other uses. The CSS version however, will rely on presentational classes to structure the markup (which is exactly what I'm looking to avoid here).
