@@ -7,7 +7,7 @@ A simple CSS grid toolkit built on Sass. Its flexible, semantic, responsive and 
 ---
 
 # How it works
-Girder is a simple yet versatile grid designed for use in small to medium projects. Its best suited for building with Sass, a fantastic pre-processor but you can also use plain CSS.
+Girder is a simple yet versatile grid designed for small to medium projects. Its best suited for building with Sass, a fantastic pre-processor but you can also use plain CSS. Build flexible layouts divided into logical sections. Girder uses silent classes (placeholders) to structure content in HTML and keeps your Markup free of excess presentational classes like "unit_1of4", "small-2", "grid4".
 
 **Example?**
 You can write your html with semantic classes to target elements in CSS or use the cascade to add structure:
@@ -36,7 +36,7 @@ main.content {
 
 # Installation / Requirements
 1. Install the Compass Gem which includes Sass: ```sudo gem install compass```
-2. Copy the Sass folder from this Repo. You only need two things (everything else is optional):
+2. Copy the Sass folder from this Repo or [Download all the files](http://comfypixel.com/Girder/girder_package_v03.zip). You only need two things (everything else is optional):
 
 	**girder.scss**
 
@@ -47,10 +47,11 @@ main.content {
 ``` @include unit(one-third); ```
 ``` @include unit(two-fifths); ```
 
-4. **Optional** Girder is made to be responsive and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by uncommenting these lines in the Girder settings file:
+4. **Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units and use media queries or the sophisticated breakpoint plugin to make Girder fully responsive. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download all the files to see exactly how it works.
+
+## Optional
+Girder is made with responsive design in mind and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by uncommenting these lines in the Girder settings file:
 ```@import "breakpoint";```
 ```@import "girder_modules/girder_responsive";```
-
-Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units and use sophisticated breakpoint plugins to make Girder fully responsive. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download all the files to see exactly how it works.
 
 Girder is built to take advantage of Sass but I'm also making a plain CSS version of the grid for other uses. The CSS version however, will rely on presentational classes to structure the markup (which is exactly what I'm looking to avoid here).
