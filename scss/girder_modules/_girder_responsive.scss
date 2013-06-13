@@ -1,5 +1,6 @@
 //////////////////////////////
 // Breakpoints and responsiveness
+// Requires Breakpoint plugin for Compass
 
 $breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq'),
 							'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
@@ -7,40 +8,79 @@ $breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq')
 							'larger screens' $large-breakpoint,
 							'extra large screens' $xlarge-breakpoint;
 
+@if $use-breakpoint == true {
+	@include respond-to('turn single column') {
+		.row {
+			// Clear for small screens
+			&.equal-units {
+				> :first-of-type {padding-left: 0 !important;}
+				> :last-child {padding-right: 0 !important;}
+			}
 
-@include respond-to('turn single column') {
-	.row {
-		// Clear for small screens
-		&.equal-units {
-			> :first-of-type {padding-left: 0 !important;}
-			> :last-child {padding-right: 0 !important;}
+			// All units can go full-width here
+			%unit {
+				padding-left: 0;
+				padding-right: 0;
+				width: 100%;
+
+				// Reset push for small viewports
+				left: 0;
+				// Reset neg margin for nested grids
+				margin-left: inherit !important;
+			}
 		}
-
-		// All units can go full-width here
-		%unit {
-			padding-left: 0;
-			padding-right: 0;
-			width: 100%;
-
-			// Reset push for small viewports
-			left: 0;
-			// Reset neg margin for nested grids
-			margin-left: inherit !important;
-		}
+		.gee {margin-top: 0 !important;}
 	}
-	.gee {margin-top: 0 !important;}
+}
+@else {
+	@media (min-width: 10em) and (max-width: $small-breakpoint) {
+		.row {
+			// Clear for small screens
+			&.equal-units {
+				> :first-of-type {padding-left: 0 !important;}
+				> :last-child {padding-right: 0 !important;}
+			}
+
+			// All units can go full-width here
+			%unit {
+				padding-left: 0;
+				padding-right: 0;
+				width: 100%;
+
+				// Reset push for small viewports
+				left: 0;
+				// Reset neg margin for nested grids
+				margin-left: inherit !important;
+			}
+		}
+		.gee {margin-top: 0 !important;}
+	}
 }
 
 // Utility classes for centering text and hiding stuff in smaller screens
 .center-small {
-	text-align: center;
-	@include respond-to('turn single column') {
-		text-align: inherit;
+	text-align: inherit;
+	@if $use-breakpoint == true {
+		@include respond-to('turn single column') {
+			text-align: center;
+		}
+	}
+	@else {
+		@media (min-width: 10em) and (max-width: $small-breakpoint) {
+			text-align: center;
+		}
 	}
 }
 .hide-small {
-	display: none;
-	@include respond-to('turn single column') {
-		display: block;
+	display: block;
+	@if $use-breakpoint == true {
+		@include respond-to('turn single column') {
+			display: none;
+		}
+	}
+	@else {
+		@media (min-width: 10em) and (max-width: $small-breakpoint) {
+			display: none;
+		}
 	}
 }

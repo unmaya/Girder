@@ -70,9 +70,15 @@
 	}
 	@else {
 		@extend %whole;
-		// TODO: Add check for breakpoint();
-		@include respond-to('turn single column') {
-			padding-right: 0 !important;
+		@if $use-breakpoint == true {
+			@include respond-to('turn single column') {
+				padding-right: 0 !important;
+			}
+		}
+		@else {
+			@media (min-width: 10em) and (max-width: $small-breakpoint) {
+				text-align: inherit;
+			}
 		}
 	}
 }

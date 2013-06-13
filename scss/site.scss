@@ -1,20 +1,18 @@
 @charset "UTF-8";
 
 ////////////////////////////////
-// Import the required partials
-// Styles for an example site using Guirder
-// You can use this as a boilerplate to get started with Girder
+// Styles for an example site using Girder
+// You can use this as a guide to how it can be used
+// Import the required partials (compass and breakpoint needed)
 
 // Girder CSS grid modules
 // Align $em-base with $base-font-size
 @import "girder";
 
-// Compass support modules
+// Compass support
 @import "compass";
-@import "compass/support";
 
 // Baseline for Compass Vertical Rhythm
-@import "compass/typography/vertical_rhythm";
 @include establish-baseline;
 
 // Site Styling Variables
@@ -91,9 +89,17 @@ a {
 	// bad scrollbar is bad
 	// overflow: auto;
 
-	@include respond-to('turn single column') {
-		height: auto;
-		padding-left: $gutters * 2 !important;
+	@if $use-breakpoint == true {
+		@include respond-to('turn single column') {
+			height: auto;
+			padding-left: $gutters * 2 !important;
+		}
+	}
+	@else {
+		@media (min-width: 10em) and (max-width: $small-breakpoint) {
+			height: auto;
+			padding-left: $gutters * 2 !important;
+		}
 	}
 	> * {
 		// constrain content to small-breakpoint width, fallback to pixels
@@ -125,9 +131,17 @@ a {
 	right: 0;
 	top: 0;
 
-	@include respond-to('turn single column') {
-		height: auto;
-		position: relative;
+	@if $use-breakpoint == true {
+		@include respond-to('turn single column') {
+			height: auto;
+			position: relative;
+		}
+	}
+	@else {
+		@media (min-width: 10em) and (max-width: $small-breakpoint) {
+			height: auto;
+			position: relative;
+		}
 	}
 	.gee {
 		font-family: $girder-font-family;
@@ -185,14 +199,30 @@ footer {
 }
 
 // Example response to larger screens
-@include respond-to('larger screens') {
-	.content pre {
-		font-size: 13px;
-		font-size: .75rem;
-		line-height: .8rem;
+
+@if $use-breakpoint == true {
+	@include respond-to('larger screens') {
+		.content pre {
+			font-size: 13px;
+			font-size: .75rem;
+			line-height: .8rem;
+		}
+		p {
+			@include adjust-font-size-to(1.125rem);
+			@include adjust-leading-to(1.1, 18px);
+		}
 	}
-	p {
-		@include adjust-font-size-to(1.125rem);
-		@include adjust-leading-to(1.1, 18px);
+}
+@else {
+	@media (min-width: $large-breakpoint) {
+		.content pre {
+			font-size: 13px;
+			font-size: .75rem;
+			line-height: .8rem;
+		}
+		p {
+			@include adjust-font-size-to(1.125rem);
+			@include adjust-leading-to(1.1, 18px);
+		}
 	}
 }

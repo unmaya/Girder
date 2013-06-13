@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* //////////////////////////////////////////////// */
-/*    Guirder is a simple grid toolkit   ///////// */
+/*    Girder is a simple grid toolkit   ///////// */
 /*    Simple, Responsive & Semantic     ///////// */
 /*    http://comfypixel.com/Girder     ///////// */
 /* //////////////////////////////////////////// */
@@ -18,7 +18,7 @@ exactly what I wanted to avoid by building it with Sass / Scss. */
 }
 
 /* Adjust this to fit your preference for an em base
-By default its set to the current standard of 100% or 1em */
+By default its set to the current standard of 100% (1em = 16px) */
 html {font-size: 16px;}
 
 /* Set up your wrapping container to a fixed width if desired */
@@ -136,7 +136,7 @@ html {font-size: 16px;}
     width: 100%;
 
     left: 0;
-    /* Reset neg margin for nested grids */
+    /* Reset neg. margin for nested grids */
     margin-left: inherit;
   }
 }

@@ -110,20 +110,20 @@
   }
 }
 .center-small {
-  text-align: center;
+  text-align: inherit;
 }
 @media (min-width: 10em) and (max-width: 35.5em) {
   .center-small {
-    text-align: inherit;
+    text-align: center;
   }
 }
 
 .hide-small {
-  display: none;
+  display: block;
 }
 @media (min-width: 10em) and (max-width: 35.5em) {
   .hide-small {
-    display: block;
+    display: none;
   }
 }
 

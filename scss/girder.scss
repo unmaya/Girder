@@ -10,27 +10,26 @@
 // Start with $em-base to use it in functions
 $em-base             : 16px;
 
-// Functions module (like pixel to em converters)
+// Functions module (pixel to em converters and more)
 @import "girder_modules/girder_functions";
 
-// Include HTML presentational classes? (Makes your CSS file larger)
-// Set this to true to use .unit .two-thirds classes in html elements
+// Include HTML presentational classes? (Makes your CSS file much larger)
+// Set to true to use .unit .two-thirds classes in html elements (not recommended)
 $html-classes        : false;
 
-// Gutter width is split into each side of a unit (except for outer units in a row)
+// Gutter width is split into each side of a unit
 $gutters             : emCalc(20px);
-// Set a fixed width for our wraping container or keep it fluid by setting it to none
+// Set a fixed width for a wraping .container or keep it fluid by setting it to none
 $container-width     : none;
 $container-margins   : 0 auto;
 
-// Lets pass Pixels and Get ems in return
-// $xsmall_breakpoint  : emCalc(320px);
-$small-breakpoint  : emCalc(568px); // Expand small from usual 490px
+// Lets pass Pixels and Get ems in return (depends on $em-base)
+$small-breakpoint  : emCalc(568px); // 35.5em
 $medium-breakpoint : emCalc(640px); // 40em
 $large-breakpoint  : emCalc(790px);
 $xlarge-breakpoint : emCalc(940px);
 
-// Todo: add checks for this var
+// If set to false, remove / comment @import below
 $use-breakpoint    : true;
 @import "breakpoint";
 
@@ -42,7 +41,6 @@ $use-breakpoint    : true;
 
 // Responsiveness, not required but essential (requires breakpoint)
 @import "girder_modules/girder_responsive";
-
 
 /* /////////////////////////////////////////////// */
 /*   Girder CSS Ends Here - Extras +   ////////// */
