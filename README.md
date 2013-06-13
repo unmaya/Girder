@@ -18,7 +18,7 @@ You can write your html with semantic classes to target elements in CSS or use t
 </main>
 ```
 The Sass for this example could look like this:
-``` SCSS
+```SCSS
 // Pass gutter width in pixels or turn it to ems automagically
 $gutters: emCalc(20px);
 
@@ -37,15 +37,19 @@ main.content {
 # Installation / Requirements
 1. Copy the Sass folder from this Repo. or [Download all the files](http://comfypixel.com/Girder/girder_package_v03.zip). You only need two things, the main Girder settings file and the modules folder (everything else is optional):
 
-	**girder.scss**
+*	**girder.scss**
+*	**/girder_modules/**
 
-	**/girder_modules/**
-
-2. Unless you're using the plain CSS version be sure the Compass Gem is installed which includes Sass: ```sudo gem install compass```
+2. Unless you're using the plain CSS version be sure the Compass Gem is installed which includes Sass, if you're not sure issue this command in the console: ```sudo gem install compass```
 3. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
-``` @include unit(three-fourths); ```
-``` @include unit(one-third); ```
-``` @include unit(two-fifths); ```
+
+	``` @include unit(three-fourths); ```
+
+	``` @include unit(one-third); ```
+
+	``` @include unit(two-fifths); ```
+
+	``` footer { @include clearfix; } ```
 
 **For plain CSS** you just add the classes to the markup like this:
 ```HTML
@@ -56,11 +60,16 @@ main.content {
 </main>
 ```
 
-**Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units and use media queries or the sophisticated breakpoint plugin to make Girder fully responsive. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download all the files to see exactly how it works.
+**Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units and use media queries or add the sophisticated breakpoint plugin to make Girder fully responsive. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download all the files to see exactly how it works. More example on the way...
 
 ## Optional
 Girder is made with responsive design in mind and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by uncommenting these lines in the Girder settings file:
-```@import "breakpoint";```
-```@import "girder_modules/girder_responsive";```
+
+	```SCSS
+	@import "breakpoint";
+	@import "girder_modules/girder_responsive";
+	```
 
 Girder is built to take advantage of Sass but I'm also making a plain CSS version of the grid for other uses. The CSS version however, will rely on presentational classes to structure the markup (which is exactly what I'm looking to avoid here).
+
+### This project is open to your suggestions, forks, experiments, etc
