@@ -119,11 +119,11 @@
 }
 
 .hide-small {
-  display: block;
+  display: none;
 }
 @media (min-width: 10em) and (max-width: 35.5em) {
   .hide-small {
-    display: none;
+    display: block;
   }
 }
 
