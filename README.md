@@ -19,8 +19,10 @@ You can write your html with semantic classes to target elements in CSS or use t
 ```
 The Sass for this example could look like this:
 ```SCSS
-// Pass gutter width in pixels or turn it to ems automagically
+// Define unit spacing in pixels or turn it to ems automagically
 $gutters: emCalc(20px);
+// Include girder (modules next to this partial)
+@import girder;
 
 // You can have a fixed width / centered container or make it fluid
 $container-width: 1322px;
@@ -79,4 +81,4 @@ Girder is made with responsive design in mind and can easily adapt to a mobile-f
 
 Girder is built to take advantage of Sass but I'm also making a plain CSS version of the grid for other uses. The CSS version however, will rely on presentational classes to structure the markup (which is exactly what I'm looking to avoid here).
 
-### This project is open to your suggestions, forks, experiments, etc
+### This project is open to suggestions, forks, experiments, etc

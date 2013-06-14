@@ -17,7 +17,7 @@ $em-base           : 16px;
 $html-classes      : false;
 
 // Gutter width is split into each side of a unit
-$gutters           : emCalc(20px);
+$gutters           : emCalc(20px) !default;
 // Set a fixed width for a wraping .container or keep it fluid by setting it to none
 $container-width   : none;
 $container-margins : 0 auto;

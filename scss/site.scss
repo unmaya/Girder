@@ -5,8 +5,9 @@
 // You can use this as a guide to how it can be used
 // Import the required partials (compass and breakpoint needed)
 
+// Optional: overwrite gutters in ems preferably (1.25em = 20px)
+$gutters: 1.25em;
 // Girder CSS grid modules
-// Align $em-base with $base-font-size
 @import "girder";
 
 // Compass support
@@ -147,10 +148,10 @@ a {
 		font-family: $girder-font-family;
 		font-weight: 900;
 		font-size: 4em;
-		margin: 1em auto .25em;
+		margin: 1em auto 0;
 	}
 
-	ul {list-style: none; margin: 0; padding: 0 0 1em;}
+	ul {list-style: none; margin: 0; padding: 1.25em 0 1em;}
 
 	a:link, a:visited {
 		text-decoration: none;

@@ -80,10 +80,6 @@
     left: 0;
     margin-left: inherit !important;
   }
-
-  .gee {
-    margin-top: 0 !important;
-  }
 }
 .center-small {
   text-align: inherit;
@@ -103,7 +99,10 @@
   }
 }
 
-.push-one, .push-two, .push-three, .push-four {
+.push-one,
+.push-two,
+.push-three,
+.push-four {
   position: relative;
 }
 
@@ -121,10 +120,6 @@
 
 .push-four {
   left: 50.2%;
-}
-
-.push-one:last-child, .push-two:last-child, .push-three:last-child, .push-four:last-child {
-  padding-right: 0.625em;
 }
 
 /*   /////   Girder Core Styles End Here   /////   */
@@ -525,12 +520,12 @@ a:hover, a:active {
   font-family: lato, source-sans-pro, "Helvetica", sans-serif;
   font-weight: 900;
   font-size: 4em;
-  margin: 1em auto .25em;
+  margin: 1em auto 0;
 }
 .actions ul {
   list-style: none;
   margin: 0;
-  padding: 0 0 1em;
+  padding: 1.25em 0 1em;
 }
 .actions a:link, .actions a:visited {
   text-decoration: none;

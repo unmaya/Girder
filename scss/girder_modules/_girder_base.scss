@@ -112,8 +112,6 @@
 				padding-left: 0;
 				padding-right: 0;
 			}
-			// Experimental
-			&:first-of-type {margin-left: -$gutters /2;}
 		}
 	}
 
@@ -180,21 +178,21 @@
 
 
 // Push units up to four eighths including gutters (experimental)
-// Assumes nested rows contain homogeneous units
+// Nested rows should contain homogeneous units with em-based gutters
 @mixin pushover-units {
 	@if not $html-classes {
 		$gutterpercent: $gutters * $em-base / 100;
-		.push-one, .push-two, .push-three, .push-four { position: relative; }
+		.push-one,
+		.push-two,
+		.push-three,
+		.push-four {
+			position: relative;
+		}
 		// We'll attempt to align with eights going up to half-page
 		.push-one { left: 12.5% + strip-unit($gutterpercent); }
 		.push-two { left: 25% + strip-unit($gutterpercent); }
 		.push-three { left: 37.5% + strip-unit($gutterpercent); }
 		.push-four { left: 50% + strip-unit($gutterpercent); }
-
-		// What about consistent gutters?
-		.push-one:last-child, .push-two:last-child, .push-three:last-child, .push-four:last-child {
-			padding-right: $gutters / 2;
-		}
 	}
 }
 
@@ -223,16 +221,16 @@
 	}
 
 	$gutterpercent: $gutters * $em-base / 100;
-	.push-one, .push-two, .push-three, .push-four { position: relative; }
+	.push-one,
+	.push-two,
+	.push-three,
+	.push-four {
+		position: relative;
+	}
 	// We'll attempt to align with eights going up to half-page
 	.push-one { left: 12.5% + strip-unit($gutterpercent); }
 	.push-two { left: 25% + strip-unit($gutterpercent); }
 	.push-three { left: 37.5% + strip-unit($gutterpercent); }
 	.push-four { left: 50% + strip-unit($gutterpercent); }
-
-	// What about consistent gutters?
-	.push-one:last-child, .push-two:last-child, .push-three:last-child, .push-four:last-child {
-		padding-right: $gutters / 2;
-	}
 }
 
