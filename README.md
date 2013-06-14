@@ -35,13 +35,20 @@ main.content {
 ```
 
 # Installation / Requirements
-1. Copy the Sass folder from this Repo. or [Download all the files](http://comfypixel.com/Girder/girder_package_v03.zip). You only need two things, the main Girder settings file and the modules folder (everything else is optional):
+Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/girder_package_v03.zip). You only need two things, the main Girder settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**
 *	**/girder_modules/**
 
-2. Unless you're using the plain CSS version be sure the Compass Gem is installed which includes Sass, if you're not sure issue this command in the console: ```sudo gem install compass```
-3. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
+Include the scss files before your base styles:
+```SCSS
+@import girder;
+
+// Follow with your base styles
+```
+
+1. Unless you're using the plain CSS version be sure the Compass Gem is installed which includes Sass, if you're not sure issue this command in the console: ```sudo gem install compass```
+2. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
 
 ```SCSS
 // Units go as small as one-sixth of any container, mix and match as needed
@@ -52,6 +59,7 @@ footer { @include clearfix; } // Clear anything without a class
 
 **For plain CSS** you just add the classes to the markup like this:
 ```HTML
+<!-- Be sure to include the girder.css file in your document -->
 <main class="content row">
 	<article class="unit two-thirds"> My main column covers two thirds of the page. </article>
 	<aside class="unit one-third"> This sidebar content occupies one third of the page. </aside>
