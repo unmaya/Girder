@@ -180,10 +180,11 @@
 
 
 // Push units up to four eighths including gutters (experimental)
-@mixin pushover-units($active: false) {
+// Assumes nested rows contain homogeneous units
+@mixin pushover-units {
 	@if not $html-classes {
-		$gutterpercent: $gutters * 7 * $em-base / 100;
-		.push-one, .push-two, .push-three, .push-four { position: relative;}
+		$gutterpercent: $gutters * $em-base / 100;
+		.push-one, .push-two, .push-three, .push-four { position: relative; }
 		// We'll attempt to align with eights going up to half-page
 		.push-one { left: 12.5% + strip-unit($gutterpercent); }
 		.push-two { left: 25% + strip-unit($gutterpercent); }
@@ -221,8 +222,8 @@
 		.row &:last-child {padding-right: 0;}
 	}
 
-	$gutterpercent: $gutters * 7 * $em-base / 100;
-	.push-one, .push-two, .push-three, .push-four { position: relative;}
+	$gutterpercent: $gutters * $em-base / 100;
+	.push-one, .push-two, .push-three, .push-four { position: relative; }
 	// We'll attempt to align with eights going up to half-page
 	.push-one { left: 12.5% + strip-unit($gutterpercent); }
 	.push-two { left: 25% + strip-unit($gutterpercent); }
