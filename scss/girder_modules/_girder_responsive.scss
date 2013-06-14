@@ -73,15 +73,15 @@ $breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq')
 		}
 	}
 	.hide-small {
-		display: none;
+		display: block;
 		@if $use-breakpoint == true {
 			@include respond-to('turn single column') {
-				display: block;
+				display: none;
 			}
 		}
 		@else {
 			@media (min-width: 10em) and (max-width: $small-breakpoint) {
-				display: block;
+				display: none;
 			}
 		}
 	}
