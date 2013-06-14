@@ -66,30 +66,6 @@
   padding-right: 0.625em !important;
 }
 
-.push-one, .push-two, .push-three, .push-four {
-  position: relative;
-}
-
-.push-one {
-  left: 13.9%;
-}
-
-.push-two {
-  left: 26.4%;
-}
-
-.push-three {
-  left: 38.9%;
-}
-
-.push-four {
-  left: 51.4%;
-}
-
-.push-one:last-child, .push-two:last-child, .push-three:last-child, .push-four:last-child {
-  padding-right: 0.625em;
-}
-
 @media (min-width: 10em) and (max-width: 35.5em) {
   .row.equal-units > :first-of-type {
     padding-left: 0 !important;
@@ -127,9 +103,31 @@
   }
 }
 
-/* /////////////////////////////////////////////// */
-/*   Girder CSS Ends Here - Extras +   ////////// */
-/* ///////////////////////////////////////////// */
+.push-one, .push-two, .push-three, .push-four {
+  position: relative;
+}
+
+.push-one {
+  left: 13.9%;
+}
+
+.push-two {
+  left: 26.4%;
+}
+
+.push-three {
+  left: 38.9%;
+}
+
+.push-four {
+  left: 51.4%;
+}
+
+.push-one:last-child, .push-two:last-child, .push-three:last-child, .push-four:last-child {
+  padding-right: 0.625em;
+}
+
+/*   /////   Girder Core Styles End Here   /////   */
 html {
   font-size: 100%;
   line-height: 1.5em;

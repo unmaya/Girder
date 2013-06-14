@@ -1,6 +1,6 @@
 //////////////////////////////
-// Breakpoints and responsiveness
-// Requires Breakpoint plugin for Compass
+// Breakpoints and base media queries for grid units
+// Optional: use the Breakpoint plugin for Compass for $breakpoints
 
 $breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq'),
 							'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
@@ -58,29 +58,31 @@ $breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq')
 }
 
 // Utility classes for centering text and hiding stuff in smaller screens
-.center-small {
-	text-align: inherit;
-	@if $use-breakpoint == true {
-		@include respond-to('turn single column') {
-			text-align: center;
+@mixin responsive-utilities {
+	.center-small {
+		text-align: inherit;
+		@if $use-breakpoint == true {
+			@include respond-to('turn single column') {
+				text-align: center;
+			}
+		}
+		@else {
+			@media (min-width: 10em) and (max-width: $small-breakpoint) {
+				text-align: center;
+			}
 		}
 	}
-	@else {
-		@media (min-width: 10em) and (max-width: $small-breakpoint) {
-			text-align: center;
+	.hide-small {
+		display: none;
+		@if $use-breakpoint == true {
+			@include respond-to('turn single column') {
+				display: block;
+			}
 		}
-	}
-}
-.hide-small {
-	display: none;
-	@if $use-breakpoint == true {
-		@include respond-to('turn single column') {
-			display: block;
-		}
-	}
-	@else {
-		@media (min-width: 10em) and (max-width: $small-breakpoint) {
-			display: block;
+		@else {
+			@media (min-width: 10em) and (max-width: $small-breakpoint) {
+				display: block;
+			}
 		}
 	}
 }
