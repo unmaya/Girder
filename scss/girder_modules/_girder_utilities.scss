@@ -90,17 +90,14 @@ $panel-font-color-alt:  #fff !default;
 
 // Only include utility classes if setting is set to true
 // Useful for classes in your HTML like: <p class="right text-right">Go Right!</h2>
-@if $html-classes == true {
+@if $html-classes == true or $include-extras == true {
 	// Utility classes for presentational markup
 	.left         { float: left; margin-right: .8em; }
 	.right        { float: right; margin-left: .8em; }
-	.hide         { display: none !important; visibility: hidden; }
+	.hidden         { display: none !important; visibility: hidden; }
 	// Write out classes for text-alignment
 	@each $direction in left, right, center, justify {
 		.text-#{$direction} {text-align: #{$direction} !important;}
 	}
 }
 
-
-// Utility placeholders - Not used at this point
-// %hide         { display: none !important; visibility: hidden; }

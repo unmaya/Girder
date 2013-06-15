@@ -197,6 +197,11 @@
 	}
 }
 
+@if $include-extras == true {
+	// Optional: classes to push units (.push-one to .push-four)
+	@include pushover-units;
+}
+
 
 // Only include these classes if the option exists
 @if $html-classes == true {
@@ -234,4 +239,3 @@
 	.push-three { left: 37.5% + strip-unit($gutterpercent); }
 	.push-four { left: 50% + strip-unit($gutterpercent); }
 }
-

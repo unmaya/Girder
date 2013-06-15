@@ -84,3 +84,9 @@ $breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq')
 		}
 	}
 }
+
+
+@if $include-extras == true {
+	// Optional: Output classes to hide elements or center text in small screens
+	@include responsive-utilities;
+}
