@@ -1,5 +1,5 @@
-/////////////////////////////////////////////// */
-/*   Girder is a Sassy grid toolkit    ////////// */
+/* //////////////////////////////////////////////// */
+/*   Girder is a Sassy grid toolkit     ////////// */
 /*   Simple, Responsive & Semantic     ////////// */
 /*   https://github.com/unmaya/Girder ////////// */
 /* //////////////////////////////////////////// */
@@ -7,17 +7,18 @@
 
 // Girder Global Variables and Modules
 // Start with $em-base to use it in functions
-$em-base           : 16px;
+$em-base           : 16px !default;
 
 // Functions module (pixel to em converters and more)
 @import "girder_modules/girder_functions";
 
-// Include HTML presentational classes? (Makes your CSS file much larger)
+// Output HTML presentational classes? Larger CSS output - experimental
 // Set to true to use .unit .two-thirds classes in html elements (not recommended)
 $html-classes      : false;
 
 // Gutter width is split into each side of a unit
 $gutters           : emCalc(20px) !default;
+
 // Set a fixed width for a wraping .container or keep it fluid by setting it to none
 $container-width   : none;
 $container-margins : 0 auto;

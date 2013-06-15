@@ -1,5 +1,6 @@
 @charset "UTF-8";
-/*   Girder is a Sassy grid toolkit    ////////// */
+/* //////////////////////////////////////////////// */
+/*   Girder is a Sassy grid toolkit     ////////// */
 /*   Simple, Responsive & Semantic     ////////// */
 /*   https://github.com/unmaya/Girder ////////// */
 /* //////////////////////////////////////////// */
@@ -441,10 +442,9 @@ table {
   border-spacing: 0;
 }
 
-/* /////////////////////////////////////////////// */
-/*   Site and demo-page styles combined  //////// */
-/*   https://github.com/unmaya/Girder   //////// */
-/* //////////////////////////////////////////// */
+/* ///////////////////////////////////////////////// */
+/*  Site example and Girder styles combined  /////// */
+/* ///////////////////////////////////////////////// */
 body {
   background: white;
   color: #333333;
@@ -474,7 +474,7 @@ a:hover, a:active {
 
 .content {
   margin-right: 25%;
-  padding-left: 3.5em !important;
+  padding-left: 2.5em !important;
   padding-right: 2.5em !important;
 }
 @media (min-width: 10em) and (max-width: 35.5em) {
@@ -604,4 +604,7 @@ footer a {
     line-height: 1.33333em;
     line-height: 1.46667em;
   }
+}
+html.lt-ie9 .container .content .row {
+  display: none !important;
 }

@@ -3,11 +3,12 @@
 ////////////////////////////////
 // Styles for an example site using Girder
 // You can use this as a guide to how it can be used
-// Import the required partials (compass and breakpoint needed)
+// Import the required partials (compass and breakpoint needed for this example)
 
 // Optional: overwrite gutters in ems preferably (1.25em = 20px)
 $gutters: 1.25em;
-// Girder CSS grid modules
+
+// Girder grid modules
 @import "girder";
 
 // Compass support
@@ -24,7 +25,6 @@ $linkHoverColor      : saturate(lighten($linkColor, 25%), 25%);
 $lightText			     : lighten($base-font-color, 45%);
 $highlightColor      : #fffac0;
 
-// Normalize and Typography Variables
 // Matching Girder's em-base for consistency
 $base-font-size: $em-base !default; // Override default set in Compass' Vertical Rhythm partial.
 
@@ -32,15 +32,15 @@ $base-font-size: $em-base !default; // Override default set in Compass' Vertical
 // $base-line-height: 24px; // Override default set in Compass' Vertical Rhythm partial.
 
 // The font sizes for h1-h6.
-$h1-font-size: 2.8   * $base-font-size !default;
-$h2-font-size: 1.8   * $base-font-size !default;
-$h3-font-size: 1.17  * $base-font-size !default;
-$h4-font-size: 1     * $base-font-size !default;
-$h5-font-size: 0.83  * $base-font-size !default;
-$h6-font-size: 0.67  * $base-font-size !default;
+$h1-font-size: 2.8   * $base-font-size;
+$h2-font-size: 1.8   * $base-font-size;
+$h3-font-size: 1.17  * $base-font-size;
+$h4-font-size: 1     * $base-font-size;
+$h5-font-size: 0.83  * $base-font-size;
+$h6-font-size: 0.67  * $base-font-size;
 
 // The amount lists and blockquotes are indented.
-$indent-amount: 30px !default;
+$indent-amount: 30px;
 
 // Default font families
 $headings-font        : source-sans-pro, "Helvetica Neue", "Helvetica", sans-serif;
@@ -48,18 +48,17 @@ $base-font-family     : source-sans-pro, "Helvetica Neue", "Helvetica", Arial, s
 $girder-font-family   : lato, source-sans-pro, "Helvetica", sans-serif;
 
 // Normalize this thing
-// @import "../components/normalize.scss/normalize";
+// Tweaked to suppress css comments
 @import "normalize";
 
 
-/* /////////////////////////////////////////////// */
-/*   Site and demo-page styles combined  //////// */
-/*   https://github.com/unmaya/Girder   //////// */
-/* //////////////////////////////////////////// */
+/* ///////////////////////////////////////////////// */
+/*  Site example and Girder styles combined  /////// */
+/* ///////////////////////////////////////////////// */
 
 ////////////////////////////////
 // Theme Styles For Reference
-// Not needed by Guirder
+// Not needed by Girder
 
 body {
 	background: $body-bg;
@@ -76,19 +75,14 @@ a {
 	&:hover, &:active {color: $linkHoverColor;}
 }
 
-// Expressed CSS Classes
-// For Debugging Purposes
+// Expressed CSS classes for reference
 .about {@extend .no-gutters;}
 .content {
 	@include unit(three-fourths);
 	// Account for actions sidebar
 	margin-right: 25%;
-	// double padding in small screens while inside .no-gutters
-	// exact center with neg. margin is messy. A compromise.
-	padding-left: $gutters * 2 + 1 !important;
+	padding-left: $gutters * 2 !important;
 	padding-right: $gutters * 2 !important;
-	// bad scrollbar is bad
-	// overflow: auto;
 
 	@if $use-breakpoint == true {
 		@include respond-to('turn single column') {
@@ -199,8 +193,7 @@ footer {
 	&:hover {background: $linkColor; border-color: darken($linkColor, 20%);}
 }
 
-// Example response to larger screens
-
+// Example breakpoint for larger screens
 @if $use-breakpoint == true {
 	@include respond-to('larger screens') {
 		.content pre {
@@ -226,4 +219,9 @@ footer {
 			@include adjust-leading-to(1.1, 18px);
 		}
 	}
+}
+
+// IE < 9 Fails
+html.lt-ie9 {
+	.container .content .row {display: none !important;}
 }

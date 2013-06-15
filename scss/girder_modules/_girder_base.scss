@@ -1,6 +1,6 @@
 //////////////////////////////
-// Base Grid for Girder
-// Outputs the minimum CSS required to handles units and rows
+// Base Scss and grid functionality
+// Outputs the minimum CSS required to handle units and rows
 
 // Include a broad amount of border-box on everything and profit.
 // Override for special cases within selectors
@@ -18,7 +18,7 @@
 }
 
 // Mixin for unit widths (Might change to func to use return values later)
-// TODO: Optimize if statement with a list and a for loop
+// TODO: Optimize this if statement with a list and a loop
 @mixin unit($width:whole, $addgutters:true) {
 
 	// Handle the no-gutter case but its not pretty, looking for better options
@@ -84,7 +84,8 @@
 	}
 }
 
-// Flexible grid units using percentages
+// Row class and flexible grid units (percentage based)
+// This is the only CSS that Girder outputs by default
 .row {
 	clear: both;
 	display: block;

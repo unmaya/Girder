@@ -1,4 +1,4 @@
-Girder 0.3.0 (Beta) [demo](http://comfypixel.com/Girder/)
+Girder 0.4.0 (Beta) [demo](http://comfypixel.com/Girder/)
 ====================
 
 A simple CSS grid toolkit built on Sass. Its flexible, semantic, responsive and minimalistic. It includes some utilities to build prototypes quickly so I use it for smaller projects and as a kickstarter template.
@@ -7,10 +7,10 @@ A simple CSS grid toolkit built on Sass. Its flexible, semantic, responsive and 
 ---
 
 # How it works
-Girder is a simple yet versatile grid designed for small to medium projects. Its best suited for building with Sass, a fantastic pre-processor but you can also use plain CSS. Build flexible layouts divided into logical sections. Girder uses silent classes (placeholders) to structure content in HTML and keeps your Markup free of excess presentational classes like "unit_1of4", "small-2", "grid4".
+Girder is a simple yet versatile grid designed for small to medium projects. Its best suited for building with Sass, a fantastic pre-processor but you can also use plain CSS. Build flexible layouts divided into logical sections. It uses silent classes (placeholders) to structure content in HTML and keeps your Markup free of excess presentational classes like "unit_1of4", "small-2", "grid4".
 
 **Example?**
-You can write your html with semantic classes to target elements in CSS or use the cascade to add structure:
+You can write HTML with custom classes to target elements or use the cascade with base selectors:
 ```HTML
 <main class="content row">
 	<article> My main column covers two thirds of the page. </article>
@@ -35,9 +35,8 @@ main.content {
 	}
 }
 ```
-
 # Installation / Requirements
-Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/girder_package_v03.zip). You only need two things, the main Girder settings file and the modules folder (everything else is optional):
+Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/girder_package_v04.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**
 *	**/girder_modules/**
@@ -59,7 +58,7 @@ Include the scss files before your base styles:
 footer { @include clearfix; } // Clear anything without a class
 ```
 
-**For plain CSS** you just add the classes to the markup like this:
+**To use plain CSS** you just add the classes to the markup like this:
 ```HTML
 <!-- Be sure to include the girder.css file in your document -->
 <main class="content row">
@@ -69,16 +68,14 @@ footer { @include clearfix; } // Clear anything without a class
 </main>
 ```
 
-**Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units and use media queries or add the sophisticated breakpoint plugin to make Girder fully responsive. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download all the files to see exactly how it works. More example on the way...
+**Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units, add media queries or use any number of plugins for Sass. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download the source to see exactly how it works.
 
 ## Optional
-Girder is made with responsive design in mind and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by uncommenting these lines in the Girder settings file:
+Girder is made with responsive design in mind and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by un-commenting these lines in the settings:
 
-```SCSS
+````SCSS
 @import "breakpoint";
 @import "girder_modules/girder_responsive";
-```
-
-Girder is built to take advantage of Sass but I'm also making a plain CSS version of the grid for other uses. The CSS version however, will rely on presentational classes to structure the markup (which is exactly what I'm looking to avoid here).
+````
 
 ### This project is open to suggestions, forks, experiments, etc
