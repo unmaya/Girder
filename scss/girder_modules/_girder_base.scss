@@ -1,5 +1,6 @@
 //////////////////////////////
-// Base Grid for Girder
+// Base Scss and grid functionality
+// Outputs the minimum CSS required to handle units and rows
 
 // Include a broad amount of border-box on everything and profit.
 // Override for special cases within selectors
@@ -17,7 +18,7 @@
 }
 
 // Mixin for unit widths (Might change to func to use return values later)
-// TODO: Optimize if statement with a list and a for loop
+// TODO: Optimize this if statement with a list and a loop
 @mixin unit($width:whole, $addgutters:true) {
 
 	// Handle the no-gutter case but its not pretty, looking for better options
@@ -83,7 +84,8 @@
 	}
 }
 
-// Flexible grid units using percentages
+// Row class and flexible grid units (percentage based)
+// This is the only CSS that Girder outputs by default
 .row {
 	clear: both;
 	display: block;
@@ -93,18 +95,16 @@
 		padding: $gutters / 2;
 		width: 100%;
 
-		// Ensures outer gutters are equal to (doubled) inner gutters.
-		// Moved this gutter to the parent .row
+		// Ensures outer gutters match inner gutters (moved to parent .row)
 		// &:first-of-type {padding-left: $gutters;}
 		// &:last-child {padding-right: $gutters;}
 
 		// Handling nested outer gutters here (Deprecated for neg margin)
-		// Use first of type for rows that start with headings etc.
 		// .row &:first-of-type {padding-left: 0;}
 		// .row &:last-child {padding-right: 0;}
 
 		// Lets use neg. margin to push things left (moved out to .row css level)
-		// When first & last have zeroed gutters this keeps third+ units equal!
+		// When first & last have zeroed gutters this keeps third+ units equal
 		// .row &:first-of-type {margin-left: -$gutters /2;}
 
 		// Add a .no-gutters class to a unit to remove gutters (experimental)
@@ -113,8 +113,6 @@
 				padding-left: 0;
 				padding-right: 0;
 			}
-			// Experimental
-			&:first-of-type {margin-left: -$gutters /2;}
 		}
 	}
 
@@ -165,7 +163,7 @@
 	// but remove them when nested or specified
 	&.no-gutters, .row, .row .row  {padding-left: 0; padding-right: 0;}
 
-	// test removing nested outer gutters at css level
+	// Remove nested outer gutters at css level
 	.row > :first-of-type {padding-left: 0;}
 	.row > :last-child {padding-right: 0;}
 
@@ -180,10 +178,29 @@
 }
 
 
+// Push units up to four eighths including gutters (experimental)
+// Nested rows should contain homogeneous units with em-based gutters
+@mixin pushover-units {
+	@if not $html-classes {
+		$gutterpercent: $gutters * $em-base / 100;
+		.push-one,
+		.push-two,
+		.push-three,
+		.push-four {
+			position: relative;
+		}
+		// We'll attempt to align with eights going up to half-page
+		.push-one { left: 12.5% + strip-unit($gutterpercent); }
+		.push-two { left: 25% + strip-unit($gutterpercent); }
+		.push-three { left: 37.5% + strip-unit($gutterpercent); }
+		.push-four { left: 50% + strip-unit($gutterpercent); }
+	}
+}
+
+
 // Only include these classes if the option exists
 @if $html-classes == true {
-
-	$units: (whole 100%), (half 50%), (one-third 33.3332%), (two-thirds 66.6665%), (one-fourth 25%), (three-fourths 75%), (one-fifth 20%), (two-fifths 40%), (three-fifths 60%), (four-fifths 80%), (golden-small 38.2716%), (golden-large 61.7283%);
+	$units: (whole 100%), (half 50%), (one-third 33.3332%), (two-thirds 66.6665%), (one-fourth 25%), (three-fourths 75%), (one-fifth 20%), (two-fifths 40%), (three-fifths 60%), (four-fifths 80%), (one-sixth 16.6666%), (five-sixths 83.3333%), (golden-small 38.2716%), (golden-large 61.7283%);
 
 	@each $unit in $units {
 	  .#{nth($unit, 1)} {
@@ -203,22 +220,18 @@
 		.row &:first-of-type {padding-left: 0;}
 		.row &:last-child {padding-right: 0;}
 	}
+
+	$gutterpercent: $gutters * $em-base / 100;
+	.push-one,
+	.push-two,
+	.push-three,
+	.push-four {
+		position: relative;
+	}
+	// We'll attempt to align with eights going up to half-page
+	.push-one { left: 12.5% + strip-unit($gutterpercent); }
+	.push-two { left: 25% + strip-unit($gutterpercent); }
+	.push-three { left: 37.5% + strip-unit($gutterpercent); }
+	.push-four { left: 50% + strip-unit($gutterpercent); }
 }
 
-
-// Push units in eights including gutters (experimental)
-$gutterpercent: $gutters * 7 * $em-base / 100;
-// We'll use the ol' positioning trick for now
-.push-one, .push-two, .push-three, .push-four {
-	position: relative;
-}
-// We'll attempt to align with eights going up to half-page
-.push-one { left: 12.5% + strip-unit($gutterpercent); }
-.push-two { left: 25% + strip-unit($gutterpercent); }
-.push-three { left: 37.5% + strip-unit($gutterpercent); }
-.push-four { left: 50% + strip-unit($gutterpercent); }
-
-// What about consistent gutters?
-.push-one:last-child, .push-two:last-child, .push-three:last-child, .push-four:last-child {
-	padding-right: $gutters / 2;
-}

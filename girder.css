@@ -1,12 +1,12 @@
 @charset "UTF-8";
 /* //////////////////////////////////////////////// */
-/*    Girder is a simple grid toolkit   ///////// */
-/*    Simple, Responsive & Semantic     ///////// */
-/*    http://comfypixel.com/Girder     ///////// */
+/*   Girder is a Sassy grid toolkit     ////////// */
+/*   Simple, Responsive & Semantic     ////////// */
+/*   https://github.com/unmaya/Girder ////////// */
 /* //////////////////////////////////////////// */
 
 /* This is the CSS version of Girder which was designed for use with Scss.
-In this form it requires presentational classes in the HTML which is
+In this form it requires presentational classes in HTML which is
 exactly what I wanted to avoid by building it with Sass / Scss. */
 
 /* Include a broad amount of border-box on everything and profit. */
@@ -35,7 +35,7 @@ html {font-size: 16px;}
   clear: both;
   *zoom: 1;
 
-  /* Lets add outer gutters to top level row */
+  /* Lets add outer gutters to top level row 1.25em = 20px using 16px base */
   padding-left: 1.25em;
   padding-right: 1.25em;
 }
@@ -54,8 +54,8 @@ html {font-size: 16px;}
   /* 0.625em = 10px with a 16px base font */
 }
 
-/* remove gutter when nested or specified */
-.row.no-gutters, .row, .row .row  {padding-left: 0; padding-right: 0;}
+/* remove row gutter when nested or specified */
+.row.no-gutters, .row .row  {padding-left: 0; padding-right: 0;}
 
 /* remove nested outer gutters */
 .row > :first-of-type {padding-left: 0;}
@@ -64,7 +64,6 @@ html {font-size: 16px;}
 /* Option to add them back in to keep third+ units equal */
 .row.equal-units > :first-of-type  {padding-left: 0.625em !important;}
 .row.equal-units > :last-child {padding-right: 0.625em !important;}
-
 
 /* Lets remove the padding - gutter for nested units */
 /* We can also remove just left or right gutter with .alpha .omega */
@@ -91,6 +90,18 @@ html {font-size: 16px;}
 
 /* Remove padding (gutter) for units inside a row or for a specific unit */
 .row.no-gutters .unit, .unit.no-gutters {padding: 0;}
+
+/* Sure, push things around if that's your thing */
+.push-one,
+.push-two,
+.push-three,
+.push-four {
+  position: relative;
+}
+.push-one {left: 13.9%;}
+.push-two {left: 26.4%;}
+.push-three {left: 38.9%;}
+.push-four {left: 51.4%;}
 
 /* Your standard presentational clearing class. Boo! Seriously, try Sass. */
 .clear {

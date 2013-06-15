@@ -1,4 +1,4 @@
-Girder 0.3.0 (Beta) [demo](http://comfypixel.com/Girder/)
+Girder 0.4.0 (Beta) [demo](http://comfypixel.com/Girder/)
 ====================
 
 A simple CSS grid toolkit built on Sass. Its flexible, semantic, responsive and minimalistic. It includes some utilities to build prototypes quickly so I use it for smaller projects and as a kickstarter template.
@@ -7,10 +7,10 @@ A simple CSS grid toolkit built on Sass. Its flexible, semantic, responsive and 
 ---
 
 # How it works
-Girder is a simple yet versatile grid designed for small to medium projects. Its best suited for building with Sass, a fantastic pre-processor but you can also use plain CSS. Build flexible layouts divided into logical sections. Girder uses silent classes (placeholders) to structure content in HTML and keeps your Markup free of excess presentational classes like "unit_1of4", "small-2", "grid4".
+Girder is a simple yet versatile grid designed for small to medium projects. Its best suited for building with Sass, a fantastic pre-processor but you can also use plain CSS. Build flexible layouts divided into logical sections. It uses silent classes (placeholders) to structure content in HTML and keeps your Markup free of excess presentational classes like "unit_1of4", "small-2", "grid4".
 
 **Example?**
-You can write your html with semantic classes to target elements in CSS or use the cascade to add structure:
+You can write HTML with custom classes to target elements or use the cascade with base selectors:
 ```HTML
 <main class="content row">
 	<article> My main column covers two thirds of the page. </article>
@@ -19,8 +19,10 @@ You can write your html with semantic classes to target elements in CSS or use t
 ```
 The Sass for this example could look like this:
 ```SCSS
-// Pass gutter width in pixels or turn it to ems automagically
+// Define unit spacing in pixels or turn it to ems automagically
 $gutters: emCalc(20px);
+// Include girder (modules next to this partial)
+@import girder;
 
 // You can have a fixed width / centered container or make it fluid
 $container-width: 1322px;
@@ -33,26 +35,32 @@ main.content {
 	}
 }
 ```
-
 # Installation / Requirements
-1. Copy the Sass folder from this Repo. or [Download all the files](http://comfypixel.com/Girder/girder_package_v03.zip). You only need two things, the main Girder settings file and the modules folder (everything else is optional):
+Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/girder_package_v04.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**
 *	**/girder_modules/**
 
-2. Unless you're using the plain CSS version be sure the Compass Gem is installed which includes Sass, if you're not sure issue this command in the console: ```sudo gem install compass```
-3. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
+Include the scss files before your base styles:
+```SCSS
+@import girder;
 
-	``` @include unit(three-fourths); ```
+// Follow with your base styles
+```
 
-	``` @include unit(one-third); ```
+1. Unless you're using the plain CSS version be sure the Compass Gem is installed which includes Sass, if you're not sure issue this command in the console: ```sudo gem install compass```
+2. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
 
-	``` @include unit(two-fifths); ```
+```SCSS
+// Units go as small as one-sixth of any container, mix and match as needed
+@include unit(three-fourths); // Match fourths
+@include unit(one-third); // Match thirds
+footer { @include clearfix; } // Clear anything without a class
+```
 
-	``` footer { @include clearfix; } ```
-
-**For plain CSS** you just add the classes to the markup like this:
+**To use plain CSS** you just add the classes to the markup like this:
 ```HTML
+<!-- Be sure to include the girder.css file in your document -->
 <main class="content row">
 	<article class="unit two-thirds"> My main column covers two thirds of the page. </article>
 	<aside class="unit one-third"> This sidebar content occupies one third of the page. </aside>
@@ -60,16 +68,14 @@ main.content {
 </main>
 ```
 
-**Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units and use media queries or add the sophisticated breakpoint plugin to make Girder fully responsive. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download all the files to see exactly how it works. More example on the way...
+**Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units, add media queries or use any number of plugins for Sass. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download the source to see exactly how it works.
 
 ## Optional
-Girder is made with responsive design in mind and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by uncommenting these lines in the Girder settings file:
+Girder is made with responsive design in mind and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by un-commenting these lines in the settings:
 
-	```SCSS
-	@import "breakpoint";
-	@import "girder_modules/girder_responsive";
-	```
+````SCSS
+@import "breakpoint";
+@import "girder_modules/girder_responsive";
+````
 
-Girder is built to take advantage of Sass but I'm also making a plain CSS version of the grid for other uses. The CSS version however, will rely on presentational classes to structure the markup (which is exactly what I'm looking to avoid here).
-
-### This project is open to your suggestions, forks, experiments, etc
+### This project is open to suggestions, forks, experiments, etc
