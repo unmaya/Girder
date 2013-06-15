@@ -235,3 +235,11 @@
 	.push-four { left: 50% + strip-unit($gutterpercent); }
 }
 
+
+@if $include-extras == true {
+	// Optional: classes to hide elements or center text in small screens (Req. girder_responsive)
+	@include responsive-utilities;
+
+	// Optional: classes to push units (.push-one, .push-two - Req. girder_utilities)
+	@include pushover-units;
+}
