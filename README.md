@@ -36,7 +36,7 @@ main.content {
 }
 ```
 # Installation / Requirements
-Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/girder_package_v04.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
+Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/Girder_example_files_v04.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**
 *	**/girder_modules/**
