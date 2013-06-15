@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* //////////////////////////////////////////////// */
 /*   Girder is a Sassy grid toolkit     ////////// */
 /*   Simple, Responsive & Semantic     ////////// */
 /*   https://github.com/unmaya/Girder ////////// */
@@ -67,6 +66,60 @@
   padding-right: 0.625em !important;
 }
 
+.push-one,
+.push-two,
+.push-three,
+.push-four {
+  position: relative;
+}
+
+.push-one {
+  left: 12.7%;
+}
+
+.push-two {
+  left: 25.2%;
+}
+
+.push-three {
+  left: 37.7%;
+}
+
+.push-four {
+  left: 50.2%;
+}
+
+.left {
+  float: left;
+  margin-right: .8em;
+}
+
+.right {
+  float: right;
+  margin-left: .8em;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
 @media (min-width: 10em) and (max-width: 35.5em) {
   .row.equal-units > :first-of-type {
     padding-left: 0 !important;
@@ -98,29 +151,6 @@
   .hide-small {
     display: none;
   }
-}
-
-.push-one,
-.push-two,
-.push-three,
-.push-four {
-  position: relative;
-}
-
-.push-one {
-  left: 12.7%;
-}
-
-.push-two {
-  left: 25.2%;
-}
-
-.push-three {
-  left: 37.7%;
-}
-
-.push-four {
-  left: 50.2%;
 }
 
 /*   /////   Girder Core Styles End Here   /////   */
@@ -605,6 +635,16 @@ footer a {
     line-height: 1.46667em;
   }
 }
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
 html.lt-ie9 .container .content .row {
   display: none !important;
 }

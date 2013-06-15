@@ -122,7 +122,7 @@ html {font-size: 16px;}
   float: right;
   margin-left: .8em;
 }
-.hide {
+.hidden {
   display: none !important;
   visibility: hidden;
 }

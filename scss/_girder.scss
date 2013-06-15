@@ -9,7 +9,7 @@
 // Start with $em-base to use it in functions
 $em-base           : 16px !default;
 
-// Functions module (pixel to em converters and more)
+// Functions module need priority (pixel to em converters and more)
 @import "girder_modules/girder_functions";
 
 // Gutter width is split into each side of a unit
@@ -17,10 +17,10 @@ $gutters           : emCalc(20px) !default;
 
 // Set a fixed width for a wraping .container or keep it fluid by setting it to none
 $container-width   : none !default;
-$container-margins : 0 auto;
+$container-margins : 0 auto !default;
 
 // Lets pass Pixels and Get ems in return (depends on $em-base)
-$small-breakpoint  : emCalc(568px); // 35.5em
+$small-breakpoint  : emCalc(568px) !default; // 35.5em
 $medium-breakpoint : emCalc(640px); // 40em
 $large-breakpoint  : emCalc(790px);
 $xlarge-breakpoint : emCalc(940px);
@@ -28,6 +28,13 @@ $xlarge-breakpoint : emCalc(940px);
 // Optional: If set to true make sure to @import breakpoint
 $use-breakpoint    : false !default;
 // @import "breakpoint";
+
+// Output extra classes for pushing units and .hide-small / .center-small
+$include-extras    : true !default;
+
+// Output HTML presentational classes? Larger CSS output - experimental
+// Set to true to use .unit .two-thirds classes in html elements (not recommended)
+$html-classes      : false;
 
 // Required: Base grid for girder
 @import "girder_modules/girder_base";
@@ -38,11 +45,4 @@ $use-breakpoint    : false !default;
 // Basic responsiveness for grid units, not required but essential
 @import "girder_modules/girder_responsive";
 
-// Output extra classes for pushing units and .hide-small / .center-small
-$include-extras    : true !default;
-
-// Output HTML presentational classes? Larger CSS output - experimental
-// Set to true to use .unit .two-thirds classes in html elements (not recommended)
-$html-classes      : false;
-
-/*   /////   Girder Core Styles End Here   /////
+/*   /////   Girder Core Styles End Here   /////   */
