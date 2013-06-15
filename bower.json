@@ -1,10 +1,9 @@
 {
-  "name": "girder",
-  "version": "0.3.0",
-  "main": "./scss/girder.scss",
-  "homepage": "http://comfypixel.com/Girder",
-  "dependencies": {
-    "jquery": "~1.9.1",
-    "normalize.scss": "~2.1.0"
-  }
+	"name": "girder",
+	"version": "0.4.0",
+	"main": "./scss/girder.scss",
+	"homepage": "http://comfypixel.com/Girder",
+	"dependencies": {
+		"normalize.scss": "~2.1.0"
+	}
 }
