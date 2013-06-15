@@ -103,10 +103,6 @@
 		// .row &:first-of-type {padding-left: 0;}
 		// .row &:last-child {padding-right: 0;}
 
-		// Lets use neg. margin to push things left (moved out to .row css level)
-		// When first & last have zeroed gutters this keeps third+ units equal
-		// .row &:first-of-type {margin-left: -$gutters /2;}
-
 		// Add a .no-gutters class to a unit to remove gutters (experimental)
 		@if $html-classes == true {
 			.no-gutters > &:first-of-type {
@@ -197,6 +193,11 @@
 	}
 }
 
+@if $include-extras == true {
+	// Optional: classes to push units (.push-one to .push-four)
+	@include pushover-units;
+}
+
 
 // Only include these classes if the option exists
 @if $html-classes == true {
@@ -234,4 +235,3 @@
 	.push-three { left: 37.5% + strip-unit($gutterpercent); }
 	.push-four { left: 50% + strip-unit($gutterpercent); }
 }
-

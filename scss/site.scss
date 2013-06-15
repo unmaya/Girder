@@ -5,7 +5,7 @@
 // You can use this as a guide to how it can be used
 // Import the required partials (compass and breakpoint needed for this example)
 
-// Optional: overwrite gutters in ems preferably (1.25em = 20px)
+// Optional: overwrite gutters in ems (by default 1.25em = 20px)
 $gutters: 1.25em;
 
 // Girder grid modules
@@ -219,6 +219,17 @@ footer {
 			@include adjust-leading-to(1.1, 18px);
 		}
 	}
+}
+
+
+// * Remove text-shadow in selection highlight: h5bp.com/i
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
 }
 
 // IE < 9 Fails
