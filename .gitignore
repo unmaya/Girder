@@ -13,6 +13,7 @@ npm-debug.log
 .sass-cache/
 css/girder.css
 component.json
+bower.json
 
 # Jekyll generated
 _site/
