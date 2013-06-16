@@ -1,12 +1,12 @@
-//////////////////////////////////////////////// */
-/*   Girder is a Sassy grid toolkit     ////////// */
-/*   Simple, Responsive & Semantic     ////////// */
-/*   https://github.com/unmaya/Girder ////////// */
-/* //////////////////////////////////////////// */
+/* ================================================ */
+/*   Girder is a Sassy grid toolkit      ////////// */
+/*   Simple, Responsive & Semantic       ////////// */
+/*   https://github.com/unmaya/Girder    ////////// */
+/* ================================================ */
 @charset "UTF-8";
 
-// Girder Global Variables and Modules
-// Start with $em-base to use it in functions
+// Girder Global Variables, Settings and Modules
+// Start with $em-base to use it in functions going forward
 $em-base           : 16px !default;
 
 // Functions module need priority (pixel to em converters and more)
@@ -20,6 +20,7 @@ $container-width   : none !default;
 $container-margins : 0 auto !default;
 
 // Lets pass Pixels and Get ems in return (depends on $em-base)
+// You can define variable values for breakpoints based on your needs
 $small-breakpoint  : emCalc(568px) !default; // 35.5em
 $medium-breakpoint : emCalc(640px); // 40em
 $large-breakpoint  : emCalc(790px);
@@ -45,4 +46,4 @@ $html-classes      : false;
 // Basic responsiveness for grid units, not required but essential
 @import "girder_modules/girder_responsive";
 
-/*   /////   Girder Core Styles End Here   /////   */
+/*   /////   Girder Core Styles End Here   /////  */
