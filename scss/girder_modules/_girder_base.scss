@@ -10,10 +10,9 @@
 			-webkit-box-sizing: border-box;
 }
 
-// Set up the container and alignment row width
+// Set up the container alignment and max-width
 .container, .row {
 	margin: $container-margins;
-	// TODO: Add a check for 'auto' value here
 	max-width: $container-width;
 }
 

@@ -1,8 +1,9 @@
 @charset "UTF-8";
-/*   Girder is a Sassy grid toolkit     ////////// */
-/*   Simple, Responsive & Semantic     ////////// */
-/*   https://github.com/unmaya/Girder ////////// */
-/* //////////////////////////////////////////// */
+/* ================================================ */
+/*   Girder is a Sassy grid toolkit      ////////// */
+/*   Simple, Responsive & Semantic       ////////// */
+/*   https://github.com/unmaya/Girder    ////////// */
+/* ================================================ */
 *, *:before, *:after {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -153,7 +154,7 @@
   }
 }
 
-/*   /////   Girder Core Styles End Here   /////   */
+/*   /////   Girder Core Styles End Here   /////  */
 html {
   font-size: 100%;
   line-height: 1.5em;
