@@ -4,6 +4,5 @@
 	"main": "./scss/_girder.scss",
 	"homepage": "http://comfypixel.com/Girder",
 	"dependencies": {
-		"normalize.scss": "~2.1.0"
 	}
 }
