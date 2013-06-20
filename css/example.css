@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/* ///////////////////////////////////////////////// */
+/*  Example page using Standard Girder.css   /////// */
+/* ///////////////////////////////////////////////// */
+
+body {
+	background: #fff;
+	color: #333;
+	font-family: source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {margin-bottom: .4em;}
+h3 {margin-top: .4em;}
+
+p {margin: 1em 0 1.5em; line-height: 1.4;}
+a:link, a:visited {color: #72CEE7;}
+a:hover, a:active {color: #72CEE7;}
+
+.top-content {
+	background: #EAEAEA;
+}
+
+[role="banner"] {
+		font-family: lato, source-sans-pro, "Helvetica", sans-serif;
+		font-weight: 300;
+		font-size: 4em;
+		margin-top: 1em;
+		margin-bottom: 0;
+		letter-spacing: -.05em;
+		text-transform: uppercase;
+	}
+
+nav {
+	position: absolute;
+	right: 1.50em;
+	top: 2em;
+}
+nav a {
+	display: inline-block;
+	margin-right: .50em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+footer {
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: .50em 0;
+}
+footer a {text-transform: uppercase;}
+
+
+/* Example breakpoint for larger screens */
+@media (min-width: 790px) {
+	.content pre {
+		font-size: 13px;
+		font-size: .75rem;
+		line-height: .8rem;
+	}
+	p {
+		font-size: 1.125rem;
+		line-height: 1.4;
+	}
+}
+
+/* Remove text-shadow in selection highlight: h5bp.com/i */
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+/* IE < 9 Fails */
+html.lt-ie9 .container .content .row {display: none !important;}

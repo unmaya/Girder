@@ -73,20 +73,20 @@ html {font-size: 16px;}
 .omega {padding-right: 0;}
 
 /* Units are named based on how a row can be divided 1 - 6 parts */
-.whole {width: 100%;}
-.half, .two-quarters {width: 50%;}
-.one-third, .two-sixths {width: 33.3332%;}
-.two-thirds, .four-sixths {width: 66.6665%;}
-.one-quarter {width: 25%;}
-.three-quarters {width: 75%;}
-.one-fifth {width: 20%;}
-.two-fifths {width: 40%;}
-.three-fifths {width: 60%;}
-.four-fifths {width: 80%;}
-.one-sixth {width: 16.6666%;}
-.five-sixths {width: 83.3333%;}
-.golden-small {width: 38.2716%;}
-.golden-large {width: 61.7283%;}
+.row .whole {width: 100%;}
+.row .half, .two-quarters {width: 50%;}
+.row .one-third, .two-sixths {width: 33.3332%;}
+.row .two-thirds, .four-sixths {width: 66.6665%;}
+.row .one-quarter {width: 25%;}
+.row .three-quarters {width: 75%;}
+.row .one-fifth {width: 20%;}
+.row .two-fifths {width: 40%;}
+.row .three-fifths {width: 60%;}
+.row .four-fifths {width: 80%;}
+.row .one-sixth {width: 16.6666%;}
+.row .five-sixths {width: 83.3333%;}
+.row .golden-small {width: 38.2716%;}
+.row .golden-large {width: 61.7283%;}
 
 /* Remove padding (gutter) for units inside a row or for a specific unit */
 .row.no-gutters .unit, .unit.no-gutters {padding: 0;}

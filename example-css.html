@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- Example using Girder.css grid and presentational classes -->
+	<title>Girder - A Simple CSS Grid Built on Sass</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="author" content="comfypixel.com" />
+	<meta name="description" content="A CSS grid built on Sass. Its responsive, modular and semantic." />
+
+	<link rel="stylesheet" href="girder.css">
+	<link rel="stylesheet" href="css/example.css">
+	<script src="//use.edgefonts.net/source-sans-pro;pt-sans-narrow;lato:n1,n3,n9,i9.js"></script>
+	<!-- /js/modernizr-2.5.3.min.js -->
+</head>
+
+<body>
+	<main class="container">
+
+		<section class="top-content row">
+			<header role="banner">
+				<h1>Girder</h1>
+				<small>Example Using Just CSS</small>
+			</header>
+			<nav>
+				<a href="#">Home</a>
+				<a href="#">Work</a>
+				<a href="#">Blog</a>
+				<a href="#">Contact</a>
+			</nav>
+
+			<p>A minimalistic grid for building awesome Websites with <acronym title="Syntactically Awesome Stylesheets">Sass</acronym> targeting the modern browser. It uses silent classes (placeholders) to structure content in HTML and keeps your Markup free of excess presentational classes like "unit_1of4", "small-2", "grid4". This page is built with Girder.</p>
+		</section>
+
+		<section class="main-content row">
+
+			<div class="installation row">
+				<h2>Installation</h2>
+				<p>Copy the Girder files from Github or from the downloaded examples directly into your project's path.</p>
+				<p>With <a href="http://bower.io/">Bower</a> just use: <strong>"bower install girder --save"</strong> then add a reference to either <b>scss/_girder.scss</b> or <b>girder.css</b> inside the components folder.</p>
+
+				<section class="unit half">
+					<h3>Using Scss</h3>
+					<p>@import the <b>_girder.scss</b> partial which should reside next to its modules in your project.</p>
+				</section>
+
+				<section class="unit half">
+					<h3>Standard CSS</h3>
+					<p>Simply include the <b>girder.css</b> file in your document before your site's custom styles.</p>
+				</section>
+			</div>
+
+			<footer>
+				<p class="credits center-small">
+					<small>Made with care by Comfypixel - <a href="https://github.com/unmaya/Girder">Suggestions</a> welcome!<br>
+						&copy; 2013 - Open Source Under <a href="http://opensource.org/licenses/MIT">MIT</a> license  <br><br>
+					<strong><a href="http://comfypixel.com">Website</a> - <a href="https://twitter.com/unmaya">Twitter</a> - <a href="https://github.com/unmaya">Github</a></strong> </small>
+				</p>
+			</footer>
+
+		</section>
+	</main>
+
+<!--[if lt IE 7]>
+	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a></p>
+<![endif]-->
+</body>
+</html>
