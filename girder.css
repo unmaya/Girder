@@ -141,7 +141,7 @@ html {font-size: 16px;}
   .row.equal-units > :last-child {padding-right: 0;}
 
    /* All units can go full-width here */
-  .unit {
+  .row .unit {
     padding-left: 0;
     padding-right: 0;
     width: 100%;

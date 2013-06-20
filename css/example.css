@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /* ///////////////////////////////////////////////// */
 /*  Example page using Standard Girder.css   /////// */
 /* ///////////////////////////////////////////////// */
@@ -15,26 +14,44 @@ body {
 }
 
 h1, h2, h3, h4 {margin-bottom: .4em;}
+h2 {
+	font-size: 26px;
+	font-size: 1.625rem;
+	margin-top: 0;
+}
 h3 {margin-top: .4em;}
 
-p {margin: 1em 0 1.5em; line-height: 1.4;}
-a:link, a:visited {color: #72CEE7;}
-a:hover, a:active {color: #72CEE7;}
-
+p {margin: .75em 0 1.5em; line-height: 1.5;}
+a:link, a:visited {color: #2099ba;}
+a:hover, a:active {color: #64C2DD;}
+.top-wrapper, .main-wrapper {
+	max-width: 568px;
+	max-width: 37.5rem;
+	padding-left: 0; padding-right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
 .top-content {
 	background: #EAEAEA;
+	padding-bottom: 1em;
+	margin-bottom: 2em;
 }
-
-[role="banner"] {
+[role="banner"] h1 {
 		font-family: lato, source-sans-pro, "Helvetica", sans-serif;
-		font-weight: 300;
-		font-size: 4em;
+		font-weight: 600;
+		font-size: 4.25em;
 		margin-top: 1em;
 		margin-bottom: 0;
 		letter-spacing: -.05em;
 		text-transform: uppercase;
 	}
-
+[role="banner"] span {
+	display: block;
+	font-size: 2em;
+	font-weight: 300;
+	margin: 0 0 .75em;
+	text-transform: uppercase;
+}
 nav {
 	position: absolute;
 	right: 1.50em;
@@ -42,28 +59,47 @@ nav {
 }
 nav a {
 	display: inline-block;
+	font-size: 19px;
+	font-size: 1.2rem;
+	font-weight: bold;
 	margin-right: .50em;
 	text-transform: uppercase;
 	text-decoration: none;
 }
 footer {
-	border-top: 1px solid #ccc;
-	margin: 1em 0;
+	border-top: 1px solid #ddd;
 	padding: .50em 0;
+	position: relative;
 }
 footer a {text-transform: uppercase;}
+footer .links {
+	font-size: 1rem;
+}
 
+/* Example breakpoint for smaller screens  */
+@media (max-width: 35.5em) and (min-width: 10em) {
+	nav {
+		left: 1.25em;
+	}
+}
 
-/* Example breakpoint for larger screens */
-@media (min-width: 790px) {
-	.content pre {
-		font-size: 13px;
-		font-size: .75rem;
-		line-height: .8rem;
+/* Example breakpoint for larger screens (790px) */
+@media (min-width: 49.375em) {
+	[role="banner"] h1 {
+		font-size: 5.2em;
+	}
+	h2 {
+		font-size: 32px;
+		font-size: 2rem;
 	}
 	p {
 		font-size: 1.125rem;
-		line-height: 1.4;
+		line-height: 1.5;
+	}
+	footer .links {
+		position: absolute;
+		right: 0;
+		top: 1em;
 	}
 }
 

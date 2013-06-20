@@ -22,26 +22,29 @@
 	<main class="container">
 
 		<section class="top-content row">
-			<header role="banner">
-				<h1>Girder</h1>
-				<small>Example Using Just CSS</small>
-			</header>
-			<nav>
-				<a href="#">Home</a>
-				<a href="#">Work</a>
-				<a href="#">Blog</a>
-				<a href="#">Contact</a>
-			</nav>
+			<div class="top-wrapper">
+				<header role="banner">
+					<h1>Girder</h1>
+					<span>Example Using Just CSS</span>
+				</header>
+				<a name="about"></a>
+				<p>A simple CSS grid for building modern Websites. This example page doesn't use the <acronym title="Syntactically Awesome Stylesheets"><b>Sass</b></acronym> features of Girder but includes girder.css as a good alternative for quickly building HTML prototypes when Sass is not available.</p>
+				<nav>
+					<a href="#install">Install</a>
+					<a href="#guide">Guide</a>
+					<a href="#links">Links</a>
+				</nav>
+			</div>
 
-			<p>A minimalistic grid for building awesome Websites with <acronym title="Syntactically Awesome Stylesheets">Sass</acronym> targeting the modern browser. It uses silent classes (placeholders) to structure content in HTML and keeps your Markup free of excess presentational classes like "unit_1of4", "small-2", "grid4". This page is built with Girder.</p>
 		</section>
 
 		<section class="main-content row">
-
+			<div class="main-wrapper">
 			<div class="installation row">
+				<a name="install"></a>
 				<h2>Installation</h2>
-				<p>Copy the Girder files from Github or from the downloaded examples directly into your project's path.</p>
-				<p>With <a href="http://bower.io/">Bower</a> just use: <strong>"bower install girder --save"</strong> then add a reference to either <b>scss/_girder.scss</b> or <b>girder.css</b> inside the components folder.</p>
+				<p>Copy the Scss folder and files directly into your project's path. Get them from <a href="https://github.com/unmaya/Girder">Github</a> or from the <a href="http://comfypixel.com/Girder/Girder_example_files_v04.zip">downloaded examples</a>.</p>
+				<p>With <a href="http://bower.io/">Bower</a> just use: <strong>"bower install girder --save"</strong> and add a reference to either <b>scss/_girder.scss</b> or <b>girder.css</b> inside the components folder.</p>
 
 				<section class="unit half">
 					<h3>Using Scss</h3>
@@ -50,18 +53,28 @@
 
 				<section class="unit half">
 					<h3>Standard CSS</h3>
-					<p>Simply include the <b>girder.css</b> file in your document before your site's custom styles.</p>
+						<h3>Standard CSS</h3>
+						<p>Simply include <b>girder.css</b> in your document along with the site's styles. (Like this page)</p>
 				</section>
+			</div>
+
+			<div class="reference row">
+				<a name="guide"></a>
+				<h2>Reference</h2>
+				<p>Coming Soon...</p>
 			</div>
 
 			<footer>
 				<p class="credits center-small">
-					<small>Made with care by Comfypixel - <a href="https://github.com/unmaya/Girder">Suggestions</a> welcome!<br>
-						&copy; 2013 - Open Source Under <a href="http://opensource.org/licenses/MIT">MIT</a> license  <br><br>
-					<strong><a href="http://comfypixel.com">Website</a> - <a href="https://twitter.com/unmaya">Twitter</a> - <a href="https://github.com/unmaya">Github</a></strong> </small>
+					<a name="links"></a>
+					<small>Made by Comfypixel, <a href="https://github.com/unmaya/Girder">Suggestions</a> welcome!<br>
+						&copy; 2013 - Open Source Under <a href="http://opensource.org/licenses/MIT">MIT</a> license </small>
+				</p>
+				<p class="links center-small">
+					<strong><a href="http://comfypixel.com">Website</a> - <a href="https://twitter.com/unmaya">Twitter</a> - <a href="https://github.com/unmaya">Github</a></strong>
 				</p>
 			</footer>
-
+			</div>
 		</section>
 	</main>
 
