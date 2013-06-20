@@ -1,8 +1,13 @@
 Girder CSS [demo](http://comfypixel.com/Girder/)
 ====================
 
-A simple CSS grid toolkit built on Sass. Its flexible, semantic, responsive and minimalistic. It includes some utilities to build prototypes quickly so I use it for smaller projects and as a kickstarter template.
-**Why build another css grid?** Because I can :) No, really. I couldn't find exactly what I was looking for so I decided to spin my own solution over a rainy weekend. I'm drawing inspiration from all over but I'm looking to keep things super simple.
+A simple CSS grid toolkit built on Sass targeting the modern browser. Its flexible, semantic, responsive and minimalistic. Its extra handy when building HTML prototypes because its small, fast and easy to use. **Why build another css grid?** Because I can :) No, really. I couldn't find exactly what I was looking for so I decided to spin my own solution over a rainy weekend. I'm drawing inspiration from all over but I'm looking to keep things super simple. Here's what I think is different about it:
+
+* Its built on Sass with semantic html5 in mind but can also be used with plain CSS
+* Styles are conscise but well commented, its small and easy to learn. No excess stuff only the essentials.
+* Instead of columns it uses flexible grid units based on page sections (.one-half, .two-thirds).
+* The grid likes relative units and can easily adapt to a mobile-first approach (but its not required).
+* It makes no other assumptions of how you want to build (its just a layout helper). You bring your own typography, design elements, javascript etc.
 
 ---
 
@@ -58,7 +63,7 @@ Include the scss files before your base styles:
 footer { @include clearfix; } // Clear anything without a class
 ```
 
-**To use plain CSS** you just add the classes to the markup like this:
+**To use plain CSS** you just add the classes to the markup like this [Example page](http://comfypixel.com/Girder/example-css.html):
 ```HTML
 <!-- Be sure to include the girder.css file in your document -->
 <main class="content row">
