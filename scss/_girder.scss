@@ -35,7 +35,7 @@ $include-extras    : true !default;
 
 // Output HTML presentational classes? Larger CSS output - experimental
 // Set to true to use .unit .two-thirds classes in html elements (not recommended)
-$html-classes      : false;
+$html-classes      : false !default;
 
 // Required: Base grid for girder
 @import "girder_modules/girder_base";

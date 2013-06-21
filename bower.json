@@ -1,6 +1,6 @@
 {
 	"name": "girder",
-	"version": "0.4.5",
+	"version": "0.5.0",
 	"main": "./scss/_girder.scss",
 	"homepage": "http://comfypixel.com/Girder",
 	"dependencies": {

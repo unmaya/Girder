@@ -1,21 +1,21 @@
 Girder CSS [demo](http://comfypixel.com/Girder/)
 ====================
 
-A simple CSS grid toolkit built on Sass targeting the modern browser. Its flexible, semantic, responsive and minimalistic. Its extra handy when building HTML prototypes because its small, fast and easy to use. **Why build another css grid?** Because I can :) No, really. I couldn't find exactly what I was looking for so I decided to spin my own solution over a rainy weekend. I'm drawing inspiration from all over but I'm looking to keep things super simple. Here's what I think is different about it:
+A simple CSS grid toolkit built with Sass. Extra handy for HTML prototypes because its small, fast and easy to use. **Why build another css grid?** Because I can :) No, really. I couldn't find exactly what I was looking for so I decided to spin my own solution over a rainy weekend. I'm drawing inspiration from all over but really looking to keep things super simple:
 
-* Its built on Sass with semantic html5 in mind but can also be used with plain CSS
-* Styles are conscise but well commented, its small and easy to learn. No excess stuff only the essentials.
-* Instead of columns it uses flexible grid units based on page sections (.one-half, .two-thirds).
+* Its Sass with semantic html5 in mind but can also be used with plain CSS (girder.css)
+* Conscise but well commented, small, focused and easy to learn. No excess stuff just the essentials.
+* Instead of columns it uses flexible grid units based on page sections (.half, .two-thirds).
 * The grid likes relative units and can easily adapt to a mobile-first approach (but its not required).
-* It makes no other assumptions of how you want to build (its just a layout helper). You bring your own typography, design elements, javascript etc.
+* It makes no other assumptions of how you want to build (its just a layout helper). You bring your own typography, design elements, javascript, plusins, etc.
 
 ---
 
 # How it works
-Girder is a simple yet versatile grid designed for small to medium projects. Its best suited for building with Sass, a fantastic pre-processor but you can also use plain CSS. Build flexible layouts divided into logical sections. It uses silent classes (placeholders) to structure content in HTML and keeps your Markup free of excess presentational classes like "unit_1of4", "small-2", "grid4".
+Girder is a simple yet versatile grid designed for small to medium projects. Its best suited for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It builds flexible layouts divided into logical sections and uses silent classes (placeholders) to structure content in HTML; this keeps your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4".
 
 **Example?**
-You can write HTML with custom classes to target elements or use the cascade with base selectors:
+You can write HTML with custom classes of your choosing to target elements or use the cascade:
 ```HTML
 <main class="content row">
 	<article> My main column covers two thirds of the page. </article>
@@ -35,13 +35,13 @@ $container-width: 1322px;
 main.content {
 	article { @include(two-thirds); }
 	aside {
-		@include(one-third);
+		@include(third);
 		background: #ddd;
 	}
 }
 ```
 # Installation / Requirements
-Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/Girder_example_files_v04.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
+Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/Girder_example_files_v05.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**
 *	**/girder_modules/**
@@ -57,9 +57,9 @@ Include the scss files before your base styles:
 2. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
 
 ```SCSS
-// Units go as small as one-sixth of any container, mix and match as needed
+// Units go as small as sixth of any container, mix and match as needed
 @include unit(three-fourths); // Match fourths
-@include unit(one-third); // Match thirds
+@include unit(third); // Match thirds
 footer { @include clearfix; } // Clear anything without a class
 ```
 
@@ -68,7 +68,7 @@ footer { @include clearfix; } // Clear anything without a class
 <!-- Be sure to include the girder.css file in your document -->
 <main class="content row">
 	<article class="unit two-thirds"> My main column covers two thirds of the page. </article>
-	<aside class="unit one-third"> This sidebar content occupies one third of the page. </aside>
+	<aside class="unit third"> This sidebar content occupies one third of the page. </aside>
 	<footer class="clear">Awesome footer</footer>
 </main>
 ```
@@ -76,7 +76,7 @@ footer { @include clearfix; } // Clear anything without a class
 **Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units, add media queries or use any number of plugins for Sass. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download the source to see exactly how it works.
 
 ## Optional
-Girder is made with responsive design in mind and can easily adapt to a mobile-first approach using the Breakpoint plugin for Compass. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by un-commenting these lines in the settings:
+Girder is tiny but it can scale based on the project's needs. It includes support for more complex media queries using the Breakpoint() compass plugin. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by un-commenting these lines in the settings:
 
 ````SCSS
 @import "breakpoint";
