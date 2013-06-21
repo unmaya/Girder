@@ -34,7 +34,7 @@ main.content {
 }
 ```
 # Installation / Requirements
-1. Once you've installed the Sass Gem you can get the latest version of Girder from this repo directly or with Bower: ```bower install girder --save``` You can also [download all the example files](http://comfypixel.com/Girder/Girder_example_files_v04.zip)
+1. Once you've installed the Sass Gem you can get the latest version of Girder from this repo directly or with Bower: ```bower install girder --save``` You can also [download all the example files](http://comfypixel.com/Girder/)
 
 a.	**girder.scss**
 b.	**/girder_modules/**

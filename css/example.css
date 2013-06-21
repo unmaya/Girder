@@ -35,7 +35,8 @@ a:hover, a:active {color: #64C2DD;}
 .top-content {
 	background: #EAEAEA;
 	padding-bottom: 1em;
-	margin-bottom: 2em;
+	margin-bottom: 1.75em;
+	text-shadow: 0 1px 0 #fff;
 }
 [role="banner"] h1 {
 		font-family: lato, source-sans-pro, "Helvetica", sans-serif;
@@ -73,6 +74,9 @@ nav a {
 	padding: 0 1.25em;
 	text-align: center;
 }
+.sample-grid img {width: 200px;}
+.sample-grid a {text-decoration: none;}
+.sample-grid small {display: block;}
 
 footer {
 	border-top: 1px solid #ddd;
@@ -124,9 +128,12 @@ footer .links {
 	nav {
 		left: 1.25em;
 	}
+}
+
+@media (max-width: 28em) {
 	/* Reset our adjusted layout */
 	.sample-grid .unit:nth-child(3) {clear: none;}
-	.sample-grid .fourth {width: 100%;}
+	.sample-grid .fourth, .sample-grid img {width: 100%;}
 }
 
 /* Remove text-shadow in selection highlight: h5bp.com/i */

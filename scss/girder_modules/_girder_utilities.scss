@@ -20,12 +20,11 @@
 }
 
 
-// Modified Version of the Excellent Panels Mixin from Zurb
-// ----------------------------
-// Panel Variables
-//
+// Modified the Excellent Panels Mixin from Zurb
+// -----------------------------------------------
+// Might surface these vars in the future but keeping settings simple for now
 // Control the background and border styles
-$panel-bg:              darken(#fff, 5%) !default;
+$panel-bg:              darken(#fff, 7%) !default;
 $panel-border-color:    darken($panel-bg, 15%) !default;
 // Set default inner padding and bottom margin
 $panel-margin-bottom:   0 !default;
@@ -49,7 +48,6 @@ $panel-font-color-alt:  #fff !default;
 		margin-bottom: $panel-margin-bottom;
 		margin-top: 0;
 		padding: $padding $padding / 2;
-
 		background: $bg;
 
 		// We set the font color based on the darkness of the bg and if we are using filler content
