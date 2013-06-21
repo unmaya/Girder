@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* ///////////////////////////////////////////////// */
 /*  Example page using Standard Girder.css   /////// */
+/*  Not required by Girder, just for demo   /////// */
 /* ///////////////////////////////////////////////// */
 
 body {
@@ -66,6 +67,13 @@ nav a {
 	text-transform: uppercase;
 	text-decoration: none;
 }
+
+.sample-grid {
+	margin: 0 auto 2em;
+	padding: 0 1.25em;
+	text-align: center;
+}
+
 footer {
 	border-top: 1px solid #ddd;
 	padding: .50em 0;
@@ -74,13 +82,6 @@ footer {
 footer a {text-transform: uppercase;}
 footer .links {
 	font-size: 1rem;
-}
-
-/* Example breakpoint for smaller screens  */
-@media (max-width: 35.5em) and (min-width: 10em) {
-	nav {
-		left: 1.25em;
-	}
 }
 
 /* Example breakpoint for larger screens (790px) */
@@ -101,6 +102,31 @@ footer .links {
 		right: 0;
 		top: 1em;
 	}
+}
+
+/* Example max-width query */
+@media (max-width: 49.375em) {
+	/* Adjust the media grid layout */
+	.sample-grid .unit:nth-child(3) {clear: left;}
+	.sample-grid .fourth {width: 50%;}
+}
+
+/* Example breakpoint for x-large screen */
+@media (min-width: 58.75em) {
+	.sample-grid {
+		/* 940px with 16px base */
+		max-width: 58.75em;
+	}
+}
+
+/* Example breakpoint for smaller screens  */
+@media (max-width: 35.5em) and (min-width: 10em) {
+	nav {
+		left: 1.25em;
+	}
+	/* Reset our adjusted layout */
+	.sample-grid .unit:nth-child(3) {clear: none;}
+	.sample-grid .fourth {width: 100%;}
 }
 
 /* Remove text-shadow in selection highlight: h5bp.com/i */
