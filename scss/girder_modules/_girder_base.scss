@@ -32,20 +32,20 @@
 	@if $width == 'half' {
 		@extend %half;
 	}
-	@else if $width == 'one-third' {
-		@extend %one-third;
+	@else if $width == 'third' {
+		@extend %third;
 	}
 	@else if $width == 'two-thirds' {
 		@extend %two-thirds;
 	}
-	@else if $width == 'one-fourth' {
-		@extend %one-fourth;
+	@else if $width == 'fourth' {
+		@extend %fourth;
 	}
 	@else if $width == 'three-fourths' {
 		@extend %three-fourths;
 	}
-	@else if $width == 'one-fifth' {
-		@extend %one-fifth;
+	@else if $width == 'fifth' {
+		@extend %fifth;
 	}
 	@else if $width == 'two-fifths' {
 		@extend %two-fifths;
@@ -56,8 +56,8 @@
 	@else if $width == 'four-fifths' {
 		@extend %four-fifths;
 	}
-	@else if $width == 'one-sixth' {
-		@extend %one-sixth;
+	@else if $width == 'sixth' {
+		@extend %sixth;
 	}
 	@else if $width == 'five-sixths' {
 		@extend %five-sixths;
@@ -112,15 +112,15 @@
 
 	%half           { width: 50%;
 		@extend %unit; }
-	%one-third      { width: 33.3332%;
+	%third      { width: 33.3332%;
 		@extend %unit; }
 	%two-thirds     { width: 66.6665%;
 		@extend %unit; }
-	%one-fourth    { width: 25%;
+	%fourth    { width: 25%;
 		@extend %unit; }
 	%three-fourths { width: 75%;
 		@extend %unit; }
-	%one-fifth      { width: 20%;
+	%fifth      { width: 20%;
 		@extend %unit; }
 	%two-fifths     { width: 40%;
 		@extend %unit; }
@@ -128,7 +128,7 @@
 		@extend %unit; }
 	%four-fifths    { width: 80%;
 		@extend %unit; }
-	%one-sixth      { width: 16.6666%;
+	%sixth      { width: 16.6666%;
 		@extend %unit; }
 	%five-sixths      { width: 83.3333%;
 		@extend %unit; }
@@ -199,7 +199,7 @@
 
 // Only include these classes if the option exists
 @if $html-classes == true {
-	$units: (whole 100%), (half 50%), (one-third 33.3332%), (two-thirds 66.6665%), (one-fourth 25%), (three-fourths 75%), (one-fifth 20%), (two-fifths 40%), (three-fifths 60%), (four-fifths 80%), (one-sixth 16.6666%), (five-sixths 83.3333%), (golden-small 38.2716%), (golden-large 61.7283%);
+	$units: (whole 100%), (half 50%), (third 33.3332%), (two-thirds 66.6665%), (fourth 25%), (three-fourths 75%), (fifth 20%), (two-fifths 40%), (three-fifths 60%), (four-fifths 80%), (sixth 16.6666%), (five-sixths 83.3333%), (golden-small 38.2716%), (golden-large 61.7283%);
 
 	@each $unit in $units {
 	  .#{nth($unit, 1)} {

@@ -1,12 +1,12 @@
 [Girder Site Files](http://comfypixel.com/Girder/)
 ====================
 
-A simple CSS grid toolkit built on Sass. This is the demo source for the github pages, it includes a basic starter kit with some responsive examples and grid uses.
+A simple CSS grid toolkit built on Sass. This is the demo source for the github pages, it includes a basic starter kit with some responsive examples and grid uses. There's also an example page for using the [CSS version of Girder][http://comfypixel.com/Girder/example-css.html].
 
 ---
 
-# About the demo
-This page is built with Girder to test functionality and for general reference. There's also an example page for using the [CSS version of Girder][http://comfypixel.com/Girder/example-css.html].
+# About the example pages
+These pages are just testing functionality which I'll eventually use as a reference point for css classes and layouts.
 
 **Example HTML**
 ```HTML
@@ -28,7 +28,7 @@ $container-width: 1322px;
 main.content {
 	article { @include(two-thirds); }
 	aside {
-		@include(one-third);
+		@include(third);
 		background: #ddd;
 	}
 }
@@ -49,9 +49,9 @@ Include the scss files before your base styles:
 2. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
 
 ```SCSS
-// Units go as small as one-sixth of any container, mix and match as needed
+// Units go as small as sixth of any container, mix and match as needed
 @include unit(three-fourths); // Match fourths
-@include unit(one-third); // Match thirds
+@include unit(third); // Match thirds
 footer { @include clearfix; } // Clear anything without a class
 ```
 [Check the example](http://comfypixel.com/Girder/), inspect, poke and download the source to see exactly how it works.
