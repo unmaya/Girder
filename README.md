@@ -15,7 +15,7 @@ A simple CSS grid toolkit built with Sass. Extra handy for HTML prototypes becau
 Girder is a simple yet versatile grid designed for small to medium projects. Its best suited for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It builds flexible layouts divided into logical sections and uses silent classes (placeholders) to structure content in HTML; this keeps your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4".
 
 **Example?**
-You can write HTML with custom classes of your choosing to target elements or use the cascade:
+You can write HTML with your own custom classes to target elements or use the cascade:
 ```HTML
 <main class="content row">
 	<article> My main column covers two thirds of the page. </article>
@@ -40,7 +40,11 @@ main.content {
 	}
 }
 ```
-# Installation / Requirements
+### These are built entirely with the toolkit including a mix of Sass and pure CSS:
+[Setup Guide](http://comfypixel.com/Girder/guide.html)
+[Examples Page](http://comfypixel.com/Girder/example-css.html)
+
+# Setup / Requirements
 Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/Girder_example_files_v05.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**

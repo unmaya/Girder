@@ -69,16 +69,16 @@ $panel-font-color-alt:  #fff !default;
 // Usage: @include text-align(right);
 @mixin text-align($direction) {
 	@if $direction == left {
-		text-align: #{$direction} !important;
+		text-align: #{$direction};
 	}
 	@else if $direction == right {
-		text-align: #{$direction} !important;
+		text-align: #{$direction};
 	}
 	@else if $direction == center {
-		text-align: #{$direction} !important;
+		text-align: #{$direction};
 	}
 	@else if $direction == justify {
-		text-align: #{$direction} !important;
+		text-align: #{$direction};
 	}
 	@else {
 		@warn '"#{$direction}" is not a valid alignment for the text-align() mixin.';

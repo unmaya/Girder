@@ -8,9 +8,9 @@ js/
 _site/
 css/
 index.html
+example-css.html
 Gemfile.lock
 Gruntfile.js
-bower.json
 package.json
 npm-debug.log
 .sass-cache/
