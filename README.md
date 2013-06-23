@@ -40,9 +40,9 @@ main.content {
 	}
 }
 ```
-### These are built entirely with the toolkit including a mix of Sass and pure CSS:
-[Setup Guide](http://comfypixel.com/Girder/guide.html)
-[Examples Page](http://comfypixel.com/Girder/example-css.html)
+### These are built with Girder including a mix of Sass and pure CSS:
+* [Setup Guide](http://comfypixel.com/Girder/guide.html)
+* [Examples Page](http://comfypixel.com/Girder/example-css.html)
 
 # Setup / Requirements
 Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/Girder_example_files_v05.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
