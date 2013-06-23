@@ -1,8 +1,8 @@
 @charset "UTF-8";
-/* ///////////////////////////////////////////////// */
-/*  Example page using Standard Girder.css   /////// */
-/*  Not required by Girder, just for demo   /////// */
-/* ///////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+/*  Example page using Standard Girder.css    ////// */
+/*  Not required by Girder, just for demo    ////// */
+/* /////////////////////////////////////////////// */
 html {
 	font-size: 16px;
 }
@@ -48,9 +48,6 @@ a:hover, a:active {color: #64C2DD;}
 	text-shadow: 0 1px 0 #777;
 }
 nav {
-/*	position: absolute;
-	right: 1.50em;
-	top: 2em;*/
 	float: right;
 	margin: 1.6rem .8rem 0 1rem;
 	line-height: 2rem;
@@ -60,10 +57,9 @@ nav a {
 	font-size: 19px;
 	font-size: 1.2rem;
 	/*font-weight: bold;*/
-	margin-right: .75rem;
+	margin-right: 6px;
 	text-transform: uppercase;
 	text-decoration: none;
-
 	padding: 3px 6px 0;
 	border-radius: 3px;
 }
@@ -205,8 +201,7 @@ footer .links {font-size: 1rem;}
 /* Example breakpoint for smaller screens  */
 @media (max-width: 35.5em) and (min-width: 10em) {
 	[role="brand"],
-	nav {float: none; margin-bottom: 0;}
-	nav {margin-top: .5rem;}
+	nav {float: none; margin: 20px 0 0;}
 	[role="banner"] h1 {margin-top: 0;}
 }
 
@@ -215,6 +210,7 @@ footer .links {font-size: 1rem;}
 	.sample-grid .unit:nth-child(3) {clear: none;}
 	.sample-grid .fourth, .sample-grid img {width: 100%;}
 	[role="brand"] {display: none;}
+	.guide footer .credits {text-align: center;}
 }
 
 /* Remove text-shadow in selection highlight: h5bp.com/i */

@@ -632,6 +632,53 @@ footer a {
   padding-bottom: 0 !important;
 }
 
+nav#top {
+  border: 1px solid #eee;
+  display: none;
+  margin: 0 auto;
+  position: relative;
+  text-transform: uppercase;
+  text-align: center;
+}
+nav#top a {
+  display: block;
+  text-decoration: none;
+  padding: 8px;
+  font-weight: bold;
+}
+nav#top a.trigger:link,
+nav#top a.trigger:visited,
+nav#top a.trigger:hover,
+nav#top a:hover {
+  color: #333;
+}
+nav#top ul {
+  border: 1px solid #eee;
+  display: none;
+  margin: 0;
+  background: #fff;
+  position: absolute;
+  padding: 0 0 8px;
+  top: 0;
+  width: 100%;
+}
+nav#top ul .trigger {
+  border-bottom: 1px solid #eee;
+  padding: 8px;
+  background: #f5f5f5;
+}
+nav#top ul a {
+  padding: 5px 0 0;
+}
+nav#top #navigate:target {
+  display: block;
+}
+@media (min-width: 10em) and (max-width: 35.5em) {
+  nav#top {
+    display: block;
+  }
+}
+
 @media (min-width: 49.375em) {
   .content pre {
     font-size: 13px;
