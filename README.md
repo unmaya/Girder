@@ -1,12 +1,9 @@
 [Girder Site Files](http://comfypixel.com/Girder/)
 ====================
 
-A simple CSS grid toolkit built on Sass. This is the demo source for the github pages, it includes a basic starter kit with some responsive examples and grid uses. There's also an example page for using the [CSS version of Girder][http://comfypixel.com/Girder/example-css.html].
+A simple CSS grid toolkit built on Sass. This is the demo source for the github pages, it includes a basic <a href="http://comfypixel.com/Girder/guide.html">guide / starter kit</a> with some responsive use of the grid. There's also an example page for using the [CSS version of Girder][http://comfypixel.com/Girder/example-css.html].
 
 ---
-
-# About the example pages
-These pages are just testing functionality which I'll eventually use as a reference point for css classes and layouts.
 
 **Example HTML**
 ```HTML

@@ -7,49 +7,72 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<!-- Example page using Girder.css grid and presentational classes -->
-	<title>Girder - A Simple CSS Grid Built on Sass</title>
+	<title>Girder - A Simple CSS Grid Built with Sass</title>
 	<meta name="viewport" content="width=device-width">
 	<meta name="author" content="comfypixel.com" />
-	<meta name="description" content="A CSS grid built on Sass. Its responsive, modular and semantic." />
+	<meta name="description" content="A CSS grid built with Sass. Its responsive, modular and semantic." />
 
+	<!-- Separate and expanded to make css inspection-friendly  -->
 	<link rel="stylesheet" href="girder.css">
 	<link rel="stylesheet" href="css/example.css">
 	<script src="//use.edgefonts.net/source-sans-pro;pt-sans-narrow;lato:n1,n3,n9,i9.js"></script>
 	<!-- /js/modernizr-2.5.3.min.js -->
 </head>
 
-<body>
+<body class="examples">
 	<main class="container">
 
 		<section class="top-content row">
-			<div class="top-wrapper">
-				<header role="banner">
-					<h1>Girder</h1>
-					<span>Example Using Just CSS</span>
-				</header>
-				<a name="about"></a>
-				<p>A simple CSS grid for building modern Websites. This example page doesn't use the <acronym title="Syntactically Awesome Stylesheets"><b>Sass</b></acronym> features of <a href="http://comfypixel.com/Girder">Girder</a> but includes girder.css as an alternative for quickly building HTML prototypes when Sass is not available.</p>
-				<nav>
-					<a href="#install">Install</a>
-					<a href="#reference">Reference</a>
-					<a href="#links">Links</a>
-				</nav>
-			</div>
+			<h2 role="brand">Girder</h2>
+			<nav class="center-small">
+				<a href="guide.html">Guide</a>
+				<a class="activated" href="example-css.html">Examples</a>
+				<a href="#setup">Setup</a>
+			</nav>
 
+			<div class="top-wrapper row">
+				<header role="banner">
+					<h2><strong>Simple</strong> &amp; <strong>Powerful</strong></h2>
+					<span>Using Girder CSS</span>
+				</header>
+				<p>Including a pure CSS alternative to <acronym title="Syntactically Awesome Stylesheets"><b>Sass</b></acronym>.</p>
+			</div>
 		</section>
 
 		<section class="sample-grid equal-units row">
 			<div class="unit fourth"> <img src="https://lh3.googleusercontent.com/-kcFPzB7t2ss/UIli8OwlDjI/AAAAAAAAHrM/s8H1wQoiLw4/s506-o/Inception.jpg" alt="">  <small>By Joel Tjintjelaar <a href="https://plus.google.com/u/0/+JoelTjintjelaar/posts">*</a></small></div>
+
 			<div class="unit fourth"> <img src="https://lh3.googleusercontent.com/-Mu7kEUoE4u8/UQFjOnELLPI/AAAAAAAAWd8/FDppHCA5E_4/s506-o/by+Joel++Tjintjelaar.jpg" alt=""> <small>By Joel Tjintjelaar <a href="https://plus.google.com/u/0/+JoelTjintjelaar/posts">*</a></small></div>
+
 			<div class="unit fourth"> <img src="https://lh4.googleusercontent.com/-TmmcL-72614/UAW9Qn64n6I/AAAAAAAAHRc/-3HvdrXoc8g/s506-o/Shape-Of-Light-XIV.jpg" alt=""> <small>By Joel Tjintjelaar <a href="https://plus.google.com/u/0/+JoelTjintjelaar/posts">*</a></small></div>
+
 			<div class="unit fourth"> <img src="https://lh4.googleusercontent.com/-TpIIfWQtiuA/T9NSC3h9lXI/AAAAAAAAGc8/QMhdQc8J4F0/s506-o/Shaping-The-Light-X-in-Berlin-Shell-Haus-WEB.jpg" alt="">  <small>By Joel Tjintjelaar <a href="https://plus.google.com/u/0/+JoelTjintjelaar/posts">*</a></small></div>
+		</section>
+
+		<div class="caption row no-gutters">
+			<p>Inspect these basic examples of the grid</p>
+		</div>
+
+		<section class="features row">
+			<div class="unit third">
+				<h2>Simple</h2>
+				<p>Conscise but well commented. No excess stuff, only the essentials.</p>
+			</div>
+			<div class="unit third">
+				<h2>Flexible</h2>
+				<p>It uses flexible grid units based on page sections like "half" &amp; "two-thirds".</p>
+			</div>
+			<div class="unit third">
+				<h2>Responsive</h2>
+				<p>The grid likes relative units, it supports Breakpoint() and you can build mobile-first.</p>
+			</div>
 		</section>
 
 		<section class="main-content row">
 			<div class="main-wrapper">
-			<div class="installation row">
-				<a name="install"></a>
-				<h2>Installation</h2>
+			<div class="setup row">
+				<a name="setup"></a>
+				<h2>Setup</h2>
 				<p>Copy the Scss folder and files directly into your project's path. Get them from <a href="https://github.com/unmaya/Girder">Github</a> or from the <a href="http://comfypixel.com/Girder/Girder_example_files_v05.zip">downloaded examples</a>.</p>
 				<p>With <a href="http://bower.io/">Bower</a> just use: <strong>"bower install girder --save"</strong> and add a reference to either <b>scss/_girder.scss</b> or <b>girder.css</b> inside the components folder.</p>
 
@@ -62,12 +85,6 @@
 					<h3>Standard CSS</h3>
 					<p>Simply include <b>girder.css</b> in your document along with the site's styles. (Like this page)</p>
 				</section>
-			</div>
-
-			<div class="reference row">
-				<a name="reference"></a>
-				<h2>Reference</h2>
-				<p>Coming Soon...</p>
 			</div>
 
 			<footer>

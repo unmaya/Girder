@@ -594,7 +594,7 @@ footer {
   padding: 2em 0;
 }
 footer .credits {
-  text-align: center !important;
+  text-align: center;
 }
 footer a {
   text-transform: uppercase;
@@ -627,7 +627,7 @@ footer a {
   border-color: #23abd0;
 }
 
-.installation section {
+.setup section {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
