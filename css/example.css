@@ -85,7 +85,7 @@ nav a.activated {
 	text-shadow: none;
 }
 .examples .top-wrapper {text-align: center;}
-
+.top-content h2 a {color: #333; text-decoration: none;}
 [role="brand"] {
 		float: left;
 		font-family: lato, source-sans-pro, "Helvetica", sans-serif;

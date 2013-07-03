@@ -17,6 +17,23 @@
 	max-width: $container-width;
 }
 
+// A list of unit names and corresponding widths required by Girder
+$units:'half' 50%,
+				'third' 33.333%,
+				'two-thirds' 66.666%,
+				'fourth' 25%,
+				'three-fourths' 75%,
+				'fifth' 20%,
+				'two-fifths' 40%,
+				'three-fifths' 60%,
+				'four-fifths' 80%,
+				'sixth' 16.6666%,
+				'five-sixths' 83.3333%,
+				'golden-small' 38.2716%,
+				'golden-large' 61.7283%,
+				'whole' 100%;
+
+
 // Mixin for unit widths (Optimize @if and add func for return values)
 @mixin unit($width:whole, $addgutters:true) {
 
@@ -169,6 +186,44 @@
 
 	// .row clearing haxor
 	*zoom: 1;
+}
+
+
+// Girder Responsive unit Mixin uses a cleaner syntax (until maps in Sass 3.3)
+// Separate unit mixin for media queries for additional control over gutters
+@mixin responsive-unit($size, $gutters:false) {
+	@each $unit in $units {
+		@if $size == nth($unit, 1) {
+			$length: length($unit);
+			$size: whole !default;
+
+			@for $i from 2 through $length {
+				// If it's the first item, override it
+				@if $i == 2 {
+					$size: nth($unit, $i);
+				}
+				// Else, join $size
+				@else {
+					$size: join($size, nth($unit, $i));
+				}
+			}
+			// Send this to our unit Mixin
+			@include girder-unit($size, $gutters);
+		}
+	}
+}
+
+// This separates our unit mixin and css to keep things tidy
+@mixin girder-unit ($width, $addgutters) {
+	.row & {
+		float: left;
+		// reverse gutters logic to prevent overriding false
+		@if $addgutters == true {
+			padding: $gutters / 2;
+		}
+		// Collect our unit size
+		width: $width;
+	}
 }
 
 

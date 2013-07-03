@@ -144,6 +144,11 @@ a {
 		font-weight: 900;
 		font-size: 4em;
 		margin: 1em auto 0;
+
+		img {
+			width: 75%;
+			max-width: 200px;
+		}
 	}
 
 	ul {list-style: none; margin: 0; padding: 1.25em 0 1em;}

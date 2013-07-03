@@ -14,7 +14,10 @@
 
 	<link rel="stylesheet" href="css/site.css">
 	<script src="//use.edgefonts.net/source-sans-pro;pt-sans-narrow;lato:n1,n3,n9,i9.js"></script>
-	<!-- /js/modernizr-2.5.3.min.js -->
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 
 <body>
@@ -38,6 +41,14 @@
 					<h1>Girder</h1>
 				</header>
 				<p>A minimalistic grid for building awesome Websites with <acronym title="Syntactically Awesome Stylesheets">Sass</acronym> targeting the modern browser. It uses silent classes (placeholders) to structure content in HTML and keeps your Markup free of excess presentational classes like "unit_1of4", "small-2", "grid4". This page is built with Girder.</p>
+				<h2>Why I use it:</h2>
+				<ul>
+					<li>Its fast and simple to use. With <a href="http://sass-lang.com/">Sass</a> or plain CSS</li>
+					<li>Flexible, responsive and scalable; It likes relative units.</li>
+					<li>Uses document flow, box-sizing and adjustable gutters</li>
+					<li>Semantic &amp; concise. Its a layout helper with just the essentials.</li>
+					<li>Built to work smart with sass</li>
+				</ul>
 
 				<div class="example-units row">
 				<h2>Simple Grid Units</h2>
@@ -91,7 +102,7 @@
 			</section>
 
 			<div class="actions">
-				<h1 class="gee hide-small">G</h1>
+				<h1 class="gee hide-small"><img title="Girder" src="img/girder-logo-white.png"></h1>
 				<ul>
 					<li> <a class="download" href="http://comfypixel.com/Girder/Girder_example_files_v05.zip">Download</a> </li>
 					<li> <a href="guide.html">How to use</a> </li>
@@ -105,5 +116,14 @@
 <!--[if lt IE 7]>
 	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a></p>
 <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-272608-12', 'comfypixel.com');
+  ga('send', 'pageview');
+</script>
 </body>
 </html>

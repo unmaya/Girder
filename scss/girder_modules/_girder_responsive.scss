@@ -2,12 +2,6 @@
 // Breakpoints and base media queries for grid units and utilities
 // Optional: install the Breakpoint plugin for Compass to use respond-to mixin
 
-$breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq'),
-							'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
-							'medium and up' $medium-breakpoint,
-							'larger screens' $large-breakpoint,
-							'extra large screens' $xlarge-breakpoint;
-
 @if $use-breakpoint == true {
 	@include respond-to('turn single column') {
 		.row {

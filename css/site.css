@@ -557,6 +557,10 @@ a:hover, a:active {
   font-size: 4em;
   margin: 1em auto 0;
 }
+.actions .gee img {
+  width: 75%;
+  max-width: 200px;
+}
 .actions ul {
   list-style: none;
   margin: 0;
