@@ -1,0 +1,234 @@
+@charset "UTF-8";
+/* ////////////////////////////////////////////////// */
+/*  Example page using Standard Girder.css    ////// */
+/*  Not required by Girder, just for demo    ////// */
+/* /////////////////////////////////////////////// */
+html {
+	font-size: 16px;
+}
+body {
+	background: #fff;
+	color: #333;
+	font-family: source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {margin-bottom: .4em;}
+h1 {
+	line-height: 1.60714em;
+}
+h2 {
+	font-size: 26px;
+	font-size: 1.625rem;
+	margin-top: 0;
+}
+h3 {margin-top: .4em;}
+
+p {margin: .75em 0 1.5em; line-height: 1.5;}
+a:link, a:visited {color: #2099ba;}
+a:hover, a:active {color: #64C2DD;}
+.top-wrapper, .main-wrapper {
+	max-width: 568px;
+	max-width: 37.5rem;
+	padding-left: 0; padding-right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+.top-content {
+	background: #EAEAEA;
+	padding-bottom: 1em;
+	margin-bottom: 1.75em;
+	text-shadow: 0 1px 0 #fff;
+}
+.guide .top-content {
+	background: #46A6E2;
+	text-shadow: 0 1px 0 #777;
+}
+nav {
+	float: right;
+	margin: 1.6rem .8rem 0 1rem;
+	line-height: 2rem;
+}
+nav a {
+	display: inline-block;
+	font-size: 19px;
+	font-size: 1.2rem;
+	/*font-weight: bold;*/
+	margin-right: 6px;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 3px 6px 0;
+	border-radius: 3px;
+}
+nav a.activated {
+	background: #72CEE7;
+	color: #333;
+	-webkit-box-shadow: 0 1px 0 #888;
+	-moz-box-shadow: 0 1px 0 #888;
+	box-shadow: 0 1px 0 #888;
+}
+.guide nav a,
+.guide [role="brand"]{
+	color: #222;
+	text-shadow: none;
+}
+.guide .top-wrapper {color: #fff;}
+.guide .top-wrapper a:link,
+.guide .top-wrapper a:visited {
+	color: #222;
+	background: #FFFAC0;
+	text-decoration: none;
+	padding: 0 3px;
+	text-shadow: none;
+}
+.examples .top-wrapper {text-align: center;}
+.top-content h2 a {color: #333; text-decoration: none;}
+[role="brand"] {
+		float: left;
+		font-family: lato, source-sans-pro, "Helvetica", sans-serif;
+		font-weight: 300;
+		font-size: 2.25rem;
+		/*margin: 1.6rem 0 0 .8rem;*/
+		/*line-height: 2rem;*/
+		margin: 1.15rem 0 0 .8rem;
+		line-height: 48px;
+		letter-spacing: -.05em;
+		text-transform: uppercase;
+
+
+		padding-left: 53px;
+		background: url(../img/girder-logo-blacksm.png) left top no-repeat;
+		background-size: 42px 48px;
+	}
+[role="banner"] h1, [role="banner"] h2 {
+		font-family: lato, source-sans-pro, "Helvetica", sans-serif;
+		font-weight: 600;
+		font-size: 4.25em;
+		margin-top: 5rem;
+		margin-bottom: 0;
+		letter-spacing: -.02em;
+		text-transform: uppercase;
+		line-height: 1.3;
+	}
+ [role="banner"] h2 {
+		font-weight: 300;
+		text-transform: none;
+		line-height: 1;
+		margin-bottom: 1rem;
+		margin-top: 2rem;
+	}
+
+[role="banner"] span {
+	display: block;
+	font-size: 2em;
+	font-weight: 300;
+	line-height: 1.1;
+	margin: 0 0 .75em;
+	text-transform: uppercase;
+}
+
+.sample-grid {
+	margin: 0 auto 2em;
+	padding: 0 1.25em;
+	text-align: center;
+}
+.sample-grid img {width: 200px;}
+.sample-grid a {text-decoration: none;}
+.sample-grid small {display: block;}
+
+.features {
+	margin: 0 auto 2em;
+	padding: 0 2em;
+}
+.caption p {
+	font-family: lato, source-sans-pro, "Helvetica", sans-serif;
+	font-weight: 400;
+	font-size: 2.8em;
+	letter-spacing: -.02em;
+	line-height: 1.2;
+	margin: 0 .5em 1em;
+	text-align: center;
+}
+
+footer {
+	border-top: 1px solid #ddd;
+	color: #888;
+	line-height: 1.4;
+	padding: .50em 0;
+	position: relative;
+}
+footer a {text-transform: uppercase;}
+footer .links {font-size: 1rem;}
+.guide footer .credits {text-align: left;}
+
+/* Example breakpoint for larger screens (790px) */
+@media (min-width: 49.375em) {
+	[role="banner"] h1 {
+		font-size: 5.2em;
+	}
+	h2 {
+		font-size: 32px;
+		font-size: 2rem;
+	}
+	p {
+		font-size: 1.325rem;
+		line-height: 1.5;
+	}
+	footer .links {
+		position: absolute;
+		right: 0;
+		top: 1em;
+	}
+}
+
+/* Example max-width query */
+@media (max-width: 49.375em) {
+	/* Adjust the media grid layout */
+	.sample-grid .unit:nth-child(3) {clear: left;}
+	.sample-grid .fourth {width: 50%;}
+
+}
+
+/* Example breakpoint for x-large screen */
+@media (min-width: 58.75em) {
+	.sample-grid, .features {
+		/* 940px with 16px base */
+		max-width: 58.75em;
+	}
+	/* Increase unit padding (gutters) just for a specific row */
+	.features .unit {
+		padding-left: 1.25em;
+		padding-right: 1.25em;
+	}
+}
+
+/* Example breakpoint for smaller screens  */
+@media (max-width: 35.5em) and (min-width: 10em) {
+	[role="brand"],
+	nav {float: none; margin: 20px 0 0;}
+	[role="banner"] h1 {margin-top: 0;}
+}
+
+@media (max-width: 28em) {
+	/* Reset our adjusted layout */
+	.sample-grid .unit:nth-child(3) {clear: none;}
+	.sample-grid .fourth, .sample-grid img {width: 100%;}
+	[role="brand"] {display: none;}
+	.guide footer .credits {text-align: center;}
+}
+
+/* Remove text-shadow in selection highlight: h5bp.com/i */
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+/* IE < 9 Fails */
+html.lt-ie9 .container .content .row {display: none !important;}
