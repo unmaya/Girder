@@ -57,6 +57,12 @@
 .row.no-gutters, .row.about, .row .no-gutters, .row .about {
   padding: 0;
 }
+.row .row > :first-of-type {
+  padding-left: 0;
+}
+.row .row > :last-child {
+  padding-right: 0;
+}
 .row.equal-units > :first-of-type {
   padding-left: 0.625em !important;
 }
