@@ -75,6 +75,7 @@ nav a.activated {
 	color: #222;
 	text-shadow: none;
 }
+.top-content a:hover {color: rgb(6, 96, 124);}
 .guide .top-wrapper {color: #fff;}
 .guide .top-wrapper a:link,
 .guide .top-wrapper a:visited {
@@ -85,6 +86,7 @@ nav a.activated {
 	text-shadow: none;
 }
 .examples .top-wrapper {text-align: center;}
+.examples .main-content {padding-top: 1em; border-top: 5px solid #eee;}
 .top-content h2 a {color: #333; text-decoration: none;}
 [role="brand"] {
 		float: left;
@@ -140,9 +142,10 @@ nav a.activated {
 .sample-grid small {display: block;}
 
 .features {
-	margin: 0 auto 2em;
+	margin: 0 auto;
 	padding: 0 2em;
 }
+.features div {text-align: center;}
 .caption p {
 	font-family: lato, source-sans-pro, "Helvetica", sans-serif;
 	font-weight: 400;
