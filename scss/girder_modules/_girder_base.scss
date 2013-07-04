@@ -17,6 +17,23 @@
 	max-width: $container-width;
 }
 
+// A list of unit names and corresponding widths required by Girder
+$units:'half' 50%,
+				'third' 33.333%,
+				'two-thirds' 66.666%,
+				'fourth' 25%,
+				'three-fourths' 75%,
+				'fifth' 20%,
+				'two-fifths' 40%,
+				'three-fifths' 60%,
+				'four-fifths' 80%,
+				'sixth' 16.6666%,
+				'five-sixths' 83.3333%,
+				'golden-small' 38.2716%,
+				'golden-large' 61.7283%,
+				'whole' 100%;
+
+
 // Mixin for unit widths (Optimize @if and add func for return values)
 @mixin unit($width:whole, $addgutters:true) {
 
@@ -29,13 +46,13 @@
 		}
 	}
 
-	@if $width == 'half' {
+	@if $width == 'half' or $width == 'two-fourths' {
 		@extend %half;
 	}
-	@else if $width == 'third' {
+	@else if $width == 'third' or $width == 'two-sixths' {
 		@extend %third;
 	}
-	@else if $width == 'two-thirds' {
+	@else if $width == 'two-thirds' or $width == 'four-sixths' {
 		@extend %two-thirds;
 	}
 	@else if $width == 'fourth' {
@@ -68,7 +85,7 @@
 	@else if $width == 'golden-large' {
 		@extend %golden-large;
 	}
-	@else {
+	@else if $width == 'whole' {
 		@extend %whole;
 		@if $use-breakpoint == true {
 			@include respond-to('turn single column') {
@@ -80,6 +97,9 @@
 				text-align: inherit;
 			}
 		}
+	}
+	@else {
+		@warn '"#{$width}" is not a valid width for the unit mixin (try "half" or "three-fourths" instead). Defaulting to "whole" unit.';
 	}
 }
 
@@ -103,6 +123,7 @@
 
 		// Add a .no-gutters class to a unit to remove gutters (experimental)
 		@if $html-classes == true {
+			&.no-gutters,
 			.no-gutters > &:first-of-type {
 				padding-left: 0;
 				padding-right: 0;
@@ -154,8 +175,9 @@
 	// Lets add outer gutters to top level row
 	padding-right: $gutters;
 	padding-left: $gutters;
-	// but remove them when nested or specified
-	&.no-gutters, .row, .row .row  {padding-left: 0; padding-right: 0;}
+	// Remove them when nested or specified (enforced but override is still possible)
+	.row, .row .row  {padding-left: 0; padding-right: 0;}
+	&.no-gutters, .no-gutters {padding: 0;}
 
 	// Remove nested outer gutters at css level
 	.row > :first-of-type {padding-left: 0;}
@@ -169,6 +191,44 @@
 
 	// .row clearing haxor
 	*zoom: 1;
+}
+
+
+// Girder Responsive unit Mixin uses a cleaner syntax (until maps in Sass 3.3)
+// Separate unit mixin for media queries for additional control over gutters
+@mixin responsive-unit($size, $gutters:false) {
+	@each $unit in $units {
+		@if $size == nth($unit, 1) {
+			$length: length($unit);
+			$size: whole !default;
+
+			@for $i from 2 through $length {
+				// If it's the first item, override it
+				@if $i == 2 {
+					$size: nth($unit, $i);
+				}
+				// Else, join $size
+				@else {
+					$size: join($size, nth($unit, $i));
+				}
+			}
+			// Send this to our unit Mixin
+			@include girder-unit($size, $gutters);
+		}
+	}
+}
+
+// This separates our unit mixin and css to keep things tidy
+@mixin girder-unit ($width, $addgutters) {
+	.row & {
+		float: left;
+		// reverse gutters logic to prevent overriding false
+		@if $addgutters == true {
+			padding: $gutters / 2;
+		}
+		// Collect our unit size
+		width: $width;
+	}
 }
 
 

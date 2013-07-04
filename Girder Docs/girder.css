@@ -1,0 +1,154 @@
+@charset "UTF-8";
+/* //////////////////////////////////////////////// */
+/*   Girder is a Sassy grid toolkit     ////////// */
+/*   Simple, Responsive & Semantic     ////////// */
+/*   https://github.com/unmaya/Girder ////////// */
+/* //////////////////////////////////////////// */
+
+/* This is the CSS version of Girder which was designed for use with Scss.
+In this form it requires presentational classes in HTML which is
+exactly what I wanted to avoid by building it with Sass / Scss. */
+
+/* Include a broad amount of border-box on everything and profit. */
+/* Override for special cases within selectors. Yes, its for modern browsers! */
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Adjust this to fit your preference for an em base
+By default its set to the current standard of 100% (1em = 16px) */
+html {font-size: 16px;}
+
+/* Set up your wrapping container with margins and to a fixed width if desired */
+.container, .row {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: none;
+}
+
+/* Automatically clear rows and column / unit groupings */
+/* Rows are the primary building blocks for Girder */
+.row {
+  display: block;
+  clear: both;
+  *zoom: 1;
+
+  /* Lets add outer gutters to top level row 1.25em = 20px using 16px base */
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+.row:after {clear: both;}
+.row:before, .row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+/* All units will float left and use ems for gutter spacing */
+.row .unit {
+  float: left;
+  width: 100%;
+  padding: 0.625em;
+  /* 0.625em = 10px with a 16px base font */
+}
+
+/* remove nested outer gutters */
+.row > .unit:first-of-type {padding-left: 0;}
+.row > .unit:last-child {padding-right: 0;}
+
+/* Option to add them back in to keep third+ units equal in a row */
+.row.equal-units > .unit:first-of-type  {padding-left: 0.625em;}
+.row.equal-units > .unit:last-child {padding-right: 0.625em;}
+
+/* Lets remove the padding - gutter for nested units */
+/* We can also remove just left or right gutter with .alpha .omega */
+.row .unit .unit:first-of-type,
+.alpha {padding-left: 0;}
+.row .unit .unit:last-child,
+.omega {padding-right: 0;}
+
+/* Units are named based on how a row can be divided 1 - 6 parts */
+.row .whole {width: 100%;}
+.row .half, .two-quarters {width: 50%;}
+.row .third, .two-sixths {width: 33.3332%;}
+.row .two-thirds, .four-sixths {width: 66.6665%;}
+.row .fourth {width: 25%;}
+.row .three-fourths {width: 75%;}
+.row .fifth {width: 20%;}
+.row .two-fifths {width: 40%;}
+.row .three-fifths {width: 60%;}
+.row .four-fifths {width: 80%;}
+.row .sixth {width: 16.6666%;}
+.row .five-sixths {width: 83.3333%;}
+.row .golden-small {width: 38.2716%;}
+.row .golden-large {width: 61.7283%;}
+
+/* Remove padding (gutter) for all units inside a row, when nested or for specific units */
+.row.no-gutters,
+.row .row,
+.no-gutters .unit,
+.unit.no-gutters {padding: 0;}
+
+/* Sure, push things around if that's your thing */
+.push-one,
+.push-two,
+.push-three,
+.push-four {
+  position: relative;
+}
+.push-one {left: 13.9%;}
+.push-two {left: 26.4%;}
+.push-three {left: 38.9%;}
+.push-four {left: 51.4%;}
+
+/* Your standard presentational clearing class. Boo! Seriously, try Sass. */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* Utility classes to align text and float / hide elements (optional) */
+.left {
+  float: left;
+  margin-right: .8em;
+}
+.right {
+  float: right;
+  margin-left: .8em;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Small classes will only apply to viewports below 35.5em or 568px (with a 16px base) */
+.center-small {text-align: center;}
+.hide-small {display: none;}
+@media (min-width: 35.5em) {
+  .hide-small {display: block;}
+  .center-small {text-align: inherit;}
+}
+
+/* Example of a "small to medium" breakpoint turning things into single-column (optional) */
+@media (min-width: 10em) and (max-width: 35.5em) {
+  .row.equal-units > .unit:first-of-type {padding-left: 0;}
+  .row.equal-units > .unit:last-child {padding-right: 0;}
+
+   /* All units can go full-width here */
+  .row .unit {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+
+    left: 0;
+    /* Reset neg. margin for nested grids */
+    margin-left: inherit;
+  }
+}

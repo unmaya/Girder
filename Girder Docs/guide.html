@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Girder - A Simple CSS Grid Built With Sass</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="author" content="comfypixel.com" />
+	<meta name="description" content="A CSS grid built with Sass. Its responsive, modular and semantic." />
+
+	<!-- Some redundant styles here, separated and expanded to make CSS inspection-friendly  -->
+	<link rel="stylesheet" href="girder.css">
+	<link rel="stylesheet" href="css/site.css">
+	<link rel="stylesheet" href="css/example.css">
+	<script src="//use.edgefonts.net/source-sans-pro;pt-sans-narrow;lato:n1,n3,n9,i9.js"></script>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body class="guide">
+	<main class="container">
+
+		<section class="top-content row">
+
+			<h2 role="brand"><a href="/">Girder</a></h2>
+			<nav>
+				<a class="activated" href="guide.html">Guide</a>
+				<a href="example-css.html">Examples</a>
+				<a href="#setup">Setup</a>
+			</nav>
+
+			<div class="top-wrapper">
+				<header role="banner">
+					<h1>Guide</h1>
+					<span>Using Girder CSS</span>
+				</header>
+				<p>A simple CSS grid for building modern Websites. This guide is built using the <acronym title="Syntactically Awesome Stylesheets"><b>Sass</b></acronym> features of <a href="http://comfypixel.com/Girder">Girder</a> but it also includes girder.css as an example for using pure CSS.</p>
+			</div>
+
+		</section>
+
+
+		<section class="main-content row">
+			<div class="main-wrapper">
+
+				<div class="example-units row">
+					<h2>Simple Grid Units</h2>
+					<div class="example-gs"><pre>unit(golden-small)</pre></div>
+					<div class="example-gl"><pre>unit(golden-large)</pre></div>
+				</div>
+				<div class="row">
+					<div class="example-half"><pre>unit(half)</pre></div>
+					<div class="example-half"><pre>unit(half)</pre></div>
+				</div>
+				<div class="row">
+					<section class="example-34"><pre>unit(three-fourths)</pre></section>
+					<section class="example-fourth"><pre>(fourth)</pre></section>
+				</div>
+				<div class="row equal-units">
+					<section class="example-fourth"><pre>(fourth)</pre></section>
+					<section class="example-fourth"><pre>(fourth)</pre></section>
+					<section class="example-fourth"><pre>(fourth)</pre></section>
+					<section class="example-fourth"><pre>(fourth)</pre></section>
+				</div>
+				<div class="row">
+					<section class="example-fourth push-one"><pre>.push-one</pre></section>
+					<section class="example-gs push-two"><pre>(golden-small)</pre></section>
+				</div>
+
+				<div class="setup row">
+					<a name="setup"><br></a>
+					<h2>Setup</h2>
+					<p>Copy the Scss folder and files directly into your project's path. Get them from <a href="https://github.com/unmaya/Girder">Github</a> or from the <a href="http://comfypixel.com/Girder/Girder_example_files_v05.zip">downloaded examples</a>.</p>
+					<p>With <a href="http://bower.io/">Bower</a> just use: <strong>"bower install girder --save"</strong> and add a reference to either <b>scss/_girder.scss</b> or <b>girder.css</b> inside the components folder.</p>
+
+					<section class="unit half">
+						<h3>Using Scss</h3>
+						<p>@import the <b>_girder.scss</b> partial which should reside next to its modules in your project.</p>
+					</section>
+
+					<section class="unit half">
+						<h3>Standard CSS</h3>
+						<p>Simply include <b>girder.css</b> in your document along with the site's styles. (Like this page)</p>
+					</section>
+				</div>
+
+				<div class="reference row">
+					<a name="reference"></a>
+					<h2>Reference</h2>
+					<p>Coming Soon...</p>
+				</div>
+
+				<footer>
+					<p class="credits center-small">
+						<a name="links"></a>
+						<small>Made by Comfypixel, <a href="https://github.com/unmaya/Girder">Suggestions</a> welcome!<br>
+							&copy; 2013 - Open Source Under <a href="http://opensource.org/licenses/MIT">MIT</a> license </small>
+					</p>
+					<p class="links center-small">
+						<strong><a href="http://comfypixel.com">Website</a> - <a href="https://twitter.com/unmaya">Twitter</a> - <a href="https://github.com/unmaya">Github</a></strong>
+					</p>
+				</footer>
+
+			</div>
+		</section>
+
+	</main>
+
+<!--[if lt IE 7]>
+	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a></p>
+<![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-272608-12', 'comfypixel.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

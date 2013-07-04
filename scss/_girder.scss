@@ -19,16 +19,24 @@ $gutters           : emCalc(20px) !default;
 $container-width   : none !default;
 $container-margins : 0 auto !default;
 
-// Lets pass Pixels and Get ems in return (depends on $em-base)
-// You can define variable values for breakpoints based on your needs
+// Example / placeholder breakpoints, change values as needed
+// Pass Pixels and Get ems in return (depends on $em-base var above)
 $small-breakpoint  : emCalc(568px) !default; // 35.5em
-$medium-breakpoint : emCalc(640px); // 40em
-$large-breakpoint  : emCalc(790px);
-$xlarge-breakpoint : emCalc(940px);
+$medium-breakpoint : emCalc(640px) !default; // 40em
+$large-breakpoint  : emCalc(790px) !default;
+$xlarge-breakpoint : emCalc(940px) !default;
 
 // Optional: If set to true make sure to @import breakpoint
 $use-breakpoint    : false !default;
 // @import "breakpoint";
+
+// Optional: Only used for if breakpoint is enabled (modify as needed)
+$breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq'),
+              'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
+              'medium and up' $medium-breakpoint,
+              'larger screens' $large-breakpoint,
+              'extra large screens' $xlarge-breakpoint;
+
 
 // Output extra classes for pushing units and .hide-small / .center-small
 $include-extras    : true !default;

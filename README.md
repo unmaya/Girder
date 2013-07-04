@@ -3,7 +3,7 @@ Girder CSS [demo](http://comfypixel.com/Girder/)
 
 A simple CSS grid toolkit built with Sass. Extra handy for HTML prototypes because its small, fast and easy to use. **Why build another css grid?** Because I can :) No, really. I couldn't find exactly what I was looking for so I decided to spin my own solution over a rainy weekend. I'm drawing inspiration from all over but really looking to keep things super simple:
 
-* Its Sass with semantic html5 in mind but can also be used with plain CSS (girder.css)
+* Its Sass with semantic html5 in mind but can also be used with [plain CSS](http://comfypixel.com/Girder/guide.html) (girder.css)
 * Conscise but well commented, small, focused and easy to learn. No excess stuff just the essentials.
 * Instead of columns it uses flexible grid units based on page sections (.half, .two-thirds).
 * The grid likes relative units and can easily adapt to a mobile-first approach (but its not required).
@@ -12,7 +12,7 @@ A simple CSS grid toolkit built with Sass. Extra handy for HTML prototypes becau
 ---
 
 # How it works
-Girder is a simple yet versatile grid designed for small to medium projects. Its best suited for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It builds flexible layouts divided into logical sections and uses silent classes (placeholders) to structure content in HTML; this keeps your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4".
+Girder is a simple yet versatile grid designed for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It builds flexible layouts divided into logical sections and uses silent classes (placeholders) to structure content in HTML; this keeps your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4".
 
 **Example?**
 You can write HTML with your own custom classes to target elements or use the cascade:
@@ -40,9 +40,10 @@ main.content {
 	}
 }
 ```
-### These are built with Girder including a mix of Sass and pure CSS:
+### These pages are built with Girder including a mix of Sass and pure CSS:
 * [Setup Guide](http://comfypixel.com/Girder/guide.html)
 * [Examples Page](http://comfypixel.com/Girder/example-css.html)
+* [Portfolio](http://fredmaya.com)
 
 # Setup / Requirements
 Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/Girder_example_files_v05.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
@@ -62,8 +63,8 @@ Include the scss files before your base styles:
 
 ```SCSS
 // Units go as small as sixth of any container, mix and match as needed
-@include unit(three-fourths); // Match fourths
-@include unit(third); // Match thirds
+@include unit(three-fourths); // Three quarters of a page (inc. gutters by default)
+@include unit(third, false); // A Third of any container (add 'false' to remove gutters)
 footer { @include clearfix; } // Clear anything without a class
 ```
 
