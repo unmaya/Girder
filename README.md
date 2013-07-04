@@ -46,7 +46,7 @@ main.content {
 * [My Lil' Portfolio](http://fredmaya.com)
 
 # Setup / Requirements
-Copy the Sass folder from this Repo. or [Download all the example files](https://github.com/unmaya/Girder/archive/v0.9.0.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
+Copy the Sass folder from this Repo. or [Download all the example files](https://github.com/unmaya/Girder/archive/v0.9.5.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**
 *	**/girder_modules/**
