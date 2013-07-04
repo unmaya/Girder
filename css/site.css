@@ -50,9 +50,12 @@
   content: "";
   line-height: 0;
 }
-.row.no-gutters, .row.about, .row .row, .row .row .row {
+.row .row, .row .row .row {
   padding-left: 0;
   padding-right: 0;
+}
+.row.no-gutters, .row.about, .row .no-gutters, .row .about {
+  padding: 0;
 }
 .row .row > :first-of-type {
   padding-left: 0;

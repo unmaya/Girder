@@ -123,6 +123,7 @@ $units:'half' 50%,
 
 		// Add a .no-gutters class to a unit to remove gutters (experimental)
 		@if $html-classes == true {
+			&.no-gutters,
 			.no-gutters > &:first-of-type {
 				padding-left: 0;
 				padding-right: 0;
@@ -174,8 +175,9 @@ $units:'half' 50%,
 	// Lets add outer gutters to top level row
 	padding-right: $gutters;
 	padding-left: $gutters;
-	// but remove them when nested or specified
-	&.no-gutters, .row, .row .row  {padding-left: 0; padding-right: 0;}
+	// Remove them when nested or specified (enforced but override is still possible)
+	.row, .row .row  {padding-left: 0; padding-right: 0;}
+	&.no-gutters, .no-gutters {padding: 0;}
 
 	// Remove nested outer gutters at css level
 	.row > :first-of-type {padding-left: 0;}
