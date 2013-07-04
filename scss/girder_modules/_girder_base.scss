@@ -46,13 +46,13 @@ $units:'half' 50%,
 		}
 	}
 
-	@if $width == 'half' {
+	@if $width == 'half' or $width == 'two-fourths' {
 		@extend %half;
 	}
-	@else if $width == 'third' {
+	@else if $width == 'third' or $width == 'two-sixths' {
 		@extend %third;
 	}
-	@else if $width == 'two-thirds' {
+	@else if $width == 'two-thirds' or $width == 'four-sixths' {
 		@extend %two-thirds;
 	}
 	@else if $width == 'fourth' {
@@ -85,7 +85,7 @@ $units:'half' 50%,
 	@else if $width == 'golden-large' {
 		@extend %golden-large;
 	}
-	@else {
+	@else if $width == 'whole' {
 		@extend %whole;
 		@if $use-breakpoint == true {
 			@include respond-to('turn single column') {
@@ -97,6 +97,9 @@ $units:'half' 50%,
 				text-align: inherit;
 			}
 		}
+	}
+	@else {
+		@warn '"#{$width}" is not a valid width for the unit mixin (try "half" or "three-fourths" instead). Defaulting to "whole" unit.';
 	}
 }
 

@@ -32,10 +32,10 @@ $use-breakpoint    : false !default;
 
 // Optional: Only used for if breakpoint is enabled (modify as needed)
 $breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq'),
-							'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
-							'medium and up' $medium-breakpoint,
-							'larger screens' $large-breakpoint,
-							'extra large screens' $xlarge-breakpoint;
+              'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
+              'medium and up' $medium-breakpoint,
+              'larger screens' $large-breakpoint,
+              'extra large screens' $xlarge-breakpoint;
 
 
 // Output extra classes for pushing units and .hide-small / .center-small

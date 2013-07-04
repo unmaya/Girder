@@ -91,10 +91,17 @@ nav a.activated {
 		font-family: lato, source-sans-pro, "Helvetica", sans-serif;
 		font-weight: 300;
 		font-size: 2.25rem;
-		margin: 1.6rem 0 0 .8rem;
-		line-height: 2rem;
+		/*margin: 1.6rem 0 0 .8rem;*/
+		/*line-height: 2rem;*/
+		margin: 1.15rem 0 0 .8rem;
+		line-height: 48px;
 		letter-spacing: -.05em;
 		text-transform: uppercase;
+
+
+		padding-left: 53px;
+		background: url(../img/girder-logo-blacksm.png) left top no-repeat;
+		background-size: 42px 48px;
 	}
 [role="banner"] h1, [role="banner"] h2 {
 		font-family: lato, source-sans-pro, "Helvetica", sans-serif;

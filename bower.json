@@ -4,9 +4,5 @@
   "main": "./scss/girder.scss",
   "homepage": "http://comfypixel.com/Girder",
   "dependencies": {
-    "requirejs": "~2.1.4",
-    "requirejs-text": "~2.0.5",
-    "jquery": "~1.9.1",
-    "normalize.scss": "~2.1.0"
   }
 }
