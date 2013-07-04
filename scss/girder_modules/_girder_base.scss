@@ -171,9 +171,9 @@ $units:'half' 50%,
 	.row, .row .row  {padding-left: 0; padding-right: 0;}
 	&.no-gutters, .no-gutters {padding: 0;}
 
-	// Remove nested outer gutters at css level (depracated 0.9)
-	// .row > :first-of-type {padding-left: 0;}
-	// .row > :last-child {padding-right: 0;}
+	// Remove nested outer gutters at css level
+	.row > :first-of-type {padding-left: 0;}
+	.row > :last-child {padding-right: 0;}
 
 	// Option to add outer gutters back in to keep third+ units even
 	&.equal-units {
