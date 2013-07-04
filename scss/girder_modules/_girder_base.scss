@@ -39,12 +39,12 @@ $units:'half' 50%,
 
 	// Handle the no-gutter case but its not pretty, looking for better options
 	@if $addgutters == false {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-		.row &:first-of-type {
-			padding-left: 0 !important;
+		.row & {
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
+
 
 	@if $width == 'half' or $width == 'two-fourths' {
 		@extend %half;
@@ -113,14 +113,6 @@ $units:'half' 50%,
 		padding: $gutters / 2;
 		width: 100%;
 
-		// Ensures outer gutters match inner gutters (moved to parent .row)
-		// &:first-of-type {padding-left: $gutters;}
-		// &:last-child {padding-right: $gutters;}
-
-		// Handling nested outer gutters here (Deprecated for neg margin)
-		// .row &:first-of-type {padding-left: 0;}
-		// .row &:last-child {padding-right: 0;}
-
 		// Add a .no-gutters class to a unit to remove gutters (experimental)
 		@if $html-classes == true {
 			&.no-gutters,
@@ -179,9 +171,9 @@ $units:'half' 50%,
 	.row, .row .row  {padding-left: 0; padding-right: 0;}
 	&.no-gutters, .no-gutters {padding: 0;}
 
-	// Remove nested outer gutters at css level
-	.row > :first-of-type {padding-left: 0;}
-	.row > :last-child {padding-right: 0;}
+	// Remove nested outer gutters at css level (depracated 0.9)
+	// .row > :first-of-type {padding-left: 0;}
+	// .row > :last-child {padding-right: 0;}
 
 	// Option to add outer gutters back in to keep third+ units even
 	&.equal-units {
@@ -192,7 +184,6 @@ $units:'half' 50%,
 	// .row clearing haxor
 	*zoom: 1;
 }
-
 
 // Girder Responsive unit Mixin uses a cleaner syntax (until maps in Sass 3.3)
 // Separate unit mixin for media queries for additional control over gutters

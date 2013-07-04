@@ -8,7 +8,7 @@
 // Optional: overwrite gutters in ems (by default 1.25em = 20px)
 $gutters: 1.25em;
 
-// Girder grid modules
+// Girder grid modules (adjust your path to _girder.scss)
 @import "girder";
 
 // Compass support
@@ -116,7 +116,8 @@ a {
 			text-transform: uppercase;
 		}
 	}
-	a:link, a:visited { color: darken($linkColor, 25%);}
+	a:link, a:visited {color: darken($linkColor, 25%); padding: 0 3px;}
+	a:hover, a:active {color: $base-font-color; background: $linkHoverColor;}
 }
 .actions {
 	@include unit(fourth);
@@ -290,7 +291,7 @@ nav#top {
 	text-shadow: none;
 }
 
-// IE < 9 Fails
+// IE < 9 Fails`
 html.lt-ie9 {
-	.container .content .row {display: none !important;}
+	.container .content {display: none !important;}
 }

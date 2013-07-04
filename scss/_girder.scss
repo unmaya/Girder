@@ -30,7 +30,7 @@ $xlarge-breakpoint : emCalc(940px) !default;
 $use-breakpoint    : false !default;
 // @import "breakpoint";
 
-// Optional: Only used for if breakpoint is enabled (modify as needed)
+// Optional: Only used if breakpoint plugin is enabled (modify as needed)
 $breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq'),
               'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
               'medium and up' $medium-breakpoint,

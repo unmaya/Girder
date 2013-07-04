@@ -40,13 +40,13 @@ main.content {
 	}
 }
 ```
-### These pages are built with Girder including a mix of Sass and pure CSS:
+### Pages built with Girder using a mix of Sass and pure CSS:
 * [Setup Guide](http://comfypixel.com/Girder/guide.html)
 * [Examples Page](http://comfypixel.com/Girder/example-css.html)
-* [Portfolio](http://fredmaya.com)
+* [My Lil' Portfolio](http://fredmaya.com)
 
 # Setup / Requirements
-Copy the Sass folder from this Repo. or [Download all the example files](http://comfypixel.com/Girder/Girder_example_files_v05.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
+Copy the Sass folder from this Repo. or [Download all the example files](https://github.com/unmaya/Girder/archive/v0.9.0.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**
 *	**/girder_modules/**
@@ -89,3 +89,4 @@ Girder is tiny but it can scale based on the project's needs. It includes suppor
 ````
 
 ### This project is open to suggestions, forks, experiments, etc
+Open Source Under <a href="http://opensource.org/licenses/MIT">MIT</a> license.
