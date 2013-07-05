@@ -524,6 +524,6 @@ nav#top #navigate:target {
   text-shadow: none;
 }
 
-html.lt-ie9 .container .content {
+html.lt-ie8 .container .content {
   display: none !important;
 }

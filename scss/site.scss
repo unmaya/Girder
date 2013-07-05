@@ -291,7 +291,7 @@ nav#top {
 	text-shadow: none;
 }
 
-// IE < 9 Fails`
-html.lt-ie9 {
+// IE < 8 Fails
+html.lt-ie8 {
 	.container .content {display: none !important;}
 }

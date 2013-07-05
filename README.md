@@ -1,42 +1,53 @@
 Girder CSS [demo](http://comfypixel.com/Girder/)
 ====================
 
-A simple CSS grid toolkit built with Sass. Extra handy for HTML prototypes because its small, fast and easy to use. **Why build another css grid?** Because I can :) No, really. I couldn't find exactly what I was looking for so I decided to spin my own solution over a rainy weekend. I'm drawing inspiration from all over but really looking to keep things super simple:
+A CSS grid toolkit built with Sass. Extra handy for HTML prototypes because its small, fast and easy to use. **Why build another CSS grid?** Because I can :) No, really. I couldn't find exactly what I was looking for so I decided to spin my own solution over a rainy weekend. I'm drawing inspiration from all over but really looking to keep things super simple:
 
 * Its Sass with semantic html5 in mind but can also be used with [plain CSS](http://comfypixel.com/Girder/guide.html) (girder.css)
 * Conscise but well commented, small, focused and easy to learn. No excess stuff just the essentials.
 * Instead of columns it uses flexible grid units based on page sections (.half, .two-thirds).
 * The grid likes relative units and can easily adapt to a mobile-first approach (but its not required).
-* It makes no other assumptions of how you want to build (its just a layout helper). You bring your own typography, design elements, javascript, plusins, etc.
+* It makes no other assumptions of how you want to build (its just a layout helper). You bring your own typography, design elements, javascript, plugins, etc.
 
 ---
 
 # How it works
-Girder is a simple yet versatile grid designed for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It builds flexible layouts divided into logical sections and uses silent classes (placeholders) to structure content in HTML; this keeps your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4".
+Girder is a simple yet versatile grid designed for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It builds flexible layouts divided into logical sections and uses silent classes (placeholders) to structure content in HTML; this keeps your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4". [View the examples](http://comfypixel.com/Girder/example-css.html)
 
-**Example?**
-You can write HTML with your own custom classes to target elements or use the cascade:
+**Sample Code:** You can write HTML with your own classes to target elements or use the cascade:
 ```HTML
-<main class="content row">
-	<article> My main column covers two thirds of the page. </article>
-	<aside> This sidebar content occupies one third of the page. </aside>
+<main class="container row">
+	<article>
+		<p>The main column covers two thirds of the page.</p>
+		<ul>
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+			<li>Four</li>
+		</ul>
+	</article>
+	<aside> This sidebar covers one third of the page. </aside>
 </main>
 ```
 The Sass for this example could look like this:
 ```SCSS
-// Define unit spacing in pixels or turn it to ems automagically
-$gutters: emCalc(20px);
-// Include girder (modules next to this partial)
+// Define unit spacing in pixels, em or rem
+$gutters: 1.25em;
+// Include girder (and modules next to this partial)
 @import girder;
-
-// You can have a fixed width / centered container or make it fluid
+// Containers can be fluid, fixed width, centered or anything
 $container-width: 1322px;
 
-main.content {
-	article { @include(two-thirds); }
+.container {
+	article {
+		@include(two-thirds);
+	}
 	aside {
 		@include(third);
 		background: #ddd;
+	}
+	article li {
+		@include(fourth);
 	}
 }
 ```
