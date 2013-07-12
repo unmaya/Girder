@@ -426,7 +426,7 @@ footer a {
   background: #fffac0;
 }
 
-.example-gl pre, .example-gs pre, .example-half pre, .example-fourth pre, .example-34 pre {
+.content .row pre {
   text-align: center;
   font-size: .6em;
   border-radius: 3px;
@@ -444,7 +444,7 @@ footer a {
   overflow: hidden;
   text-shadow: 0 1px 0 #daf7fe;
 }
-.example-gl pre:hover, .example-gs pre:hover, .example-half pre:hover, .example-fourth pre:hover, .example-34 pre:hover {
+.content .row pre:hover {
   background: #72cee7;
   border-color: #23abd0;
 }
@@ -502,7 +502,7 @@ nav#top #navigate:target {
 }
 
 @media (min-width: 49.375em) {
-  .content pre {
+  .content .row pre {
     font-size: 13px;
     font-size: .75rem;
     line-height: .8rem;
@@ -524,6 +524,6 @@ nav#top #navigate:target {
   text-shadow: none;
 }
 
-html.lt-ie9 .container .content {
+html.lt-ie8 .container .content {
   display: none !important;
 }
