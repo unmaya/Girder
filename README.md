@@ -31,7 +31,7 @@ Girder is a simple yet versatile grid designed for building with <a href="http:/
 ```
 The Sass for this example could look like this:
 ```SCSS
-// Define unit spacing in pixels, em or rem
+// Define unit spacing in pixels, em or rem (optional)
 $gutters: 1.25em;
 // Include girder (and modules next to this partial)
 @import girder;
@@ -48,6 +48,10 @@ $container-width: 1322px;
 	}
 	article li {
 		@include(fourth);
+
+		@include respond-to('medium screens') {
+			@include responsive-unit(half); // easily change layouts based on screen size
+		}
 	}
 }
 ```
@@ -57,13 +61,14 @@ $container-width: 1322px;
 * [My Lil' Portfolio](http://fredmaya.com)
 
 # Setup / Requirements
-Copy the Sass folder from this Repo. or [Download all the example files](https://github.com/unmaya/Girder/archive/v0.9.5.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
+Copy the Sass folder from this Repo. or [Download source and example files](https://github.com/unmaya/Girder/archive/master.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**
 *	**/girder_modules/**
 
-Include the scss files before your base styles:
+Include the Girder scss file:
 ```SCSS
+// Customize settings here or directly inside _girder.scss (optional)
 @import girder;
 
 // Follow with your base styles
@@ -76,7 +81,13 @@ Include the scss files before your base styles:
 // Units go as small as sixth of any container, mix and match as needed
 @include unit(three-fourths); // Three quarters of a page (inc. gutters by default)
 @include unit(third, false); // A Third of any container (add 'false' to remove gutters)
-footer { @include clearfix; } // Clear anything without a class
+.sixth-box {
+	@include unit(sixth);
+
+	@include respond-to('medium screens') {
+		@include responsive-unit(third);
+	}
+}
 ```
 
 **To use plain CSS** you just add the classes to the markup like this [Example page](http://comfypixel.com/Girder/example-css.html):

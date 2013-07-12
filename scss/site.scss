@@ -181,15 +181,15 @@ footer {
 }
 
 // Test grid elements
-.example-gl {@include unit(golden-large);}
 .example-gs {@include unit(golden-small);}
+.example-gl {@include unit(golden-large);}
 .example-half {@include unit(half);}
 .example-fourth {@include unit(fourth);}
 .example-34 {@include unit(three-fourths);}
 .equal-units {background: $highlightColor;}
 
 // Visualizing Girder units
-.example-gl pre, .example-gs pre, .example-half pre, .example-fourth pre, .example-34 pre {
+.content .row pre {
 	@include panel();
 	@include transition(all 0.3s ease-in);
 	overflow: hidden;
@@ -256,7 +256,7 @@ nav#top {
 // Example breakpoint for larger screens
 @if $use-breakpoint == true {
 	@include respond-to('larger screens') {
-		.content pre {
+		.content .row pre {
 			font-size: 13px;
 			font-size: .75rem;
 			line-height: .8rem;
@@ -269,7 +269,7 @@ nav#top {
 }
 @else {
 	@media (min-width: $large-breakpoint) {
-		.content pre {
+		.content .row pre {
 			font-size: 13px;
 			font-size: .75rem;
 			line-height: .8rem;
