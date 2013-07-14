@@ -358,6 +358,9 @@ a:hover, a:active {
   color: #333333;
   background: #daf7fe;
 }
+.content ul {
+  margin: 0;
+}
 
 .actions {
   background: #242526;

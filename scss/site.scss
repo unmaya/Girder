@@ -126,6 +126,7 @@ a {
 	}
 	a:link, a:visited {color: darken($linkColor, 25%); padding: 0 3px;}
 	a:hover, a:active {color: $base-font-color; background: $linkHoverColor;}
+	ul {margin: 0;}
 }
 
 .actions {
