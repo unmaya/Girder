@@ -124,7 +124,6 @@ nav a.activated {
 		margin: 0 0 1em;
 		text-transform: uppercase;
 	}
-
 .sample-grid {
 	margin: 0 auto 2em;
 	padding: 0 1.25em;
@@ -207,7 +206,7 @@ footer .links {font-size: 1rem;}
 	[role="brand"],
 	nav {float: none; margin: 20px 0 0;}
 	[role="banner"] h1 {margin-top: 0;}
-	.examples .main-content {padding-top: 1em; border-top: 5px solid #eee;}
+	.examples .content {padding-top: 1em; border-top: 5px solid #eee;}
 }
 
 @media (max-width: 28em) {

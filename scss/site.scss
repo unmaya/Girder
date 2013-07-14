@@ -77,33 +77,41 @@ a {
 }
 
 // Expressed CSS classes for reference
-.about {@extend .no-gutters;}
+.about {
+	@extend .no-gutters;
+
+	// Specific to about section
+	.content {
+		// Account for actions sidebar
+		margin-right: 25%;
+		padding-left: $gutters * 2 !important;
+		padding-right: $gutters * 2 !important;
+
+		> * {
+			// constrain content to small-breakpoint width, fallback to pixels
+			max-width: strip-unit($small-breakpoint) / 100 * $base-font-size * 100;
+			// replace em for rem
+			max-width: strip-unit($small-breakpoint) + rem;
+			margin-left: auto; margin-right: auto;
+			}
+
+		@if $use-breakpoint == true {
+			@include respond-to('turn single column') {
+				height: auto;
+				padding-left: $gutters * 2 !important;
+			}
+		}
+		@else {
+			@media (min-width: 10em) and (max-width: $small-breakpoint) {
+				height: auto;
+				padding-left: $gutters * 2 !important;
+			}
+		}
+	}
+}
+
 .content {
 	@include unit(three-fourths);
-	// Account for actions sidebar
-	margin-right: 25%;
-	padding-left: $gutters * 2 !important;
-	padding-right: $gutters * 2 !important;
-
-	@if $use-breakpoint == true {
-		@include respond-to('turn single column') {
-			height: auto;
-			padding-left: $gutters * 2 !important;
-		}
-	}
-	@else {
-		@media (min-width: 10em) and (max-width: $small-breakpoint) {
-			height: auto;
-			padding-left: $gutters * 2 !important;
-		}
-	}
-	> * {
-		// constrain content to small-breakpoint width, fallback to pixels
-		max-width: strip-unit($small-breakpoint) / 100 * $base-font-size * 100;
-		// replace em for rem
-		max-width: strip-unit($small-breakpoint) + rem;
-		margin-left: auto; margin-right: auto;
-		}
 
 	[role="banner"] {
 		h1 {
@@ -119,6 +127,7 @@ a {
 	a:link, a:visited {color: darken($linkColor, 25%); padding: 0 3px;}
 	a:hover, a:active {color: $base-font-color; background: $linkHoverColor;}
 }
+
 .actions {
 	@include unit(fourth);
 	background: #242526;
@@ -173,7 +182,8 @@ a {
 
 		&:hover {color: $linkHoverColor;}
 	}
-}
+} // End .actions
+
 footer {
 	padding: 2em 0;
 	.credits {@include text-align(center);}

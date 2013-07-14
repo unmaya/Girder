@@ -1,17 +1,15 @@
 # Project Environment
-grunt_settings/
-node_modules/
-build/
 components/
+node_modules/
+server/
 scripts/
 js/
+.sass-cache/
+npm-debug.log
 Gemfile
 Gemfile.lock
 Gruntfile.js
 package.json
-npm-debug.log
-.sass-cache/
-css/girder.css
 component.json
 bower.json
 
