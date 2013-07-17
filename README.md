@@ -31,12 +31,12 @@ Girder is a simple yet versatile grid designed for building with <a href="http:/
 ```
 The Sass for this example could look like this:
 ```SCSS
-// Define unit spacing in pixels, em or rem (optional)
+// Adjust unit spacing in pixels, em or rem (optional)
 $gutters: 1.25em;
-// Include girder (and modules next to this partial)
-@import girder;
-// Containers can be fluid, fixed width, centered or anything
+// Containers can be fluid, fixed, centered or whatever you need
 $container-width: 1322px;
+// Include the main Girder partial
+@import girder;
 
 .container {
 	article {
@@ -58,10 +58,10 @@ $container-width: 1322px;
 ### Pages built with Girder using a mix of Sass and pure CSS:
 * [Setup Guide](http://comfypixel.com/Girder/guide.html)
 * [Examples Page](http://comfypixel.com/Girder/example-css.html)
-* [My Lil' Portfolio](http://fredmaya.com)
+* [Portfolio](http://fredmaya.com)
 
 # Setup / Requirements
-Copy the Sass folder from this Repo. or [Download source and example files](https://github.com/unmaya/Girder/archive/master.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
+Copy the Sass folder from this Repo. Or [download the source and example files](https://github.com/unmaya/Girder/archive/master.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**
 *	**/girder_modules/**
@@ -74,7 +74,7 @@ Include the Girder scss file:
 // Follow with your base styles
 ```
 
-1. Unless you're using the plain CSS version be sure the Compass Gem is installed which includes Sass, if you're not sure issue this command in the console: ```sudo gem install compass```
+1. Unless you're using plain CSS be sure the Compass Gem is installed which includes Sass, if you're not sure, issue this command in the console: ```sudo gem install compass```
 2. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
 
 ```SCSS
@@ -103,11 +103,11 @@ Include the Girder scss file:
 **Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units, add media queries or use any number of plugins for Sass. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download the source to see exactly how it works.
 
 ## Optional
-Girder is tiny but it can scale based on the project's needs. It includes support for more complex media queries using the Breakpoint() compass plugin. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by un-commenting these lines in the settings:
+Girder is tiny but it can scale based on your project's needs. It includes support for more complex media queries using the Breakpoint() compass plugin. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by modifying or overwriting these settins:
 
 ````SCSS
+$use-breakpoint: true;
 @import "breakpoint";
-@import "girder_modules/girder_responsive";
 ````
 
 ### This project is open to suggestions, forks, experiments, etc

@@ -1,7 +1,6 @@
 # Project Environment
-grunt_settings/
 node_modules/
-build/
+server/
 components/
 scripts/
 js/

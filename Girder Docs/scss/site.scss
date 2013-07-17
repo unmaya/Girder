@@ -77,33 +77,41 @@ a {
 }
 
 // Expressed CSS classes for reference
-.about {@extend .no-gutters;}
+.about {
+	@extend .no-gutters;
+
+	// Specific to about section
+	.content {
+		// Account for actions sidebar
+		margin-right: 25%;
+		padding-left: $gutters * 2 !important;
+		padding-right: $gutters * 2 !important;
+
+		> * {
+			// constrain content to small-breakpoint width, fallback to pixels
+			max-width: strip-unit($small-breakpoint) / 100 * $base-font-size * 100;
+			// replace em for rem
+			max-width: strip-unit($small-breakpoint) + rem;
+			margin-left: auto; margin-right: auto;
+			}
+
+		@if $use-breakpoint == true {
+			@include respond-to('turn single column') {
+				height: auto;
+				padding-left: $gutters * 2 !important;
+			}
+		}
+		@else {
+			@media (min-width: 10em) and (max-width: $small-breakpoint) {
+				height: auto;
+				padding-left: $gutters * 2 !important;
+			}
+		}
+	}
+}
+
 .content {
 	@include unit(three-fourths);
-	// Account for actions sidebar
-	margin-right: 25%;
-	padding-left: $gutters * 2 !important;
-	padding-right: $gutters * 2 !important;
-
-	@if $use-breakpoint == true {
-		@include respond-to('turn single column') {
-			height: auto;
-			padding-left: $gutters * 2 !important;
-		}
-	}
-	@else {
-		@media (min-width: 10em) and (max-width: $small-breakpoint) {
-			height: auto;
-			padding-left: $gutters * 2 !important;
-		}
-	}
-	> * {
-		// constrain content to small-breakpoint width, fallback to pixels
-		max-width: strip-unit($small-breakpoint) / 100 * $base-font-size * 100;
-		// replace em for rem
-		max-width: strip-unit($small-breakpoint) + rem;
-		margin-left: auto; margin-right: auto;
-		}
 
 	[role="banner"] {
 		h1 {
@@ -118,7 +126,9 @@ a {
 	}
 	a:link, a:visited {color: darken($linkColor, 25%); padding: 0 3px;}
 	a:hover, a:active {color: $base-font-color; background: $linkHoverColor;}
+	ul {margin: 0;}
 }
+
 .actions {
 	@include unit(fourth);
 	background: #242526;
@@ -173,7 +183,8 @@ a {
 
 		&:hover {color: $linkHoverColor;}
 	}
-}
+} // End .actions
+
 footer {
 	padding: 2em 0;
 	.credits {@include text-align(center);}
@@ -181,15 +192,15 @@ footer {
 }
 
 // Test grid elements
-.example-gl {@include unit(golden-large);}
 .example-gs {@include unit(golden-small);}
+.example-gl {@include unit(golden-large);}
 .example-half {@include unit(half);}
 .example-fourth {@include unit(fourth);}
 .example-34 {@include unit(three-fourths);}
 .equal-units {background: $highlightColor;}
 
 // Visualizing Girder units
-.example-gl pre, .example-gs pre, .example-half pre, .example-fourth pre, .example-34 pre {
+.content .row pre {
 	@include panel();
 	@include transition(all 0.3s ease-in);
 	overflow: hidden;
@@ -256,7 +267,7 @@ nav#top {
 // Example breakpoint for larger screens
 @if $use-breakpoint == true {
 	@include respond-to('larger screens') {
-		.content pre {
+		.content .row pre {
 			font-size: 13px;
 			font-size: .75rem;
 			line-height: .8rem;
@@ -269,7 +280,7 @@ nav#top {
 }
 @else {
 	@media (min-width: $large-breakpoint) {
-		.content pre {
+		.content .row pre {
 			font-size: 13px;
 			font-size: .75rem;
 			line-height: .8rem;
@@ -291,7 +302,7 @@ nav#top {
 	text-shadow: none;
 }
 
-// IE < 9 Fails`
-html.lt-ie9 {
+// IE < 8 Fails
+html.lt-ie8 {
 	.container .content {display: none !important;}
 }

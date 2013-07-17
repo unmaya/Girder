@@ -151,8 +151,7 @@ $units:'half' 50%,
 		@extend %unit; }
 	%whole {
 		width: 100%;
-		padding: $gutters /2 0;
-		padding-right: $gutters;
+		padding: $gutters /2;
 	}
 
 	// Automagic clearing for rows
@@ -187,7 +186,7 @@ $units:'half' 50%,
 
 // Girder Responsive unit Mixin uses a cleaner syntax (until maps in Sass 3.3)
 // Separate unit mixin for media queries for additional control over gutters
-@mixin responsive-unit($size, $gutters:false) {
+@mixin responsive-unit($size:whole, $gutters:false) {
 	@each $unit in $units {
 		@if $size == nth($unit, 1) {
 			$length: length($unit);

@@ -49,7 +49,7 @@ a:hover, a:active {color: #64C2DD;}
 }
 nav {
 	float: right;
-	margin: 1.6rem .8rem 0 1rem;
+	margin: 20px 10px 0;
 	line-height: 2rem;
 }
 nav a {
@@ -86,30 +86,24 @@ nav a.activated {
 	text-shadow: none;
 }
 .examples .top-wrapper {text-align: center;}
-.examples .main-content {padding-top: 1em; border-top: 5px solid #eee;}
 .top-content h2 a {color: #333; text-decoration: none;}
 [role="brand"] {
 		float: left;
 		font-family: lato, source-sans-pro, "Helvetica", sans-serif;
 		font-weight: 300;
+		font-size: 36px;
 		font-size: 2.25rem;
-		/*margin: 1.6rem 0 0 .8rem;*/
-		/*line-height: 2rem;*/
-		margin: 1.15rem 0 0 .8rem;
+		margin: 20px 0 0 10px;
 		line-height: 48px;
 		letter-spacing: -.05em;
 		text-transform: uppercase;
-
-
-		padding-left: 53px;
-		background: url(../img/girder-logo-blacksm.png) left top no-repeat;
-		background-size: 42px 48px;
 	}
+	[role="brand"] img {width: 42px; float: left; margin-right: 10px; border: 0;}
 [role="banner"] h1, [role="banner"] h2 {
 		font-family: lato, source-sans-pro, "Helvetica", sans-serif;
 		font-weight: 600;
 		font-size: 4.25em;
-		margin-top: 5rem;
+		clear: both;
 		margin-bottom: 0;
 		letter-spacing: -.02em;
 		text-transform: uppercase;
@@ -119,19 +113,17 @@ nav a.activated {
 		font-weight: 300;
 		text-transform: none;
 		line-height: 1;
-		margin-bottom: 1rem;
-		margin-top: 2rem;
+		margin-bottom: .3em;
+		margin-top: .5em;
 	}
-
-[role="banner"] span {
-	display: block;
-	font-size: 2em;
-	font-weight: 300;
-	line-height: 1.1;
-	margin: 0 0 .75em;
-	text-transform: uppercase;
-}
-
+	[role="banner"] span {
+		display: block;
+		font-size: 2em;
+		font-weight: 300;
+		line-height: 1.1;
+		margin: 0 0 1em;
+		text-transform: uppercase;
+	}
 .sample-grid {
 	margin: 0 auto 2em;
 	padding: 0 1.25em;
@@ -177,7 +169,8 @@ footer .links {font-size: 1rem;}
 		font-size: 2rem;
 	}
 	p {
-		font-size: 1.325rem;
+		font-size: 18px;
+		font-size: 1.225rem;
 		line-height: 1.5;
 	}
 	footer .links {
@@ -213,6 +206,7 @@ footer .links {font-size: 1rem;}
 	[role="brand"],
 	nav {float: none; margin: 20px 0 0;}
 	[role="banner"] h1 {margin-top: 0;}
+	.examples .content {padding-top: 1em; border-top: 5px solid #eee;}
 }
 
 @media (max-width: 28em) {
@@ -233,5 +227,5 @@ footer .links {font-size: 1rem;}
 	text-shadow: none;
 }
 
-/* IE < 9 Fails */
-html.lt-ie9 .container .content .row {display: none !important;}
+/* IE < 8 Fails */
+html.lt-ie8 .container .content {display: none !important;}
