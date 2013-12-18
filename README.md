@@ -40,14 +40,14 @@ $container-width: 1322px;
 
 .container {
 	article {
-		@include(two-thirds);
+		@include unit(two-thirds);
 	}
 	aside {
-		@include(third);
+		@include unit(third);
 		background: #ddd;
 	}
 	article li {
-		@include(fourth);
+		@include unit(fourth);
 
 		@include respond-to('medium screens') {
 			@include responsive-unit(half); // easily change layouts based on screen size
@@ -103,7 +103,7 @@ Include the Girder scss file:
 **Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units, add media queries or use any number of plugins for Sass. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download the source to see exactly how it works.
 
 ## Optional
-Girder is tiny but it can scale based on your project's needs. It includes support for more complex media queries using the Breakpoint() compass plugin. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by modifying or overwriting these settins:
+Girder is tiny but it can scale based on your project's needs. It includes support for more complex media queries using the Breakpoint() compass plugin. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by modifying or overwriting these settings:
 
 ````SCSS
 $use-breakpoint: true;
