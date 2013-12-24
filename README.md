@@ -49,7 +49,7 @@ $container-width: 1322px;
 	article li {
 		@include unit(fourth);
 
-		@include respond-to('medium screens') {
+		@include breakpoint($medium-breakpoint) {
 			@include responsive-unit(half); // easily change layouts based on screen size
 		}
 	}
