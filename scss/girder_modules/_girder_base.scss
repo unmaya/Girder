@@ -2,6 +2,15 @@
 // Base Scss and grid functionality
 // Outputs the minimum CSS required to handle units and rows
 
+// Set breakpoint map values as globals if respond-to is being used
+@if $use-breakpoint == true {
+	$breakpoints: add-breakpoint('turn single column', (10em $small-breakpoint, 'no-query' '.no-mq')) !global;
+	$breakpoints: add-breakpoint('small to medium', ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq')) !global;
+	$breakpoints: add-breakpoint('medium and up', $medium-breakpoint) !global;
+	$breakpoints: add-breakpoint('larger screens', $large-breakpoint) !global;
+	$breakpoints: add-breakpoint('extra large screens', $xlarge-breakpoint) !global;
+}
+
 // Include a broad amount of border-box on everything and profit.
 // Override for special cases within selectors
 *, *:before, *:after {
@@ -14,7 +23,7 @@
 // This is the only CSS that Girder outputs by default (.row stuff)
 .container, .row {
 	margin: $container-margins;
-	max-width: $container-width;
+	max-width: $container-max-width;
 }
 
 // A list of unit names and corresponding widths required by Girder
@@ -88,7 +97,7 @@ $units:'half' 50%,
 	@else if $width == 'whole' {
 		@extend %whole;
 		@if $use-breakpoint == true {
-			@include respond-to('turn single column') {
+			@include breakpoint($single-column) {
 				padding-right: 0 !important;
 			}
 		}
@@ -170,7 +179,7 @@ $units:'half' 50%,
 	.row, .row .row  {padding-left: 0; padding-right: 0;}
 	&.no-gutters, .no-gutters {padding: 0;}
 
-	// Remove nested outer gutters at css level (depracated 0.9)
+	// Remove nested outer gutters at css level
 	.row > :first-of-type {padding-left: 0;}
 	.row > :last-child {padding-right: 0;}
 
