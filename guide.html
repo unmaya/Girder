@@ -14,7 +14,6 @@
 
 	<!-- Example page using Girder.css with presentational classes. Some redundant styles are expected, separated and expanded to make CSS inspection-friendly  -->
 	<link rel="stylesheet" href="girder.css">
-	<link rel="stylesheet" href="css/site.css">
 	<link rel="stylesheet" href="css/example.css">
 	<script src="//use.edgefonts.net/source-sans-pro;pt-sans-narrow;lato:n1,n3,n9,i9.js"></script>
 
@@ -42,7 +41,7 @@
 					<h1>Guide</h1>
 					<span>Using Girder CSS</span>
 				</header>
-				<p>This page is built using the <acronym title="Syntactically Awesome Stylesheets"><b>Sass</b></acronym> features of <a href="http://comfypixel.com/Girder">Girder</a> but it also includes girder.css as an example for using pure CSS.</p>
+				<p>Here's a quick reference for using the <acronym title="Syntactically Awesome Stylesheets"><b>Sass</b></acronym> features of <a href="http://comfypixel.com/Girder">Girder</a> and some examples for using it with plain ol' CSS.</p>
 			</div>
 
 		</section>
@@ -50,31 +49,6 @@
 
 		<section class="content row">
 			<div class="main-wrapper">
-
-				<div class="example-units row">
-					<h2>Simple Grid Units</h2>
-					<div class="example-gs"><pre>unit(golden-small)</pre></div>
-					<div class="example-gl"><pre>unit(golden-large)</pre></div>
-				</div>
-				<div class="row">
-					<div class="example-half"><pre>unit(half)</pre></div>
-					<div class="example-half"><pre>unit(half)</pre></div>
-				</div>
-				<div class="row">
-					<section class="example-34"><pre>unit(three-fourths)</pre></section>
-					<section class="example-fourth"><pre>(fourth)</pre></section>
-				</div>
-				<div class="row equal-units">
-					<section class="example-fourth"><pre>(fourth)</pre></section>
-					<section class="example-fourth"><pre>(fourth)</pre></section>
-					<section class="example-fourth"><pre>(fourth)</pre></section>
-					<section class="example-fourth"><pre>(fourth)</pre></section>
-				</div>
-				<div class="row">
-					<section class="example-fourth push-one"><pre>.push-one</pre></section>
-					<section class="example-gs push-two"><pre>(golden-small)</pre></section>
-				</div>
-
 				<div class="setup row">
 					<a name="setup"><br></a>
 					<h2>Setup</h2>
@@ -88,21 +62,113 @@
 
 					<section class="unit half">
 						<h3>Standard CSS</h3>
-						<p>Simply include <b>girder.css</b> in your document along with the site's styles. (Like this page)</p>
+						<p>Simply include <b>girder.css</b> in your document along with the site's styles. (Like in this page).</p>
 					</section>
 				</div>
 
+
 				<div class="reference row">
 					<a name="reference"></a>
-					<h2>Reference</h2>
-					<p>Coming Soon...</p>
+					<h2>Quick Reference</h2>
+
+					<dl class="ref-table">
+						<div class="title"><dt>Layout units</dt> <dd>With CSS</dd> <dd>With Scss</dd></div>
+
+						<dt>Whole</dt>
+						<dd class="incss">class="row"</dd>
+						<dd class="insass">@include unit();</dd>
+
+						<dt>Half</dt>
+						<dd class="incss">class="unit half"</dd>
+						<dd class="insass">@include unit(half);</dd>
+
+						<dt>Third</dt>
+						<dd class="incss">class="unit third"</dd>
+						<dd class="insass">@include unit(third);</dd>
+
+						<dt>Fourth</dt>
+						<dd class="incss">class="unit fourth"</dd>
+						<dd class="insass">@include unit(fourth);</dd>
+
+						<dt>Fifth</dt>
+						<dd class="incss">class="unit fifth"</dd>
+						<dd class="insass">@include unit(fifth);</dd>
+
+						<dt>Sixth</dt>
+						<dd class="incss">class="unit sixth"</dd>
+						<dd class="insass">@include unit(sixth);</dd>
+
+						<dt>Two-Thirds</dt>
+						<dd class="incss">class="unit two-thirds"</dd>
+						<dd class="insass">@include unit(two-thirds);</dd>
+
+						<dt>Three-Fourths</dt>
+						<dd class="incss">class="unit three-fourths"</dd>
+						<dd class="insass">@include unit(three-fourths);</dd>
+
+						<dt>Three-Fifths</dt>
+						<dd class="incss">class="unit three-fifths"</dd>
+						<dd class="insass">@include unit(three-fifths);</dd>
+
+						<dt>Four-Fifths</dt>
+						<dd class="incss">class="unit four-fifths"</dd>
+						<dd class="insass">@include unit(four-fifths);</dd>
+
+						<dt>Five-Sixths</dt>
+						<dd class="incss">class="unit five-sixths"</dd>
+						<dd class="insass">@include unit(five-sixths);</dd>
+
+						<dt>Golden Ratio Small (38.2716%)</dt>
+						<dd class="incss">class="unit golden-small"</dd>
+						<dd class="insass">@include unit(golden-small);</dd>
+
+						<dt>Golden Ratio Large (61.7283%)</dt>
+						<dd class="incss">class="unit golden-large"</dd>
+						<dd class="insass">@include unit(golden-large);</dd>
+
+					</dl>
+
+					<dl class="ref-table">
+						<div class="title"><dt>Helpers</dt> <dd>With CSS</dd> <dd>With Scss</dd></div>
+
+						<dt>Variable Gutters</dt>
+						<dd class="incss"><em>unavailable</em></dd>
+						<dd class="insass">$gutters or $gutters /2</dd>
+						<p>Useful in Sass for re-using gutter values and matching spacing between elements.</p>
+
+						<dt>No-Gutters</dt>
+						<dd class="incss">class="no-gutters"</dd>
+						<dd class="insass">@include unit(third, <span>false</span>);</dd>
+						<p>Adding this class to a row removes gutters for all containing units. In Sass you can pass "false" to the unit mixin to remove gutters for specific elements.</p>
+
+						<dt>Rows</dt>
+						<dd class="incss">class="row"</dd>
+						<dd class="insass"><em>Not applicable.</em></dd>
+
+						<dt>Equal Units</dt>
+						<dd class="incss">class="equal-units"</dd>
+						<dd class="insass"><em>Not applicable.</em></dd>
+						<p>This applies equal spacing for all units within a given .row. It adds left and right padding but makes them more symmetrical.</p>
+
+						<dt>Responsive Units</dt>
+						<dd class="incss">Manual Media Queries </dd>
+						<dd class="insass">@include responsive-unit(third);</dd>
+						<p>In Sass this is used to define (or re-shape) units within media queries.</p>
+
+						<dt>em and rem Calculators</dt>
+						<dd class="incss"><em>Unavailable</em> </dd>
+						<dd class="insass">emCalc(20px); <br> remCalc(15px);</dd>
+						<p>Pass a pixel value and get the em / rem equivalent, simple as that. You can use this anywhere in your styles like: margin: $gutters emCalc(24px);</p>
+					</dl>
+
 				</div>
+
 
 				<footer>
 					<p class="credits center-small">
 						<a name="links"></a>
-						<small>Made by Comfypixel, <a href="https://github.com/unmaya/Girder">Suggestions</a> welcome!<br>
-							&copy; 2013 - Open Source Under <a href="http://opensource.org/licenses/MIT">MIT</a> license </small>
+						<small>Made by Comfypixel - <a href="https://github.com/unmaya/Girder">Suggestions</a> welcome!<br>
+							&copy; 2014 - Open Source Under <a href="http://opensource.org/licenses/MIT">MIT</a> license </small>
 					</p>
 					<p class="links center-small">
 						<strong><a href="http://comfypixel.com">Website</a> - <a href="https://twitter.com/unmaya">Twitter</a> - <a href="https://github.com/unmaya">Github</a></strong>

@@ -35,8 +35,7 @@ $use-breakpoint    : true;
 // Output extra classes for pushing units and .hide-small / .center-small
 $include-extras    : true !default;
 
-// Output HTML presentational classes? Larger CSS output - experimental
-// Set to true to use .unit .two-thirds classes in html elements (not recommended)
+// Output HTML presentational classes? Larger CSS output (experimental, not recommended).
 $html-classes      : false !default;
 
 // Required: Base grid for girder
@@ -47,5 +46,3 @@ $html-classes      : false !default;
 
 // Basic responsiveness for grid units, not required but essential
 @import "girder_modules/girder_responsive";
-
-/*   /////   Girder Core Styles End Here   /////  */
