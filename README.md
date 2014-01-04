@@ -49,7 +49,7 @@ $container-width: 1322px;
 	article li {
 		@include unit(fourth);
 
-		@include respond-to('medium screens') {
+		@include breakpoint($medium-breakpoint) {
 			@include responsive-unit(half); // easily change layouts based on screen size
 		}
 	}
@@ -58,6 +58,7 @@ $container-width: 1322px;
 ### Pages built with Girder using a mix of Sass and pure CSS:
 * [Setup Guide](http://comfypixel.com/Girder/guide.html)
 * [Examples Page](http://comfypixel.com/Girder/example-css.html)
+* [Girder-Ghost Theme](http://ghost.fredmaya.com)
 * [Portfolio](http://fredmaya.com)
 
 # Setup / Requirements
@@ -84,7 +85,7 @@ Include the Girder scss file:
 .sixth-box {
 	@include unit(sixth);
 
-	@include respond-to('medium screens') {
+	@include breakpoint('medium screens') {
 		@include responsive-unit(third);
 	}
 }
@@ -101,6 +102,8 @@ Include the Girder scss file:
 ```
 
 **Some familiar options:** Wrap multi-column rows with the ```.row``` class. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units, add media queries or use any number of plugins for Sass. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download the source to see exactly how it works.
+
+For more tips on using Sass and CSS layout tools like Girder, visit the [dev journal](http://ghost.fredmaya.com).
 
 ## Optional
 Girder is tiny but it can scale based on your project's needs. It includes support for more complex media queries using the Breakpoint() compass plugin. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by modifying or overwriting these settings:

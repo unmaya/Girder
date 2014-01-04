@@ -51,7 +51,6 @@ $girder-font-family   : lato, source-sans-pro, "Helvetica", sans-serif;
 // Tweaked to suppress css comments
 @import "normalize";
 
-
 /* ///////////////////////////////////////////////// */
 /*  Site example and Girder styles combined  /////// */
 /* ///////////////////////////////////////////////// */
@@ -78,7 +77,6 @@ a {
 
 // Expressed CSS classes for reference
 .about {
-	@extend .no-gutters;
 
 	// Specific to about section
 	.content {
@@ -96,7 +94,7 @@ a {
 			}
 
 		@if $use-breakpoint == true {
-			@include respond-to('turn single column') {
+			@include breakpoint($single-column) {
 				height: auto;
 				padding-left: $gutters * 2 !important;
 			}
@@ -139,7 +137,7 @@ a {
 	top: 0;
 
 	@if $use-breakpoint == true {
-		@include respond-to('turn single column') {
+		@include breakpoint($single-column) {
 			height: auto;
 			position: relative;
 		}
@@ -253,7 +251,7 @@ nav#top {
 	#navigate:target {display: block;}
 
 	@if $use-breakpoint == true {
-		@include respond-to('turn single column') {
+		@include breakpoint($single-column) {
 			display: block;
 		}
 	}
@@ -266,7 +264,7 @@ nav#top {
 
 // Example breakpoint for larger screens
 @if $use-breakpoint == true {
-	@include respond-to('larger screens') {
+	@include breakpoint($large-breakpoint) {
 		.content .row pre {
 			font-size: 13px;
 			font-size: .75rem;
