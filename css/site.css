@@ -18,8 +18,6 @@
 .row {
   clear: both;
   display: block;
-  padding-right: 1.25em;
-  padding-left: 1.25em;
   *zoom: 1;
 }
 .row .example-half, .row .actions, .row .example-fourth, .row .content, .row .example-34, .row .example-gs, .row .example-gl {
@@ -49,13 +47,6 @@
   display: table;
   content: "";
   line-height: 0;
-}
-.row .row, .row .row .row {
-  padding-left: 0;
-  padding-right: 0;
-}
-.row.no-gutters, .row.about, .row .no-gutters, .row .about {
-  padding: 0;
 }
 .row .row > :first-of-type {
   padding-left: 0;
