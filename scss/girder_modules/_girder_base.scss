@@ -2,6 +2,16 @@
 // Base Scss and grid functionality
 // Outputs the minimum CSS required to handle units and rows
 
+// Set breakpoint map values as globals if using Sass 3.3.x and respond-to mixin
+// This is here mostly for backward-compatibility. It can be removed in case of conflicts
+@if $use-breakpoint == true {
+	$breakpoints: add-breakpoint('turn single column', (10em $small-breakpoint, 'no-query' '.no-mq'));
+	$breakpoints: add-breakpoint('small to medium', ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'));
+	$breakpoints: add-breakpoint('medium and up', $medium-breakpoint);
+	$breakpoints: add-breakpoint('larger screens', $large-breakpoint);
+	$breakpoints: add-breakpoint('extra large screens', $xlarge-breakpoint);
+}
+
 // Include a broad amount of border-box on everything and profit.
 // Override for special cases within selectors
 *, *:before, *:after {
@@ -14,7 +24,7 @@
 // This is the only CSS that Girder outputs by default (.row stuff)
 .container, .row {
 	margin: $container-margins;
-	max-width: $container-width;
+	max-width: $container-max-width;
 }
 
 // A list of unit names and corresponding widths required by Girder
@@ -44,7 +54,6 @@ $units:'half' 50%,
 			padding-right: 0;
 		}
 	}
-
 
 	@if $width == 'half' or $width == 'two-fourths' {
 		@extend %half;
@@ -88,7 +97,7 @@ $units:'half' 50%,
 	@else if $width == 'whole' {
 		@extend %whole;
 		@if $use-breakpoint == true {
-			@include respond-to('turn single column') {
+			@include breakpoint($single-column) {
 				padding-right: 0 !important;
 			}
 		}
@@ -163,18 +172,17 @@ $units:'half' 50%,
 		line-height: 0;
 	}
 
-	// Lets add outer gutters to top level row
-	padding-right: $gutters;
-	padding-left: $gutters;
-	// Remove them when nested or specified (enforced but override is still possible)
-	.row, .row .row  {padding-left: 0; padding-right: 0;}
-	&.no-gutters, .no-gutters {padding: 0;}
+	// gutters on top level rows are no longer used! (re-enable if needed)
+	// padding-right: $gutters;
+	// padding-left: $gutters;
+	// .row, .row .row  {padding-left: 0; padding-right: 0;}
+	// &.no-gutters, .no-gutters {padding: 0;}
 
 	// Remove nested outer gutters at css level
 	.row > :first-of-type {padding-left: 0;}
 	.row > :last-child {padding-right: 0;}
 
-	// Option to add outer gutters back in to keep third+ units even
+	// Strong option to add outer gutters back (keeps third+ units even)
 	&.equal-units {
 		> :first-of-type {padding-left: $gutters / 2 !important;}
 		> :last-child {padding-right: $gutters / 2 !important;}

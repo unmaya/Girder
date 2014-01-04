@@ -16,33 +16,26 @@ $em-base           : 16px !default;
 $gutters           : emCalc(20px) !default;
 
 // Set a fixed width for a wraping .container or keep it fluid by setting it to none
-$container-width   : none !default;
+$container-max-width   : none !default;
 $container-margins : 0 auto !default;
 
 // Example / placeholder breakpoints, change values as needed
 // Pass Pixels and Get ems in return (depends on $em-base var above)
 $small-breakpoint  : emCalc(568px) !default; // 35.5em
+$single-column     : emCalc(160px) $small-breakpoint !default; // between 10em and 35.5em
 $medium-breakpoint : emCalc(640px) !default; // 40em
 $large-breakpoint  : emCalc(790px) !default;
 $xlarge-breakpoint : emCalc(940px) !default;
+// You can add any number of breakpoints here to pass to the breakpoint() mixin
 
 // Optional: If set to true make sure to @import breakpoint
-$use-breakpoint    : false !default;
-// @import "breakpoint";
-
-// Optional: Only used if breakpoint plugin is enabled (modify as needed)
-$breakpoints: 'turn single column' (10em $small-breakpoint, 'no-query' '.no-mq'),
-              'small to medium' ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'),
-              'medium and up' $medium-breakpoint,
-              'larger screens' $large-breakpoint,
-              'extra large screens' $xlarge-breakpoint;
-
+$use-breakpoint    : true;
+@import "breakpoint";
 
 // Output extra classes for pushing units and .hide-small / .center-small
 $include-extras    : true !default;
 
-// Output HTML presentational classes? Larger CSS output - experimental
-// Set to true to use .unit .two-thirds classes in html elements (not recommended)
+// Output HTML presentational classes? Larger CSS output (experimental, not recommended).
 $html-classes      : false !default;
 
 // Required: Base grid for girder
@@ -53,5 +46,3 @@ $html-classes      : false !default;
 
 // Basic responsiveness for grid units, not required but essential
 @import "girder_modules/girder_responsive";
-
-/*   /////   Girder Core Styles End Here   /////  */
