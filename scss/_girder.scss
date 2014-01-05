@@ -1,9 +1,7 @@
-/* ================================================ */
-/*   Girder is a Sassy grid toolkit      ////////// */
-/*   Simple, Responsive & Semantic       ////////// */
-/*   https://github.com/unmaya/Girder    ////////// */
-/* ================================================ */
-@charset "UTF-8";
+/* ========================================== */
+/*   Girder is a Sassy layout helper     /// */
+/*   https://github.com/unmaya/Girder   /// */
+/* ======================================= */
 
 // Girder Global Variables, Settings and Modules
 // Start with $em-base to use it in functions going forward
@@ -29,8 +27,8 @@ $xlarge-breakpoint : emCalc(940px) !default;
 // You can add any number of breakpoints here to pass to the breakpoint() mixin
 
 // Optional: If set to true make sure to @import breakpoint
-$use-breakpoint    : true;
-@import "breakpoint";
+$use-breakpoint    : false;
+// @import "breakpoint";
 
 // Output extra classes for pushing units and .hide-small / .center-small
 $include-extras    : true !default;

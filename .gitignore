@@ -1,15 +1,12 @@
 # Project Environment
 node_modules/
-server/
-components/
-scripts/
-js/
-_site/
-Gemfile.lock
 Gruntfile.js
 package.json
 npm-debug.log
 .sass-cache/
+Gemfile.lock
+Girder Docs/scss/_girder.scss
+Girder Docs/scss/girder_modules
 
 # OS Generated files
 .DS_Store
