@@ -1,17 +1,12 @@
 # Project Environment
-components/
+bower_components/
 node_modules/
-server/
-scripts/
-js/
 .sass-cache/
 npm-debug.log
-Gemfile
-Gemfile.lock
 Gruntfile.js
 package.json
-component.json
-bower.json
+Girder Docs/
+scss/girder
 
 # Jekyll generated
 _site/
