@@ -5,8 +5,8 @@ node_modules/
 npm-debug.log
 Gruntfile.js
 package.json
-Girder Docs/
 scss/girder
+Girder Docs/
 
 # Jekyll generated
 _site/

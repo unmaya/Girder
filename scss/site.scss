@@ -1,21 +1,16 @@
 @charset "UTF-8";
-
 ////////////////////////////////
-// Styles for an example site using Girder
-// You can use this as a guide to how it can be used
-// Import the required partials (compass and breakpoint needed for this example)
+// Styles for an example site using Girder.
+// You can use this as a reference guide to get started.
+// Import the required partials (compass and breakpoint gems are used for this example).
 
-// Optional: overwrite gutters in ems (by default 1.25em = 20px)
+// Optional: overwrite Girder gutters in ems before importing (Default 1.25em = 20px)
 $gutters: 1.25em;
-
 // Girder grid modules (adjust your path to _girder.scss)
 @import "girder";
 
 // Compass support
 @import "compass";
-
-// Baseline for Compass Vertical Rhythm
-@include establish-baseline;
 
 // Site Styling Variables
 $body-bg             : #ffffff;
@@ -36,8 +31,6 @@ $h1-font-size: 2.8   * $base-font-size;
 $h2-font-size: 1.8   * $base-font-size;
 $h3-font-size: 1.17  * $base-font-size;
 $h4-font-size: 1     * $base-font-size;
-$h5-font-size: 0.83  * $base-font-size;
-$h6-font-size: 0.67  * $base-font-size;
 
 // The amount lists and blockquotes are indented.
 $indent-amount: 30px;
@@ -47,33 +40,39 @@ $headings-font        : source-sans-pro, "Helvetica Neue", "Helvetica", sans-ser
 $base-font-family     : source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
 $girder-font-family   : lato, source-sans-pro, "Helvetica", sans-serif;
 
-// Normalize this thing
-// Tweaked to suppress css comments
-@import "normalize";
+// Baseline for Compass Vertical Rhythm
+@include establish-baseline;
 
-/* ///////////////////////////////////////////////// */
-/*  Site example and Girder styles combined  /////// */
-/* ///////////////////////////////////////////////// */
-
-////////////////////////////////
-// Theme Styles For Reference
-// Not needed by Girder
-
+/* /////////////////////////////////////// */
+/*  Girder Site & Example Styles  /////// */
+/* ///////////////////////////////////// */
 body {
 	background: $body-bg;
 	color: $base-font-color;
 	font-family: $base-font-family;
 	font-size: $base-font-size;
+	margin: 0;
 	-webkit-font-smoothing: antialiased;
 }
 html, body, .container, .about, .content, .actions {height: 100%;}
 h1, h2, h3, h4 {margin-bottom: .4em;}
 h3 {margin-top: .4em;}
+h1 {
+	font-size: $h1-font-size;
+	line-height: 1.60714em;
+	margin-top: 0.53571em;
+}
+h2 {
+	font-size: $h2-font-size;
+	line-height: 1.66667em;
+	margin-top: 0.83333em;
+}
 p {margin: 1em 0 1.5em;}
 a {
 	&:link, &:visited {color: $linkColor;}
 	&:hover, &:active {color: $linkHoverColor;}
 }
+img {border: 0;}
 
 // Expressed CSS classes for reference
 .about {
@@ -82,8 +81,8 @@ a {
 	.content {
 		// Account for actions sidebar
 		margin-right: 25%;
-		padding-left: $gutters * 2 !important;
-		padding-right: $gutters * 2 !important;
+		padding-left: $gutters + $gutters /2;
+		padding-right: $gutters + $gutters /2;
 
 		> * {
 			// constrain content to small-breakpoint width, fallback to pixels
@@ -96,13 +95,11 @@ a {
 		@if $use-breakpoint == true {
 			@include breakpoint($single-column) {
 				height: auto;
-				padding-left: $gutters * 2 !important;
 			}
 		}
 		@else {
 			@media (min-width: 10em) and (max-width: $small-breakpoint) {
 				height: auto;
-				padding-left: $gutters * 2 !important;
 			}
 		}
 	}
