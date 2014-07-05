@@ -9,19 +9,22 @@ $gutters: 1.25em;
 // Girder grid modules (adjust your path to _girder.scss)
 @import "girder";
 
-// Compass support
-@import "compass";
+// Compass is now Optional
+// @import "compass";
 
 // Site Styling Variables
 $body-bg             : #ffffff;
 $base-font-color     : #333333;
 $linkColor	         : #72CEE7;
-$linkHoverColor      : saturate(lighten($linkColor, 25%), 25%);
-$lightText			     : lighten($base-font-color, 45%);
+// $linkHoverColor      : saturate(lighten($linkColor, 25%), 25%);
+// $lightText			     : lighten($base-font-color, 45%);
+$linkHoverColor      : #daf7fe;
+$lightText			     : #a6a6a6;
 $highlightColor      : #fffac0;
 
 // Matching Girder's em-base for consistency
-$base-font-size: $em-base !default; // Override default set in Compass' Vertical Rhythm partial.
+// Override default set in Compass' Vertical Rhythm partial.
+$base-font-size: $em-base !default;
 
 // The base line height determines the basic unit of vertical rhythm.
 // $base-line-height: 24px; // Override default set in Compass' Vertical Rhythm partial.
@@ -41,7 +44,7 @@ $base-font-family     : source-sans-pro, "Helvetica Neue", "Helvetica", Arial, s
 $girder-font-family   : lato, source-sans-pro, "Helvetica", sans-serif;
 
 // Baseline for Compass Vertical Rhythm
-@include establish-baseline;
+// @include establish-baseline;
 
 /* /////////////////////////////////////// */
 /*  Girder Site & Example Styles  /////// */
@@ -119,7 +122,7 @@ img {border: 0;}
 			text-transform: uppercase;
 		}
 	}
-	a:link, a:visited {color: darken($linkColor, 25%); padding: 0 3px;}
+	a:link, a:visited {color: #2099ba; padding: 0 3px;}
 	a:hover, a:active {color: $base-font-color; background: $linkHoverColor;}
 	ul {margin: 0;}
 }
@@ -161,24 +164,25 @@ img {border: 0;}
 		display: block;
 
 		&.download {
-			@include box-shadow(#333 0 1px 0);
-			@include border-radius(4px);
+			@include prefix(box-shadow, #333 0 1px 0);
+			@include prefix(border-radius, 4px);
 			color: $body-bg;
-			text-shadow: 0 -1px 0 darken($linkColor, 36%);
+			// text-shadow: 0 -1px 0 $linkColor, 36%;
 			width: emCalc(120px);
 			margin: 0 auto .8em auto;
 			padding: emCalc(5px) emCalc(10px);
-			background: darken($linkColor, 20%);
+			background: #23abd0;
 
 			line-height: 1.6em;
 			text-transform: uppercase;
 			font-weight: bold;
-			&:hover {background: darken($linkColor, 30%);}
+			&:hover {background: #1c87a4;}
 		}
 
 		&:hover {color: $linkHoverColor;}
 	}
-} // End .actions
+}
+// End .actions
 
 footer {
 	padding: 2em 0;
@@ -197,10 +201,11 @@ footer {
 // Visualizing Girder units
 .content .row pre {
 	@include panel();
-	@include transition(all 0.3s ease-in);
+	// @include transition(all 0.3s ease-in);
+	@include prefix(transition, 'all 0.3s ease-in');
 	overflow: hidden;
 	text-shadow: 0 1px 0 $linkHoverColor;
-	&:hover {background: $linkColor; border-color: darken($linkColor, 20%);}
+	&:hover {background: $linkColor; border-color: #1c87a4;}
 }
 
 .setup section {
@@ -281,8 +286,8 @@ nav#top {
 			line-height: .8rem;
 		}
 		p {
-			@include adjust-font-size-to(1.125rem);
-			@include adjust-leading-to(1.1, 18px);
+			// @include adjust-font-size-to(1.125rem);
+			// @include adjust-leading-to(1.1, 18px);
 		}
 	}
 }
