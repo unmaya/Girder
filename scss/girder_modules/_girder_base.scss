@@ -95,15 +95,9 @@ $units:'half' 50%,
 	}
 	@else if $width == 'whole' {
 		@extend %whole;
-		@if $use-breakpoint == true {
-			@include breakpoint($single-column) {
-				padding-right: 0 !important;
-			}
-		}
-		@else {
-			@media (min-width: 10em) and (max-width: $small-breakpoint) {
-				text-align: inherit;
-			}
+
+		@include breakpoint($single-column) {
+			padding-right: 0 !important;
 		}
 	}
 	@else {

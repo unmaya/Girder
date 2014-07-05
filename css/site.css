@@ -113,7 +113,7 @@
   text-align: justify !important;
 }
 
-@media (min-width: 10em) and (max-width: 35.5em) {
+@media only screen and (min-width: 10em) and (max-width: 35.5em) {
   .row.equal-units > :first-of-type {
     padding-left: 0 !important;
   }
@@ -131,7 +131,7 @@
 .center-small {
   text-align: inherit;
 }
-@media (min-width: 10em) and (max-width: 35.5em) {
+@media only screen and (min-width: 10em) and (max-width: 35.5em) {
   .center-small {
     text-align: center;
   }
@@ -140,7 +140,7 @@
 .hide-small {
   display: block;
 }
-@media (min-width: 10em) and (max-width: 35.5em) {
+@media only screen and (min-width: 10em) and (max-width: 35.5em) {
   .hide-small {
     display: none;
   }

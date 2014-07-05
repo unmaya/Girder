@@ -19,9 +19,12 @@ $container-margins : 0 auto !default;
 
 // Example / placeholder breakpoints, change values as needed
 // Pass Pixels and Get ems in return (depends on $em-base var above)
-$small-breakpoint  : emCalc(568px) !default; // 35.5em
-$single-column     : emCalc(160px) $small-breakpoint !default; // between 10em and 35.5em
-$medium-breakpoint : emCalc(640px) !default; // 40em
+// 35.5em
+$small-breakpoint  : emCalc(568px) !default;
+// between 10em and 35.5em
+$single-column     : emCalc(160px), $small-breakpoint !default;
+// 40em
+$medium-breakpoint : emCalc(640px) !default;
 $large-breakpoint  : emCalc(790px) !default;
 $xlarge-breakpoint : emCalc(940px) !default;
 // You can add any number of breakpoints here to pass to the breakpoint() mixin

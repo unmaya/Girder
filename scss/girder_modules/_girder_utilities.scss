@@ -147,19 +147,19 @@ $panel-font-color-alt:  #fff !default;
 // @include breakpoint(600px) {
 //   font-size: 2.4em;
 // }
-// @mixin breakpoint($breakpoint-size, $breakpoint-max:"") {
-//   @if $breakpoint-max != "" and type-of($breakpoint-max) == 'number' {
-//     @media only screen and (min-width:$breakpoint-size) and (max-width: $breakpoint-max) { @content; }
-//   }
-//   @else if $breakpoint-max != "" and type-of($breakpoint-max) == 'string' {
-//     @if $breakpoint-max == "max-width" {
-//       @media only screen and (max-width: $breakpoint-size) { @content; }
-//     } @else {
-//       @warn "Your second argument for the breakpoint mixin is not valid. It accepts 'max-width' or a number value like '600px' (optional)."
-//     }
-//   }
-//   @else {
-//     @media only screen and (min-width: $breakpoint-size) { @content; }
-//   }
-// }
+@mixin breakpoint($breakpoint-size, $breakpoint-max:"") {
+  @if $breakpoint-max != "" and type-of($breakpoint-max) == 'number' {
+    @media only screen and (min-width:$breakpoint-size) and (max-width: $breakpoint-max) { @content; }
+  }
+  @else if $breakpoint-max != "" and type-of($breakpoint-max) == 'string' {
+    @if $breakpoint-max == "max-width" {
+      @media only screen and (max-width: $breakpoint-size) { @content; }
+    } @else {
+      @warn "Your second argument for the breakpoint mixin is not valid. It accepts 'max-width' or a number value like '600px' (optional)."
+    }
+  }
+  @else {
+    @media only screen and (min-width: $breakpoint-size) { @content; }
+  }
+}
 
