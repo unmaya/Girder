@@ -208,7 +208,7 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-@media (min-width: 10em) and (max-width: 35.5em) {
+@media only screen and (min-width: 10em) and (max-width: 35.5em) {
   .about .content {
     height: auto;
   }
@@ -243,7 +243,7 @@ img {
   right: 0;
   top: 0;
 }
-@media (min-width: 10em) and (max-width: 35.5em) {
+@media only screen and (min-width: 10em) and (max-width: 35.5em) {
   .actions {
     height: auto;
     position: relative;
@@ -373,7 +373,7 @@ nav#top ul a {
 nav#top #navigate:target {
   display: block;
 }
-@media (min-width: 10em) and (max-width: 35.5em) {
+@media only screen and (min-width: 10em) and (max-width: 35.5em) {
   nav#top {
     display: block;
   }
@@ -384,6 +384,10 @@ nav#top #navigate:target {
     font-size: 13px;
     font-size: .75rem;
     line-height: .8rem;
+  }
+
+  p {
+    font-size: 1.125em;
   }
 }
 ::-moz-selection {

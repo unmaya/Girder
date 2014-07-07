@@ -9,15 +9,13 @@ $gutters: 1.25em;
 // Girder grid modules (adjust your path to _girder.scss)
 @import "girder";
 
-// Compass is now Optional
+// Compass is now optional
 // @import "compass";
 
 // Site Styling Variables
 $body-bg             : #ffffff;
 $base-font-color     : #333333;
 $linkColor	         : #72CEE7;
-// $linkHoverColor      : saturate(lighten($linkColor, 25%), 25%);
-// $lightText			     : lighten($base-font-color, 45%);
 $linkHoverColor      : #daf7fe;
 $lightText			     : #a6a6a6;
 $highlightColor      : #fffac0;
@@ -43,7 +41,7 @@ $headings-font        : source-sans-pro, "Helvetica Neue", "Helvetica", sans-ser
 $base-font-family     : source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
 $girder-font-family   : lato, source-sans-pro, "Helvetica", sans-serif;
 
-// Baseline for Compass Vertical Rhythm
+// Baseline for Compass Vertical Rhythm (optional)
 // @include establish-baseline;
 
 /* /////////////////////////////////////// */
@@ -101,7 +99,7 @@ img {border: 0;}
 			}
 		}
 		@else {
-			@media (min-width: 10em) and (max-width: $small-breakpoint) {
+			@include media-query(10em, $small-breakpoint) {
 				height: auto;
 			}
 		}
@@ -143,7 +141,7 @@ img {border: 0;}
 		}
 	}
 	@else {
-		@media (min-width: 10em) and (max-width: $small-breakpoint) {
+		@include media-query(10em, $small-breakpoint) {
 			height: auto;
 			position: relative;
 		}
@@ -258,7 +256,7 @@ nav#top {
 		}
 	}
 	@else {
-		@media (min-width: 10em) and (max-width: $small-breakpoint) {
+		@include media-query(10em, $small-breakpoint) {
 			display: block;
 		}
 	}
@@ -273,8 +271,7 @@ nav#top {
 			line-height: .8rem;
 		}
 		p {
-			@include adjust-font-size-to(1.125rem);
-			@include adjust-leading-to(1.1, 18px);
+			font-size: 1.125em;
 		}
 	}
 }
@@ -286,8 +283,7 @@ nav#top {
 			line-height: .8rem;
 		}
 		p {
-			// @include adjust-font-size-to(1.125rem);
-			// @include adjust-leading-to(1.1, 18px);
+			font-size: 1.125em;
 		}
 	}
 }

@@ -141,13 +141,12 @@ $panel-font-color-alt:  #fff !default;
 }
 
 
-// Breakpoint Placeholder Mixin (additional work is needed here)
-// Suggested enhancements: support for media types, orientation and dpi
-// Basic Syntax is a min-width query but you can pass a second value or max-width
-// @include breakpoint(600px) {
+// A Super Basic Breakpoint Mixin
+// Defaults to a 'min-width' query but you can pass a second value for min or max
+// @include media-query(600px) {
 //   font-size: 2.4em;
 // }
-@mixin breakpoint($breakpoint-size, $breakpoint-max:"") {
+@mixin media-query ($breakpoint-size, $breakpoint-max:"") {
   @if $breakpoint-max != "" and type-of($breakpoint-max) == 'number' {
     @media only screen and (min-width:$breakpoint-size) and (max-width: $breakpoint-max) { @content; }
   }

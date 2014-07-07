@@ -26,7 +26,7 @@
 	}
 }
 @else {
-	@include breakpoint(10em, $small-breakpoint) {
+	@include media-query(10em, $small-breakpoint) {
 		.row {
 			// Clear for small screens
 			&.equal-units {
@@ -59,7 +59,7 @@
 			}
 		}
 		@else {
-			@include breakpoint(10em, $small-breakpoint) {
+			@include media-query(10em, $small-breakpoint) {
 				text-align: center;
 			}
 		}
@@ -72,7 +72,7 @@
 			}
 		}
 		@else {
-			@include breakpoint(10em, $small-breakpoint) {
+			@include media-query(10em, $small-breakpoint) {
 				display: none;
 			}
 		}

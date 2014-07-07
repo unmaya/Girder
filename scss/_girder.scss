@@ -14,20 +14,18 @@ $em-base           : 16px !default;
 $gutters           : emCalc(20px) !default;
 
 // Set a fixed width for a wraping .container or keep it fluid by setting it to none
-$container-max-width   : none !default;
+$container-max-width : none !default;
 $container-margins : 0 auto !default;
 
 // Example / placeholder breakpoints, change values as needed
 // Pass Pixels and Get ems in return (depends on $em-base var above)
-// 35.5em
 $small-breakpoint  : emCalc(568px) !default;
-// between 10em and 35.5em
-$single-column     : emCalc(160px), $small-breakpoint !default;
-// 40em
 $medium-breakpoint : emCalc(640px) !default;
 $large-breakpoint  : emCalc(790px) !default;
 $xlarge-breakpoint : emCalc(940px) !default;
-// You can add any number of breakpoints here to pass to the breakpoint() mixin
+// Optional: Different syntax available for the breakpoint() gem
+// Example: min-max, between 10em and 35.5em
+$single-column     : emCalc(160px) $small-breakpoint !default;
 
 // Optional: If set to true make sure to @import breakpoint (Gem)
 $use-breakpoint    : false;
