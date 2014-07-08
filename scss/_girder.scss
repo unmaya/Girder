@@ -1,7 +1,7 @@
-/* ========================================== */
-/*   Girder is a Sassy layout helper     /// */
-/*   https://github.com/unmaya/Girder   /// */
-/* ======================================= */
+// /* ========================================== */
+// /*   Girder is a Sassy layout helper     /// */
+// /*   https://github.com/unmaya/Girder   /// */
+// /* ======================================= */
 
 // Girder Global Variables, Settings and Modules
 // Start with $em-base to use it in functions going forward
@@ -16,6 +16,9 @@ $gutters           : emCalc(20px) !default;
 // Set a fixed width for a wraping .container or keep it fluid by setting it to none
 $container-max-width : none !default;
 $container-margins : 0 auto !default;
+
+// a class name for self-clearing elements (row, line, grid, etc)
+$row-class				 : 'row' !default;
 
 // Example / placeholder breakpoints, change values as needed
 // Pass Pixels and Get ems in return (depends on $em-base var above)

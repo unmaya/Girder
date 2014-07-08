@@ -101,18 +101,11 @@ $panel-font-color-alt:  #fff !default;
 
 
 // Manual prefixing of a property of your choice
-// Exceptions required for special cases like "transition"
+// Covers most practical uses.
 @mixin prefix($property,$value...) {
-  @if $property == transition {
-  -webkit-#{$property}: -webkit-#{$value};
-     -moz-#{$property}: -moz-#{$value};
-      -ms-#{$property}: -ms-#{$value};
-  }
-  @else {
   -webkit-#{$property}: $value;
      -moz-#{$property}: $value;
       -ms-#{$property}: $value;
-  }
   #{$property}: $value;
 }
 
@@ -141,7 +134,7 @@ $panel-font-color-alt:  #fff !default;
 }
 
 
-// A Super Basic Breakpoint Mixin
+// A Super Basic Media Query Mixin
 // Defaults to a 'min-width' query but you can pass a second value for min or max
 // @include media-query(600px) {
 //   font-size: 2.4em;

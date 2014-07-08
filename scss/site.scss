@@ -189,8 +189,8 @@ footer {
 // Visualizing Girder units
 .content .row pre {
 	@include panel();
-	// @include transition(all 0.3s ease-in);
-	@include prefix(transition, 'all 0.3s ease-in');
+	// transition: all 0.3s ease-in;
+	@include prefix(transition, all 0.3s ease-in);
 	overflow: hidden;
 	text-shadow: 0 1px 0 $linkHoverColor;
 	&:hover {background: $linkColor; border-color: #1c87a4;}
