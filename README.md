@@ -1,7 +1,7 @@
 Girder CSS [demo](http://comfypixel.com/Girder/)
 ====================
 
-A CSS grid toolkit built with Sass. Extra handy for HTML prototypes because its small, I'm drawing inspiration from all over but trying to keep things super simple:
+A CSS grid toolkit built with Sass. Extra handy for HTML prototypes because its small, fast and easy to use. I'm drawing inspiration from all over but trying to keep things  simple and focused:
 
 * Its Sass with semantic html5 in mind but can also be used with [plain CSS](http://comfypixel.com/Girder/guide.html) (girder.css)
 * Conscise but well commented, small, focused and easy to learn. No excess stuff just the essentials.
@@ -58,6 +58,14 @@ $container-width: 1322px;
 * [Portfolio](http://fredmaya.com)
 
 # Setup / Requirements
+You can use Girder without Sass (plain css) but a lot of useful tools would be missing.
+
+### just Css
+1. Include [girder.css](https://github.com/unmaya/Girder/blob/master/girder.css) in your project.
+
+2. Use the layout classes in your HTML to infinitely nest and splice content on your app as needed. [More examples and usage](http://ghost.fredmaya.com/getting-started-with-girder/).
+
+### Using Sass / Scss
 Copy the Sass folder from this Repo. Or [download the source and example files](https://github.com/unmaya/Girder/archive/master.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**
@@ -71,11 +79,11 @@ Include the Girder scss file:
 // Follow with your base styles
 ```
 
-1. Unless you're using plain CSS be sure the Compass Gem is installed which includes Sass, if you're not sure, issue this command in the console: ```sudo gem install compass```
-2. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
+1. Sass should be present in your environment (Ruby Sass or Libsass). To install the gem, issue this command in the console: ```sudo gem install sass```
+2. Start building your app and hook up to the grid simply by including the mixins in your selectors like this:
 
 ```SCSS
-// Units go as small as sixth of any container, mix and match as needed
+// Units go as small as a sixth of the width of any container. Mix and match as needed
 @include unit(three-fourths); // Three quarters of a page (inc. gutters by default)
 @include unit(third, false); // A Third of any container (add 'false' to remove gutters)
 .sixth-box {

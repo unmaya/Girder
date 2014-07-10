@@ -4,7 +4,5 @@
 	"main": "./scss/girder.scss",
 	"homepage": "http://comfypixel.com/Girder",
 	"dependencies": {},
-	"devDependencies": {
-		"compass-breakpoint": "~2.4.0"
-	}
+	"devDependencies": {}
 }

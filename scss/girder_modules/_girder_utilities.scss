@@ -135,8 +135,8 @@ $panel-font-color-alt:  #fff !default;
 }
 
 
-// A Super Basic Media Query Mixin
-// Defaults to a 'min-width' query but you can pass a second value for min or max
+// A Basic Media Query Mixin
+// Defaults to a 'min-width' query but you can pass a second value for min and max
 // @include media-query(600px) {
 //   font-size: 2.4em;
 // }
