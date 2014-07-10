@@ -1,25 +1,7 @@
-@charset "UTF-8";
-/* //////////////////////////////////////////////// */
-/*   Girder is a Sassy grid toolkit     ////////// */
-/*   Simple, Responsive & Semantic     ////////// */
-/*   https://github.com/unmaya/Girder ////////// */
-/* //////////////////////////////////////////// */
+/*    Girder is a Sassy grid toolkit      ====== */
+/*    https://github.com/unmaya/Girder    ===== */
 
-/* This is the CSS version of Girder which was designed for use with Scss.
-In this form it requires presentational classes in HTML which is
-exactly what I wanted to avoid by building it with Sass / Scss. */
-
-/* Include a broad amount of border-box on everything and profit. */
-/* Override for special cases within selectors. Yes, its for modern browsers! */
-/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* Adjust this to fit your preference for an em base
-By default its set to the current standard of 100% (1em = 16px) */
+/* Adjust / Overwrite to fit your preference */
 html {font-size: 16px;}
 
 /* Set up your wrapping container with margins and to a fixed width if desired */
@@ -114,6 +96,15 @@ html {font-size: 16px;}
   height: 0;
 }
 
+/* Include a broad amount of border-box on everything and profit. */
+/* Override for special cases within selectors. */
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* Utility classes to align text and float / hide elements (optional) */
 .left {
   float: left;
@@ -136,7 +127,7 @@ html {font-size: 16px;}
   .center-small {text-align: inherit;}
 }
 
-/* Example of a "small to medium" breakpoint turning things into single-column (optional) */
+/* Example of a "small to medium" breakpoint for a single-column layout (optional) */
 @media (min-width: 10em) and (max-width: 35.5em) {
   .row.equal-units > .unit:first-of-type {padding-left: 0;}
   .row.equal-units > .unit:last-child {padding-right: 0;}

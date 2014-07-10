@@ -3,9 +3,10 @@
 
 // Clear floats etc
 @mixin clearfix() {
-	*zoom:1;
 	&:before, &:after { content: " "; display: table; }
 	&:after { clear: both; }
+	// Old IE
+	*zoom:1;
 }
 
 
@@ -97,5 +98,69 @@ $panel-font-color-alt:  #fff !default;
 	@each $direction in left, right, center, justify {
 		.text-#{$direction} {text-align: #{$direction} !important;}
 	}
+}
+
+
+// Manual prefixing of a property of your choice
+// Covers most practical uses.
+@mixin prefix($property,$value...) {
+  -webkit-#{$property}: $value;
+     -moz-#{$property}: $value;
+      -ms-#{$property}: $value;
+  #{$property}: $value;
+}
+
+
+// Layout and Flex utilities
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+@mixin flexorder($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+
+// Basic Media Query Mixin
+// Defaults to a 'min-width' query but you can pass a second value for min and max
+// @include media-query(600px) {
+//   font-size: 2.4em;
+// }
+@mixin media-query ($breakpoint-size, $breakpoint-max:"") {
+  @if $breakpoint-max != "" and type-of($breakpoint-max) == 'number' {
+    @media only screen and (min-width:$breakpoint-size) and (max-width: $breakpoint-max) { @content; }
+  }
+  @else if $breakpoint-max != "" and type-of($breakpoint-max) == 'string' {
+    @if $breakpoint-max == "max-width" {
+      @media only screen and (max-width: $breakpoint-size) { @content; }
+    } @else {
+      @warn "Your second argument for the breakpoint mixin is not valid. It accepts 'max-width' or a number value like '600px' (optional)."
+    }
+  }
+  @else {
+    @media only screen and (min-width: $breakpoint-size) { @content; }
+  }
+}
+
+
+// This is required for grid units to work using padded gutters
+// Include a broad amount of border-box on everything and profit.
+// Override for special cases within selectors
+*, *:before, *:after {
+	@include prefix(box-sizing, border-box);
 }
 
