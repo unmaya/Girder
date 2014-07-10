@@ -11,14 +11,6 @@
 	$breakpoints: add-breakpoint('extra large screens', $xlarge-breakpoint) !global;
 }
 
-// Include a broad amount of border-box on everything and profit.
-// Override for special cases within selectors
-*, *:before, *:after {
-	box-sizing: border-box;
-		-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-}
-
 // Set up the container alignment and max-width
 // This is the only CSS that Girder outputs by default (.row self-clearing stuff)
 .container, .#{$row-class} {
