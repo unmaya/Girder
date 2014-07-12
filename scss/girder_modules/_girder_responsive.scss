@@ -5,7 +5,7 @@
 @if $use-breakpoint == true {
 	@include breakpoint($single-column) {
 		.#{$row-class} {
-			// Clear for small screens
+			// Strong exceptions for only these few rules
 			&.equal-units {
 				> :first-of-type {padding-left: 0 !important;}
 				> :last-child {padding-right: 0 !important;}
@@ -19,8 +19,6 @@
 
 				// Reset push for small viewports
 				left: 0;
-				// Reset neg margin for nested grids
-				margin-left: inherit !important;
 			}
 		}
 	}
@@ -30,8 +28,8 @@
 		.#{$row-class} {
 			// Clear for small screens
 			&.equal-units {
-				> :first-of-type {padding-left: 0;}
-				> :last-child {padding-right: 0;}
+				> :first-of-type {padding-left: 0 !important;}
+				> :last-child {padding-right: 0 !important;}
 			}
 		}
 
@@ -43,8 +41,6 @@
 
 			// Reset push for small viewports
 			left: 0;
-			// Reset neg margin for nested grids
-			margin-left: inherit;
 		}
 
 	}

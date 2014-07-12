@@ -11,7 +11,7 @@ A CSS grid toolkit built with Sass. Extra handy for HTML prototypes because its 
 
 ---
 
-# How it works
+## How it works
 Girder is a simple yet versatile grid designed for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It builds flexible layouts divided into logical sections and uses silent classes (placeholders) to structure content in HTML; this keeps your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4". [View the examples](http://comfypixel.com/Girder/example-css.html)
 
 **Sample Code:** You can write HTML with your own classes to target elements or use the cascade:
@@ -45,7 +45,7 @@ $container-width: 1322px;
 	article li {
 		@include unit(fourth);
 
-		@include media-query($medium-breakpoint) {
+		@include media-query($medium-screens) {
 			@include responsive-unit(half); // easily change layouts based on screen size
 		}
 	}
@@ -57,8 +57,8 @@ $container-width: 1322px;
 * [Girder-Ghost Theme](http://ghost.fredmaya.com)
 * [Portfolio](http://fredmaya.com)
 
-# Setup / Requirements
-You can use Girder without Sass (plain css) but a lot of useful tools would be missing.
+## Setup / Requirements
+Girder is compatible with Node-Sass or Ruby-Sass. You can use it without Sass also (plain css) but you'd be missing a some useful tools.
 
 ### just Css
 1. Include [girder.css](https://github.com/unmaya/Girder/blob/master/girder.css) in your project.
@@ -79,7 +79,9 @@ Include the Girder scss file:
 // Follow with your base styles
 ```
 
-1. Sass should be present in your environment (Ruby Sass or Libsass). To install the gem, issue this command in the console: ```sudo gem install sass```
+1. Sass should be present in your environment (Ruby Sass or Node-Sass).
+	a. ```npm install node-sass```
+	b. Alternatively to install the gem: ```sudo gem install sass```
 2. Start building your app and hook up to the grid simply by including the mixins in your selectors like this:
 
 ```SCSS
@@ -89,7 +91,7 @@ Include the Girder scss file:
 .sixth-box {
 	@include unit(sixth);
 
-	@include media-query('medium screens') {
+	@include media-query($large-screens) {
 		@include responsive-unit(third);
 	}
 }
@@ -110,11 +112,11 @@ Include the Girder scss file:
 For more tips on using Sass and CSS layout tools like Girder, visit the [dev journal](http://ghost.fredmaya.com).
 
 ## Optional
-Girder is tiny but it can scale based on your project's needs. It includes support for more complex media queries using the Breakpoint() plugin. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by modifying or overwriting these settings:
+Girder is tiny but it can scale based on your project's needs. It includes support for more complex media queries using the Breakpoint Sass extension. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by modifying or overwriting these settings:
 
 ````SCSS
 $use-breakpoint: true;
-@import "breakpoint";
+@import "girder_modules/addon_breakpoint";
 ````
 
 ### This project is open to suggestions, forks, experiments, etc
