@@ -5,6 +5,7 @@ package.json
 npm-debug.log
 .sass-cache/
 Gemfile.lock
+Gemfile
 Girder Docs/scss/_girder.scss
 Girder Docs/scss/girder_modules
 
