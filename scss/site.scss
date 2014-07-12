@@ -67,7 +67,7 @@ img {border: 0;}
 
 // Expressed CSS classes for reference
 .about {
-	@include row;
+	@extend %row;
 	// @include baseline-grid;
 	// Specific to about section
 	.content {
@@ -198,7 +198,7 @@ footer {
 }
 
 .setup {
-	@include row;
+	@extend %row;
 	section {
 		padding-top: 0 !important; padding-bottom: 0 !important;
 	}
