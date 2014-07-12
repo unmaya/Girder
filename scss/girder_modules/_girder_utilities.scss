@@ -9,6 +9,17 @@
 	*zoom:1;
 }
 
+%clear,
+.clear {
+  &:before,
+  &:after {
+    content:"";
+    display:table;
+  }
+  &:after {
+    clear:both;
+  }
+}
 
 // Return rem units with pixel fallback
 // This takes an rem value (just a number)

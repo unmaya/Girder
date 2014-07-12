@@ -38,7 +38,7 @@ $units:'half' 50%,
 // Mixin for unit widths (Optimize @if and add func for return values)
 @mixin unit($width:whole, $addgutters:true) {
 
-	// Handle the no-gutter case but its not pretty, looking for better options
+	// Remove the side gutters if specified
 	@if $addgutters == false {
 		.#{$row-class} & {
 			padding-left: 0;
@@ -88,8 +88,15 @@ $units:'half' 50%,
 	@else if $width == 'whole' {
 		@extend %whole;
 
-		@include breakpoint($single-column) {
-			padding-right: 0 !important;
+		@if $use-breakpoint == true {
+			@include breakpoint($single-column) {
+				padding-right: 0;
+			}
+		}
+		@else {
+			@include media-query(10em, $small-breakpoint) {
+				padding-right: 0;
+			}
 		}
 	}
 	@else {
@@ -102,15 +109,6 @@ $units:'half' 50%,
 	float: left;
 	padding: $gutters / 2;
 	width: 100%;
-
-	// Add a .no-gutters class to a unit to remove gutters (experimental)
-	// @if $html-classes == true {
-	// 	&.no-gutters,
-	// 	.no-gutters > &:first-of-type {
-	// 		padding-left: 0;
-	// 		padding-right: 0;
-	// 	}
-	// }
 }
 
 

@@ -77,6 +77,15 @@
   left: 50.2%;
 }
 
+.clear:before,
+.clear:after {
+  content: "";
+  display: table;
+}
+.clear:after {
+  clear: both;
+}
+
 .left {
   float: left;
   margin-right: .8em;
