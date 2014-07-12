@@ -1,8 +1,12 @@
 {
 	"name": "girder",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "./scss/girder.scss",
 	"homepage": "http://comfypixel.com/Girder",
+  "ignore": [
+    "Gemfile",
+    ".gitignore"
+  ],
 	"dependencies": {},
 	"devDependencies": {}
 }

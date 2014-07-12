@@ -196,9 +196,9 @@ $units:'half' 50%,
 			> :first-of-type {padding-left: $gutters / 2;}
 			> :last-child {padding-right: $gutters / 2;}
 		}
-	}
 
-	&.no-gutters, &.no-padding {padding: 0;}
+		&.no-gutters, &.no-padding {padding: 0;}
+	}
 }
 
 // Girder Responsive unit Mixin uses a cleaner syntax (until maps in Sass 3.3)
