@@ -2,7 +2,7 @@
 ////////////////////////////////
 // Styles for an example site using Girder.
 // You can use this as a reference guide to get started.
-// Import the required partials (compass and breakpoint gems are used for this example).
+// Import Girder with its main partial
 
 // Optional: overwrite Girder gutters in ems before importing (Default 1.25em = 20px)
 $gutters: 1.25em;
@@ -67,7 +67,8 @@ img {border: 0;}
 
 // Expressed CSS classes for reference
 .about {
-
+	@include row;
+	// @include baseline-grid;
 	// Specific to about section
 	.content {
 		// Account for actions sidebar
@@ -196,8 +197,11 @@ footer {
 	&:hover {background: $linkColor; border-color: #1c87a4;}
 }
 
-.setup section {
-	padding-top: 0 !important; padding-bottom: 0 !important;
+.setup {
+	@include row;
+	section {
+		padding-top: 0 !important; padding-bottom: 0 !important;
+	}
 }
 
 nav#top {

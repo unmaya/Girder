@@ -2,15 +2,6 @@
 // Base Scss and grid functionality
 // Outputs the minimum CSS required to handle units and self-clearing rows
 
-// Set breakpoint map values as globals if respond-to is being used
-@if $use-breakpoint == true {
-	$breakpoints: add-breakpoint('turn single column', (10em $small-breakpoint, 'no-query' '.no-mq')) !global;
-	$breakpoints: add-breakpoint('small to medium', ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq')) !global;
-	$breakpoints: add-breakpoint('medium and up', $medium-breakpoint) !global;
-	$breakpoints: add-breakpoint('larger screens', $large-breakpoint) !global;
-	$breakpoints: add-breakpoint('extra large screens', $xlarge-breakpoint) !global;
-}
-
 // Set up the container alignment and max-width
 // This is the only CSS that Girder outputs by default (.row self-clearing stuff)
 .container, .#{$row-class} {
@@ -38,7 +29,7 @@ $units:'half' 50%,
 // Mixin for unit widths (Optimize @if and add func for return values)
 @mixin unit($width:whole, $addgutters:true) {
 
-	// Handle the no-gutter case but its not pretty, looking for better options
+	// Remove the side gutters if specified
 	@if $addgutters == false {
 		.#{$row-class} & {
 			padding-left: 0;
@@ -88,8 +79,15 @@ $units:'half' 50%,
 	@else if $width == 'whole' {
 		@extend %whole;
 
-		@include breakpoint($single-column) {
-			padding-right: 0 !important;
+		@if $use-breakpoint == true {
+			@include breakpoint($single-column) {
+				padding-right: 0;
+			}
+		}
+		@else {
+			@include media-query(10em, $small-breakpoint) {
+				padding-right: 0;
+			}
 		}
 	}
 	@else {
@@ -97,22 +95,11 @@ $units:'half' 50%,
 	}
 }
 
-
 %unit {
 	float: left;
 	padding: $gutters / 2;
 	width: 100%;
-
-	// Add a .no-gutters class to a unit to remove gutters (experimental)
-	// @if $html-classes == true {
-	// 	&.no-gutters,
-	// 	.no-gutters > &:first-of-type {
-	// 		padding-left: 0;
-	// 		padding-right: 0;
-	// 	}
-	// }
 }
-
 
 %half           { width: 50%;
 	@extend %unit; }
@@ -146,29 +133,33 @@ $units:'half' 50%,
 }
 
 // Rows can be cleared with this class if needed
-.#{$row-class} {
+@if $silent-rows != true {
+	.#{$row-class} {
+		padding: $row-padding;
+		clear: both;
+		display: block;
 
-	clear: both;
-	display: block;
+		// Automagic clearing for rows
+		&:after {clear: both;}
 
-	// Automagic clearing for rows
-	&:after {clear: both;}
+		&:before, &:after {
+			display: table;
+			content: "";
+			line-height: 0;
+		}
 
-	&:before, &:after {
-		display: table;
-		content: "";
-		line-height: 0;
+		// Remove nested outer gutters at css level
+		.#{$row-class} > :first-of-type {padding-left: 0;}
+		.#{$row-class} > :last-child {padding-right: 0;}
+
+		// Option to add outer gutters back in to keep third+ units even
+		&.equal-units {
+			> :first-of-type {padding-left: $gutters / 2;}
+			> :last-child {padding-right: $gutters / 2;}
+		}
 	}
 
-	// Remove nested outer gutters at css level
-	.#{$row-class} > :first-of-type {padding-left: 0;}
-	.#{$row-class} > :last-child {padding-right: 0;}
-
-	// Option to add outer gutters back in to keep third+ units even
-	&.equal-units {
-		> :first-of-type {padding-left: $gutters / 2;}
-		> :last-child {padding-right: $gutters / 2;}
-	}
+	&.no-gutters, &.no-padding {padding: 0;}
 }
 
 // Girder Responsive unit Mixin uses a cleaner syntax (until maps in Sass 3.3)

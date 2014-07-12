@@ -1,0 +1,17 @@
+//////////////////////////////
+// Optional Addon: Support for breakpoint sass plugin
+
+// Optional: Different syntax available for the breakpoint() extension
+// Example: min-max, between 10em and 35.5em
+$single-column     : emCalc(160px) $small-breakpoint !default;
+
+@import "breakpoint";
+
+// Set breakpoint map values as globals if respond-to is being used
+@if $use-breakpoint == true {
+	$breakpoints: add-breakpoint('turn single column', (10em $small-breakpoint, 'no-query' '.no-mq')) !global;
+	$breakpoints: add-breakpoint('small to medium', ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq')) !global;
+	$breakpoints: add-breakpoint('medium and up', $medium-breakpoint) !global;
+	$breakpoints: add-breakpoint('larger screens', $large-breakpoint) !global;
+	$breakpoints: add-breakpoint('extra large screens', $xlarge-breakpoint) !global;
+}

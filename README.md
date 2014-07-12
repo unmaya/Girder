@@ -1,32 +1,28 @@
 Girder CSS [demo](http://comfypixel.com/Girder/)
 ====================
 
-A CSS grid toolkit built with Sass. Extra handy for HTML prototypes because its small, fast and easy to use. **Why build another CSS grid?** Because I can :) No, really. I couldn't find exactly what I was looking for so I decided to spin my own solution over a rainy weekend. I'm drawing inspiration from all over but really looking to keep things super simple:
+A CSS grid toolkit built with Sass. Extra handy for HTML prototypes because its small, fast and easy to use. I'm drawing inspiration from all over but trying to keep things  simple and focused:
 
 * Its Sass with semantic html5 in mind but can also be used with [plain CSS](http://comfypixel.com/Girder/guide.html) (girder.css)
 * Conscise but well commented, small, focused and easy to learn. No excess stuff just the essentials.
-* Instead of columns it uses flexible grid units based on page sections (.half, .two-thirds).
+* Instead of columns it uses flexible grid units based on viewport sections (.half, .two-thirds).
 * The grid likes relative units and can easily adapt to a mobile-first approach (but its not required).
 * It makes no other assumptions of how you want to build (its just a layout helper). You bring your own typography, design elements, javascript, plugins, etc.
 
 ---
 
-# How it works
+## How it works
 Girder is a simple yet versatile grid designed for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It builds flexible layouts divided into logical sections and uses silent classes (placeholders) to structure content in HTML; this keeps your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4". [View the examples](http://comfypixel.com/Girder/example-css.html)
 
 **Sample Code:** You can write HTML with your own classes to target elements or use the cascade:
 ```HTML
-<main class="container row">
-	<article>
+<main class="container">
+	<article class="row">
 		<p>The main column covers two thirds of the page.</p>
-		<ul>
-			<li>One</li>
-			<li>Two</li>
-			<li>Three</li>
-			<li>Four</li>
-		</ul>
 	</article>
-	<aside> This sidebar covers one third of the page. </aside>
+	<aside>
+		<p>This sidebar covers one third of the page.</p>
+	</aside>
 </main>
 ```
 The Sass for this example could look like this:
@@ -49,7 +45,7 @@ $container-width: 1322px;
 	article li {
 		@include unit(fourth);
 
-		@include breakpoint($medium-breakpoint) {
+		@include media-query($medium-screens) {
 			@include responsive-unit(half); // easily change layouts based on screen size
 		}
 	}
@@ -61,7 +57,15 @@ $container-width: 1322px;
 * [Girder-Ghost Theme](http://ghost.fredmaya.com)
 * [Portfolio](http://fredmaya.com)
 
-# Setup / Requirements
+## Setup / Requirements
+Girder is compatible with Node-Sass or Ruby-Sass. You can use it without Sass also (plain css) but you'd be missing a some useful tools.
+
+### just Css
+1. Include [girder.css](https://github.com/unmaya/Girder/blob/master/girder.css) in your project.
+
+2. Use the layout classes in your HTML to infinitely nest and splice content on your app as needed. [More examples and usage](http://ghost.fredmaya.com/getting-started-with-girder/).
+
+### Using Sass / Scss
 Copy the Sass folder from this Repo. Or [download the source and example files](https://github.com/unmaya/Girder/archive/master.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
 
 *	**girder.scss**
@@ -75,17 +79,19 @@ Include the Girder scss file:
 // Follow with your base styles
 ```
 
-1. Unless you're using plain CSS be sure the Compass Gem is installed which includes Sass, if you're not sure, issue this command in the console: ```sudo gem install compass```
-2. Start building your markup and hook up the grid simply by adding rows and including the mixins in your selectors like this:
+1. Sass should be present in your environment (Ruby Sass or Node-Sass).
+	a. ```npm install node-sass```
+	b. Alternatively to install the gem: ```sudo gem install sass```
+2. Start building your app and hook up to the grid simply by including the mixins in your selectors like this:
 
 ```SCSS
-// Units go as small as sixth of any container, mix and match as needed
+// Units go as small as a sixth of the width of any container. Mix and match as needed
 @include unit(three-fourths); // Three quarters of a page (inc. gutters by default)
 @include unit(third, false); // A Third of any container (add 'false' to remove gutters)
 .sixth-box {
 	@include unit(sixth);
 
-	@include breakpoint('medium screens') {
+	@include media-query($large-screens) {
 		@include responsive-unit(third);
 	}
 }
@@ -106,11 +112,11 @@ Include the Girder scss file:
 For more tips on using Sass and CSS layout tools like Girder, visit the [dev journal](http://ghost.fredmaya.com).
 
 ## Optional
-Girder is tiny but it can scale based on your project's needs. It includes support for more complex media queries using the Breakpoint() compass plugin. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by modifying or overwriting these settings:
+Girder is tiny but it can scale based on your project's needs. It includes support for more complex media queries using the Breakpoint Sass extension. Just make sure you [install the gem](http://rubygems.org/gems/breakpoint) and include the module by modifying or overwriting these settings:
 
 ````SCSS
 $use-breakpoint: true;
-@import "breakpoint";
+@import "girder_modules/addon_breakpoint";
 ````
 
 ### This project is open to suggestions, forks, experiments, etc
