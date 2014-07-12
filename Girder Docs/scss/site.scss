@@ -1,43 +1,30 @@
 @charset "UTF-8";
-
 ////////////////////////////////
-// Styles for an example site using Girder
-// You can use this as a guide to how it can be used
-// Import the required partials (compass and breakpoint needed for this example)
+// Styles for an example site using Girder.
+// You can use this as a reference guide to get started.
+// Import Girder with its main partial
 
-// Optional: overwrite gutters in ems (by default 1.25em = 20px)
+// Optional: overwrite Girder gutters in ems before importing (Default 1.25em = 20px)
 $gutters: 1.25em;
-
 // Girder grid modules (adjust your path to _girder.scss)
 @import "girder";
-
-// Compass support
-@import "compass";
-
-// Baseline for Compass Vertical Rhythm
-@include establish-baseline;
 
 // Site Styling Variables
 $body-bg             : #ffffff;
 $base-font-color     : #333333;
 $linkColor	         : #72CEE7;
-$linkHoverColor      : saturate(lighten($linkColor, 25%), 25%);
-$lightText			     : lighten($base-font-color, 45%);
+$linkHoverColor      : #daf7fe;
+$lightText			     : #a6a6a6;
 $highlightColor      : #fffac0;
 
 // Matching Girder's em-base for consistency
-$base-font-size: $em-base !default; // Override default set in Compass' Vertical Rhythm partial.
-
-// The base line height determines the basic unit of vertical rhythm.
-// $base-line-height: 24px; // Override default set in Compass' Vertical Rhythm partial.
+$base-font-size: $em-base !default;
 
 // The font sizes for h1-h6.
 $h1-font-size: 2.8   * $base-font-size;
 $h2-font-size: 1.8   * $base-font-size;
 $h3-font-size: 1.17  * $base-font-size;
 $h4-font-size: 1     * $base-font-size;
-$h5-font-size: 0.83  * $base-font-size;
-$h6-font-size: 0.67  * $base-font-size;
 
 // The amount lists and blockquotes are indented.
 $indent-amount: 30px;
@@ -47,43 +34,47 @@ $headings-font        : source-sans-pro, "Helvetica Neue", "Helvetica", sans-ser
 $base-font-family     : source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
 $girder-font-family   : lato, source-sans-pro, "Helvetica", sans-serif;
 
-// Normalize this thing
-// Tweaked to suppress css comments
-@import "normalize";
-
-/* ///////////////////////////////////////////////// */
-/*  Site example and Girder styles combined  /////// */
-/* ///////////////////////////////////////////////// */
-
-////////////////////////////////
-// Theme Styles For Reference
-// Not needed by Girder
-
+/* /////////////////////////////////////// */
+/*  Girder Site & Example Styles  /////// */
+/* ///////////////////////////////////// */
 body {
 	background: $body-bg;
 	color: $base-font-color;
 	font-family: $base-font-family;
 	font-size: $base-font-size;
+	margin: 0;
 	-webkit-font-smoothing: antialiased;
 }
 html, body, .container, .about, .content, .actions {height: 100%;}
 h1, h2, h3, h4 {margin-bottom: .4em;}
 h3 {margin-top: .4em;}
+h1 {
+	font-size: $h1-font-size;
+	line-height: 1.60714em;
+	margin-top: 0.53571em;
+}
+h2 {
+	font-size: $h2-font-size;
+	line-height: 1.66667em;
+	margin-top: 0.83333em;
+}
 p {margin: 1em 0 1.5em;}
 a {
 	&:link, &:visited {color: $linkColor;}
 	&:hover, &:active {color: $linkHoverColor;}
 }
+img {border: 0;}
 
 // Expressed CSS classes for reference
 .about {
-
+	@extend %row;
+	// @include baseline-grid;
 	// Specific to about section
 	.content {
 		// Account for actions sidebar
 		margin-right: 25%;
-		padding-left: $gutters * 2 !important;
-		padding-right: $gutters * 2 !important;
+		padding-left: $gutters + $gutters /2;
+		padding-right: $gutters + $gutters /2;
 
 		> * {
 			// constrain content to small-breakpoint width, fallback to pixels
@@ -96,13 +87,11 @@ a {
 		@if $use-breakpoint == true {
 			@include breakpoint($single-column) {
 				height: auto;
-				padding-left: $gutters * 2 !important;
 			}
 		}
 		@else {
-			@media (min-width: 10em) and (max-width: $small-breakpoint) {
+			@include media-query(10em, $small-breakpoint) {
 				height: auto;
-				padding-left: $gutters * 2 !important;
 			}
 		}
 	}
@@ -122,7 +111,7 @@ a {
 			text-transform: uppercase;
 		}
 	}
-	a:link, a:visited {color: darken($linkColor, 25%); padding: 0 3px;}
+	a:link, a:visited {color: #2099ba; padding: 0 3px;}
 	a:hover, a:active {color: $base-font-color; background: $linkHoverColor;}
 	ul {margin: 0;}
 }
@@ -143,7 +132,7 @@ a {
 		}
 	}
 	@else {
-		@media (min-width: 10em) and (max-width: $small-breakpoint) {
+		@include media-query(10em, $small-breakpoint) {
 			height: auto;
 			position: relative;
 		}
@@ -164,24 +153,25 @@ a {
 		display: block;
 
 		&.download {
-			@include box-shadow(#333 0 1px 0);
-			@include border-radius(4px);
+			@include prefix(box-shadow, #333 0 1px 0);
+			@include prefix(border-radius, 4px);
 			color: $body-bg;
-			text-shadow: 0 -1px 0 darken($linkColor, 36%);
+			text-shadow: 0 -1px 0 $linkColor;
 			width: emCalc(120px);
 			margin: 0 auto .8em auto;
 			padding: emCalc(5px) emCalc(10px);
-			background: darken($linkColor, 20%);
+			background: #23abd0;
 
 			line-height: 1.6em;
 			text-transform: uppercase;
 			font-weight: bold;
-			&:hover {background: darken($linkColor, 30%);}
+			&:hover {background: #1c87a4;}
 		}
 
 		&:hover {color: $linkHoverColor;}
 	}
-} // End .actions
+}
+// End .actions
 
 footer {
 	padding: 2em 0;
@@ -200,14 +190,18 @@ footer {
 // Visualizing Girder units
 .content .row pre {
 	@include panel();
-	@include transition(all 0.3s ease-in);
+	// transition: all 0.3s ease-in;
+	@include prefix(transition, all 0.3s ease-in);
 	overflow: hidden;
 	text-shadow: 0 1px 0 $linkHoverColor;
-	&:hover {background: $linkColor; border-color: darken($linkColor, 20%);}
+	&:hover {background: $linkColor; border-color: #1c87a4;}
 }
 
-.setup section {
-	padding-top: 0 !important; padding-bottom: 0 !important;
+.setup {
+	@extend %row;
+	section {
+		padding-top: 0 !important; padding-bottom: 0 !important;
+	}
 }
 
 nav#top {
@@ -256,7 +250,7 @@ nav#top {
 		}
 	}
 	@else {
-		@media (min-width: 10em) and (max-width: $small-breakpoint) {
+		@include media-query(10em, $small-breakpoint) {
 			display: block;
 		}
 	}
@@ -271,8 +265,7 @@ nav#top {
 			line-height: .8rem;
 		}
 		p {
-			@include adjust-font-size-to(1.125rem);
-			@include adjust-leading-to(1.1, 18px);
+			font-size: 1.125em;
 		}
 	}
 }
@@ -284,8 +277,7 @@ nav#top {
 			line-height: .8rem;
 		}
 		p {
-			@include adjust-font-size-to(1.125rem);
-			@include adjust-leading-to(1.1, 18px);
+			font-size: 1.125em;
 		}
 	}
 }

@@ -4,31 +4,34 @@
 /* ======================================= */
 
 // Girder Global Variables, Settings and Modules
-// Start with $em-base to use it in functions going forward
+// Start with an $em-base as the foundation of your app
 $em-base           : 16px !default;
 
 // Functions module need priority (pixel to em converters and more)
 @import "girder_modules/girder_functions";
 
-// Gutter width is split into each side of a unit
+// Gutter width is split into each side of a unit by default
 $gutters           : emCalc(20px) !default;
 
 // Set a fixed width for a wraping .container or keep it fluid by setting it to none
-$container-max-width   : none !default;
+$container-max-width : none !default;
 $container-margins : 0 auto !default;
+
+// Name your class for self-clearing elements (row, container, grid, etc)
+$row-class         : 'row' !default;
+$row-padding       : 0 !default;
+$silent-rows       : false !default;
 
 // Example / placeholder breakpoints, change values as needed
 // Pass Pixels and Get ems in return (depends on $em-base var above)
-$small-breakpoint  : emCalc(568px) !default; // 35.5em
-$single-column     : emCalc(160px) $small-breakpoint !default; // between 10em and 35.5em
-$medium-breakpoint : emCalc(640px) !default; // 40em
+$small-breakpoint  : emCalc(568px) !default;
+$medium-breakpoint : emCalc(640px) !default;
 $large-breakpoint  : emCalc(790px) !default;
 $xlarge-breakpoint : emCalc(940px) !default;
-// You can add any number of breakpoints here to pass to the breakpoint() mixin
 
-// Optional: If set to true make sure to @import breakpoint
+// Optional: Support for the breakpoint sass extension (requires addon)
 $use-breakpoint    : false;
-// @import "breakpoint";
+// @import "girder_modules/addon_breakpoint";
 
 // Output extra classes for pushing units and .hide-small / .center-small
 $include-extras    : true !default;

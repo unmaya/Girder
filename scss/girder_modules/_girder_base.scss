@@ -1,28 +1,10 @@
 //////////////////////////////
 // Base Scss and grid functionality
-// Outputs the minimum CSS required to handle units and rows
-
-// Set breakpoint map values as globals if using Sass 3.3.x and respond-to mixin
-// This is here mostly for backward-compatibility. It can be removed in case of conflicts
-@if $use-breakpoint == true {
-	$breakpoints: add-breakpoint('turn single column', (10em $small-breakpoint, 'no-query' '.no-mq'));
-	$breakpoints: add-breakpoint('small to medium', ($small-breakpoint $medium-breakpoint, 'no-query' '.no-mq'));
-	$breakpoints: add-breakpoint('medium and up', $medium-breakpoint);
-	$breakpoints: add-breakpoint('larger screens', $large-breakpoint);
-	$breakpoints: add-breakpoint('extra large screens', $xlarge-breakpoint);
-}
-
-// Include a broad amount of border-box on everything and profit.
-// Override for special cases within selectors
-*, *:before, *:after {
-	box-sizing: border-box;
-		-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-}
+// Outputs the minimum CSS required to handle units and self-clearing rows
 
 // Set up the container alignment and max-width
-// This is the only CSS that Girder outputs by default (.row stuff)
-.container, .row {
+// This is the only CSS that Girder outputs by default (.row self-clearing stuff)
+.container, .#{$row-class} {
 	margin: $container-margins;
 	max-width: $container-max-width;
 }
@@ -47,9 +29,9 @@ $units:'half' 50%,
 // Mixin for unit widths (Optimize @if and add func for return values)
 @mixin unit($width:whole, $addgutters:true) {
 
-	// Handle the no-gutter case but its not pretty, looking for better options
+	// Remove the side gutters if specified
 	@if $addgutters == false {
-		.row & {
+		.#{$row-class} & {
 			padding-left: 0;
 			padding-right: 0;
 		}
@@ -96,14 +78,15 @@ $units:'half' 50%,
 	}
 	@else if $width == 'whole' {
 		@extend %whole;
+
 		@if $use-breakpoint == true {
 			@include breakpoint($single-column) {
-				padding-right: 0 !important;
+				padding-right: 0;
 			}
 		}
 		@else {
-			@media (min-width: 10em) and (max-width: $small-breakpoint) {
-				text-align: inherit;
+			@include media-query(10em, $small-breakpoint) {
+				padding-right: 0;
 			}
 		}
 	}
@@ -112,56 +95,56 @@ $units:'half' 50%,
 	}
 }
 
-// Row class and flexible grid units (percentage based)
-.row {
+%unit {
+	float: left;
+	padding: $gutters / 2;
+	width: 100%;
+}
+
+%half           { width: 50%;
+	@extend %unit; }
+%third      { width: 33.3332%;
+	@extend %unit; }
+%two-thirds     { width: 66.6665%;
+	@extend %unit; }
+%fourth    { width: 25%;
+	@extend %unit; }
+%three-fourths { width: 75%;
+	@extend %unit; }
+%fifth      { width: 20%;
+	@extend %unit; }
+%two-fifths     { width: 40%;
+	@extend %unit; }
+%three-fifths   { width: 60%;
+	@extend %unit; }
+%four-fifths    { width: 80%;
+	@extend %unit; }
+%sixth      { width: 16.6666%;
+	@extend %unit; }
+%five-sixths      { width: 83.3333%;
+	@extend %unit; }
+%golden-small   { width: 38.2716%;
+	@extend %unit; }
+%golden-large   { width: 61.7283%;
+	@extend %unit; }
+%whole {
+	width: 100%;
+	padding: $gutters /2;
+}
+
+
+// Mixin to generate silent rows without the need for a class
+@mixin row($isRelative: false, $padding:0) {
+  @if $isRelative {
+    position: relative;
+  }
+
+	@if $padding > 0 {
+		padding: $padding;
+	}
+
 	clear: both;
 	display: block;
-
-	%unit {
-		float: left;
-		padding: $gutters / 2;
-		width: 100%;
-
-		// Add a .no-gutters class to a unit to remove gutters (experimental)
-		@if $html-classes == true {
-			&.no-gutters,
-			.no-gutters > &:first-of-type {
-				padding-left: 0;
-				padding-right: 0;
-			}
-		}
-	}
-
-	%half           { width: 50%;
-		@extend %unit; }
-	%third      { width: 33.3332%;
-		@extend %unit; }
-	%two-thirds     { width: 66.6665%;
-		@extend %unit; }
-	%fourth    { width: 25%;
-		@extend %unit; }
-	%three-fourths { width: 75%;
-		@extend %unit; }
-	%fifth      { width: 20%;
-		@extend %unit; }
-	%two-fifths     { width: 40%;
-		@extend %unit; }
-	%three-fifths   { width: 60%;
-		@extend %unit; }
-	%four-fifths    { width: 80%;
-		@extend %unit; }
-	%sixth      { width: 16.6666%;
-		@extend %unit; }
-	%five-sixths      { width: 83.3333%;
-		@extend %unit; }
-	%golden-small   { width: 38.2716%;
-		@extend %unit; }
-	%golden-large   { width: 61.7283%;
-		@extend %unit; }
-	%whole {
-		width: 100%;
-		padding: $gutters /2;
-	}
 
 	// Automagic clearing for rows
 	&:after {clear: both;}
@@ -172,24 +155,50 @@ $units:'half' 50%,
 		line-height: 0;
 	}
 
-	// gutters on top level rows are no longer used! (re-enable if needed)
-	// padding-right: $gutters;
-	// padding-left: $gutters;
-	// .row, .row .row  {padding-left: 0; padding-right: 0;}
-	// &.no-gutters, .no-gutters {padding: 0;}
-
 	// Remove nested outer gutters at css level
-	.row > :first-of-type {padding-left: 0;}
-	.row > :last-child {padding-right: 0;}
+	.#{$row-class} > :first-of-type {padding-left: 0;}
+	.#{$row-class} > :last-child {padding-right: 0;}
 
-	// Strong option to add outer gutters back (keeps third+ units even)
+	// Option to add outer gutters back in to keep third+ units even
 	&.equal-units {
-		> :first-of-type {padding-left: $gutters / 2 !important;}
-		> :last-child {padding-right: $gutters / 2 !important;}
+		> :first-of-type {padding-left: $gutters / 2;}
+		> :last-child {padding-right: $gutters / 2;}
+	}
+}
+
+// Make our default row an extendable placeholder
+%row {@include row($row-padding);}
+
+
+// Rows can be cleared using a class if preferred:
+// $silent-rows: false;
+@if $silent-rows != true {
+	.#{$row-class} {
+		padding: $row-padding;
+		clear: both;
+		display: block;
+
+		// Automagic clearing for rows
+		&:after {clear: both;}
+
+		&:before, &:after {
+			display: table;
+			content: "";
+			line-height: 0;
+		}
+
+		// Remove nested outer gutters at css level
+		.#{$row-class} > :first-of-type {padding-left: 0;}
+		.#{$row-class} > :last-child {padding-right: 0;}
+
+		// Option to add outer gutters back in to keep third+ units even
+		&.equal-units {
+			> :first-of-type {padding-left: $gutters / 2;}
+			> :last-child {padding-right: $gutters / 2;}
+		}
 	}
 
-	// .row clearing haxor
-	*zoom: 1;
+	&.no-gutters, &.no-padding {padding: 0;}
 }
 
 // Girder Responsive unit Mixin uses a cleaner syntax (until maps in Sass 3.3)
@@ -218,7 +227,7 @@ $units:'half' 50%,
 
 // This separates our unit mixin and css to keep things tidy
 @mixin girder-unit ($width, $addgutters) {
-	.row & {
+	.#{$row-class} & {
 		float: left;
 		// reverse gutters logic to prevent overriding false
 		@if $addgutters == true {
@@ -274,8 +283,8 @@ $units:'half' 50%,
 		&:first-of-type {padding-left: $gutters;}
 		&:last-child {padding-right: $gutters;}
 
-		.row &:first-of-type {padding-left: 0;}
-		.row &:last-child {padding-right: 0;}
+		.#{$row-class} &:first-of-type {padding-left: 0;}
+		.#{$row-class} &:last-child {padding-right: 0;}
 	}
 
 	$gutterpercent: $gutters * $em-base / 100;

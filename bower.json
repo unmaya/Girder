@@ -1,10 +1,8 @@
 {
 	"name": "girder",
-	"version": "0.9.8",
+	"version": "1.0.0",
 	"main": "./scss/girder.scss",
 	"homepage": "http://comfypixel.com/Girder",
 	"dependencies": {},
-	"devDependencies": {
-		"compass-breakpoint": "~2.4.0"
-	}
+	"devDependencies": {}
 }

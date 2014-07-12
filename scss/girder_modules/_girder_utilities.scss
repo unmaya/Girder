@@ -1,13 +1,25 @@
 //////////////////////////////
 // Utility Mixins and classes
 
-// Clear floats etc
+// Clear magic, in mixin and extender flavors
+// Usage: @include clearfix; or @extend clear;
 @mixin clearfix() {
-	*zoom:1;
 	&:before, &:after { content: " "; display: table; }
 	&:after { clear: both; }
+	// Old IE
+	*zoom:1;
 }
 
+%clear {
+  &:before,
+  &:after {
+    content:"";
+    display:table;
+  }
+  &:after {
+    clear:both;
+  }
+}
 
 // Return rem units with pixel fallback
 // This takes an rem value (just a number)
@@ -18,7 +30,6 @@
 	font-size: ($size * $em-base);
 	font-size: $size + rem;
 }
-
 
 // Modified the Excellent Panels Mixin from Zurb
 // -----------------------------------------------
@@ -97,5 +108,105 @@ $panel-font-color-alt:  #fff !default;
 	@each $direction in left, right, center, justify {
 		.text-#{$direction} {text-align: #{$direction} !important;}
 	}
+	.clear {
+		&:before, &:after { content:""; display:table; }
+	  &:after {clear:both;}
+	}
+}
+
+
+// Mixin to show a baseline grid (Via Google Kit)
+// only visible when body has 'debug' class
+@mixin baseline-grid() {
+  position: relative;
+
+  &:after {
+  	display: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9;
+
+    // display: none;
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 95%, rgba(0,0,0,0.15) 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(95%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.15)));
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 95%,rgba(0,0,0,0.15) 100%);
+    background-image: -o-linear-gradient(top, rgba(0,0,0,0) 95%, rgba(0,0,0,0.15) 100%);
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 95%,rgba(0,0,0,0.15) 100%);
+    background-image: linear-gradient(top, rgba(0,0,0,0.15) 95%,rgba(0,0,0,0.15) 100%);
+
+    @include prefix(background-size, 100% 26px);
+  }
+
+  .debug &:after {
+    display: block;
+    pointer-events: none;
+  }
+}
+
+// Manual prefixing of a property of your choice
+// Covers most practical uses.
+@mixin prefix($property,$value...) {
+  -webkit-#{$property}: $value;
+     -moz-#{$property}: $value;
+      -ms-#{$property}: $value;
+  #{$property}: $value;
+}
+
+// Layout and Flex utilities
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex($values...) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+@mixin flexorder($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+
+// A Basic Media Query Mixin
+// Defaults to a 'min-width' query but you can pass a second value for min and max
+// @include media-query(600px) {
+//   font-size: 2.4em;
+// }
+@mixin media-query ($breakpoint-size, $breakpoint-max:"") {
+  @if $breakpoint-max != "" and type-of($breakpoint-max) == 'number' {
+    @media only screen and (min-width:$breakpoint-size) and (max-width: $breakpoint-max) { @content; }
+  }
+  @else if $breakpoint-max != "" and type-of($breakpoint-max) == 'string' {
+    @if $breakpoint-max == "max-width" {
+      @media only screen and (max-width: $breakpoint-size) { @content; }
+    } @else {
+      @warn "Your second argument for the breakpoint mixin is not valid. It accepts 'max-width' or a number value like '600px' (optional)."
+    }
+  }
+  @else {
+    @media only screen and (min-width: $breakpoint-size) { @content; }
+  }
+}
+
+
+// This is required for grid units to work using padded gutters
+// Include a broad amount of border-box on everything and profit.
+// Override for special cases within selectors
+*, *:before, *:after {
+	@include prefix(box-sizing, border-box);
 }
 
