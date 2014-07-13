@@ -299,7 +299,8 @@ nav#top {
   margin: 0 auto;
   position: relative;
   text-transform: uppercase;
-  text-align: center; }
+  text-align: center;
+  z-index: 1000; }
   nav#top a {
     display: block;
     text-decoration: none;
