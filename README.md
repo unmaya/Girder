@@ -8,6 +8,7 @@ A CSS grid toolkit built with Sass. Extra handy for HTML prototypes because its 
 * Instead of columns it uses flexible grid units based on viewport sections (.half, .two-thirds).
 * The grid likes relative units and can easily adapt to a mobile-first approach (but its not required).
 * It makes no other assumptions of how you want to build (its just a layout helper). You bring your own typography, design elements, javascript, plugins, etc.
+* Integrates easily, works with [Node-Sass](https://github.com/sass/node-sass) or Ruby.
 
 ---
 

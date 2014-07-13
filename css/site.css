@@ -1,3 +1,7 @@
+/* =========================================== */
+/*   Girder v.1.0.1 A Sassy layout helper  // */
+/*   https://github.com/unmaya/Girder     // */
+/* ======================================== */
 .container, .row {
   margin: 0 auto;
   max-width: none; }
@@ -59,9 +63,8 @@
     padding-left: 0.625em; }
   .row.equal-units > :last-child {
     padding-right: 0.625em; }
-
-.no-gutters, .no-padding {
-  padding: 0; }
+  .row.no-gutters, .row.no-padding {
+    padding: 0; }
 
 .push-one, .push-two, .push-three, .push-four {
   position: relative; }
@@ -145,6 +148,7 @@ body {
   color: #333333;
   font-family: source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
   font-size: 16px;
+  line-height: 1.5em;
   margin: 0;
   -webkit-font-smoothing: antialiased; }
 
@@ -330,7 +334,8 @@ nav#top {
     font-size: 0.75rem;
     line-height: 0.8rem; }
   p {
-    font-size: 1.125em; } }
+    font-size: 1.125em;
+    line-height: 1.46667em; } }
 
 ::-moz-selection {
   background: #b3d4fc;
