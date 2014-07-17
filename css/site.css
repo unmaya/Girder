@@ -42,9 +42,6 @@
   float: left;
   padding: 0.625em; }
 
-.content, .actions, .example-gs, .example-gl, .example-half, .example-fourth, .example-34 {
-  padding: 0; }
-
 .example-half {
   width: 50%; }
 
@@ -73,10 +70,6 @@
   .about .row > :first-of-type, .setup .row > :first-of-type {
     padding-left: 0; }
   .about .row > :last-child, .setup .row > :last-child {
-    padding-right: 0; }
-  .about else > :first-of-type, .setup else > :first-of-type {
-    padding-left: 0; }
-  .about else > :last-child, .setup else > :last-child {
     padding-right: 0; }
   .about.equal-units > :first-of-type, .setup.equal-units > :first-of-type {
     padding-left: 0.625em; }

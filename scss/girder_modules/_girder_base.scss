@@ -79,7 +79,9 @@ $units:'half' 50%,
 	}
 
 	// Remove the unit $gutters when specified
-	@if not $addgutters {@extend %removegutters;}
+	@if $addgutters == false {
+		@extend %removegutters;
+	}
 
 }
 
@@ -88,7 +90,7 @@ $units:'half' 50%,
 	float: left;
 	padding: $gutters / 2;
 }
-%removegutters {padding: 0;}
+%removegutters {padding-left: 0; padding-right: 0;}
 
 %half           { width: 50%;
 	@extend %unit; }
@@ -148,7 +150,7 @@ $units:'half' 50%,
 		// Remove nested outer gutters at css level
 		.#{$row-class} > :first-of-type {padding-left: 0;}
 		.#{$row-class} > :last-child {padding-right: 0;}
-	} else {
+	} @else {
 		& > :first-of-type {padding-left: 0;}
 		& > :last-child {padding-right: 0;}
 	}
