@@ -4,10 +4,10 @@
 // Clear magic, in mixin and extender flavors
 // Usage: @include clearfix; or @extend clear;
 @mixin clearfix() {
-	&:before, &:after { content: " "; display: table; }
-	&:after { clear: both; }
-	// Old IE
-	*zoom:1;
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+  // Old IE
+  *zoom:1;
 }
 
 %clear {
@@ -26,9 +26,9 @@
 // Returns a pixel fall back based on our $em-base
 // Usage: @include font-size(2);
 @mixin font-size($sizeValue: 1.8) {
-	$size: strip-unit($sizeValue);
-	font-size: ($size * $em-base);
-	font-size: $size + rem;
+  $size: strip-unit($sizeValue);
+  font-size: ($size * $em-base);
+  font-size: $size + rem;
 }
 
 // Modified the Excellent Panels Mixin from Zurb
@@ -46,74 +46,71 @@ $panel-font-color-alt:  #fff !default;
 // Panel Mixin
 @mixin panel($bg:$panel-bg, $padding:$panel-padding, $filler:false) {
 
-	text-align: center;
-	font-size: .6em;
-	border-radius: 3px;
+  text-align: center;
+  font-size: .6em;
+  border-radius: 3px;
 
   @if $bg {
-		$bg-lightness: lightness($bg);
+    $bg-lightness: lightness($bg);
 
-		border-style: solid;
-		border-width: 1px;
-		border-color: darken($bg, 15%);
-		margin-bottom: $panel-margin-bottom;
-		margin-top: 0;
-		padding: $padding $padding / 2;
-		background: $bg;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darken($bg, 15%);
+    margin-bottom: $panel-margin-bottom;
+    margin-top: 0;
+    padding: $padding $padding / 2;
+    background: $bg;
 
-		// We set the font color based on the darkness of the bg and if we are using filler content
-		@if $bg-lightness >= 50% and $filler == true        { h1,h2,h3,h4,p { color: $panel-font-color-alt; } }
-		@else if $bg-lightness >= 50% and $filler == true   { h1,h2,h3,h4,p { color: $panel-font-color; } }
-		@else if $filler == true {
-			h1,h2,h3,h4,p { color: $panel-font-color-alt;
-			line-height: 1; margin-bottom: emCalc(20px) / 2;
-			}
-		}
+    // We set the font color based on the darkness of the bg and if we are using filler content
+    @if $bg-lightness >= 50% and $filler == true        { h1,h2,h3,h4,p { color: $panel-font-color-alt; } }
+    @else if $bg-lightness >= 50% and $filler == true   { h1,h2,h3,h4,p { color: $panel-font-color; } }
+    @else if $filler == true {
+      h1,h2,h3,h4,p { color: $panel-font-color-alt;
+      line-height: 1; margin-bottom: emCalc(20px) / 2;
+      }
+    }
     // Respect the padding, fool.
     // &>:first-child { padding-top: 0; }
     // &>:last-child { padding-bottom: 0; }
-	}
+  }
 }
-
 
 // Basic Mixin for text alignments
 // Usage: @include text-align(right);
 @mixin text-align($direction) {
-	@if $direction == left {
-		text-align: #{$direction};
-	}
-	@else if $direction == right {
-		text-align: #{$direction};
-	}
-	@else if $direction == center {
-		text-align: #{$direction};
-	}
-	@else if $direction == justify {
-		text-align: #{$direction};
-	}
-	@else {
-		@warn '"#{$direction}" is not a valid alignment for the text-align() mixin.';
-	}
+  @if $direction == left {
+    text-align: #{$direction};
+  }
+  @else if $direction == right {
+    text-align: #{$direction};
+  }
+  @else if $direction == center {
+    text-align: #{$direction};
+  }
+  @else if $direction == justify {
+    text-align: #{$direction};
+  }
+  @else {
+    @warn '"#{$direction}" is not a valid alignment for the text-align() mixin.';
+  }
 }
-
 
 // Only include utility classes if setting is set to true
 // Useful for classes in your HTML like: <p class="right text-right">Go Right!</h2>
 @if $html-classes == true or $include-extras == true {
-	// Utility classes for presentational markup
-	.left         { float: left; margin-right: .8em; }
-	.right        { float: right; margin-left: .8em; }
-	.hidden         { display: none !important; visibility: hidden; }
-	// Write out classes for text-alignment
-	@each $direction in left, right, center, justify {
-		.text-#{$direction} {text-align: #{$direction} !important;}
-	}
-	.clear {
-		&:before, &:after { content:""; display:table; }
-	  &:after {clear:both;}
-	}
+  // Utility classes for presentational markup
+  .left         { float: left; margin-right: .8em; }
+  .right        { float: right; margin-left: .8em; }
+  .hidden         { display: none !important; visibility: hidden; }
+  // Write out classes for text-alignment
+  @each $direction in left, right, center, justify {
+    .text-#{$direction} {text-align: #{$direction};}
+  }
+  .clear {
+    &:before, &:after { content:""; display:table; }
+    &:after {clear:both;}
+  }
 }
-
 
 // Mixin to show a baseline grid (Via Google Kit)
 // only visible when body has 'debug' class
@@ -121,7 +118,7 @@ $panel-font-color-alt:  #fff !default;
   position: relative;
 
   &:after {
-  	display: none;
+    display: none;
     content: "";
     position: absolute;
     top: 0;
@@ -149,11 +146,19 @@ $panel-font-color-alt:  #fff !default;
 }
 
 // Manual prefixing of a property of your choice
-// Covers most practical uses.
-@mixin prefix($property,$value...) {
+// Covers *most* practical uses.
+@mixin prefix($property,$value) {
+  $isTransform: nth($value, 1);
+  @if $property == transition and $isTransform == transform {
+  -webkit-#{$property}: -webkit-#{$value};
+     -moz-#{$property}: -moz-#{$value};
+      -ms-#{$property}: -ms-#{$value};
+  }
+  @else {
   -webkit-#{$property}: $value;
      -moz-#{$property}: $value;
       -ms-#{$property}: $value;
+  }
   #{$property}: $value;
 }
 
@@ -181,9 +186,11 @@ $panel-font-color-alt:  #fff !default;
 }
 
 
+// ---- Media Query Helpers
+// ---------------------------------
 // A Basic Media Query Mixin
-// Defaults to a 'min-width' query but you can pass a second value for min and max
-// @include media-query(600px) {
+// Defaults to: 'min-width'. Pass a second value for min and max query.
+// @include media-query(600px, max-width) {
 //   font-size: 2.4em;
 // }
 @mixin media-query ($breakpoint-size, $breakpoint-max:"") {
@@ -202,11 +209,44 @@ $panel-font-color-alt:  #fff !default;
   }
 }
 
+// --- max-width only
+@mixin max-width($breakpoint-size) {
+  @include breakpoint ($breakpoint-size, "max-width") {
+    @content;
+  }
+}
 
-// This is required for grid units to work using padded gutters
-// Include a broad amount of border-box on everything and profit.
-// Override for special cases within selectors
+// --- min-width and max-width only
+@mixin max-width($breakpoint-size-min, $breakpoint-size-max) {
+  @include breakpoint ($breakpoint-size-min, $breakpoint-size-max) {
+    @content;
+  }
+}
+
+// --- ipad-retina (Optional: specify orientation)
+@mixin ipad-retina($orientation: all) {
+  $deviceMinWidth: 768px;
+  $deviceMaxWidth: 1024px;
+  $devicePixelRatio: 2;
+
+  @if $orientation == all {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth) and (-webkit-device-pixel-ratio: $devicePixelRatio) {
+      @content;
+    }
+  }
+  @else {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth) and (-webkit-device-pixel-ratio: $devicePixelRatio) and (orientation:#{$orientation}) {
+      @content;
+    }
+  }
+}
+
+// ---- Girder Box-Sizing
+// ---------------------------------
+// This is required for grid units to work using padded gutters.
+// TODO: Option to remove this if its already included in a project
+// Override for special cases when selectors need other types of box-sizing or scope this selector to your grid wrappers if preferred.
 *, *:before, *:after {
-	@include prefix(box-sizing, border-box);
+  @include prefix(box-sizing, border-box);
 }
 

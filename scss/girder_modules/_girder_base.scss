@@ -1,13 +1,5 @@
 //////////////////////////////
 // Base Scss and grid functionality
-// Outputs the minimum CSS required to handle units and self-clearing rows
-
-// Set up the container alignment and max-width
-// This is the only CSS that Girder outputs by default (.row self-clearing stuff)
-.container, .#{$row-class} {
-	margin: $container-margins;
-	max-width: $container-max-width;
-}
 
 // A list of unit names and corresponding widths required by Girder
 $units:'half' 50%,
@@ -28,14 +20,6 @@ $units:'half' 50%,
 
 // Mixin for unit widths (Optimize @if and add func for return values)
 @mixin unit($width:whole, $addgutters:true) {
-
-	// Remove the side gutters if specified
-	@if $addgutters == false {
-		.#{$row-class} & {
-			padding-left: 0;
-			padding-right: 0;
-		}
-	}
 
 	@if $width == 'half' or $width == 'two-fourths' {
 		@extend %half;
@@ -79,7 +63,7 @@ $units:'half' 50%,
 	@else if $width == 'whole' {
 		@extend %whole;
 
-		@if $use-breakpoint == true {
+		@if $use-breakpoint {
 			@include breakpoint($single-column) {
 				padding-right: 0;
 			}
@@ -93,13 +77,20 @@ $units:'half' 50%,
 	@else {
 		@warn '"#{$width}" is not a valid width for the unit mixin (try "half" or "three-fourths" instead). Defaulting to "whole" unit.';
 	}
+
+	// Remove the unit $gutters when specified
+	@if $addgutters == false {
+		@extend %removegutters;
+	}
+
 }
 
+// Extendable placeholders for our unit mixin
 %unit {
 	float: left;
 	padding: $gutters / 2;
-	width: 100%;
 }
+%removegutters {padding-left: 0; padding-right: 0;}
 
 %half           { width: 50%;
 	@extend %unit; }
@@ -133,7 +124,7 @@ $units:'half' 50%,
 }
 
 
-// Mixin to generate silent rows without the need for a class
+// Generate silent rows anywhere without needing a specific class
 @mixin row($isRelative: false, $padding:0) {
   @if $isRelative {
     position: relative;
@@ -155,9 +146,14 @@ $units:'half' 50%,
 		line-height: 0;
 	}
 
-	// Remove nested outer gutters at css level
-	.#{$row-class} > :first-of-type {padding-left: 0;}
-	.#{$row-class} > :last-child {padding-right: 0;}
+	@if not $silent-classes {
+		// Remove nested outer gutters at css level
+		.#{$row-class} > :first-of-type {padding-left: 0;}
+		.#{$row-class} > :last-child {padding-right: 0;}
+	} @else {
+		& > :first-of-type {padding-left: 0;}
+		& > :last-child {padding-right: 0;}
+	}
 
 	// Option to add outer gutters back in to keep third+ units even
 	&.equal-units {
@@ -170,9 +166,27 @@ $units:'half' 50%,
 %row {@include row($row-padding);}
 
 
-// Rows can be cleared using a class if preferred:
-// $silent-rows: false;
-@if $silent-rows != true {
+// Extend containers with padding and a theme background
+@mixin container($max-width: $container-max-width, $margins: $container-margins) {
+		margin: $container-margins;
+		max-width: $container-max-width;
+}
+
+%container {@include container($container-max-width, $container-margins);}
+
+
+// Outputs the minimum CSS required to handle units and self-clearing rows unless this is set in the config:
+// $silent-classes: true;
+@if not $silent-classes {
+
+	// Set up the container alignment and max-width
+	// Some of the few lines of CSS that Girder outputs by default
+	.container {
+		margin: $container-margins;
+		max-width: $container-max-width;
+	}
+
+	// Rows can be cleared using a class of your choice if preferred:
 	.#{$row-class} {
 		padding: $row-padding;
 		clear: both;
@@ -191,15 +205,16 @@ $units:'half' 50%,
 		.#{$row-class} > :first-of-type {padding-left: 0;}
 		.#{$row-class} > :last-child {padding-right: 0;}
 
-		// Option to add outer gutters back in to keep third+ units even
-		&.equal-units {
-			> :first-of-type {padding-left: $gutters / 2;}
-			> :last-child {padding-right: $gutters / 2;}
-		}
-
 		&.no-gutters, &.no-padding {padding: 0;}
 	}
 }
+
+// Extend to re-introduce left/right padding in nested outer units
+%equal-units {
+	> :first-of-type {padding-left: $gutters / 2;}
+	> :last-child {padding-right: $gutters / 2;}
+}
+
 
 // Girder Responsive unit Mixin uses a cleaner syntax (until maps in Sass 3.3)
 // Separate unit mixin for media queries for additional control over gutters

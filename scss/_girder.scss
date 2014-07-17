@@ -1,7 +1,7 @@
-/* ========================================== */
-/*   Girder is a Sassy layout helper     /// */
-/*   https://github.com/unmaya/Girder   /// */
-/* ======================================= */
+/* =========================================== */
+/*   Girder v.1.0.2 A Sassy layout helper  // */
+/*   https://github.com/unmaya/Girder     // */
+/* ======================================== */
 
 // Girder Global Variables, Settings and Modules
 // Start with an $em-base as the foundation of your app
@@ -10,17 +10,20 @@ $em-base           : 16px !default;
 // Functions module need priority (pixel to em converters and more)
 @import "girder_modules/girder_functions";
 
-// Gutter width is split into each side of a unit by default
+// Gutter width is split evenly into each side of a unit by default
 $gutters           : emCalc(20px) !default;
 
-// Set a fixed width for a wraping .container or keep it fluid by setting it to none
+// Set a fixed width for a wraping .container or keep it fluid. eg: @include container(40em, 0 auto);
 $container-max-width : none !default;
 $container-margins : 0 auto !default;
 
 // Name your class for self-clearing elements (row, container, grid, etc)
 $row-class         : 'row' !default;
 $row-padding       : 0 !default;
-$silent-rows       : false !default;
+
+// Set this to true to suppress the default css generated for self-clearing rows
+// If set, use @extend %row in your containing element (advanced)
+$silent-classes    : false !default;
 
 // Example / placeholder breakpoints, change values as needed
 // Pass Pixels and Get ems in return (depends on $em-base var above)
@@ -30,8 +33,11 @@ $large-breakpoint  : emCalc(790px) !default;
 $xlarge-breakpoint : emCalc(940px) !default;
 
 // Optional: Support for the breakpoint sass extension (requires addon)
-$use-breakpoint    : false;
+$use-breakpoint    : false !default;
 // @import "girder_modules/addon_breakpoint";
+
+// Resets all units to go full-width in viewports smaller than $small-breakpoint
+$reset-units       : true !default;
 
 // Output extra classes for pushing units and .hide-small / .center-small
 $include-extras    : true !default;
@@ -39,11 +45,11 @@ $include-extras    : true !default;
 // Output HTML presentational classes? Larger CSS output (experimental, not recommended).
 $html-classes      : false !default;
 
-// Required: Base grid for girder
-@import "girder_modules/girder_base";
-
 // Utility mixins and classes (clearfix, floats, text-aligns)
 @import "girder_modules/girder_utilities";
+
+// Required: Base grid for girder
+@import "girder_modules/girder_base";
 
 // Basic responsiveness for grid units, not required but essential
 @import "girder_modules/girder_responsive";

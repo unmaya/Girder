@@ -2,19 +2,11 @@
 // Breakpoints and base media queries for grid units and utilities
 // Optional: install the Breakpoint plugin for Compass to use the breakpoint mixin
 
-@if $use-breakpoint == true {
-  @include breakpoint($single-column) {
-    .#{$row-class} {
-      // Strong exceptions for only these few rules
-      &.equal-units {
-        > :first-of-type {padding-left: 0 !important;}
-        > :last-child {padding-right: 0 !important;}
-      }
-
-      // All units can go full-width here
+@if $reset-units {
+  @if $use-breakpoint == true {
+    @include breakpoint($single-column) {
       %unit {
-        padding-left: 0;
-        padding-right: 0;
+        // All units go full-width for a single-column layout
         width: 100%;
 
         // Reset push for small viewports
@@ -22,27 +14,37 @@
       }
     }
   }
-}
-@else {
-  @include media-query(10em, $small-breakpoint) {
-    .#{$row-class} {
-      // Clear for small screens
-      &.equal-units {
-        > :first-of-type {padding-left: 0 !important;}
-        > :last-child {padding-right: 0 !important;}
+  @else {
+    @include media-query(10em, $small-breakpoint) {
+      %unit {
+        width: 100%;
+        left: 0;
       }
     }
+  }
+}
 
-    // All units can go full-width here
-    %unit {
-      padding-left: 0;
-      padding-right: 0;
-      width: 100%;
-
-      // Reset push for small viewports
-      left: 0;
+// Generate the css for a clearing element here
+@if not $silent-classes {
+  .#{$row-class} {
+    @if $use-breakpoint {
+      @include breakpoint($small-breakpoint) {
+        // Option to add outer gutters back in to keep third+ units even
+        &.equal-units {
+          > :first-of-type {padding-left: $gutters / 2;}
+          > :last-child {padding-right: $gutters / 2;}
+        }
+      }
     }
-
+    @else {
+      @include media-query($small-breakpoint) {
+        // Option to add outer gutters back in to keep third+ units even
+        &.equal-units {
+          > :first-of-type {padding-left: $gutters / 2;}
+          > :last-child {padding-right: $gutters / 2;}
+        }
+      }
+    }
   }
 }
 
@@ -76,7 +78,7 @@
   }
 }
 
-@if $include-extras == true {
+@if $include-extras {
   // Optional: Output classes to hide elements or center text in small screens
   @include responsive-utilities;
 }

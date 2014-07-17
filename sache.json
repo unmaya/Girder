@@ -1,0 +1,5 @@
+{
+  "name": "Girder CSS",
+  "description": "A simple CSS grid toolkit. A layout helper for building and prototyping modern websites. Its flexible, semantic and responsive. Extra handy for HTML prototypes because its small, fast and easy to use. It can be used with Ruby Sass or LibSass in Node JS.",
+  "tags": ["ui", "grid", "layout", "toolkit", "prototype", "responsive"]
+}
