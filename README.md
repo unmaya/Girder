@@ -18,7 +18,7 @@ Girder is a simple yet versatile grid designed for building with <a href="http:/
 **Sample Code:** You can write HTML with your own classes to target elements or use the cascade:
 ```HTML
 <main class="container">
-	<article class="row">
+	<article>
 		<p>The main column covers two thirds of the page.</p>
 	</article>
 	<aside>
