@@ -1,15 +1,49 @@
 /* =========================================== */
-/*   Girder v.1.0.1 A Sassy layout helper  // */
+/*   Girder v.1.0.2 A Sassy layout helper  // */
 /*   https://github.com/unmaya/Girder     // */
 /* ======================================== */
-.container, .row {
-  margin: 0 auto;
-  max-width: none; }
+.left {
+  float: left;
+  margin-right: 0.8em; }
+
+.right {
+  float: right;
+  margin-left: 0.8em; }
+
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
+.text-justify {
+  text-align: justify; }
+
+.clear:before, .clear:after {
+  content: "";
+  display: table; }
+.clear:after {
+  clear: both; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
 
 .example-half, .actions, .example-fourth, .content, .example-34, .example-gs, .example-gl {
   float: left;
-  padding: 0.625em;
-  width: 100%; }
+  padding: 0.625em; }
+
+.content, .actions, .example-gs, .example-gl, .example-half, .example-fourth, .example-34 {
+  padding: 0; }
 
 .example-half {
   width: 50%; }
@@ -40,10 +74,18 @@
     padding-left: 0; }
   .about .row > :last-child, .setup .row > :last-child {
     padding-right: 0; }
+  .about else > :first-of-type, .setup else > :first-of-type {
+    padding-left: 0; }
+  .about else > :last-child, .setup else > :last-child {
+    padding-right: 0; }
   .about.equal-units > :first-of-type, .setup.equal-units > :first-of-type {
     padding-left: 0.625em; }
   .about.equal-units > :last-child, .setup.equal-units > :last-child {
     padding-right: 0.625em; }
+
+.container {
+  margin: 0 auto;
+  max-width: none; }
 
 .row {
   padding: 0;
@@ -59,10 +101,6 @@
     padding-left: 0; }
   .row .row > :last-child {
     padding-right: 0; }
-  .row.equal-units > :first-of-type {
-    padding-left: 0.625em; }
-  .row.equal-units > :last-child {
-    padding-right: 0.625em; }
   .row.no-gutters, .row.no-padding {
     padding: 0; }
 
@@ -81,52 +119,16 @@
 .push-four {
   left: 50.2%; }
 
-.left {
-  float: left;
-  margin-right: 0.8em; }
-
-.right {
-  float: right;
-  margin-left: 0.8em; }
-
-.hidden {
-  display: none !important;
-  visibility: hidden; }
-
-.text-left {
-  text-align: left !important; }
-
-.text-right {
-  text-align: right !important; }
-
-.text-center {
-  text-align: center !important; }
-
-.text-justify {
-  text-align: justify !important; }
-
-.clear:before, .clear:after {
-  content: "";
-  display: table; }
-.clear:after {
-  clear: both; }
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box; }
-
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
-  .row.equal-units > :first-of-type {
-    padding-left: 0 !important; }
-  .row.equal-units > :last-child {
-    padding-right: 0 !important; }
   .example-half, .actions, .example-fourth, .content, .example-34, .example-gs, .example-gl {
-    padding-left: 0;
-    padding-right: 0;
     width: 100%;
     left: 0; } }
+
+@media only screen and (min-width: 35.5em) {
+  .row.equal-units > :first-of-type {
+    padding-left: 0.625em; }
+  .row.equal-units > :last-child {
+    padding-right: 0.625em; } }
 
 .center-small {
   text-align: inherit; }

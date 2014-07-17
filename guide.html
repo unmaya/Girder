@@ -132,6 +132,11 @@
 					<dl class="ref-table">
 						<div class="title"><dt>Helpers</dt> <dd>With CSS</dd> <dd>With Scss</dd></div>
 
+						<dt>Media Queries</dt>
+						<dd class="incss"><em>Standard syntax.</em></dd>
+						<dd class="insass">@include media-query($medium-screens){}</dd>
+						<p>Simple min-width media queries within selectors. You can also pass 'max-width' as the second value or two numbers for min-max.</p>
+
 						<dt>Variable Gutters</dt>
 						<dd class="incss"><em>unavailable</em></dd>
 						<dd class="insass">$gutters or $gutters /2</dd>
@@ -144,7 +149,7 @@
 
 						<dt>Rows</dt>
 						<dd class="incss">class="row"</dd>
-						<dd class="insass"><em>Not applicable.</em></dd>
+						<dd class="insass"><em>Optional &amp; configurable</em> @extend row;</dd>
 
 						<dt>Equal Units</dt>
 						<dd class="incss">class="equal-units"</dd>
@@ -155,6 +160,22 @@
 						<dd class="incss">Manual Media Queries </dd>
 						<dd class="insass">@include responsive-unit(third);</dd>
 						<p>In Sass this is used to define (or re-shape) units within media queries.</p>
+
+						<dt>Baseline Grid Display</dt>
+						<dd class="incss"><em>Not applicable.</em></dd>
+						<dd class="insass">.container {@include baseline-grid();}</dd>
+						<p>More info coming soon.</p>
+
+						<dt>CSS Prefixes</dt>
+						<dd class="incss"><em>Not applicable.</em></dd>
+						<dd class="insass">@include prefix(border-radius, 3px);</dd>
+						<p>Generate browser prefixes for simple properties. For a more robust solution I'd recommend auto-prefixing during builds. </p>
+
+						<dt>Flexbox</dt>
+						<dd class="incss"><em>Not applicable.</em></dd>
+						<dd class="insass">@include flexbox; or @include flex(2, 1);</dd>
+						<p>More info coming soon...</p>
+
 
 						<dt>em and rem Calculators</dt>
 						<dd class="incss"><em>Unavailable</em> </dd>
