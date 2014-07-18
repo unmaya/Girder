@@ -146,14 +146,20 @@ $units:'half' 50%,
 		line-height: 0;
 	}
 
-	@if not $silent-classes {
+	@if $silent-classes == false {
 		// Remove nested outer gutters at css level
 		.#{$row-class} > :first-of-type {padding-left: 0;}
 		.#{$row-class} > :last-child {padding-right: 0;}
+	} @else if $reset-units == true {
+		@include media-query($small-breakpoint){
+			> :first-of-type {padding-left: 0;}
+			> :last-child {padding-right: 0;}
+		}
 	} @else {
-		& > :first-of-type {padding-left: 0;}
-		& > :last-child {padding-right: 0;}
+		> :first-of-type {padding-left: 0;}
+		> :last-child {padding-right: 0;}
 	}
+
 
 	// Option to add outer gutters back in to keep third+ units even
 	&.equal-units {
@@ -177,7 +183,7 @@ $units:'half' 50%,
 
 // Outputs the minimum CSS required to handle units and self-clearing rows unless this is set in the config:
 // $silent-classes: true;
-@if not $silent-classes {
+@if $silent-classes == false {
 
 	// Set up the container alignment and max-width
 	// Some of the few lines of CSS that Girder outputs by default
@@ -201,9 +207,15 @@ $units:'half' 50%,
 			line-height: 0;
 		}
 
-		// Remove nested outer gutters at css level
-		.#{$row-class} > :first-of-type {padding-left: 0;}
-		.#{$row-class} > :last-child {padding-right: 0;}
+		@if $reset-units == true {
+			@include media-query($small-breakpoint){
+				> :first-of-type {padding-left: 0;}
+				> :last-child {padding-right: 0;}
+			}
+		} @else {
+			> :first-of-type {padding-left: 0;}
+			> :last-child {padding-right: 0;}
+		}
 
 		&.no-gutters, &.no-padding {padding: 0;}
 	}
@@ -242,7 +254,18 @@ $units:'half' 50%,
 
 // This separates our unit mixin and css to keep things tidy
 @mixin girder-unit ($width, $addgutters) {
-	.#{$row-class} & {
+	@if $silent-classes == false {
+		.#{$row-class} & {
+			float: left;
+			// reverse gutters logic to prevent overriding false
+			@if $addgutters == true {
+				padding: $gutters / 2;
+			}
+			// Collect our unit size
+			width: $width;
+		}
+	}
+	@else {
 		float: left;
 		// reverse gutters logic to prevent overriding false
 		@if $addgutters == true {
@@ -257,7 +280,7 @@ $units:'half' 50%,
 // Push units up to four eighths including gutters (experimental)
 // Nested rows should contain homogeneous units with em-based gutters
 @mixin pushover-units {
-	@if not $html-classes {
+	@if $html-classes == false {
 		$gutterpercent: $gutters * $em-base / 100;
 		.push-one,
 		.push-two,

@@ -90,10 +90,11 @@
     display: table;
     content: "";
     line-height: 0; }
-  .row .row > :first-of-type {
-    padding-left: 0; }
-  .row .row > :last-child {
-    padding-right: 0; }
+  @media only screen and (min-width: 35.5em) {
+    .row > :first-of-type {
+      padding-left: 0; }
+    .row > :last-child {
+      padding-right: 0; } }
   .row.no-gutters, .row.no-padding {
     padding: 0; }
 
@@ -115,7 +116,9 @@
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
   .example-half, .actions, .example-fourth, .content, .example-34, .example-gs, .example-gl {
     width: 100%;
-    left: 0; } }
+    left: 0;
+    padding-left: 0;
+    padding-right: 0; } }
 
 @media only screen and (min-width: 35.5em) {
   .row.equal-units > :first-of-type {

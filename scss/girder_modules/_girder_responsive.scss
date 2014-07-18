@@ -11,6 +11,10 @@
 
         // Reset push for small viewports
         left: 0;
+
+        // Reset horizontal gutters
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   }
@@ -19,13 +23,15 @@
       %unit {
         width: 100%;
         left: 0;
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   }
 }
 
 // Generate the css for a clearing element here
-@if not $silent-classes {
+@if $silent-classes == false {
   .#{$row-class} {
     @if $use-breakpoint {
       @include breakpoint($small-breakpoint) {

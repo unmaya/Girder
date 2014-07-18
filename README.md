@@ -5,7 +5,7 @@ A CSS grid toolkit built with Sass. Extra handy for HTML prototypes because its 
 
 * Its Sass with semantic html5 in mind but can also be used with [plain CSS](http://comfypixel.com/Girder/guide.html) (girder.css)
 * Conscise but well commented, small, focused and easy to learn. No excess stuff just the essentials.
-* Instead of columns it uses flexible grid units based on viewport sections (.half, .two-thirds).
+* Instead of columns it uses fractional grid units based on viewport sections (.half, .two-thirds).
 * The grid likes relative units and can easily adapt to a mobile-first approach (but its not required).
 * It makes no other assumptions of how you want to build (its just a layout helper). You bring your own typography, design elements, javascript, plugins, etc.
 * Integrates easily, works with [Node-Sass](https://github.com/sass/node-sass) or Ruby.
@@ -18,7 +18,7 @@ Girder is a simple yet versatile grid designed for building with <a href="http:/
 **Sample Code:** You can write HTML with your own classes to target elements or use the cascade:
 ```HTML
 <main class="container">
-	<article class="row">
+	<article>
 		<p>The main column covers two thirds of the page.</p>
 	</article>
 	<aside>
