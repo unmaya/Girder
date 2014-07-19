@@ -1,10 +1,10 @@
 /* =========================================== */
-/*   Girder v.1.0.2 A Sassy layout helper  // */
+/*   Girder v.1.0.3 A Sassy layout helper  // */
 /*   https://github.com/unmaya/Girder     // */
 /* ======================================== */
 
 // Config Settings can be adjusted prior to Girder @import
-// Start with an $em-base as the foundation of your app
+// An $em-base used for utilities like emCalc() and other extras
 $em-base           : 16px !default;
 
 // Functions module need priority (pixel to em converters and more)
