@@ -7,7 +7,7 @@
 // Optional: overwrite Girder gutters in ems before importing (Default 1.25em = 20px)
 $gutters: 1.25em;
 // Girder grid modules (adjust your path to _girder.scss)
-@import "girder";
+@import "../../girder";
 
 // Site Styling Variables
 $body-bg             : #ffffff;

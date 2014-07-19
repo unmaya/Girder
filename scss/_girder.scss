@@ -1,10 +1,10 @@
 /* =========================================== */
-/*   Girder v.1.0.2 A Sassy layout helper  // */
+/*   Girder v.1.0.3 A Sassy layout helper  // */
 /*   https://github.com/unmaya/Girder     // */
 /* ======================================== */
 
-// Girder Global Variables, Settings and Modules
-// Start with an $em-base as the foundation of your app
+// Config Settings can be adjusted prior to Girder @import
+// An $em-base used for utilities like emCalc() and other extras
 $em-base           : 16px !default;
 
 // Functions module need priority (pixel to em converters and more)
@@ -20,9 +20,7 @@ $container-margins : 0 auto !default;
 // Name your class for self-clearing elements (row, container, grid, etc)
 $row-class         : 'row' !default;
 $row-padding       : 0 !default;
-
-// Set this to true to suppress the default css generated for self-clearing rows
-// If set, use @extend %row in your containing element (advanced)
+// Clear rows with a class in your markup or by silently extending %row (advanced)
 $silent-classes    : false !default;
 
 // Example / placeholder breakpoints, change values as needed
