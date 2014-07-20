@@ -7,7 +7,7 @@
 // Optional: overwrite Girder gutters in ems before importing (Default 1.25em = 20px)
 $gutters: 1.25em;
 // Girder grid modules (adjust your path to _girder.scss)
-@import "../../girder";
+@import "../../scss/girder";
 
 // Site Styling Variables
 $body-bg             : #ffffff;
@@ -42,6 +42,7 @@ body {
 	color: $base-font-color;
 	font-family: $base-font-family;
 	font-size: $base-font-size;
+	line-height: 1.5em;
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 }
@@ -211,6 +212,7 @@ nav#top {
 	position: relative;
 	text-transform: uppercase;
 	text-align: center;
+	z-index: 1000;
 
 	a {
 		display: block;
@@ -278,6 +280,7 @@ nav#top {
 		}
 		p {
 			font-size: 1.125em;
+			line-height: 1.46667em;
 		}
 	}
 }

@@ -1,5 +1,5 @@
 /* =========================================== */
-/*   Girder v.1.0.3 A Sassy layout helper  // */
+/*   Girder v.1.0.4 A Sassy layout helper  // */
 /*   https://github.com/unmaya/Girder     // */
 /* ======================================== */
 
@@ -21,6 +21,7 @@ $container-margins : 0 auto !default;
 $row-class         : 'row' !default;
 $row-padding       : 0 !default;
 // Clear rows with a class in your markup or by silently extending %row (advanced)
+// Reduces css output when Girder is dormant to practically nothing
 $silent-classes    : false !default;
 
 // Example / placeholder breakpoints, change values as needed
@@ -38,7 +39,7 @@ $use-breakpoint    : false !default;
 $reset-units       : true !default;
 
 // Output extra classes for pushing units and .hide-small / .center-small
-$include-extras    : true !default;
+$include-extras    : false !default;
 
 // Output HTML presentational classes? Larger CSS output (experimental, not recommended).
 $html-classes      : false !default;

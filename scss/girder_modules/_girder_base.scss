@@ -90,7 +90,7 @@ $units:'half' 50%,
 	float: left;
 	padding: $gutters / 2;
 }
-%removegutters {padding-left: 0; padding-right: 0;}
+%removegutters {padding: 0;}
 
 %half           { width: 50%;
 	@extend %unit; }
