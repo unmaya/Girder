@@ -1,7 +1,7 @@
 Girder CSS [demo](http://comfypixel.com/Girder/)
 ====================
 
-A CSS toolkit built with Sass, ideal for screen layouts of all shapes and sizes. **But why you ask? "There are a bizzillion of these..".** Because I wanted to use a fractional system, something lean and focused - A tool that doesn't have to generate any extra css unless I ask. Its really handy for HTML prototypes because its small and it easily integrates with other extensions.
+A CSS toolkit and layout helper built with Sass, ideal for screen layouts and grids of all shapes and sizes. **But why you ask? "There are a bazillion of these..".** Because I wanted to use a fractional system, something lean and focused - A tool that doesn't have to generate any extra css unless I asked. Its really handy for HTML prototypes because its small, fast and it easily integrates with other extensions.
 
 * Its Sass with semantic html5 in mind but can also be used with [plain CSS](http://comfypixel.com/Girder/guide.html) (girder.css)
 * Conscise but well commented, small, focused and easy to learn. No excess stuff just the essentials.
@@ -13,9 +13,9 @@ A CSS toolkit built with Sass, ideal for screen layouts of all shapes and sizes.
 ---
 
 ## How it works
-Girder is a simple yet versatile grid designed for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It builds flexible layouts using fractions and silent classes (placeholders) to structure content in HTML; this keeps your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4". [View the examples](http://comfypixel.com/Girder/example-css.html)
+Girder is designed for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It builds flexible layouts using fractions and silent classes (placeholders) to structure content in a clean and logical structure; this can also keep your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4". [View some examples](http://comfypixel.com/Girder/example-css.html)
 
-**Sample Code:** You can write HTML with your own classes to target elements or use the cascade:
+**Sample Code:** You can use classes to target elements or use the cascade for any type of layout:
 ```HTML
 <main class="container">
 	<article>

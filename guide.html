@@ -33,7 +33,7 @@
 			<nav>
 				<a class="activated" href="guide.html">Guide</a>
 				<a href="example-css.html">Examples</a>
-				<a href="http://ghost.fredmaya.com">Blog</a>
+				<a href="http://ghost.fredmaya.com">Journal</a>
 			</nav>
 
 			<div class="top-wrapper">
@@ -153,17 +153,17 @@
 
 						<dt>Equal Units</dt>
 						<dd class="incss">class="equal-units"</dd>
-						<dd class="insass"><em>Not applicable.</em></dd>
+						<dd class="insass"><em>Optional:</em> @extend %equal-units;</dd>
 						<p>This applies equal spacing for all units within a given .row. It adds left and right padding but makes them more symmetrical.</p>
 
 						<dt>Responsive Units</dt>
-						<dd class="incss">Manual Media Queries </dd>
-						<dd class="insass">@include responsive-unit(third);</dd>
-						<p>In Sass this is used to define (or re-shape) units within media queries.</p>
+						<dd class="incss">Manual Media Queries.</dd>
+						<dd class="insass">@include responsive-unit(third, true);</dd>
+						<p>Define (or re-shape) units within media queries. This mixin excludes $gutter padding by default, override this by specifying 'true'.</p>
 
 						<dt>Baseline Grid Display</dt>
 						<dd class="incss"><em>Not applicable.</em></dd>
-						<dd class="insass">.container {@include baseline-grid();}</dd>
+						<dd class="insass">main {@include baseline-grid();}</dd>
 						<p>More info coming soon.</p>
 
 						<dt>CSS Prefixes</dt>

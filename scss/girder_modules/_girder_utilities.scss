@@ -201,7 +201,7 @@ $panel-font-color-alt:  #fff !default;
     @if $breakpoint-max == "max-width" {
       @media only screen and (max-width: $breakpoint-size) { @content; }
     } @else {
-      @warn "Your second argument for the breakpoint mixin is not valid. It accepts 'max-width' or a number value like '600px' (optional)."
+      @warn "Your second argument for the media query mixin is invalid. It accepts the string 'max-width' or a number value like '600px' (optional)."
     }
   }
   @else {
@@ -211,15 +211,19 @@ $panel-font-color-alt:  #fff !default;
 
 // --- max-width only
 @mixin max-width($breakpoint-size) {
-  @include breakpoint ($breakpoint-size, "max-width") {
+  @include media-query ($breakpoint-size, "max-width") {
     @content;
   }
 }
 
 // --- min-width and max-width only
-@mixin max-width($breakpoint-size-min, $breakpoint-size-max) {
-  @include breakpoint ($breakpoint-size-min, $breakpoint-size-max) {
-    @content;
+@mixin min-max($breakpoint-size-min, $breakpoint-size-max) {
+  @include media-query ($breakpoint-size-min, $breakpoint-size-max) {
+    @if type-of($breakpoint-size-max) == 'number' {
+      @content;
+    } @else {
+      @warn "Your second argument for the min-max mixin is invalid. It needs a number value for this type of media query (like '600px')."
+    }
   }
 }
 
