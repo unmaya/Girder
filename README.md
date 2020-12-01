@@ -1,9 +1,9 @@
-Girder CSS [demo](http://comfypixel.com/Girder/)
+Girder CSS [demo](http://unmaya.github.io/Girder/)
 ====================
 
 A CSS toolkit and layout helper built with Sass, ideal for screen layouts and grids of all shapes and sizes. **But why you ask? "There are a bazillion of these..".** Because I wanted to use a fractional system, something lean and focused - A tool that doesn't have to generate any extra css unless I asked. Its really handy for HTML prototypes because its small, fast and it easily integrates with other extensions.
 
-* Its Sass with semantic html5 in mind but can also be used with [plain CSS](http://comfypixel.com/Girder/guide.html) (girder.css)
+* Its Sass with semantic html5 in mind but can also be used with [plain CSS](http://unmaya.github.io/Girder/guide.html) (girder.css)
 * Conscise but well commented, small, focused and easy to learn. No excess stuff just the essentials.
 * Instead of columns it uses fractional grid units based on viewport sections (.half, .two-thirds).
 * The grid likes relative units and can easily adapt to a mobile-first approach (but its not required).
@@ -13,7 +13,7 @@ A CSS toolkit and layout helper built with Sass, ideal for screen layouts and gr
 ---
 
 ## How it works
-Girder is designed for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It makes it easy to quickly make flexible layouts using fractions as viewport sections. It uses silent classes (placeholders) to structure your grid content which also keeps your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4". [View some examples](http://comfypixel.com/Girder/example-css.html)
+Girder is designed for building with <a href="http://sass-lang.com/">Sass</a>, a fantastic pre-processor. It makes it easy to quickly make flexible layouts using fractions as viewport sections. It uses silent classes (placeholders) to structure your grid content which also keeps your Markup free of excess presentational (often meaningless) classes like "unit_1of4", "small-2", "grid4". [View some examples](http://unmaya.github.io/Girder/example-css.html)
 
 **Sample Code:** You can use classes to target elements or use the cascade to build any type of layout:
 ```HTML
@@ -55,9 +55,8 @@ $container-max-width: 1322px;
 }
 ```
 ### Pages built with Girder using a mix of Sass and pure CSS:
-* [Setup Guide](http://comfypixel.com/Girder/guide.html)
-* [Examples Page](http://comfypixel.com/Girder/example-css.html)
-* [Girder-Ghost Theme](http://ghost.fredmaya.com)
+* [Setup Guide](http://unmaya.github.io/Girder/guide.html)
+* [Examples Page](http://unmaya.github.io/Girder/example-css.html)
 * [Portfolio](http://fredmaya.com)
 
 ## Setup / Requirements
@@ -66,7 +65,7 @@ Girder is compatible with Node-Sass or Ruby-Sass. You can use it without Sass al
 ### just Css
 1. Include [girder.css](https://github.com/unmaya/Girder/blob/master/girder.css) in your project.
 
-2. Use the layout classes in your HTML to infinitely nest and splice content on your app as needed. [More examples and usage](http://ghost.fredmaya.com/getting-started-with-girder/).
+2. Use the layout classes in your HTML to infinitely nest and splice content on your app as needed.
 
 ### Using Sass / Scss
 Copy the Sass folder from this Repo. Or [download the source and example files](https://github.com/unmaya/Girder/archive/master.zip). You only need two things, the main settings file and the modules folder (everything else is optional):
@@ -97,11 +96,11 @@ Include the Girder scss file:
 
 	@include media-query($large-screens) {
 		@include responsive-unit(third);
-	}
+	}http://unmaya.github.io/Girder/
 }
 ```
 
-**To use plain CSS** you just add the classes to the markup like this [Example page](http://comfypixel.com/Girder/example-css.html):
+**To use plain CSS** you just add the classes to the markup like this [Example page](http://unmaya.github.io/Girder/example-css.html):
 ```HTML
 <!-- Be sure to include the girder.css file in your document -->
 <main class="content row">
@@ -111,7 +110,7 @@ Include the Girder scss file:
 </main>
 ```
 
-**Some familiar options:** Wrap multi-column rows with a ```.row``` class or use ```@extend %row``` to do it silently. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units, add media queries or use any number of plugins for Sass. [Check the example](http://comfypixel.com/Girder/), inspect, poke and download the source to see exactly how it works.
+**Some familiar options:** Wrap multi-column rows with a ```.row``` class or use ```@extend %row``` to do it silently. Nest rows and mix grid units to achieve your desired results. You can remove gutters, push units, add media queries or use any number of plugins for Sass. [Check the example](http://unmaya.github.io/Girder/), inspect, poke and download the source to see exactly how it works.
 
 Sometimes I write about using Sass and CSS layout tools like Girder on this [dev journal](http://ghost.fredmaya.com).
 
